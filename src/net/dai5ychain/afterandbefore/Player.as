@@ -1,0 +1,117 @@
+package net.dai5ychain.afterandbefore {
+    import org.flixel.*;
+
+    public class Player extends FlxSprite {
+        [Embed(source='/../data/boy-blob-white-half-walk.png')]
+        private var PlayerImage:Class;
+
+        private var _jump_power:uint = 150;
+        private var _move_speed:uint;
+
+        private var climb_speed:uint = 25;
+        public var is_jumping:Boolean = false;
+
+        public var on_ladder:Boolean = false;
+        public var is_climbing:Boolean = false;
+        
+        public function Player(X:Number, Y:Number):void {
+            super(X,Y);
+
+            this.loadGraphic(PlayerImage, true, true, 15, 15);
+
+            maxVelocity.x = 80;
+            maxVelocity.y = 200;
+
+            _move_speed = 800;
+            acceleration.y = 420;
+            drag.x = 600;
+
+            addAnimation("walk", [0,1,2,1,3,1,4,1], 12);
+            addAnimation("climbing", [6,7,8,9,10], 9);
+            addAnimation("climbing-stopped", [8]);
+            addAnimation("stopped", [5]);
+            addAnimation("jump", [2,3],4);
+            addAnimation("mid-air",[0]);
+
+            width = 3;
+            offset.x = 6;
+        }
+
+        override public function update():void {
+            // Controls
+            if(FlxG.keys.LEFT) {
+                facing = LEFT;
+                velocity.x -= _move_speed * FlxG.elapsed;
+            } else if (FlxG.keys.RIGHT) {
+                facing = RIGHT;
+                velocity.x += _move_speed * FlxG.elapsed;                
+            }
+
+            if(FlxG.keys.justPressed("Z") || FlxG.keys.justPressed("UP")) {
+                if(!on_ladder) {
+                    if(velocity.y == 0) {
+                        velocity.y = - _jump_power;
+                    }
+                }
+            }
+
+            if(on_ladder) {
+                if(FlxG.keys.UP || FlxG.keys.DOWN) {
+                    is_climbing = true;
+                }
+            } else {
+                is_climbing = false;
+            }
+
+            if(is_climbing) {
+                acceleration.y = 0;
+                
+                if(FlxG.keys.UP) {
+                    velocity.y = - climb_speed;
+                } else if(FlxG.keys.DOWN) {
+                    velocity.y = climb_speed;
+                } else {
+                    velocity.y = 0;
+                }
+
+                // Nudge the player toward the center of the ladder, if they're
+                // already in motion.
+                var x_offset:uint = this.x % PlayState.TILE_SIZE;
+                if(x_offset < 3 && velocity.y != 0) {
+                    x += 1;
+                } else if(x_offset > 3 && velocity.y != 0) {
+                    x -= 1;
+                }
+            } else {
+                acceleration.y = 420;                
+            }
+            
+            // Animation
+            if(is_climbing) {
+                if(velocity.y == 0) {
+                    play("climbing-stopped");
+                } else {
+                    play("climbing");
+                }
+            } else {
+                if(velocity.y > 0) {
+                    if(!is_jumping) {
+                        is_jumping = true;
+                        play("mid-air");
+                    }
+                } else if(velocity.y < 0) {
+                    play("jump");
+                } else {
+                    is_jumping = false;
+                    if(velocity.x == 0) {
+                        play("stopped");
+                    } else {
+                        play("walk");
+                    }
+                }
+            }
+            
+            super.update();
+        }
+    }
+}
