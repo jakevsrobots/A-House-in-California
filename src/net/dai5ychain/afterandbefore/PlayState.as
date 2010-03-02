@@ -21,7 +21,9 @@ package net.dai5ychain.afterandbefore {
 
         private var fx:FlxSprite;
 
-        public static const TILE_SIZE:uint=  8;
+        public static const TILE_SIZE:uint=8;
+
+        public static var WORLD_LIMITS:FlxPoint;
         
         override public function create():void {
             walls_group = new FlxGroup;
@@ -38,6 +40,9 @@ package net.dai5ychain.afterandbefore {
             
             // Load map
             var map:Object = JSON.decode(new WorldMapJSON);
+            WORLD_LIMITS = new FlxPoint;
+            WORLD_LIMITS.x = map['width'] * TILE_SIZE;
+            WORLD_LIMITS.y = map['height'] * TILE_SIZE;            
             var sprite_index_map:Object = {
                 'ladder': 2,
                 'firefly': 3
