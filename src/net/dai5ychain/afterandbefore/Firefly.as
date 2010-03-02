@@ -49,6 +49,7 @@ package net.dai5ychain.afterandbefore {
             if(destination.x <=0 || destination.y <= 0 ||
                 destination.x >= PlayState.WORLD_LIMITS.x ||
                 destination.y >= PlayState.WORLD_LIMITS.y) {
+                
                 get_new_destination();
             }
         }

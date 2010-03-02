@@ -1,5 +1,7 @@
 package net.dai5ychain.afterandbefore {
     import org.flixel.*;
+
+    import net.dai5ychain.afterandbefore.phenomena.*;
     
     import com.adobe.serialization.json.JSON;
     
@@ -19,8 +21,10 @@ package net.dai5ychain.afterandbefore {
         
         private var player:Player;
 
-        private var fx:FlxSprite;
+        private var phenomena:Array;
 
+        private var current_phenomenon:Phenomenon;
+        
         public static const TILE_SIZE:uint=8;
 
         public static var WORLD_LIMITS:FlxPoint;
@@ -97,10 +101,14 @@ package net.dai5ychain.afterandbefore {
 
             FlxG.followAdjust(0.5,0.5);
             FlxG.follow(player, 2.5);
-            
-            // Effect
-            fx = new FlxSprite();
-            fx.createGraphic(FlxG.width, FlxG.height, 0xffb6fecd);
+
+            // Phenomena
+            phenomena = [
+                new Trails(16 * TILE_SIZE, 69 * TILE_SIZE, player)
+            ];
+
+            //current_phenomenon = null;
+            current_phenomenon = phenomena[0];
         }
 
         override public function update():void {
@@ -124,15 +132,22 @@ package net.dai5ychain.afterandbefore {
         }
 
         override public function preProcess():void {
-            //fx.draw(screen);
-            //screen.fill(bgColor);
+            if(current_phenomenon) {
+                current_phenomenon.preProcess();
+            } else {
+                super.preProcess();
+            }
 
-            screen.draw(fx);
                 
         }
         
         override public function postProcess():void {
-            //screen.draw(fx);
+            if(current_phenomenon) {
+                current_phenomenon.postProcess();
+            } else {
+                super.postProcess();
+            }
+ 
         }
     }
 }
