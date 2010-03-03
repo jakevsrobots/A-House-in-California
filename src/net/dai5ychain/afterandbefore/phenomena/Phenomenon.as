@@ -9,6 +9,13 @@ package net.dai5ychain.afterandbefore.phenomena {
         protected var fx:FlxSprite;
         protected var position:FlxPoint;
         protected var player:Player;
+        protected var distance_to_player:uint;
+
+        // The maximum player distance at which this phenomenon should be active
+        // (in pixels)
+        protected var max_player_distance:uint = 256;
+
+        public var active:Boolean = false;
         
         public function Phenomenon(x:uint, y:uint, player:Player):void {
             fx = new FlxSprite();
@@ -18,8 +25,18 @@ package net.dai5ychain.afterandbefore.phenomena {
             this.player = player;
         }
 
-        protected var get_distance():uint {
-            return uint(Math.sqrt(Math.pow(player.x - x, 2) + Math.pow(player.y - y, 2)));
+        protected function get_distance():uint {
+            return uint(Math.sqrt(Math.pow(player.x - position.x, 2) + Math.pow(player.y - position.y, 2)));
+        }
+
+        public function update():void {
+            distance_to_player = get_distance();
+
+            if(distance_to_player < max_player_distance) {
+                active = true;
+            } else {
+                active = false;
+            }
         }
         
         public function preProcess():void {

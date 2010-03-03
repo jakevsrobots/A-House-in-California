@@ -23,8 +23,6 @@ package net.dai5ychain.afterandbefore {
 
         private var phenomena:Array;
 
-        private var current_phenomenon:Phenomenon;
-        
         public static const TILE_SIZE:uint=8;
 
         public static var WORLD_LIMITS:FlxPoint;
@@ -106,9 +104,6 @@ package net.dai5ychain.afterandbefore {
             phenomena = [
                 new Trails(16 * TILE_SIZE, 69 * TILE_SIZE, player)
             ];
-
-            //current_phenomenon = null;
-            current_phenomenon = phenomena[0];
         }
 
         override public function update():void {
@@ -127,27 +122,42 @@ package net.dai5ychain.afterandbefore {
             } else {
                 trace('----');
             }*/
+
+            for each(var phenomenon:Phenomenon in phenomena) {
+                phenomenon.update();
+            }
             
             super.update();
         }
 
         override public function preProcess():void {
-            if(current_phenomenon) {
-                current_phenomenon.preProcess();
-            } else {
-                super.preProcess();
+            var any_phenomena_active:Boolean = false;
+            
+            for each (var phenomenon:Phenomenon in phenomena) {
+                if(phenomenon.active) {
+                    phenomenon.preProcess();
+                    any_phenomena_active = true;
+                }
             }
 
-                
+            if(!any_phenomena_active) {
+                super.preProcess();
+            }
         }
         
         override public function postProcess():void {
-            if(current_phenomenon) {
-                current_phenomenon.postProcess();
-            } else {
+            var any_phenomena_active:Boolean = false;
+            
+            for each (var phenomenon:Phenomenon in phenomena) {
+                if(phenomenon.active) {
+                    phenomenon.postProcess();
+                    any_phenomena_active = true;
+                }
+            }
+
+            if(!any_phenomena_active) {
                 super.postProcess();
             }
- 
         }
     }
 }
