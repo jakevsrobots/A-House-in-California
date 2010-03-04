@@ -1,6 +1,6 @@
 #!/bin/sh
 
-rm output/AfterAndBefore.swf
+rm output/GlowingInsects.swf
 python src/compile_levels.py
-mxmlc src/net/dai5ychain/afterandbefore/AfterAndBefore.as -source-path=src/ -output output/AfterAndBefore.swf
-flashplayer_10 output/AfterAndBefore.swf
+mxmlc src/net/dai5ychain/glowinginsects/GlowingInsects.as -source-path=src/ -output output/GlowingInsects.swf
+flashplayer_10 output/GlowingInsects.swf

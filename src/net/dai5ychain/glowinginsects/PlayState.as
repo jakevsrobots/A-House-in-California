@@ -1,8 +1,6 @@
-package net.dai5ychain.afterandbefore {
+package net.dai5ychain.glowinginsects {
     import org.flixel.*;
 
-    import net.dai5ychain.afterandbefore.phenomena.*;
-    
     import com.adobe.serialization.json.JSON;
     
     public class PlayState extends FlxState {
@@ -20,8 +18,6 @@ package net.dai5ychain.afterandbefore {
         private var AutoTiles:Class;
         
         private var player:Player;
-
-        private var phenomena:Array;
 
         public static const TILE_SIZE:uint=8;
 
@@ -100,10 +96,6 @@ package net.dai5ychain.afterandbefore {
             FlxG.followAdjust(0.5,0.5);
             FlxG.follow(player, 2.5);
 
-            // Phenomena
-            phenomena = [
-                new Trails(16 * TILE_SIZE, 69 * TILE_SIZE, player)
-            ];
         }
 
         override public function update():void {
@@ -123,41 +115,15 @@ package net.dai5ychain.afterandbefore {
                 trace('----');
             }*/
 
-            for each(var phenomenon:Phenomenon in phenomena) {
-                phenomenon.update();
-            }
-            
             super.update();
         }
 
         override public function preProcess():void {
-            var any_phenomena_active:Boolean = false;
-            
-            for each (var phenomenon:Phenomenon in phenomena) {
-                if(phenomenon.active) {
-                    phenomenon.preProcess();
-                    any_phenomena_active = true;
-                }
-            }
-
-            if(!any_phenomena_active) {
-                super.preProcess();
-            }
+            super.preProcess();
         }
         
         override public function postProcess():void {
-            var any_phenomena_active:Boolean = false;
-            
-            for each (var phenomenon:Phenomenon in phenomena) {
-                if(phenomenon.active) {
-                    phenomenon.postProcess();
-                    any_phenomena_active = true;
-                }
-            }
-
-            if(!any_phenomena_active) {
-                super.postProcess();
-            }
+            super.postProcess();
         }
     }
 }

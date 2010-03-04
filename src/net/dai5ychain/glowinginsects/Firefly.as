@@ -1,4 +1,4 @@
-package net.dai5ychain.afterandbefore {
+package net.dai5ychain.glowinginsects {
     import org.flixel.*;
 
     public class Firefly extends FlxSprite {
