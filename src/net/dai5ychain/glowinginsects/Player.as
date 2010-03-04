@@ -13,11 +13,15 @@ package net.dai5ychain.glowinginsects {
 
         public var on_ladder:Boolean = false;
         public var is_climbing:Boolean = false;
+
+        public var firefly_count:uint = 0;
+
+        private var color_stages:Array;
         
         public function Player(X:Number, Y:Number):void {
             super(X,Y);
 
-            this.loadGraphic(PlayerImage, true, true, 15, 15);
+            this.loadGraphic(PlayerImage, true, true, 15, 12);
 
             maxVelocity.x = 80;
             maxVelocity.y = 200;
@@ -35,8 +39,58 @@ package net.dai5ychain.glowinginsects {
 
             width = 3;
             offset.x = 6;
+
+            color_stages = get_color_increments();
+
+            alpha = 1.0;
+            color = 0xff505050;
         }
 
+        public function add_firefly():void {
+            firefly_count += 1;
+            color = color_stages[firefly_count];
+            alpha -= (0.25 / GlowingInsects.bug_count);
+            
+        }
+
+        private function get_color_increments():Array {
+            var color_increments:Array = [];
+
+            function fadeHex (hex1:uint, hex2:uint, steps:uint):Array {
+                //
+                // Create an array to store all colors.
+                var newArry:Array = [hex1];
+                //
+                // Break Hex1 into RGB components.
+                var r:Number = hex1 >> 16;
+                var g:Number = hex1 >> 8 & 0xFF;
+                var b:Number = hex1 & 0xFF;
+                //
+                // Determine RGB differences between Hex1 and Hex2.
+                var rd:Number = (hex2 >> 16)-r;
+                var gd:Number = (hex2 >> 8 & 0xFF)-g;
+                var bd:Number = (hex2 & 0xFF)-b;
+                //
+                steps++;
+                // For each new color.
+                for (var i=1; i<steps; i++){
+                    //
+                    // Determine where the color lies between the 2 end colors.
+                    var ratio = i/steps;
+                    //
+                    // Calculate new color and add it to the array.
+                    newArry.push((r+rd*ratio)<<16 | (g+gd*ratio)<<8 | (b+bd*ratio));
+                }
+
+                //
+                // Add Hex2 to the array and return it.
+                newArry.push(hex2);
+                return newArry;
+            }
+
+            return fadeHex(0x505050, 0xd12d16, GlowingInsects.bug_count);
+        }
+        
         override public function update():void {
             // Controls
             if(FlxG.keys.LEFT) {

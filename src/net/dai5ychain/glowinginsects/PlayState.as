@@ -95,7 +95,6 @@ package net.dai5ychain.glowinginsects {
 
             FlxG.followAdjust(0.5,0.5);
             FlxG.follow(player, 2.5);
-
         }
 
         override public function update():void {
@@ -103,9 +102,18 @@ package net.dai5ychain.glowinginsects {
 
             // Check ladder overlaps.
             player.on_ladder = false;
-            FlxU.overlap(player, ladders_group, function(player:FlxObject, ladder:FlxObject):void {
+            FlxU.overlap(player, ladders_group,
+                function(player:FlxObject, ladder:FlxObject):void {
                     (player as Player).on_ladder = true;
                 });
+
+            // Check firefly overlaps.
+            FlxU.overlap(player, fireflies_group,
+                function(player:FlxObject, firefly:FlxObject):void {
+                    (player as Player).add_firefly();
+                    firefly.kill();
+                });
+            
             /*
             if(player.x >= walls_map.width - player.width) {
                 trace('off right');
