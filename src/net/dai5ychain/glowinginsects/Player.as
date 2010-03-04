@@ -17,7 +17,7 @@ package net.dai5ychain.glowinginsects {
         public var firefly_count:uint = 0;
 
         private var color_stages:Array;
-        
+
         public function Player(X:Number, Y:Number):void {
             super(X,Y);
 
@@ -43,7 +43,7 @@ package net.dai5ychain.glowinginsects {
             color_stages = get_color_increments();
 
             alpha = 1.0;
-            color = 0xff505050;
+            color = 0x5080a0;
         }
 
         public function add_firefly():void {
@@ -89,7 +89,7 @@ package net.dai5ychain.glowinginsects {
                 return newArry;
             }
 
-            return fadeHex(0x505050, 0xd12d16, GlowingInsects.bug_count);
+            return fadeHex(0x5080a0, 0xd12d16, GlowingInsects.bug_count);
         }
         
         override public function update():void {

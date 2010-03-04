@@ -28,6 +28,8 @@ package net.dai5ychain.glowinginsects {
         public static const TILE_SIZE:uint=8;
         public static var WORLD_LIMITS:FlxPoint;
 
+        private var mini_map:MiniMap;
+        
         override public function create():void {
             walls_group = new FlxGroup;
             this.add(walls_group);
@@ -105,13 +107,19 @@ package net.dai5ychain.glowinginsects {
             player = new Player(5 * TILE_SIZE,77 * TILE_SIZE);
             player_group.add(player);
 
+            // Minimap
+            mini_map = new MiniMap;
+            mini_map.scrollFactor.x = mini_map.scrollFactor.y = 0;
+            this.add(mini_map);
+            
             FlxG.followAdjust(0.5,0.5);
             FlxG.follow(player, 2.5);
         }
 
         override public function update():void {
             walls_map.collide(player);
-
+            //walls_map.collide(fireflies_group);            
+            
             // Check ladder overlaps.
             player.on_ladder = false;
             FlxU.overlap(player, ladders_group,
@@ -123,6 +131,7 @@ package net.dai5ychain.glowinginsects {
             FlxU.overlap(player, fireflies_group,
                 function(player:FlxObject, firefly:FlxObject):void {
                     if((firefly as Firefly).behavior_state == Firefly.FLYING_FREE) {
+                        FlxG.flash.start(0xfff14d36, 0.5);                        
                         (player as Player).add_firefly();
                         firefly.kill();
                     }
@@ -140,6 +149,9 @@ package net.dai5ychain.glowinginsects {
                         }
                     });
             }
+
+            // Update mini-map
+            mini_map.update_map(fireflies_group.members, player);
             
             super.update();
         }

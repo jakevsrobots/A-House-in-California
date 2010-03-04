@@ -80,5 +80,24 @@ package net.dai5ychain.glowinginsects {
                 uint(Math.random() * PlayState.WORLD_LIMITS.y)
             );
         }
+
+        override public function hitLeft(Contact:FlxObject, Velocity:Number):void {
+            if(behavior_state == FLYING_FREE) {
+                get_new_destination();
+                super.hitLeft(Contact,Velocity);
+            }
+        }
+        override public function hitTop(Contact:FlxObject, Velocity:Number):void {
+            if(behavior_state == FLYING_FREE) {            
+                get_new_destination();
+                super.hitTop(Contact,Velocity);
+            }
+        }
+        override public function hitBottom(Contact:FlxObject, Velocity:Number):void {
+            if(behavior_state == FLYING_FREE) {
+                get_new_destination();
+                super.hitBottom(Contact,Velocity);
+            }
+        }
     }
 }
