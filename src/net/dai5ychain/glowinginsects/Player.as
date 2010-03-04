@@ -56,6 +56,7 @@ package net.dai5ychain.glowinginsects {
         private function get_color_increments():Array {
             var color_increments:Array = [];
 
+            // Borrowed from http://www.pixelwit.com/blog/2008/05/color-fading-array/
             function fadeHex (hex1:uint, hex2:uint, steps:uint):Array {
                 //
                 // Create an array to store all colors.
@@ -73,10 +74,10 @@ package net.dai5ychain.glowinginsects {
                 //
                 steps++;
                 // For each new color.
-                for (var i=1; i<steps; i++){
+                for (var i:uint=1; i<steps; i++){
                     //
                     // Determine where the color lies between the 2 end colors.
-                    var ratio = i/steps;
+                    var ratio:Number = i/steps;
                     //
                     // Calculate new color and add it to the array.
                     newArry.push((r+rd*ratio)<<16 | (g+gd*ratio)<<8 | (b+bd*ratio));

@@ -4,6 +4,9 @@ package net.dai5ychain.glowinginsects {
     import com.adobe.serialization.json.JSON;
     
     public class PlayState extends FlxState {
+        [Embed(source='/../data/jar.png')]
+        private var JarImage:Class;
+        
         private var background_group:FlxGroup;
         private var walls_group:FlxGroup;
         private var player_group:FlxGroup;
@@ -18,11 +21,13 @@ package net.dai5ychain.glowinginsects {
         private var AutoTiles:Class;
         
         private var player:Player;
+        private var jar:FlxSprite;
 
-        public static const TILE_SIZE:uint=8;
-
-        public static var WORLD_LIMITS:FlxPoint;
+        public static var JAR_POSITION:FlxPoint;
         
+        public static const TILE_SIZE:uint=8;
+        public static var WORLD_LIMITS:FlxPoint;
+
         override public function create():void {
             walls_group = new FlxGroup;
             this.add(walls_group);
@@ -35,6 +40,11 @@ package net.dai5ychain.glowinginsects {
 
             fireflies_group = new FlxGroup;
             this.add(fireflies_group);
+
+            JAR_POSITION = new FlxPoint(19 * TILE_SIZE, 77 * TILE_SIZE);
+            
+            jar = new FlxSprite(JAR_POSITION.x, JAR_POSITION.y, JarImage);
+            this.add(jar);
             
             // Load map
             var map:Object = JSON.decode(new WorldMapJSON);
@@ -42,14 +52,12 @@ package net.dai5ychain.glowinginsects {
             WORLD_LIMITS.x = map['width'] * TILE_SIZE;
             WORLD_LIMITS.y = map['height'] * TILE_SIZE;            
             var sprite_index_map:Object = {
-                'ladder': 2,
-                'firefly': 3
+                'ladder': 2
             };
             for(var i:uint = 0; i < map['layers'].length; i++) {
                 var layer:Object = map['layers'][i];
 
                 if(layer['name'] == 'walls') {
-                    trace('loading walls');
                     walls_map = new FlxTilemap;
                     walls_map.auto = FlxTilemap.AUTO;
                     walls_map.loadMap(layer['tiles'], AutoTiles, TILE_SIZE, TILE_SIZE);
@@ -67,7 +75,6 @@ package net.dai5ychain.glowinginsects {
                         }
                     }
                     
-                    trace('loading sprites');
                     for(var y:uint=0; y < map['height']; y++) {
                         for(var x:uint=0; x < map['width']; x++) {
                             var gid:uint = tile_data[y * map['width'] + x];
@@ -78,17 +85,22 @@ package net.dai5ychain.glowinginsects {
                                 case sprite_index_map['ladder']:
                                 ladders_group.add(new Ladder(sprite_position.x, sprite_position.y));
                                 break;
-
-                                // Fireflies
-                                case sprite_index_map['firefly']:
-                                fireflies_group.add(new Firefly(sprite_position.x, sprite_position.y));
-                                break;
                             }
                         }
                     }
                 }
             }
 
+            // Generate fireflies
+            for(var bug_i:uint = 0; bug_i < GlowingInsects.bug_count; bug_i++) {
+                
+                fireflies_group.add(
+                    new Firefly(
+                        JAR_POSITION.x + uint(Math.random() * 16),
+                        JAR_POSITION.y + uint(Math.random() * 16))
+                );
+            }
+            
             // Player
             player = new Player(5 * TILE_SIZE,77 * TILE_SIZE);
             player_group.add(player);
@@ -106,23 +118,29 @@ package net.dai5ychain.glowinginsects {
                 function(player:FlxObject, ladder:FlxObject):void {
                     (player as Player).on_ladder = true;
                 });
-
+            
             // Check firefly overlaps.
             FlxU.overlap(player, fireflies_group,
                 function(player:FlxObject, firefly:FlxObject):void {
-                    (player as Player).add_firefly();
-                    firefly.kill();
+                    if((firefly as Firefly).behavior_state == Firefly.FLYING_FREE) {
+                        (player as Player).add_firefly();
+                        firefly.kill();
+                    }
                 });
-            
-            /*
-            if(player.x >= walls_map.width - player.width) {
-                trace('off right');
-            } else if(player.x <= 2) {
-                trace('off left');
-            } else {
-                trace('----');
-            }*/
 
+            // Check jar overlap
+            if(jar.alpha == 1.0) {
+                FlxU.overlap(player, jar,
+                    function(player:FlxObject, jar:FlxObject):void {
+                        FlxG.flash.start(0xfff14d36);
+                        (jar as FlxSprite).alpha = 0.5;
+                        
+                        for each(var firefly:Firefly in fireflies_group.members) {
+                            firefly.fly_to_first_point();
+                        }
+                    });
+            }
+            
             super.update();
         }
 
