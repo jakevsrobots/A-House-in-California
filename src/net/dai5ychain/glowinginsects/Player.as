@@ -4,6 +4,8 @@ package net.dai5ychain.glowinginsects {
     public class Player extends FlxSprite {
         [Embed(source='/../data/newplayer.png')]
         private var PlayerImage:Class;
+        [Embed(source="/../data/glow-light.png")]
+        private var GlowImage:Class;
 
         private var _jump_power:uint = 150;
         private var _move_speed:uint;
@@ -16,8 +18,9 @@ package net.dai5ychain.glowinginsects {
 
         public var firefly_count:uint = 0;
 
-        private var color_stages:Array;
-
+        public var darkness:FlxSprite;
+        public var glow:FlxSprite;
+        
         public function Player(X:Number, Y:Number):void {
             super(X,Y);
 
@@ -40,59 +43,20 @@ package net.dai5ychain.glowinginsects {
             width = 3;
             offset.x = 6;
 
-            color_stages = get_color_increments();
-
             alpha = 1.0;
-            //color = 0x5080a0;
+
+            glow = new FlxSprite(X,Y,GlowImage);
+            glow.alpha = 0;
+            glow.blend = "screen";
         }
 
         public function add_firefly():void {
             firefly_count += 1;
             _jump_power += 10;
-            color = color_stages[firefly_count];
             alpha -= (0.25 / GlowingInsects.bug_count);
-            
+            glow.alpha += 1.0 / GlowingInsects.bug_count;
         }
 
-        private function get_color_increments():Array {
-            var color_increments:Array = [];
-
-            // Borrowed from http://www.pixelwit.com/blog/2008/05/color-fading-array/
-            function fadeHex (hex1:uint, hex2:uint, steps:uint):Array {
-                //
-                // Create an array to store all colors.
-                var newArry:Array = [hex1];
-                //
-                // Break Hex1 into RGB components.
-                var r:Number = hex1 >> 16;
-                var g:Number = hex1 >> 8 & 0xFF;
-                var b:Number = hex1 & 0xFF;
-                //
-                // Determine RGB differences between Hex1 and Hex2.
-                var rd:Number = (hex2 >> 16)-r;
-                var gd:Number = (hex2 >> 8 & 0xFF)-g;
-                var bd:Number = (hex2 & 0xFF)-b;
-                //
-                steps++;
-                // For each new color.
-                for (var i:uint=1; i<steps; i++){
-                    //
-                    // Determine where the color lies between the 2 end colors.
-                    var ratio:Number = i/steps;
-                    //
-                    // Calculate new color and add it to the array.
-                    newArry.push((r+rd*ratio)<<16 | (g+gd*ratio)<<8 | (b+bd*ratio));
-                }
-
-                //
-                // Add Hex2 to the array and return it.
-                newArry.push(hex2);
-                return newArry;
-            }
-
-            return fadeHex(color, 0xd12d16, GlowingInsects.bug_count);
-        }
-        
         override public function update():void {
             // Controls
             if(FlxG.keys.LEFT) {
@@ -168,6 +132,20 @@ package net.dai5ychain.glowinginsects {
             }
             
             super.update();
+        }
+
+        override public function render():void {
+            if(glow.alpha > 0) {
+                var player_point:FlxPoint = new FlxPoint;
+                getScreenXY(player_point);
+                darkness.draw(
+                        glow,
+                        (player_point.x - (glow.width / 2)) + 6,
+                        (player_point.y - (glow.height/ 2)) + 6
+                    );
+            }
+            
+            super.render();
         }
     }
 }

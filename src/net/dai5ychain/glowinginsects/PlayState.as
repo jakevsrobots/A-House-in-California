@@ -112,12 +112,15 @@ package net.dai5ychain.glowinginsects {
                 var firefly:Firefly = new Firefly(
                     JAR_POSITION.x + uint(Math.random() * 16),
                     JAR_POSITION.y + uint(Math.random() * 16));
+
+                firefly.darkness = darkness;
                 
                 fireflies_group.add(firefly);
             }
             
             // Player
             player = new Player(5 * TILE_SIZE, 34 * TILE_SIZE);
+            player.darkness = darkness;
             player_group.add(player);
 
             // HUD
@@ -160,7 +163,7 @@ package net.dai5ychain.glowinginsects {
             FlxU.overlap(player, fireflies_group,
                 function(player:FlxObject, firefly:FlxObject):void {
                     if((firefly as Firefly).behavior_state == Firefly.FLYING_FREE) {
-                        FlxG.flash.start(0xfff14d36, 0.5);                        
+                        FlxG.flash.start(GlowingInsects.bug_color, 0.5);                        
                         (player as Player).add_firefly();
                         firefly.kill();
                     }
@@ -170,7 +173,7 @@ package net.dai5ychain.glowinginsects {
             if(jar.alpha == 1.0) {
                 FlxU.overlap(player, jar,
                     function(player:FlxObject, jar:FlxObject):void {
-                        FlxG.flash.start(0xfff14d36);
+                        FlxG.flash.start(GlowingInsects.bug_color);
                         (jar as FlxSprite).alpha = 0.5;
                         
                         for each(var firefly:Firefly in fireflies_group.members) {
@@ -187,17 +190,7 @@ package net.dai5ychain.glowinginsects {
 
         override public function render():void {
             darkness.fill(darkness_color);
-            var firefly_point:FlxPoint = new FlxPoint;
-            for each(var firefly:Firefly in fireflies_group.members) {
-                if(!firefly.dead) {
-                    firefly.getScreenXY(firefly_point);
-                    darkness.draw(
-                        firefly.glow,
-                        firefly_point.x - (firefly.glow.width / 2),
-                        firefly_point.y - (firefly.glow.height/ 2)
-                    );
-                }
-            }
+
             super.render();
         }
 

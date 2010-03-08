@@ -7,7 +7,7 @@ package net.dai5ychain.glowinginsects {
         
         private var destination:FlxPoint;
 
-        private var move_speed:uint = 200;
+        private var move_speed:uint = 120;
 
         public var behavior_state:uint = 0;
 
@@ -27,6 +27,8 @@ package net.dai5ychain.glowinginsects {
 
         private var glow_fade_up_speed:Number = 2.0;
         private var glow_fade_down_speed:Number = 2.0;
+
+        public var darkness:FlxSprite;
         
         public function Firefly(X:uint, Y:uint):void {
             super(X,Y);
@@ -41,7 +43,7 @@ package net.dai5ychain.glowinginsects {
 
             get_new_destination();
 
-            drag.x = drag.y = 150;
+            drag.x = drag.y = 100;
 
             glow_state = GLOW_REST;
         }
@@ -83,12 +85,26 @@ package net.dai5ychain.glowinginsects {
                 }
             } else {
                 // Randomly choose to fade in.
-                if(Math.random() > 0.95) {
+                if(Math.random() > 0.98) {
                     glow_state = GLOW_START;
                 }
             }
             
             super.update();
+        }
+
+        override public function render():void {
+            if(!dead && glow.alpha > 0) {
+                var firefly_point:FlxPoint = new FlxPoint;
+                getScreenXY(firefly_point);
+                darkness.draw(
+                        glow,
+                        firefly_point.x - (glow.width / 2),
+                        firefly_point.y - (glow.height/ 2)
+                    );
+            }
+            
+            super.render();
         }
 
         override public function kill():void {
@@ -107,6 +123,8 @@ package net.dai5ychain.glowinginsects {
                     this.x + (uint(Math.random() * 100) - 50),
                     this.y + (uint(Math.random() * 100) - 50)
                 );
+
+                move_speed = 140 + (Math.random() * 20);
                 
                 if(destination.x <=0 || destination.y <= 0 ||
                     destination.x >= PlayState.WORLD_LIMITS.x ||

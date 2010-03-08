@@ -5,12 +5,13 @@ package net.dai5ychain.glowinginsects {
 
     public class GlowingInsects extends FlxGame {
         public static var bgcolor:uint = 0xff303030;
-        public static var bug_count:uint = 20;
+        public static var bug_color:uint = 0xffffa000;
+        public static var bug_count:uint = 24;
         
         public function GlowingInsects():void {
-            //super(120, 80, PlayState, 4);
+            super(120, 80, PlayState, 4);
             //super(240, 160, PlayState, 2);
-            super(480, 320, PlayState, 1);
+            //super(480, 320, PlayState, 1);
 
             FlxState.bgColor = GlowingInsects.bgcolor;
         }
