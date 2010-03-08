@@ -2,7 +2,7 @@ package net.dai5ychain.glowinginsects {
     import org.flixel.*;
 
     public class Player extends FlxSprite {
-        [Embed(source='/../data/boy-blob-white-half-walk.png')]
+        [Embed(source='/../data/newplayer.png')]
         private var PlayerImage:Class;
 
         private var _jump_power:uint = 150;
@@ -21,7 +21,7 @@ package net.dai5ychain.glowinginsects {
         public function Player(X:Number, Y:Number):void {
             super(X,Y);
 
-            this.loadGraphic(PlayerImage, true, true, 15, 12);
+            this.loadGraphic(PlayerImage, true, true, 12, 12);
 
             maxVelocity.x = 80;
             maxVelocity.y = 200;
@@ -30,12 +30,12 @@ package net.dai5ychain.glowinginsects {
             acceleration.y = 420;
             drag.x = 600;
 
-            addAnimation("walk", [0,1,2,1,3,1,4,1], 12);
-            addAnimation("climbing", [6,7,8,9,10], 9);
-            addAnimation("climbing-stopped", [8]);
-            addAnimation("stopped", [5]);
-            addAnimation("jump", [2,3],4);
-            addAnimation("mid-air",[0]);
+            addAnimation("walk", [0,1,2,3], 12);
+            addAnimation("climbing", [10,12,11], 9);
+            addAnimation("climbing-stopped", [12]);
+            addAnimation("stopped", [9]);
+            addAnimation("jump", [2,3,4],2);
+            addAnimation("mid-air",[4]);
 
             width = 3;
             offset.x = 6;
@@ -43,11 +43,12 @@ package net.dai5ychain.glowinginsects {
             color_stages = get_color_increments();
 
             alpha = 1.0;
-            color = 0x5080a0;
+            //color = 0x5080a0;
         }
 
         public function add_firefly():void {
             firefly_count += 1;
+            _jump_power += 10;
             color = color_stages[firefly_count];
             alpha -= (0.25 / GlowingInsects.bug_count);
             
@@ -89,7 +90,7 @@ package net.dai5ychain.glowinginsects {
                 return newArry;
             }
 
-            return fadeHex(0x5080a0, 0xd12d16, GlowingInsects.bug_count);
+            return fadeHex(color, 0xd12d16, GlowingInsects.bug_count);
         }
         
         override public function update():void {
@@ -132,9 +133,9 @@ package net.dai5ychain.glowinginsects {
                 // Nudge the player toward the center of the ladder, if they're
                 // already in motion.
                 var x_offset:uint = this.x % PlayState.TILE_SIZE;
-                if(x_offset < 3 && velocity.y != 0) {
+                if(x_offset < 4 && velocity.y != 0) {
                     x += 1;
-                } else if(x_offset > 3 && velocity.y != 0) {
+                } else if(x_offset > 4 && velocity.y != 0) {
                     x -= 1;
                 }
             } else {

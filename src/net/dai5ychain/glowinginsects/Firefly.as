@@ -2,32 +2,51 @@ package net.dai5ychain.glowinginsects {
     import org.flixel.*;
 
     public class Firefly extends FlxSprite {
-        [Embed(source="/../data/firefly.png")]
-        private var FireflyImage:Class;
-
+        [Embed(source="/../data/glow-light.png")]
+        private var GlowImage:Class;
+        
         private var destination:FlxPoint;
 
         private var move_speed:uint = 200;
 
         public var behavior_state:uint = 0;
 
-        // behavioral states:
+        // Behavioral states:
         public static var TRAPPED_IN_JAR:uint = 0;
         public static var FLYING_TO_FIRST_POINT:uint = 1;
         public static var FLYING_FREE:uint = 2;
+
+        public var glow:FlxSprite;
+
+        // Glow states
+        public static var GLOW_START:uint = 0;
+        public static var GLOW_FADE:uint = 1;
+        public static var GLOW_REST:uint = 2;
+        
+        private var glow_state:uint;
+
+        private var glow_fade_up_speed:Number = 2.0;
+        private var glow_fade_down_speed:Number = 2.0;
         
         public function Firefly(X:uint, Y:uint):void {
-            super(X,Y,FireflyImage);
+            super(X,Y);
+            
+            createGraphic(1,1,0xffffffff);
 
+            glow = new FlxSprite(X,Y,GlowImage);
+            glow.alpha = 0;
+            glow.blend = "screen";
+            
             maxVelocity.x = maxVelocity.y = 200;
 
             get_new_destination();
 
             drag.x = drag.y = 150;
+
+            glow_state = GLOW_REST;
         }
 
         override public function update():void {
-
             if(destination.x < this.x) {
                 velocity.x -= move_speed * FlxG.elapsed;
             } else {
@@ -47,8 +66,34 @@ package net.dai5ychain.glowinginsects {
                 }
                 get_new_destination();
             }
+
+            // update glow status
+            if(glow_state == GLOW_START) {
+                if(glow.alpha < 1.0) {
+                    glow.alpha += glow_fade_up_speed * FlxG.elapsed;
+                } else {
+                    glow_state = GLOW_FADE;
+                }
+            } else if(glow_state == GLOW_FADE) {
+                if(glow.alpha > 0) {
+                    glow.alpha -= glow_fade_down_speed * FlxG.elapsed;
+                } else {
+                    glow.alpha = 0;
+                    glow_state = GLOW_REST;
+                }
+            } else {
+                // Randomly choose to fade in.
+                if(Math.random() > 0.95) {
+                    glow_state = GLOW_START;
+                }
+            }
             
             super.update();
+        }
+
+        override public function kill():void {
+            glow.kill();
+            super.kill();
         }
 
         public function get_new_destination():void {
@@ -82,22 +127,17 @@ package net.dai5ychain.glowinginsects {
         }
 
         override public function hitLeft(Contact:FlxObject, Velocity:Number):void {
-            if(behavior_state == FLYING_FREE) {
-                get_new_destination();
-                super.hitLeft(Contact,Velocity);
-            }
+            get_new_destination();
+            super.hitLeft(Contact,Velocity);            
         }
+        
         override public function hitTop(Contact:FlxObject, Velocity:Number):void {
-            if(behavior_state == FLYING_FREE) {            
-                get_new_destination();
-                super.hitTop(Contact,Velocity);
-            }
+            get_new_destination();
+            super.hitTop(Contact,Velocity);
         }
         override public function hitBottom(Contact:FlxObject, Velocity:Number):void {
-            if(behavior_state == FLYING_FREE) {
-                get_new_destination();
-                super.hitBottom(Contact,Velocity);
-            }
+            get_new_destination();
+            super.hitBottom(Contact,Velocity);
         }
     }
 }

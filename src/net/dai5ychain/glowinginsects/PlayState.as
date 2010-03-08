@@ -6,16 +6,19 @@ package net.dai5ychain.glowinginsects {
     public class PlayState extends FlxState {
         [Embed(source='/../data/jar.png')]
         private var JarImage:Class;
+
+        [Embed(source='/../data/gardenia.ttf', fontFamily='gardenia')]
+        private var GardeniaFont:String;
         
         private var background_group:FlxGroup;
         private var walls_group:FlxGroup;
         private var player_group:FlxGroup;
         private var ladders_group:FlxGroup;
-        private var fireflies_group:FlxGroup;        
+        private var fireflies_group:FlxGroup;
                 
         private var walls_map:FlxTilemap;
 
-        [Embed(source="/../data/world.json", mimeType="application/octet-stream")]
+        [Embed(source="/../data/world-small.json", mimeType="application/octet-stream")]
         private var WorldMapJSON:Class;
         [Embed(source="/../data/autotiles.png")]
         private var AutoTiles:Class;
@@ -23,11 +26,16 @@ package net.dai5ychain.glowinginsects {
         private var player:Player;
         private var jar:FlxSprite;
 
+        private var darkness_color:uint = 0xdd000000;
+        private var darkness:FlxSprite;
+        
         public static var JAR_POSITION:FlxPoint;
         
         public static const TILE_SIZE:uint=8;
         public static var WORLD_LIMITS:FlxPoint;
 
+        private var hud:FlxSprite;
+        private var title:FlxText;        
         private var mini_map:MiniMap;
         
         override public function create():void {
@@ -43,7 +51,13 @@ package net.dai5ychain.glowinginsects {
             fireflies_group = new FlxGroup;
             this.add(fireflies_group);
 
-            JAR_POSITION = new FlxPoint(19 * TILE_SIZE, 77 * TILE_SIZE);
+            darkness = new FlxSprite(0,0);
+            darkness.createGraphic(FlxG.width, FlxG.height, darkness_color);
+            darkness.scrollFactor.x = darkness.scrollFactor.y = 0;
+            darkness.blend = "multiply";
+            this.add(darkness);
+            
+            JAR_POSITION = new FlxPoint(19 * TILE_SIZE, 34 * TILE_SIZE);
             
             jar = new FlxSprite(JAR_POSITION.x, JAR_POSITION.y, JarImage);
             this.add(jar);
@@ -95,18 +109,29 @@ package net.dai5ychain.glowinginsects {
 
             // Generate fireflies
             for(var bug_i:uint = 0; bug_i < GlowingInsects.bug_count; bug_i++) {
+                var firefly:Firefly = new Firefly(
+                    JAR_POSITION.x + uint(Math.random() * 16),
+                    JAR_POSITION.y + uint(Math.random() * 16));
                 
-                fireflies_group.add(
-                    new Firefly(
-                        JAR_POSITION.x + uint(Math.random() * 16),
-                        JAR_POSITION.y + uint(Math.random() * 16))
-                );
+                fireflies_group.add(firefly);
             }
             
             // Player
-            player = new Player(5 * TILE_SIZE,77 * TILE_SIZE);
+            player = new Player(5 * TILE_SIZE, 34 * TILE_SIZE);
             player_group.add(player);
 
+            // HUD
+            hud = new FlxSprite(0, FlxG.height - 21);
+            hud.createGraphic(FlxG.width, 21, 0xff000000);
+            hud.scrollFactor.x = hud.scrollFactor.y = 0;
+            this.add(hud);
+
+            // Title
+            title = new FlxText(2, FlxG.height - 20, FlxG.width, 'A Jar of Glowing Bugs');
+            title.setFormat("gardenia", 8, 0xffffffff);
+            title.scrollFactor.x = title.scrollFactor.y = 0;
+            this.add(title);
+            
             // Minimap
             mini_map = new MiniMap;
             mini_map.scrollFactor.x = mini_map.scrollFactor.y = 0;
@@ -118,7 +143,11 @@ package net.dai5ychain.glowinginsects {
 
         override public function update():void {
             walls_map.collide(player);
-            //walls_map.collide(fireflies_group);            
+            for each(var firefly:Firefly in fireflies_group.members) {
+                if(firefly.behavior_state == Firefly.FLYING_FREE) {
+                    walls_map.collide(firefly);
+                }
+            }
             
             // Check ladder overlaps.
             player.on_ladder = false;
@@ -154,6 +183,22 @@ package net.dai5ychain.glowinginsects {
             mini_map.update_map(fireflies_group.members, player);
             
             super.update();
+        }
+
+        override public function render():void {
+            darkness.fill(darkness_color);
+            var firefly_point:FlxPoint = new FlxPoint;
+            for each(var firefly:Firefly in fireflies_group.members) {
+                if(!firefly.dead) {
+                    firefly.getScreenXY(firefly_point);
+                    darkness.draw(
+                        firefly.glow,
+                        firefly_point.x - (firefly.glow.width / 2),
+                        firefly_point.y - (firefly.glow.height/ 2)
+                    );
+                }
+            }
+            super.render();
         }
 
         override public function preProcess():void {
