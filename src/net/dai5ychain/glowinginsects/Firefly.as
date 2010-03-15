@@ -12,7 +12,7 @@ package net.dai5ychain.glowinginsects {
         public var behavior_state:uint = 0;
 
         // Behavioral states:
-        public static var TRAPPED_IN_JAR:uint = 0;
+        public static var TRAPPED:uint = 0;
         public static var FLYING_TO_FIRST_POINT:uint = 1;
         public static var FLYING_FREE:uint = 2;
 
@@ -30,8 +30,10 @@ package net.dai5ychain.glowinginsects {
 
         public var darkness:FlxSprite;
         
-        public function Firefly(X:uint, Y:uint):void {
+        public function Firefly(X:uint, Y:uint, darkness:FlxSprite):void {
             super(X,Y);
+
+            this.darkness = darkness;
             
             createGraphic(1,1,0xffffffff);
 
@@ -41,6 +43,7 @@ package net.dai5ychain.glowinginsects {
             
             maxVelocity.x = maxVelocity.y = 200;
 
+            behavior_state = FLYING_FREE;
             get_new_destination();
 
             drag.x = drag.y = 100;
@@ -113,11 +116,13 @@ package net.dai5ychain.glowinginsects {
         }
 
         public function get_new_destination():void {
-            if(behavior_state == TRAPPED_IN_JAR) {
+            if(behavior_state == TRAPPED) {
+                /*
                 destination = new FlxPoint(
                     PlayState.JAR_POSITION.x + 3 + uint(Math.random() * 9),
                     PlayState.JAR_POSITION.y + 3 + uint(Math.random() * 11)
                 );
+                */
             } else {
                 destination = new FlxPoint(
                     this.x + (uint(Math.random() * 100) - 50),
