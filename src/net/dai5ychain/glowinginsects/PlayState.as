@@ -10,7 +10,6 @@ package net.dai5ychain.glowinginsects {
         private var background_group:FlxGroup;
         private var walls_group:FlxGroup;
         private var player_group:FlxGroup;
-        private var ladders_group:FlxGroup;
         private var fireflies_group:FlxGroup;
                 
         private var walls_map:FlxTilemap;
@@ -22,25 +21,31 @@ package net.dai5ychain.glowinginsects {
         
         [Embed(source="/../data/lamp-post.png")]
         private var LampPostImage:Class;
+
+        private var background:FlxSprite;
         
         private var player:Player;
 
         private var darkness_color:uint = 0xdd000000;
         private var darkness:FlxSprite;
         
-        public static const TILE_SIZE:uint=8;
         public static var WORLD_LIMITS:FlxPoint;
 
         private var hud:FlxSprite;
-        private var title:FlxText;        
-        private var mini_map:MiniMap;
+        private var room_title:FlxText;
+
+        private var world:World;
         
         override public function create():void {
+            world = new World();
+
+            WORLD_LIMITS = new FlxPoint(FlxG.width, FlxG.height);
+            
             walls_group = new FlxGroup;
             this.add(walls_group);
-            
-            ladders_group = new FlxGroup;
-            this.add(ladders_group);
+
+            background_group = new FlxGroup;
+            this.add(background_group);
             
             player_group = new FlxGroup;
             this.add(player_group);
@@ -53,86 +58,38 @@ package net.dai5ychain.glowinginsects {
             darkness.scrollFactor.x = darkness.scrollFactor.y = 0;
             darkness.blend = "multiply";
             this.add(darkness);
-            
+
             // Load map
-            var map:Object = JSON.decode(new WorldMapJSON);
-            WORLD_LIMITS = new FlxPoint;
-            WORLD_LIMITS.x = map['width'] * TILE_SIZE;
-            WORLD_LIMITS.y = map['height'] * TILE_SIZE;            
-            var sprite_index_map:Object = {
-                'ladder': 2,
-                'firefly': 3,
-                'lamppost': 4
-            };
-            for(var i:uint = 0; i < map['layers'].length; i++) {
-                var layer:Object = map['layers'][i];
+            walls_map = new FlxTilemap;
+            walls_map.auto = FlxTilemap.AUTO;
+            walls_map.loadMap(FlxTilemap.pngToCSV(world.rooms.home.walls, true), AutoTiles, 1, 1);
 
-                if(layer['name'] == 'walls') {
-                    walls_map = new FlxTilemap;
-                    walls_map.auto = FlxTilemap.AUTO;
-                    walls_map.loadMap(layer['tiles'], AutoTiles, TILE_SIZE, TILE_SIZE);
-                    walls_map.follow();
-                    walls_group.add(walls_map);
-                } else if(layer['name'] == 'sprites') {
-                    // This method for parsing the csv tiles is from FlxTilemap.as
-                    var rows:Array = layer['tiles'].split("\n");
-                    var cols:Array;
-                    var tile_data:Array = [];
-                    for(var r:uint = 0; r < rows.length; r++) {
-                        cols = rows[r].split(",");
-                        for(var c:uint = 0; c < cols.length; c++) {
-                            tile_data.push(uint(cols[c]));
-                        }
-                    }
-                    
-                    for(var y:uint=0; y < map['height']; y++) {
-                        for(var x:uint=0; x < map['width']; x++) {
-                            var gid:uint = tile_data[y * map['width'] + x];
-                            var sprite_position:FlxPoint = new FlxPoint(x * TILE_SIZE, y * TILE_SIZE);
-
-                            switch(gid) {
-                                // Ladders
-                                case sprite_index_map['ladder']:
-                                ladders_group.add(new Ladder(sprite_position.x, sprite_position.y));
-                                break;
-                                
-                                case sprite_index_map['firefly']:
-                                fireflies_group.add(new Firefly(sprite_position.x, sprite_position.y, darkness));
-                                break;
-                                
-                                case sprite_index_map['lamppost']:
-                                walls_group.add(new FlxSprite(sprite_position.x, sprite_position.y - (TILE_SIZE * 5), LampPostImage));
-                                break;
-                            }
-                        }
-                    }
-                }
-            }
+            walls_group.add(walls_map);
+            
+            background = new FlxSprite(0, 0, world.rooms.home.background);
+            background_group.add(background);
 
             // Player
-            player = new Player(2 * TILE_SIZE, 6 * TILE_SIZE);
+            player = new Player(16, 48);
             player.darkness = darkness;
             player_group.add(player);
 
-            // HUD
-            hud = new FlxSprite(0, FlxG.height - 21);
-            hud.createGraphic(FlxG.width, 21, 0xff000000);
-            hud.scrollFactor.x = hud.scrollFactor.y = 0;
-            //this.add(hud);
+            // Room Title
+            //room_title = new FlxText(8, 8, FlxG.width, 'A House in California');
+            room_title = new FlxText(8, 8, FlxG.width, 'A Back Yard in Lodi');
+            room_title.setFormat("gardenia", 8, 0xffffffff);
+            this.add(room_title);
 
-            // Title
-            title = new FlxText(2, FlxG.height - 20, FlxG.width, 'A Jar of Glowing Bugs');
-            title.setFormat("gardenia", 8, 0xffffffff);
-            title.scrollFactor.x = title.scrollFactor.y = 0;
-            //this.add(title);
-            
-            // Minimap
-            mini_map = new MiniMap;
-            mini_map.scrollFactor.x = mini_map.scrollFactor.y = 0;
-            //this.add(mini_map);
-            
-            FlxG.followAdjust(0.5,0.5);
-            FlxG.follow(player, 2.5);
+            // make some starting fireflies
+            for(var i:uint = 0; i < 5; i++) {
+                var firefly:Firefly = new Firefly(
+                    uint(Math.random() * FlxG.width),
+                    uint(Math.random() * FlxG.height),
+                    darkness
+                );
+
+                fireflies_group.add(firefly);
+            }
         }
 
         override public function update():void {
@@ -144,13 +101,6 @@ package net.dai5ychain.glowinginsects {
                 }
             }
             
-            // Check ladder overlaps.
-            player.on_ladder = false;
-            FlxU.overlap(player, ladders_group,
-                function(player:FlxObject, ladder:FlxObject):void {
-                    (player as Player).on_ladder = true;
-                });
-            
             // Check firefly overlaps.
             FlxU.overlap(player, fireflies_group,
                 function(player:FlxObject, firefly:FlxObject):void {
@@ -161,9 +111,6 @@ package net.dai5ychain.glowinginsects {
                     }
                 });
 
-            // Update mini-map
-            mini_map.update_map(fireflies_group.members, player);
-            
             super.update();
         }
 
