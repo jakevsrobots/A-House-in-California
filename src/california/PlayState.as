@@ -1,8 +1,6 @@
 package california {
     import org.flixel.*;
 
-    import com.adobe.serialization.json.JSON;
-    
     public class PlayState extends FlxState {
         [Embed(source='/../data/gardenia.ttf', fontFamily='gardenia')]
         private var GardeniaFont:String;
@@ -14,8 +12,6 @@ package california {
                 
         private var walls_map:FlxTilemap;
 
-        [Embed(source="/../data/small-room-test.json", mimeType="application/octet-stream")]
-        private var WorldMapJSON:Class;
         [Embed(source="/../data/autotiles.png")]
         private var AutoTiles:Class;
         
@@ -76,7 +72,7 @@ package california {
 
             // Room Title
             //room_title = new FlxText(8, 8, FlxG.width, 'A House in California');
-            room_title = new FlxText(8, 8, FlxG.width, 'A house in California');
+            room_title = new FlxText(8, 8, FlxG.width, 'A train station in Toledo');
             room_title.setFormat("gardenia", 8, 0xffffffff);
             this.add(room_title);
 
