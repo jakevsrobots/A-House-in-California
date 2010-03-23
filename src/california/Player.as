@@ -1,4 +1,4 @@
-package net.dai5ychain.glowinginsects {
+package california {
     import org.flixel.*;
 
     public class Player extends FlxSprite {
@@ -49,8 +49,8 @@ package net.dai5ychain.glowinginsects {
         public function add_firefly():void {
             firefly_count += 1;
             _jump_power += 10;
-            alpha -= (0.25 / GlowingInsects.bug_count);
-            glow.alpha += 1.0 / GlowingInsects.bug_count;
+            alpha -= (0.25 / Main.bug_count);
+            glow.alpha += 1.0 / Main.bug_count;
         }
 
         override public function update():void {

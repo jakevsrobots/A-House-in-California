@@ -1,4 +1,4 @@
-package net.dai5ychain.glowinginsects {
+package california {
     import org.flixel.*;
 
     import com.adobe.serialization.json.JSON;
@@ -76,7 +76,7 @@ package net.dai5ychain.glowinginsects {
 
             // Room Title
             //room_title = new FlxText(8, 8, FlxG.width, 'A House in California');
-            room_title = new FlxText(8, 8, FlxG.width, 'A Back Yard in Lodi');
+            room_title = new FlxText(8, 8, FlxG.width, 'A house in California');
             room_title.setFormat("gardenia", 8, 0xffffffff);
             this.add(room_title);
 
@@ -105,7 +105,7 @@ package net.dai5ychain.glowinginsects {
             FlxU.overlap(player, fireflies_group,
                 function(player:FlxObject, firefly:FlxObject):void {
                     if((firefly as Firefly).behavior_state == Firefly.FLYING_FREE) {
-                        FlxG.flash.start(GlowingInsects.bug_color, 0.5);                        
+                        FlxG.flash.start(Main.bug_color, 0.5);                        
                         (player as Player).add_firefly();
                         firefly.kill();
                     }

@@ -1,4 +1,4 @@
-package net.dai5ychain.glowinginsects {
+package california {
     import org.flixel.*;
 
     public class Firefly extends FlxSprite {
