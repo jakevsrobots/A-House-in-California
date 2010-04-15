@@ -1,9 +1,15 @@
 package california {
     import org.flixel.*;
 
+    //import flash.text.TextField;
+    //import flash.text.TextFormat;
+    
     public class PlayState extends FlxState {
-        [Embed(source='/../data/gardenia.ttf', fontFamily='gardenia')]
-        private var GardeniaFont:String;
+        //[Embed(source='/../data/gardenia.ttf', fontFamily='gardenia')]
+        //private var GardeniaFont:String;
+        
+        [Embed(source='/../data/Balderas.ttf', fontFamily='balderas')]
+        private var BalderasFont:String;
         
         private var background_group:FlxGroup;
         private var walls_group:FlxGroup;
@@ -22,7 +28,7 @@ package california {
         
         private var player:Player;
 
-        private var darkness_color:uint = 0xdd000000;
+        private var darkness_color:uint = 0xaa000000;
         private var darkness:FlxSprite;
         
         public static var WORLD_LIMITS:FlxPoint;
@@ -31,6 +37,8 @@ package california {
         private var room_title:FlxText;
 
         private var world:World;
+
+        private var input_field:FlxInputText;
         
         override public function create():void {
             world = new World();
@@ -72,8 +80,9 @@ package california {
 
             // Room Title
             //room_title = new FlxText(8, 8, FlxG.width, 'A House in California');
-            room_title = new FlxText(8, 8, FlxG.width, 'A train station in Toledo');
-            room_title.setFormat("gardenia", 8, 0xffffffff);
+            //room_title = new FlxText(8, 8, FlxG.width, 'A train station in Toledo');
+            room_title = new FlxText(8, 8, FlxG.width, 'A train station in Pittsburgh');
+            room_title.setFormat("balderas", 8, 0xffffffff);
             this.add(room_title);
 
             // make some starting fireflies
@@ -86,6 +95,10 @@ package california {
 
                 fireflies_group.add(firefly);
             }
+
+            // Add input box
+            input_field = new FlxInputText(0, FlxG.height - 20, FlxG.width, '> Catch firefly', 0xffffff);
+            this.add(input_field);
         }
 
         override public function update():void {
