@@ -12,12 +12,6 @@ package california {
                 
         private var walls_map:FlxTilemap;
 
-        [Embed(source="/../data/autotiles.png")]
-        private var AutoTiles:Class;
-        
-        [Embed(source="/../data/lamp-post.png")]
-        private var LampPostImage:Class;
-
         private var background:FlxSprite;
         
         private var player:Player;
