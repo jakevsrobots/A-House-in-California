@@ -1,0 +1,20 @@
+<project>
+  <name>A House in California</name>
+  <settings>
+    <defaultWidth>320</defaultWidth>
+    <defaultHeight>160</defaultHeight>
+    <workingDirectory>.</workingDirectory>
+  </settings>
+  <objects>
+    <object name="houseBackground" image="../backgrounds/home-background.png"
+            width="320" height="160" />
+
+    <object name="lampPost" image="../sprites/lamppost.png"
+            width="13" height="29" />
+  </objects>
+  <layers>
+    <grid name="walls" gridSize="4" exportAsObjects="true" />
+    <objects name="background" gridSize="8" exportAsObjects="true" />
+    <objects name="sprites" gridSize="1" exportAsObjects="true" />
+  </layers>
+</project>

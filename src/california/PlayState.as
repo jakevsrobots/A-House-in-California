@@ -1,15 +1,15 @@
 package california {
     import org.flixel.*;
 
-    //import flash.text.TextField;
-    //import flash.text.TextFormat;
-    
     public class PlayState extends FlxState {
         //[Embed(source='/../data/gardenia.ttf', fontFamily='gardenia')]
         //private var GardeniaFont:String;
         
         [Embed(source='/../data/Balderas.ttf', fontFamily='balderas')]
         private var BalderasFont:String;
+
+        [Embed(source="/../data/autotiles.png")]
+            private var AutoTiles:Class;
         
         private var background_group:FlxGroup;
         private var walls_group:FlxGroup;
@@ -29,8 +29,9 @@ package california {
 
         private var hud:FlxSprite;
         private var room_title:FlxText;
-
+        
         private var world:World;
+        private var currentRoom:Room;
 
         private var input_field:FlxInputText;
         
@@ -57,15 +58,12 @@ package california {
             darkness.blend = "multiply";
             this.add(darkness);
 
-            // Load map
-            walls_map = new FlxTilemap;
-            walls_map.auto = FlxTilemap.AUTO;
-            walls_map.loadMap(FlxTilemap.pngToCSV(world.rooms.home.walls, true), AutoTiles, 1, 1);
-
-            walls_group.add(walls_map);
+            // Load room
+            currentRoom = world.getRoom('home');
+            walls_group = currentRoom.walls;
             
-            background = new FlxSprite(0, 0, world.rooms.home.background);
-            background_group.add(background);
+            //background = new FlxSprite(0, 0, world.rooms.home.background);
+            //background_group.add(background);
 
             // Player
             player = new Player(16, 48);
@@ -73,9 +71,9 @@ package california {
             player_group.add(player);
 
             // Room Title
-            //room_title = new FlxText(8, 8, FlxG.width, 'A House in California');
+            room_title = new FlxText(8, 8, FlxG.width, currentRoom.title);
             //room_title = new FlxText(8, 8, FlxG.width, 'A train station in Toledo');
-            room_title = new FlxText(8, 8, FlxG.width, 'A train station in Pittsburgh');
+            //room_title = new FlxText(8, 8, FlxG.width, 'A train station in Pittsburgh');
             room_title.setFormat("balderas", 8, 0xffffffff);
             this.add(room_title);
 
@@ -91,16 +89,23 @@ package california {
             }
 
             // Add input box
-            input_field = new FlxInputText(0, FlxG.height - 20, FlxG.width, '> Catch firefly', 0xffffff);
-            this.add(input_field);
+            //input_field = new FlxInputText(0, FlxG.height - 20, FlxG.width, '> Catch firefly', 0xffffff);
+            //this.add(input_field);
+
+            //FlxG.log(currentRoom.walls.members[0]);
         }
 
         override public function update():void {
-            walls_map.collide(player);
+            FlxG.log(player.x + ',' + player.y + ' | ' + currentRoom.walls.members[0].x + ',' + currentRoom.walls.members[0].y);
+            if(FlxU.collide(currentRoom.walls.members[0], player)) {
+                FlxG.log('hit');
+            }
+            
+            //walls_group.collide(player);
             
             for each(var firefly:Firefly in fireflies_group.members) {
                 if(firefly.behavior_state == Firefly.FLYING_FREE) {
-                    walls_map.collide(firefly);
+                    walls_group.collide(firefly);
                 }
             }
             

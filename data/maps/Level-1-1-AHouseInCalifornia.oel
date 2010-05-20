@@ -1,0 +1,13 @@
+<level>
+  <width>320</width>
+  <height>160</height>
+  <walls>
+    <rect x="0" y="148" w="320" h="12"/>
+  </walls>
+  <background>
+    <houseBackground x="0" y="0"/>
+  </background>
+  <sprites>
+    <lampPost x="196" y="117"/>
+  </sprites>
+</level>
