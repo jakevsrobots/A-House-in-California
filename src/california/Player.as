@@ -4,19 +4,12 @@ package california {
     public class Player extends FlxSprite {
         [Embed(source='/../data/newplayer.png')]
         private var PlayerImage:Class;
-        [Embed(source="/../data/glow-light.png")]
-        private var GlowImage:Class;
 
         private var _jump_power:uint = 150;
         private var _move_speed:uint;
 
         public var is_jumping:Boolean = false;
 
-        public var firefly_count:uint = 0;
-
-        public var darkness:FlxSprite;
-        public var glow:FlxSprite;
-        
         public function Player(X:Number, Y:Number):void {
             super(X,Y);
 
@@ -37,22 +30,9 @@ package california {
             width = 3;
             offset.x = 6;
 
-            alpha = 1.0;
-
-            glow = new FlxSprite(X,Y,GlowImage);
-            glow.alpha = 0;
-            glow.blend = "screen";
-
             acceleration.y = 420;                
         }
-
-        public function add_firefly():void {
-            firefly_count += 1;
-            _jump_power += 10;
-            alpha -= (0.25 / Main.bug_count);
-            glow.alpha += 1.0 / Main.bug_count;
-        }
-
+        
         override public function update():void {
             // Controls
             if(FlxG.keys.LEFT) {
@@ -86,22 +66,7 @@ package california {
                 }
             }
 
-            
             super.update();
-        }
-
-        override public function render():void {
-            if(glow.alpha > 0) {
-                var player_point:FlxPoint = new FlxPoint;
-                getScreenXY(player_point);
-                darkness.draw(
-                    glow,
-                    (player_point.x - (glow.width / 2)) + 6,
-                    (player_point.y - (glow.height/ 2)) + 6
-                );
-            }
-            
-            super.render();
         }
     }
 }

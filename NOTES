@@ -2,22 +2,29 @@ Characters
 ----------
 - Lois
   - Collects fireflies to light the lamp-post
+    - Breaking fireflies out of containers
+
 - Beulah
   - Collects birds to live on the telephone wire running above the house and make music
+    - Luring birds with snacks
+    
 - Connie
   - Collects butterflies to 'paint' the house by resting on it
-  - Shorter jumps, more like traditional platforming
+    - Extending the handle of a net to catch butterflies at different distances
+    
 - Ann
   - Collects kids to play in front of the house
-  - Moves through maze without gravity
-  
+    
 Map (left-to-right)
 -------------------
 Lois
   1. A house in California
   2. A train station in Pittsburgh
-  3. A fountain in a back yard
+     - Fireflies trapped in a jar 
+ 3. A fountain in a back yard
+     - Fireflies trapped in a soda can
   4. A train station in Toledo
+     - Fireflies trapped in a vending machine
 
 Beulah
   1. A house in California
@@ -33,6 +40,6 @@ Connie
 
 Ann
   1. A house in California
-  2. In the labyrinth
-  3. In the labyrinth
-  4. In the labyrinth
+  2. A room full of colored bottles
+  3. A swimming hole in a valley
+  4. A room at the top of a hill
