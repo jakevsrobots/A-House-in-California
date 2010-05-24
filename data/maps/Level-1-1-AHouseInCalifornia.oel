@@ -7,9 +7,4 @@
   <sprites>
     <lampPost x="196" y="117"/>
   </sprites>
-  <playerPath>
-    <playerPath x="20" y="146">
-      <node x="317" y="146"/>
-    </playerPath>
-  </playerPath>
 </level>

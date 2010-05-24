@@ -40,7 +40,7 @@ package california {
             WORLD_LIMITS = new FlxPoint(FlxG.width, FlxG.height);
 
             // Player
-            player = new Player(16, 48);
+            player = new Player(145, 135);
             
             // Load room
             loadRoom('home');

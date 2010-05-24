@@ -17,6 +17,5 @@
   <layers>
     <objects name="background" gridSize="8" exportAsObjects="true" />
     <objects name="sprites" gridSize="1" exportAsObjects="true" />
-    <objects name="playerPath" gridSize="1" exportAsObjects="true" />
   </layers>
 </project>
