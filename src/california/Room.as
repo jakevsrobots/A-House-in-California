@@ -2,7 +2,6 @@ package california {
     import org.flixel.*;
 
     public class Room {
-        public var walls:FlxGroup;
         public var sprites:FlxGroup;
         public var backgrounds:FlxGroup;
         
@@ -19,7 +18,6 @@ package california {
             width = xml.width;
             height = xml.height;
 
-            walls = new FlxGroup();
             sprites = new FlxGroup();
             backgrounds = new FlxGroup();            
             
@@ -31,10 +29,10 @@ package california {
                 }
             
             // Load walls
-            for each (var wallNode:XML in xml.walls.children()) {
-                    walls.add(new FlxTileblock(wallNode.@x, wallNode.@y,
-                                               wallNode.@w, wallNode.@h));
-                }
+            // for each (var wallNode:XML in xml.walls.children()) {
+            //         walls.add(new FlxTileblock(wallNode.@x, wallNode.@y,
+            //                                    wallNode.@w, wallNode.@h));
+            //     }
 
             // Load sprites
             /*

@@ -12,11 +12,7 @@ package california {
             private var AutoTiles:Class;
         
         private var background_group:FlxGroup;
-        private var walls_group:FlxGroup;
         private var player_group:FlxGroup;
-        private var fireflies_group:FlxGroup;
-                
-        private var walls_map:FlxTilemap;
 
         private var background:FlxSprite;
         
@@ -34,7 +30,7 @@ package california {
         private var currentRoom:Room;
 
         private var input_field:FlxInputText;
-        
+
         override public function create():void {
             world = new World();
             WORLD_LIMITS = new FlxPoint(FlxG.width, FlxG.height);
@@ -47,7 +43,10 @@ package california {
         }
 
         override public function update():void {
-            FlxU.collide(walls_group, player);
+            if(FlxG.mouse.justPressed()) {
+                player.setWalkTarget(FlxG.mouse.x);
+            }
+            
             super.update();
         }
 
@@ -55,7 +54,6 @@ package california {
             this.destroy(); // just destroys the group that contains objects for this state
 
             currentRoom = world.getRoom(roomName);
-            walls_group = currentRoom.walls;
             background_group = currentRoom.backgrounds;
             player_group = new FlxGroup();
 

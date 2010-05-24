@@ -13,6 +13,9 @@ package california {
             //super(160, 80, PlayState, 4);
             super(320, 180, PlayState, 2);
 
+            FlxG.mouse.cursor = new GameCursor();
+            FlxG.mouse.show();
+            
             FlxState.bgColor = Main.bgcolor;
         }
     }
