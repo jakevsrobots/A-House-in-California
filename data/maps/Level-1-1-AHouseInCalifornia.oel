@@ -1,0 +1,10 @@
+<level>
+  <width>320</width>
+  <height>160</height>
+  <background>
+    <houseBackground x="0" y="0"/>
+  </background>
+  <sprites>
+    <lampPost x="196" y="117"/>
+  </sprites>
+</level>

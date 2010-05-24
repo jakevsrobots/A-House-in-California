@@ -1,15 +1,15 @@
 package california {
     import org.flixel.*;
 
-    //import flash.text.TextField;
-    //import flash.text.TextFormat;
-    
     public class PlayState extends FlxState {
         //[Embed(source='/../data/gardenia.ttf', fontFamily='gardenia')]
         //private var GardeniaFont:String;
         
         [Embed(source='/../data/Balderas.ttf', fontFamily='balderas')]
         private var BalderasFont:String;
+
+        [Embed(source="/../data/autotiles.png")]
+            private var AutoTiles:Class;
         
         private var background_group:FlxGroup;
         private var walls_group:FlxGroup;
@@ -29,106 +29,45 @@ package california {
 
         private var hud:FlxSprite;
         private var room_title:FlxText;
-
+        
         private var world:World;
+        private var currentRoom:Room;
 
         private var input_field:FlxInputText;
         
         override public function create():void {
             world = new World();
-
             WORLD_LIMITS = new FlxPoint(FlxG.width, FlxG.height);
-            
-            walls_group = new FlxGroup;
-            this.add(walls_group);
-
-            background_group = new FlxGroup;
-            this.add(background_group);
-            
-            player_group = new FlxGroup;
-            this.add(player_group);
-
-            fireflies_group = new FlxGroup;
-            this.add(fireflies_group);
-
-            darkness = new FlxSprite(0,0);
-            darkness.createGraphic(FlxG.width, FlxG.height, darkness_color);
-            darkness.scrollFactor.x = darkness.scrollFactor.y = 0;
-            darkness.blend = "multiply";
-            this.add(darkness);
-
-            // Load map
-            walls_map = new FlxTilemap;
-            walls_map.auto = FlxTilemap.AUTO;
-            walls_map.loadMap(FlxTilemap.pngToCSV(world.rooms.home.walls, true), AutoTiles, 1, 1);
-
-            walls_group.add(walls_map);
-            
-            background = new FlxSprite(0, 0, world.rooms.home.background);
-            background_group.add(background);
 
             // Player
-            player = new Player(16, 48);
-            player.darkness = darkness;
-            player_group.add(player);
-
-            // Room Title
-            //room_title = new FlxText(8, 8, FlxG.width, 'A House in California');
-            //room_title = new FlxText(8, 8, FlxG.width, 'A train station in Toledo');
-            room_title = new FlxText(8, 8, FlxG.width, 'A train station in Pittsburgh');
-            room_title.setFormat("balderas", 8, 0xffffffff);
-            this.add(room_title);
-
-            // make some starting fireflies
-            for(var i:uint = 0; i < 5; i++) {
-                var firefly:Firefly = new Firefly(
-                    uint(Math.random() * FlxG.width),
-                    uint(Math.random() * FlxG.height),
-                    darkness
-                );
-
-                fireflies_group.add(firefly);
-            }
-
-            // Add input box
-            input_field = new FlxInputText(0, FlxG.height - 20, FlxG.width, '> Catch firefly', 0xffffff);
-            this.add(input_field);
+            player = new Player(145, 135);
+            
+            // Load room
+            loadRoom('home');
         }
 
         override public function update():void {
-            walls_map.collide(player);
-            
-            for each(var firefly:Firefly in fireflies_group.members) {
-                if(firefly.behavior_state == Firefly.FLYING_FREE) {
-                    walls_map.collide(firefly);
-                }
-            }
-            
-            // Check firefly overlaps.
-            FlxU.overlap(player, fireflies_group,
-                function(player:FlxObject, firefly:FlxObject):void {
-                    if((firefly as Firefly).behavior_state == Firefly.FLYING_FREE) {
-                        FlxG.flash.start(Main.bug_color, 0.5);                        
-                        (player as Player).add_firefly();
-                        firefly.kill();
-                    }
-                });
-
+            FlxU.collide(walls_group, player);
             super.update();
         }
 
-        override public function render():void {
-            darkness.fill(darkness_color);
+        private function loadRoom(roomName:String):void {
+            this.destroy(); // just destroys the group that contains objects for this state
 
-            super.render();
-        }
+            currentRoom = world.getRoom(roomName);
+            walls_group = currentRoom.walls;
+            background_group = currentRoom.backgrounds;
+            player_group = new FlxGroup();
 
-        override public function preProcess():void {
-            super.preProcess();
-        }
-        
-        override public function postProcess():void {
-            super.postProcess();
-        }
+            player_group.add(player);
+
+            this.add(background_group);
+            this.add(player_group);
+
+            room_title = new FlxText(8, 8, FlxG.width, currentRoom.title);
+            room_title.setFormat("balderas", 8, 0xffffffff);
+            this.add(room_title);
+
+       }
     }
 }
