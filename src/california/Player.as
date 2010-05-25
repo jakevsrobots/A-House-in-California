@@ -14,9 +14,7 @@ package california {
 
             this.loadGraphic(PlayerImage, true, true, 12, 12);
 
-            maxVelocity.x = 80;
-
-            moveSpeed = 800;
+            moveSpeed = 64;
             minTargetDistance = 2; // At this point the character will stop accelerating towards its target.
             drag.x = 700;
 
@@ -32,9 +30,9 @@ package california {
         override public function update():void {
             if(Math.abs(walkTarget - x) > minTargetDistance) {
                 if(walkTarget < x) {
-                    velocity.x -= moveSpeed * FlxG.elapsed;
+                    x -= moveSpeed * FlxG.elapsed;
                 } else {
-                    velocity.x += moveSpeed * FlxG.elapsed;
+                    x += moveSpeed * FlxG.elapsed;
                 }
             }
             

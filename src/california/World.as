@@ -41,7 +41,8 @@ package california {
             } else {
                 // Create a new room
                 roomStates[roomName] = new Room(roomDescriptions[roomName]['data'],
-                                                roomDescriptions[roomName]['title']);
+                                                roomDescriptions[roomName]['title'],
+                                                roomName);
                 return roomStates[roomName];
             }
         }

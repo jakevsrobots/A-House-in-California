@@ -13,9 +13,9 @@ package california {
         
         private var background_group:FlxGroup;
         private var player_group:FlxGroup;
+        private var hud_group:FlxGroup;
 
         private var background:FlxSprite;
-        
         private var player:Player;
 
         private var darkness_color:uint = 0xaa000000;
@@ -23,13 +23,9 @@ package california {
         
         public static var WORLD_LIMITS:FlxPoint;
 
-        private var hud:FlxSprite;
-        private var room_title:FlxText;
-        
         private var world:World;
         private var currentRoom:Room;
-
-        private var input_field:FlxInputText;
+        private var roomTitle:FlxText;
 
         override public function create():void {
             world = new World();
@@ -62,10 +58,13 @@ package california {
             this.add(background_group);
             this.add(player_group);
 
-            room_title = new FlxText(8, 8, FlxG.width, currentRoom.title);
-            room_title.setFormat("balderas", 8, 0xffffffff);
+            roomTitle = new FlxText(8, 8, FlxG.width, currentRoom.title);
+            roomTitle.setFormat("balderas", 8, 0xffffffff);
             this.add(room_title);
 
+            hudGroup = new FlxGroup();
+            var verbList:Array = currentRoom.getVerbList();
+            
        }
     }
 }
