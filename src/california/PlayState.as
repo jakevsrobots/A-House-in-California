@@ -30,11 +30,16 @@ package california {
         private var cursor:GameCursor;
 
         private var tc:Boolean = true;
+
+        public static var vocabulary:Vocabulary;
         
         override public function create():void {
             world = new World();
             WORLD_LIMITS = new FlxPoint(FlxG.width, FlxG.height);
 
+            // Set up global vocabulary
+            vocabulary = new Vocabulary();
+            
             // Player
             player = new Player(145, 135);
             
@@ -79,6 +84,7 @@ package california {
             this.add(roomTitle);
 
             hudGroup = new FlxGroup();
+            hudGroup.add(vocabulary.currentVerbs);
             this.add(hudGroup);
             
             cursor = new GameCursor();
