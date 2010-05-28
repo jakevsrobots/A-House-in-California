@@ -11,7 +11,7 @@ package california {
 
         private var label:FlxText;
 
-        private var graphic:FlxSprite
+        public var graphic:FlxSprite
         
         public function GameCursor():void {
             super();

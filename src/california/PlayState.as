@@ -29,9 +29,9 @@ package california {
 
         private var cursor:GameCursor;
 
-        private var tc:Boolean = true;
-
         public static var vocabulary:Vocabulary;
+
+        private var currentVerbName:String;
         
         override public function create():void {
             world = new World();
@@ -46,21 +46,43 @@ package california {
             // Load room
             loadRoom('home');
 
-            cursor.setText('test');
+            currentVerbName = 'walk'
         }
 
         override public function update():void {
-            if(FlxG.mouse.justPressed()) {
-                player.setWalkTarget(FlxG.mouse.x);
-            }
+            var verb:Verb; // used to iterate thru verbs below in a few places
+            
+            if(FlxG.mouse.y > 146) {
+                // UI area mouse behavior
+                cursor.setText(null);
 
-            if(FlxG.keys.justPressed('Z')) {
-                if(tc) {
-                    cursor.setText();
-                    tc = false;
-                } else {
-                    cursor.setText('testing');
-                    tc = true;                    
+                for each (verb in vocabulary.currentVerbs.members) {
+                    verb.highlight = false;
+                }
+                for each (verb in vocabulary.currentVerbs.members) {
+                    if(cursor.graphic.overlaps(verb)) {
+                        verb.highlight = true;
+                        if(FlxG.mouse.justPressed()) {
+                            currentVerbName = verb.name;
+                        }
+
+                        break;
+                    }
+                }
+            } else {
+                for each (verb in vocabulary.currentVerbs.members) {
+                    if(verb.name == currentVerbName) {
+                        verb.highlight = true;
+                    } else {
+                        verb.highlight = false;
+                    }
+                }
+                
+                // Game area mouse behavior
+                cursor.setText(currentVerbName);
+                
+                if(FlxG.mouse.justPressed()) {
+                    player.setWalkTarget(FlxG.mouse.x);
                 }
             }
             

@@ -36,6 +36,28 @@ package california {
                     currentVerbs.add(verbObject);
                 }
             }
+
+            sortVerbs();
+        }
+
+        public function sortVerbs():void {
+            // Re-flow verb layout
+            var xSum:uint = 4;
+            var yOffset:uint = FlxG.height - 16;
+            
+            for(var i:uint = 0; i < currentVerbs.members.length; i++) {
+                var verb:Verb = currentVerbs.members[i];
+                verb.y = yOffset;
+                verb.x = xSum;
+
+                FlxG.log(verb.name + ',' + verb.x + ',' + verb.y);
+                
+                // Add this verb's width to x_sum
+                xSum += verb.width;
+                
+                // Add some padding between verbs
+                xSum += 2;
+            }
         }
 
         public function replaceVerb(oldVerbName:String, newVerbName:String):void {
@@ -45,8 +67,12 @@ package california {
             var oldVerbPosition:uint = currentVerbs.members.indexOf(oldVerb);
 
             if(oldVerbPosition != -1) {
-                currentVerbs[oldVerbPosition] = newVerb;
+                currentVerbs.members[oldVerbPosition] = newVerb;
             }
+        }
+
+        public function getVerb(verbName:String):Verb {
+            return verbData[verbName];
         }
     }
 }
