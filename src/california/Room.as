@@ -11,8 +11,6 @@ package california {
         public var title:String;
         private var roomName:String;
 
-        public var verbList:Array;        
-        
         public function Room(RoomData:Class, _title:String, _roomName:String):void {
             title = _title;
             roomName = _roomName;
@@ -25,9 +23,6 @@ package california {
             sprites = new FlxGroup();
             backgrounds = new FlxGroup();            
 
-            // Populate the list of verbs for this room. 
-           verbList = World.verbs.global.concat(World.verbs.rooms[roomName]);
-            
             // Load backgrounds
             for each (var backgroundNode:XML in xml.background.children()) {
                     var background:Background = new Background(backgroundNode.localName(),

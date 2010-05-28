@@ -11,9 +11,9 @@ package california {
         [Embed(source="/../data/autotiles.png")]
             private var AutoTiles:Class;
         
-        private var background_group:FlxGroup;
-        private var player_group:FlxGroup;
-        private var hud_group:FlxGroup;
+        private var backgroundGroup:FlxGroup;
+        private var playerGroup:FlxGroup;
+        private var hudGroup:FlxGroup;
 
         private var background:FlxSprite;
         private var player:Player;
@@ -27,6 +27,10 @@ package california {
         private var currentRoom:Room;
         private var roomTitle:FlxText;
 
+        private var cursor:GameCursor;
+
+        private var tc:Boolean = true;
+        
         override public function create():void {
             world = new World();
             WORLD_LIMITS = new FlxPoint(FlxG.width, FlxG.height);
@@ -36,11 +40,23 @@ package california {
             
             // Load room
             loadRoom('home');
+
+            cursor.setText('test');
         }
 
         override public function update():void {
             if(FlxG.mouse.justPressed()) {
                 player.setWalkTarget(FlxG.mouse.x);
+            }
+
+            if(FlxG.keys.justPressed('Z')) {
+                if(tc) {
+                    cursor.setText();
+                    tc = false;
+                } else {
+                    cursor.setText('testing');
+                    tc = true;                    
+                }
             }
             
             super.update();
@@ -50,21 +66,23 @@ package california {
             this.destroy(); // just destroys the group that contains objects for this state
 
             currentRoom = world.getRoom(roomName);
-            background_group = currentRoom.backgrounds;
-            player_group = new FlxGroup();
+            backgroundGroup = currentRoom.backgrounds;
+            playerGroup = new FlxGroup();
 
-            player_group.add(player);
+            playerGroup.add(player);
 
-            this.add(background_group);
-            this.add(player_group);
+            this.add(backgroundGroup);
+            this.add(playerGroup);
 
             roomTitle = new FlxText(8, 8, FlxG.width, currentRoom.title);
             roomTitle.setFormat("balderas", 8, 0xffffffff);
-            this.add(room_title);
+            this.add(roomTitle);
 
             hudGroup = new FlxGroup();
-            var verbList:Array = currentRoom.getVerbList();
+            this.add(hudGroup);
             
+            cursor = new GameCursor();
+            this.add(cursor);
        }
     }
 }

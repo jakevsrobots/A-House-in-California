@@ -1,41 +1,28 @@
 <verbs>
-
-  <!-- Global -->
-  <global>
-    <verb>
-      <name>Walk</name>
-      <defaultTemplate>Walk to</defaultTemplate>
-    </verb>
-    <verb>
-      <name>Look</name>
-      <defaultTemplate>Look at</defaultTemplate>
-    </verb>
-  </global>
+  <verb>
+    <name>Walk</name>
+    <template>Walk to</template>
+    <persist>1</persist>
+  </verb>
   
-  <rooms>
-    <!-- Home -->
-    <room name="home">
-      <visible>
-        <verb>
-          <name>Think</name>
-          <defaultTemplate>Think about</defaultTemplate>
-        </verb>
-      </visible>
-      
-      <hidden>
-        <verb>
-          <name>Sing</name>
-          <defaultTemplate>Sing to</defaultTemplate>    
-        </verb>
-      </hidden>
+  <verb>
+    <name>Look</name>
+    <template>Look at</template>
+    <persist>1</persist>    
+  </verb>
 
-      <dummy>
-        <verb>
-          <name>Lift</name>
-        </verb>
-      </dummy>
-    </room>
+  <verb>
+    <name>Think</name>
+    <template>Think about</template>
+  </verb>
 
-  </rooms>
-  
+  <verb>
+    <name>Sing</name>
+    <template>Sing to</template>    
+  </verb>
+
+  <verb>
+    <name>Lift</name>
+  </verb>
+
 </verbs>
