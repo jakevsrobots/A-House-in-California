@@ -1,6 +1,7 @@
 package california {
     import org.flixel.*;
-
+    import california.sprites.GameSprite;
+    
     public class Room {
         public var sprites:FlxGroup;
         public var backgrounds:FlxGroup;
@@ -29,19 +30,23 @@ package california {
                                                                backgroundNode.@x, backgroundNode.@y);
                     backgrounds.add(background.image);
                 }
-            
+            // Load sprites
+            for each (var spriteNode:XML in xml.sprites.children()) {
+                FlxG.log('loading sprite ' + spriteNode.localName());
+
+                var SpriteClass:Class = GameSprite.getSpriteClass(spriteNode.localName());
+
+                sprites.add(
+                    new SpriteClass(spriteNode.@x, spriteNode.@y)
+                );
+            }
+                
             // Load walls
             // for each (var wallNode:XML in xml.walls.children()) {
             //         walls.add(new FlxTileblock(wallNode.@x, wallNode.@y,
             //                                    wallNode.@w, wallNode.@h));
             //     }
 
-            // Load sprites
-            /*
-            for each (var spriteNode:XML in xml.sprites.children()) {
-                    
-                }
-            */
         }
     }
 }

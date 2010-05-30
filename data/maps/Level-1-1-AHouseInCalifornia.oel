@@ -6,5 +6,6 @@
   </background>
   <sprites>
     <lampPost x="196" y="117"/>
+    <moon x="267" y="17"/>
   </sprites>
 </level>

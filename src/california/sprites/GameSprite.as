@@ -27,5 +27,9 @@ package california.sprites {
         public function getVerbText(verb:Verb):String {
             return verb.template + ' ' + this.verboseName;
         }
+
+        public function handleVerb(verb:Verb):void {
+            // Stub. Maybe play a default "failed" sound effect?
+        }
     }
 }

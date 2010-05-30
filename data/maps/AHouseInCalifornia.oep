@@ -13,6 +13,8 @@
     <!-- ################# Sprites ############### -->    
     <object name="lampPost" image="../sprites/lamppost.png"
             width="13" height="29" />
+    <object name="moon" image="../sprites/moon.png"
+            width="29" height="29" />
   </objects>
   <layers>
     <objects name="background" gridSize="8" exportAsObjects="true" />

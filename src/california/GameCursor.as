@@ -4,15 +4,17 @@ package california {
     public class GameCursor extends FlxGroup {
         [Embed(source="/../data/cursor.png")] private var CursorImage:Class;
 
+        private var MizuFont:String;
+        
         private var alphaDir:int = -1;
         private var fadeSpeed:Number = 5;
         private var minAlpha:Number = 0.5;
         private var maxAlpha:Number = 0.9;
 
         private var label:FlxText;
-
         public var graphic:FlxSprite
-        
+        public var spriteHitBox:FlxObject;
+
         public function GameCursor():void {
             super();
             
@@ -26,21 +28,29 @@ package california {
             add(label);
             
             graphic.alpha = maxAlpha;
+
+            // A special hit box for colliding the cursor with sprites
+            spriteHitBox = new FlxObject(0,0,24,24);
         }
 
         override public function update():void {
             graphic.x = FlxG.mouse.x - (graphic.width / 2);
             graphic.y = FlxG.mouse.y - (graphic.height / 2);
-            label.x = FlxG.mouse.x - ((label.text.length * 4) / 2 );
+            label.x = FlxG.mouse.x - ((label.text.length * 8) / 2 );
             label.y = FlxG.mouse.y - 8;
-
+            spriteHitBox.x = FlxG.mouse.x - spriteHitBox.width / 2;
+            spriteHitBox.y = FlxG.mouse.y - spriteHitBox.height / 2;            
+            
             graphic.alpha += alphaDir * fadeSpeed * FlxG.elapsed;
+            label.alpha += alphaDir * fadeSpeed * FlxG.elapsed;            
 
             if(alphaDir == -1 && graphic.alpha <= minAlpha) {
                 graphic.alpha = minAlpha;
+                label.alpha = minAlpha;
                 alphaDir = 1;
             } else if(alphaDir == 1 && graphic.alpha >= maxAlpha) {
                 graphic.alpha = maxAlpha;
+                label.alpha = maxAlpha;
                 alphaDir = -1;
             }
             
@@ -49,6 +59,11 @@ package california {
 
         // Set or clear text (use image)
         public function setText(newText:String = null):void {
+            if((label.visible && newText == label.text) ||
+               (!label.visible && newText == null)) {
+               return;
+            }
+            
             if(newText == null) {
                 graphic.visible = true;
                 label.visible = false;

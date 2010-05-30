@@ -1,17 +1,13 @@
 package california {
     import org.flixel.*;
-
+    import california.sprites.*;
+    
     public class PlayState extends FlxState {
-        //[Embed(source='/../data/gardenia.ttf', fontFamily='gardenia')]
-        //private var GardeniaFont:String;
-        
-        [Embed(source='/../data/Balderas.ttf', fontFamily='balderas')]
-        private var BalderasFont:String;
-
         [Embed(source="/../data/autotiles.png")]
             private var AutoTiles:Class;
         
         private var backgroundGroup:FlxGroup;
+        private var spriteGroup:FlxGroup;        
         private var playerGroup:FlxGroup;
         private var hudGroup:FlxGroup;
 
@@ -30,8 +26,11 @@ package california {
         private var cursor:GameCursor;
 
         public static var vocabulary:Vocabulary;
+        private var currentVerb:Verb;
 
-        private var currentVerbName:String;
+        public static var dialog:DialogWindow;
+
+        public static var hasMouseFocus:Boolean = true;
         
         override public function create():void {
             world = new World();
@@ -46,46 +45,69 @@ package california {
             // Load room
             loadRoom('home');
 
-            currentVerbName = 'walk'
+            currentVerb = vocabulary.verbData['Walk'];
+
+            dialog = new DialogWindow();
+            add(dialog);
         }
 
         override public function update():void {
             var verb:Verb; // used to iterate thru verbs below in a few places
-            
-            if(FlxG.mouse.y > 146) {
-                // UI area mouse behavior
-                cursor.setText(null);
 
-                for each (verb in vocabulary.currentVerbs.members) {
-                    verb.highlight = false;
-                }
-                for each (verb in vocabulary.currentVerbs.members) {
-                    if(cursor.graphic.overlaps(verb)) {
-                        verb.highlight = true;
-                        if(FlxG.mouse.justPressed()) {
-                            currentVerbName = verb.name;
-                        }
+            if(PlayState.hasMouseFocus) {
+                if(FlxG.mouse.y > 146) {
+                    // UI area mouse behavior
+                    cursor.setText(null);
 
-                        break;
-                    }
-                }
-            } else {
-                for each (verb in vocabulary.currentVerbs.members) {
-                    if(verb.name == currentVerbName) {
-                        verb.highlight = true;
-                    } else {
+                    for each (verb in vocabulary.currentVerbs.members) {
                         verb.highlight = false;
                     }
-                }
-                
-                // Game area mouse behavior
-                cursor.setText(currentVerbName);
-                
-                if(FlxG.mouse.justPressed()) {
-                    player.setWalkTarget(FlxG.mouse.x);
+                    for each (verb in vocabulary.currentVerbs.members) {
+                        if(cursor.graphic.overlaps(verb)) {
+                            verb.highlight = true;
+                            if(FlxG.mouse.justPressed()) {
+                                currentVerb = verb;
+                            }
+
+                            break;
+                        }
+                    }
+                } else {
+                    // Game area mouse behavior
+                    
+                    for each (verb in vocabulary.currentVerbs.members) {
+                        if(verb == currentVerb) {
+                            verb.highlight = true;
+                        } else {
+                            verb.highlight = false;
+                        }
+                    }
+
+                    var cursorOverlappedSprite:Boolean = false;
+
+                    for each(var sprite:GameSprite in currentRoom.sprites.members) {
+                        if(cursor.spriteHitBox.overlaps(sprite)) {
+                            cursor.setText(sprite.getVerbText(currentVerb));
+                            cursorOverlappedSprite = true;
+
+                            if(FlxG.mouse.justPressed()) {
+                                FlxG.log('attempting to handle verb ' + currentVerb + ' with sprite ' + sprite);
+                                sprite.handleVerb(currentVerb);
+                            }
+                        }
+                    }
+
+                    if(!cursorOverlappedSprite) {
+                        cursor.setText(currentVerb.name);                    
+                    }
+
+                    if(FlxG.mouse.justPressed()) {
+                        if(currentVerb.name == 'Walk') {
+                            player.setWalkTarget(FlxG.mouse.x);
+                        }
+                    }
                 }
             }
-            
             super.update();
         }
 
@@ -94,15 +116,17 @@ package california {
 
             currentRoom = world.getRoom(roomName);
             backgroundGroup = currentRoom.backgrounds;
+            spriteGroup = currentRoom.sprites;            
             playerGroup = new FlxGroup();
 
             playerGroup.add(player);
 
             this.add(backgroundGroup);
+            this.add(spriteGroup);            
             this.add(playerGroup);
 
             roomTitle = new FlxText(8, 8, FlxG.width, currentRoom.title);
-            roomTitle.setFormat("balderas", 8, 0xffffffff);
+            roomTitle.setFormat(null, 8, 0xffffffff);
             this.add(roomTitle);
 
             hudGroup = new FlxGroup();
@@ -111,6 +135,8 @@ package california {
             
             cursor = new GameCursor();
             this.add(cursor);
+
+            add(dialog);
        }
     }
 }

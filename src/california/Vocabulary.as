@@ -5,9 +5,9 @@ package california {
         [Embed(source='/../data/verbs.xml', mimeType="application/octet-stream")]
         private var VerbListXMLData:Class;
 
-        private var verbData:Object;
+        public var verbData:Object;
         public var currentVerbs:FlxGroup;
-        
+
         public function Vocabulary(maxCurrentVerbs:uint = 5):void {
             var verbListXML:XML = new XML(new VerbListXMLData());
 
@@ -18,9 +18,10 @@ package california {
                 var verbObject:Verb = new Verb(verbNode.name);
                 
                 // ex. "Sing to Bird" or by default just "Sing Bird"
-                if(verbNode.defaultTemplate) {
-                    verbObject.template = verbNode.defaultTemplate;
+                if(verbNode.template.toString() != '') {
+                    verbObject.template = verbNode.template;
                 } else {
+                    FlxG.log('no template for ' + verbNode.name);
                     verbObject.template = verbNode.name;
                 }
 
