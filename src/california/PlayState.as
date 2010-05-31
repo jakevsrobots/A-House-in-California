@@ -4,11 +4,11 @@ package california {
     
     public class PlayState extends FlxState {
         [Embed(source="/../data/autotiles.png")]
-            private var AutoTiles:Class;
-        
+        private var AutoTiles:Class;
+
+        private var roomGroup:FlxGroup;    
         private var backgroundGroup:FlxGroup;
         private var spriteGroup:FlxGroup;        
-        private var playerGroup:FlxGroup;
         private var hudGroup:FlxGroup;
 
         private var background:FlxSprite;
@@ -22,19 +22,19 @@ package california {
         private var world:World;
         private var currentRoom:Room;
         private var roomTitle:FlxText;
-
         private var cursor:GameCursor;
 
         public static var vocabulary:Vocabulary;
         private var currentVerb:Verb;
-
         public static var dialog:DialogWindow;
-
         public static var hasMouseFocus:Boolean = true;
-
         public static var instance:PlayState;
         
         override public function create():void {
+            roomGroup = new FlxGroup();
+            
+            this.add(roomGroup);
+            
             world = new World();
             WORLD_LIMITS = new FlxPoint(FlxG.width, FlxG.height);
 
@@ -42,15 +42,23 @@ package california {
             vocabulary = new Vocabulary();
             
             // Player
-            player = new Player(145, 135);
+            //player = new Player(145, 135);
+            player = new LoisPlayer(145, 135);
             
             // Load room
             loadRoom('home');
 
             currentVerb = vocabulary.verbData['Walk'];
+            
+            hudGroup = new FlxGroup();
+            hudGroup.add(vocabulary.currentVerbs);
+            this.add(hudGroup);
+            
+            cursor = new GameCursor();
+            this.add(cursor);
 
             dialog = new DialogWindow();
-            add(dialog);
+            this.add(dialog);
 
             instance = this;
         }
@@ -131,31 +139,21 @@ package california {
         }
         
         private function loadRoom(roomName:String):void {
-            this.destroy(); // just destroys the group that contains objects for this state
-
+            this.roomGroup.destroy();
+            
             currentRoom = world.getRoom(roomName);
             backgroundGroup = currentRoom.backgrounds;
-            spriteGroup = currentRoom.sprites;            
-            playerGroup = new FlxGroup();
-
-            playerGroup.add(player);
-
-            this.add(backgroundGroup);
-            this.add(spriteGroup);            
-            this.add(playerGroup);
+            spriteGroup = currentRoom.sprites;
+            
+            player = new LoisPlayer(145, 135);            
+            spriteGroup.add(player);
+            
+            this.roomGroup.add(backgroundGroup);
+            this.roomGroup.add(spriteGroup);            
 
             roomTitle = new FlxText(8, 8, FlxG.width, currentRoom.title);
             roomTitle.setFormat(null, 8, 0xffffffff);
-            this.add(roomTitle);
-
-            hudGroup = new FlxGroup();
-            hudGroup.add(vocabulary.currentVerbs);
-            this.add(hudGroup);
-            
-            cursor = new GameCursor();
-            this.add(cursor);
-
-            add(dialog);
+            this.roomGroup.add(roomTitle);
 
             FlxG.log('finished loading room ' + roomName);
        }
