@@ -8,14 +8,14 @@ package california {
         // Image classes
         [Embed(source='/../data/backgrounds/home-background.png')]
             private var HouseBackgroundImage:Class;
-        [Embed(source='/../data/backgrounds/a-fountain-in-a-back-yard-background.png')]
-            private var FountainBackgroundImage:Class;
+        [Embed(source='/../data/backgrounds/the-surface-of-the-moon-background.png')]
+            private var MoonBackgroundImage:Class;
     
         public function Background(_name:String, _x:Number=0, _y:Number=0):void {
             // Background data
             var backgroundData:Object = {
                 'houseBackground': HouseBackgroundImage,
-                'fountainBackground': FountainBackgroundImage
+                'moonBackground': MoonBackgroundImage
             }
             
             name = _name;

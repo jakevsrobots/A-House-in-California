@@ -1,0 +1,12 @@
+<level>
+  <width>320</width>
+  <height>160</height>
+  <background>
+    <moonBackground x="0" y="0"/>
+  </background>
+  <sprites>
+    <moonStars x="0" y="1"/>
+    <moonFountain x="276" y="123"/>
+    <dome x="162" y="122"/>
+  </sprites>
+</level>

@@ -46,7 +46,7 @@ package california {
             player = new LoisPlayer(145, 135);
             
             // Load room
-            loadRoom('home');
+            loadRoom('loisHome');
 
             currentVerb = vocabulary.verbData['Walk'];
             

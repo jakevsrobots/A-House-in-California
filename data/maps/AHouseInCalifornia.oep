@@ -11,12 +11,21 @@
             width="320" height="160" />
     <object name="fountainBackground" image="../backgrounds/a-fountain-in-a-back-yard-background.png"
             width="320" height="160" />
+    <object name="moonBackground" image="../backgrounds/the-surface-of-the-moon-background.png"
+            width="320" height="160" />
 
     <!-- ################# Sprites ############### -->    
     <object name="lampPost" image="../sprites/lamppost.png"
             width="13" height="29" />
     <object name="moon" image="../sprites/moon.png"
             width="29" height="29" />
+    <object name="moonStars" image="../sprites/moon-stars.png"
+            width="320" height="95" />
+    <object name="moonFountain" image="../sprites/moon-fountain.png"
+            width="21" height="23" />
+    <object name="dome" image="../sprites/dome.png"
+            width="42" height="25" />
+
   </objects>
   <layers>
     <objects name="background" gridSize="8" exportAsObjects="true" />

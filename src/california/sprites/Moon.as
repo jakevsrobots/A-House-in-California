@@ -18,7 +18,7 @@ package california.sprites {
                 break;
                 
                 case 'Remember':
-                PlayState.transitionToRoom('fountainTest');
+                PlayState.transitionToRoom('theSurfaceOfTheMoon');
                 break;
                 
                 //-------                

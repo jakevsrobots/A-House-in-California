@@ -20,8 +20,14 @@ package california.sprites {
 
         public static function getSpriteClass(name:String):Class {
             var sprites:Object = {
+                // Lois Home
                 'moon': Moon,
-                'lampPost': LampPost
+                'lampPost': LampPost,
+
+                // The Surface of the Moon
+                'moonStars': MoonStars,
+                'moonFountain': MoonFountain,
+                'dome': Dome
             }
             
             return sprites[name];
