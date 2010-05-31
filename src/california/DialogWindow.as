@@ -20,7 +20,7 @@ package california {
             backgroundLayer.alpha = 0.0;
             
             add(backgroundLayer);
-
+            
             text = new FlxText(8, 8, FlxG.width - 8);
             text.alpha = 0.0;
             add(text);

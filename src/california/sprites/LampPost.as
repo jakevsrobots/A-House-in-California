@@ -16,9 +16,15 @@ package california.sprites {
         override public function handleVerb(verb:Verb):void {
             switch (verb.name) {
                 case 'Look':
-                PlayState.dialog.showText('The light was out. It was dark, and a little scary.');
+                PlayState.dialog.showText('The lamp is out. It is dark, and a little scary.');
+                break;
+                
+                case 'Lift':
+                PlayState.dialog.showText('The lamp was out. It was dark, and a little scary.');
                 break;
                 //-------
+                default:
+                verbFailure();
             }
         }
     }
