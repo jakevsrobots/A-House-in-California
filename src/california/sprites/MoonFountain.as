@@ -18,7 +18,11 @@ package california.sprites {
                 case 'Look':
                 PlayState.dialog.showText("It looks familiar but somehow ... smaller.");
                 break;
-                
+
+                case 'Remember':
+                PlayState.transitionToRoom('aFountainInABackYard');
+                break;
+
                 //-------
                 default:
                 verbFailure();

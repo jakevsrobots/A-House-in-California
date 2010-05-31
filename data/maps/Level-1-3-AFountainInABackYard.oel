@@ -1,0 +1,15 @@
+<level>
+  <width>320</width>
+  <height>160</height>
+  <background>
+    <fountainBackground x="0" y="0"/>
+  </background>
+  <sprites>
+    <fountain x="100" y="105"/>
+    <smallFlowerPots2 x="68" y="139"/>
+    <smallFlowerPots2 x="35" y="139"/>
+    <largeFlowerBox x="213" y="127"/>
+    <largeFlowerBox x="243" y="127"/>
+    <largeFlowerBox x="273" y="127"/>
+  </sprites>
+</level>

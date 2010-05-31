@@ -3,13 +3,17 @@ package california {
 
     public class World {
         [Embed(source="/../data/maps/Level-1-1-AHouseInCalifornia.oel",
-               mimeType="application/octet-stream")]
-            private var Level_1_1_MapFile:Class;
+                mimeType="application/octet-stream")]
+        private var Level_1_1_MapFile:Class;
             
         [Embed(source="/../data/maps/Level-1-2-TheSurfaceOfTheMoon.oel",
-               mimeType="application/octet-stream")]
-            private var Level_1_2_MapFile:Class;
-            
+                mimeType="application/octet-stream")]
+        private var Level_1_2_MapFile:Class;
+
+        [Embed(source="/../data/maps/Level-1-3-AFountainInABackYard.oel",
+                mimeType="application/octet-stream")]
+        private var Level_1_3_MapFile:Class;
+
         private var roomStates:Object; // The actual current states of the rooms
         private var roomDescriptions:Object; // A map of room names to level files
 
@@ -25,6 +29,10 @@ package california {
                 'theSurfaceOfTheMoon': {
                     'data': Level_1_2_MapFile,
                     'title': "The Surface of the Moon"
+                },
+                'aFountainInABackYard': {
+                    'data': Level_1_3_MapFile,
+                    'title': "A Fountain in a Back Yard"
                 }
             };
         }

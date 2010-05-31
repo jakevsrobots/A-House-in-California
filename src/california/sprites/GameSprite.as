@@ -27,7 +27,13 @@ package california.sprites {
                 // The Surface of the Moon
                 'moonStars': MoonStars,
                 'moonFountain': MoonFountain,
-                'dome': Dome
+                'dome': Dome,
+
+                // A Fountain in a Back yard
+                'fountain': Fountain,
+                'smallFlowerPots': SmallFlowerPots,
+                'smallFlowerPots2': SmallFlowerPots2,
+                'largeFlowerBox': LargeFlowerBox
             }
             
             return sprites[name];
