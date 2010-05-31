@@ -19,9 +19,6 @@ package california.sprites {
                 PlayState.dialog.showText('The lamp is out. It is dark, and a little scary.');
                 break;
                 
-                case 'Lift':
-                PlayState.dialog.showText('The lamp was out. It was dark, and a little scary.');
-                break;
                 //-------
                 default:
                 verbFailure();

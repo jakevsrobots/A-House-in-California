@@ -9,6 +9,8 @@
     <!-- ################# Backgrounds ############### -->
     <object name="houseBackground" image="../backgrounds/home-background.png"
             width="320" height="160" />
+    <object name="fountainBackground" image="../backgrounds/a-fountain-in-a-back-yard-background.png"
+            width="320" height="160" />
 
     <!-- ################# Sprites ############### -->    
     <object name="lampPost" image="../sprites/lamppost.png"

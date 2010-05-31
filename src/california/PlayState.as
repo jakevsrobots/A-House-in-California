@@ -31,6 +31,8 @@ package california {
         public static var dialog:DialogWindow;
 
         public static var hasMouseFocus:Boolean = true;
+
+        public static var instance:PlayState;
         
         override public function create():void {
             world = new World();
@@ -49,6 +51,8 @@ package california {
 
             dialog = new DialogWindow();
             add(dialog);
+
+            instance = this;
         }
 
         override public function update():void {
@@ -111,6 +115,21 @@ package california {
             super.update();
         }
 
+        static public function transitionToRoom(roomName:String):void {
+            var fadeDuration:Number = 0.5;
+            
+            PlayState.hasMouseFocus = false;
+            
+            FlxG.fade.start(0xff000000, fadeDuration, function():void {
+                    FlxG.fade.stop();
+                    instance.loadRoom(roomName);
+                    FlxG.flash.start(0xff000000, fadeDuration, function():void {
+                            PlayState.hasMouseFocus = true;
+                            FlxG.flash.stop();
+                        });
+                });
+        }
+        
         private function loadRoom(roomName:String):void {
             this.destroy(); // just destroys the group that contains objects for this state
 
@@ -137,6 +156,8 @@ package california {
             this.add(cursor);
 
             add(dialog);
+
+            FlxG.log('finished loading room ' + roomName);
        }
     }
 }
