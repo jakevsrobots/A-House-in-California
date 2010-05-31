@@ -33,7 +33,7 @@ package california {
         override public function create():void {
             roomGroup = new FlxGroup();
             
-            this.add(roomGroup);
+            add(roomGroup);
             
             world = new World();
             WORLD_LIMITS = new FlxPoint(FlxG.width, FlxG.height);
@@ -52,15 +52,15 @@ package california {
             
             hudGroup = new FlxGroup();
             hudGroup.add(vocabulary.currentVerbs);
-            this.add(hudGroup);
+            add(hudGroup);
             
             cursor = new GameCursor();
-            this.add(cursor);
+            add(cursor);
 
             dialog = new DialogWindow();
-            this.add(dialog);
+            add(dialog);
 
-            instance = this;
+            PlayState.instance = this;
         }
 
         override public function update():void {
@@ -139,7 +139,7 @@ package california {
         }
         
         private function loadRoom(roomName:String):void {
-            this.roomGroup.destroy();
+            roomGroup.destroy();
             
             currentRoom = world.getRoom(roomName);
             backgroundGroup = currentRoom.backgrounds;
@@ -148,12 +148,12 @@ package california {
             player = new LoisPlayer(145, 135);            
             spriteGroup.add(player);
             
-            this.roomGroup.add(backgroundGroup);
-            this.roomGroup.add(spriteGroup);            
+            roomGroup.add(backgroundGroup);
+            roomGroup.add(spriteGroup);            
 
             roomTitle = new FlxText(8, 8, FlxG.width, currentRoom.title);
             roomTitle.setFormat(null, 8, 0xffffffff);
-            this.roomGroup.add(roomTitle);
+            roomGroup.add(roomTitle);
 
             FlxG.log('finished loading room ' + roomName);
        }
