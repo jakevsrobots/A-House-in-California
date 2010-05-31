@@ -22,10 +22,18 @@ package california.sprites {
         override public function update():void {
             if(Math.abs(walkTarget - x) > minTargetDistance) {
                 if(walkTarget < x) {
+                    play("walk");
+                    
+                    facing = LEFT;
                     x -= moveSpeed * FlxG.elapsed;
                 } else {
+                    play("walk");
+                    
+                    facing = RIGHT;
                     x += moveSpeed * FlxG.elapsed;
                 }
+            } else {
+                play("stopped");
             }
             
             super.update();
