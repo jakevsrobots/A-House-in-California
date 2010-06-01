@@ -1,4 +1,5 @@
 <verbs>
+  
   <verb>
     <name>Walk</name>
     <template>Walk to</template>
@@ -8,7 +9,7 @@
   <verb>
     <name>Look</name>
     <template>Look at</template>
-    <persist>1</persist>    
+    <persist>1</persist>
   </verb>
 
   <verb>

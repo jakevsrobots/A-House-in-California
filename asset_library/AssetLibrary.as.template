@@ -1,0 +1,24 @@
+// This is an automatically-generated asset library class.
+// Is there a better way to do this?  Probably!
+
+package {
+    import org.flixel.FlxG;
+    
+    public class AssetLibrary {
+        // Assets
+        %(asset_embeds)s
+
+        // Data
+        private var library:Object;
+        
+        public function AssetLibrary():void {
+            library = {
+                %(asset_data)s
+            }
+        }
+
+        public function getAsset(assetName:String):Class {
+            return library[assetName];
+        }
+    }
+}
