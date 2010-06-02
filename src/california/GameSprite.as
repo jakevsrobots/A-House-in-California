@@ -2,6 +2,7 @@ package california {
     import org.flixel.*;
 
     import california.behaviors.Behavior;
+    import california.behaviors.DialogBehavior;
 
     public class GameSprite extends FlxSprite {
         //--------------------------------------------------------------------
@@ -29,7 +30,6 @@ package california {
         public function handleVerb(verb:Verb):void {
             if(this.data.verbs.hasOwnProperty(verb.name)) {
                 for each(var behavior:Behavior in this.data.verbs[verb.name].behaviors) {
-                    //FlxG.log('found behavior ' + behavior + ' for verb ' + verb.name);
                     behavior.run();
                 }
             } else {
@@ -74,7 +74,7 @@ package california {
 
                 // Verbs that this sprite can respond to
                 spriteObject['verbs'] = {};
-                for each(var verbNode:XML in spriteNode.verbs.verb) {
+                for each(var verbNode:XML in spriteNode.verb) {
                     var verbObject:Object = {};
 
                     verbObject['behaviors'] = [];
@@ -85,6 +85,11 @@ package california {
                     spriteObject['verbs'][verbNode.@name] = verbObject;
                 }
 
+                // Add a special 'look' shortcut, since it's so common
+                if(spriteNode.look.length()) {
+                    spriteObject['verbs']['Look'] = {'behaviors': [new DialogBehavior(spriteNode.look.toString())]}
+                }
+                
                 spriteDatabase[spriteObject['name']] = spriteObject;
             }
         }

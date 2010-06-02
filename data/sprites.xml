@@ -1,30 +1,38 @@
 <sprites>
-
+  <!-- ######################### LOIS ######################### -->
+  
+  <!-- Room #1 - A House in California -->
   <sprite>
     <name>Lois</name>
-    <verbs>
-      <verb name="Look">
-        <behavior type="dialog">
-          It is Lois.
-        </behavior>
-      </verb>
-    </verbs>
+    <look>It is Lois.</look>
   </sprite>
   
   <sprite>
     <name>lampPost</name>
-    <verboseName>Lamp Post</verboseName>
-    <verbs>
-      <verb name="Look">
-        <behavior type="dialog">
-          The lamp is out. It is dark, and a little scary.
-        </behavior>
-      </verb>
-    </verbs>
+    <verboseName>lamp post</verboseName>
+    <look>The lamp is out. It is dark, and a little scary.</look>
   </sprite>
 
   <sprite>
     <name>moon</name>
+    <verb name="Remember">
+      <behavior type="transitionToRoom">theSurfaceOfTheMoon</behavior>
+    </verb>
   </sprite>
 
+  <!-- Room #2 - The Surface of the Moon -->  
+  <sprite>
+    <name>moonStars</name>
+    <verboseName>stars</verboseName>
+  </sprite>
+  
+  <sprite>
+    <name>moonFountain</name>
+    <verboseName>small fountain</verboseName>
+  </sprite>
+  
+  <sprite>
+    <name>dome</name>
+  </sprite>
+  
 </sprites>

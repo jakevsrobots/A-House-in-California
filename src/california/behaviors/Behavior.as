@@ -10,6 +10,10 @@ package california.behaviors {
                 case "dialog":
                 return new DialogBehavior(behaviorNode.toString());
                 break;
+                
+                case "transitionToRoom":
+                return new TransitionToRoomBehavior(behaviorNode.toString());
+                break;
             }
 
             return null;
