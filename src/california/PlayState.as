@@ -3,9 +3,6 @@ package california {
     import california.sprites.*;
     
     public class PlayState extends FlxState {
-        [Embed(source="/../data/autotiles.png")]
-        private var AutoTiles:Class;
-
         private var roomGroup:FlxGroup;    
         private var backgroundGroup:FlxGroup;
         private var spriteGroup:FlxGroup;        
