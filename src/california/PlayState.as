@@ -138,14 +138,21 @@ package california {
         }
         
         private function loadRoom(roomName:String):void {
-            roomGroup.destroy();
+            // I will have to see how this affects performance; clearing
+            // the list instead of calling 'destroy()'.
+            // The issue is that the members of these sub-groups need
+            // to be re-used (with persistent changes).
+            // roomGroup.destroy();
+            roomGroup.members.length = 0;
             
             currentRoom = world.getRoom(roomName);
             backgroundGroup = currentRoom.backgrounds;
             spriteGroup = currentRoom.sprites;
             
-            player = new LoisPlayer(145, 135);            
-            spriteGroup.add(player);
+            player = new LoisPlayer(145, 135);
+            if(spriteGroup.members.indexOf(player) == -1) {
+                spriteGroup.add(player);
+            }
             
             roomGroup.add(backgroundGroup);
             roomGroup.add(spriteGroup);            

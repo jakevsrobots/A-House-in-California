@@ -12,7 +12,7 @@ package california.behaviors {
                 break;
                 
                 case "transitionToRoom":
-                return new TransitionToRoomBehavior(behaviorNode.toString());
+                return new TransitionToRoomBehavior(behaviorNode.@targetRoom.toString());
                 break;
             }
 
