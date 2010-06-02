@@ -28,6 +28,8 @@ package california {
         public static var instance:PlayState;
         
         override public function create():void {
+            GameSprite.createSpriteDatabase();
+            
             roomGroup = new FlxGroup();
             
             add(roomGroup);

@@ -1,7 +1,5 @@
-package california.sprites {
+package california {
     import org.flixel.*;
-
-    import california.*;
     
     public class LoisPlayer extends Player {
         [Embed(source='/../data/newplayer.png')]

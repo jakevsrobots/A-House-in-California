@@ -1,7 +1,26 @@
 <sprites>
+
+  <sprite>
+    <name>Lois</name>
+    <verbs>
+      <verb name="Look">
+        <behavior type="dialog">
+          It is Lois.
+        </behavior>
+      </verb>
+    </verbs>
+  </sprite>
   
   <sprite>
     <name>lampPost</name>
+    <verboseName>Lamp Post</verboseName>
+    <verbs>
+      <verb name="Look">
+        <behavior type="dialog">
+          The lamp is out. It is dark, and a little scary.
+        </behavior>
+      </verb>
+    </verbs>
   </sprite>
 
   <sprite>

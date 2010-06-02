@@ -1,4 +1,4 @@
-package california.sprites {
+package california {
     import org.flixel.*;
 
     public class Player extends GameSprite {
