@@ -5,18 +5,19 @@ package california.behaviors {
         // Find the appropriate Behavior subclass and instantiate it
         // properly.
         public static function getBehaviorFromXML(behaviorNode:XML):Behavior {
-            FlxG.log('trying to get behavior from xml, type=|' + behaviorNode.@type + '|');
+            var behavior:Behavior = null;
+            
             switch (behaviorNode.@type.toString()) {
                 case "dialog":
-                return new DialogBehavior(behaviorNode.toString());
+                behavior = new DialogBehavior(behaviorNode.toString());
                 break;
                 
                 case "transitionToRoom":
-                return new TransitionToRoomBehavior(behaviorNode.@targetRoom.toString());
+                behavior = new TransitionToRoomBehavior(behaviorNode.@targetRoom.toString());
                 break;
             }
-
-            return null;
+            
+            return behavior;
         }
 
         public function run():void {

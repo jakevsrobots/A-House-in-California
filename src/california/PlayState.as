@@ -9,7 +9,7 @@ package california {
         private var hudGroup:FlxGroup;
 
         private var background:FlxSprite;
-        private var player:Player;
+        public static var player:Player;
 
         private var darkness_color:uint = 0xaa000000;
         private var darkness:FlxSprite;
@@ -47,7 +47,7 @@ package california {
             // Load room
             loadRoom('loisHome');
 
-            currentVerb = vocabulary.verbData['Walk'];
+            currentVerb = vocabulary.verbData['Look'];
             
             hudGroup = new FlxGroup();
             hudGroup.add(vocabulary.currentVerbs);
@@ -102,7 +102,6 @@ package california {
                             cursorOverlappedSprite = true;
 
                             if(FlxG.mouse.justPressed()) {
-                                FlxG.log('attempting to handle verb ' + currentVerb.name + ' with sprite ' + sprite);
                                 sprite.handleVerb(currentVerb);
                             }
                         }
@@ -112,11 +111,13 @@ package california {
                         cursor.setText(currentVerb.name);                    
                     }
 
+                    /*
                     if(FlxG.mouse.justPressed()) {
                         if(currentVerb.name == 'Walk') {
                             player.setWalkTarget(FlxG.mouse.x);
                         }
                     }
+                    */
                 }
             }
             super.update();

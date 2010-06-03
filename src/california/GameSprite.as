@@ -29,10 +29,21 @@ package california {
 
         public function handleVerb(verb:Verb):void {
             if(this.data.verbs.hasOwnProperty(verb.name)) {
-                for each(var behavior:Behavior in this.data.verbs[verb.name].behaviors) {
-                    behavior.run();
+                var aggregateBehaviorFunction:Function = function():void {
+                    for each(var behavior:Behavior in data.verbs[verb.name].behaviors) {
+                        behavior.run();
+                    }
+                }
+                
+                if(this.data.verbs[verb.name].moveTo) {
+                    // Walk to the sprite before any behaviors
+                    PlayState.player.setWalkTarget(this.x, aggregateBehaviorFunction);
+                } else {
+                    // Just perform the behaviors now
+                    aggregateBehaviorFunction();
                 }
             } else {
+                FlxG.log('no handler for verb ' + verb.name + ' with sprite ' + this.name);
                 verbFailure();
             }
         }
@@ -77,6 +88,12 @@ package california {
                 for each(var verbNode:XML in spriteNode.verb) {
                     var verbObject:Object = {};
 
+                    if(verbNode.@moveTo.toString() == "1") {
+                        verbObject['moveTo'] = true;
+                    } else {
+                        verbObject['moveTo'] = false;                        
+                    }
+                    
                     verbObject['behaviors'] = [];
                     for each(var behaviorNode:XML in verbNode.behavior) {
                         verbObject['behaviors'].push(Behavior.getBehaviorFromXML(behaviorNode));

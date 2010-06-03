@@ -4,8 +4,6 @@ package california {
     public class Verb extends FlxText {
         public var name:String;
         public var template:String;
-        public var persist:Boolean;
-
         public var highlight:Boolean = false;
         
         public function Verb(_name:String):void {

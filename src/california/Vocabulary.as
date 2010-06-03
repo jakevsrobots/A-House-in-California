@@ -25,12 +25,6 @@ package california {
                     verbObject.template = verbNode.name;
                 }
 
-                if(verbNode.persist) {
-                    verbObject.persist = true;
-                } else {
-                    verbObject.persist = false;
-                }
-
                 verbData[verbNode.name] = verbObject;
 
                 if(currentVerbs.members.length < maxCurrentVerbs) {

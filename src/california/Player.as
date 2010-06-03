@@ -3,8 +3,9 @@ package california {
 
     public class Player extends GameSprite {
         private var moveSpeed:uint;
-        private var walkTarget:uint;
+        private var walkTarget:int;
         private var minTargetDistance:uint;
+        private var walkTargetCallback:Function;
         
         public function Player(name:String, X:Number, Y:Number):void {
             super(name,X,Y);
@@ -16,31 +17,42 @@ package california {
             width = 3;
             offset.x = 6;
             
-            walkTarget = X;
+            walkTarget = -1;
         }
         
         override public function update():void {
-            if(Math.abs(walkTarget - x) > minTargetDistance) {
-                if(walkTarget < x) {
-                    play("walk");
-                    
-                    facing = LEFT;
-                    x -= moveSpeed * FlxG.elapsed;
+            if(walkTarget >= 0) {
+                if(Math.abs(walkTarget - x) > minTargetDistance) {
+                    if(walkTarget < x) {
+                        play("walk");
+                        
+                        facing = LEFT;
+                        x -= moveSpeed * FlxG.elapsed;
+                    } else {
+                        play("walk");
+                        
+                        facing = RIGHT;
+                        x += moveSpeed * FlxG.elapsed;
+                    }
                 } else {
-                    play("walk");
+                    // Clear the walk target, run the callback, and clear the callback
+                    walkTarget = -1;
                     
-                    facing = RIGHT;
-                    x += moveSpeed * FlxG.elapsed;
+                    if(walkTargetCallback != null) {
+                        walkTargetCallback();
+                        walkTargetCallback = null;
+                    }
+                    
+                    play("stopped");
                 }
-            } else {
-                play("stopped");
             }
             
             super.update();
         }
 
-        public function setWalkTarget(X:uint):void {
+        public function setWalkTarget(X:uint, callback:Function = null):void {
             walkTarget = X;
+            walkTargetCallback = callback;
         }
     }
 }

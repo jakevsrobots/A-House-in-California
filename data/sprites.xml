@@ -15,7 +15,7 @@
 
   <sprite>
     <name>moon</name>
-    <verb name="Remember">
+    <verb name="Remember" moveTo="1">
       <behavior type="transitionToRoom" targetRoom="theSurfaceOfTheMoon" />
     </verb>
   </sprite>
@@ -24,6 +24,7 @@
   <sprite>
     <name>moonStars</name>
     <verboseName>stars</verboseName>
+    <look>Some are further away than others.</look>    
     <verb name="Forget">
       <behavior type="transitionToRoom" targetRoom="loisHome" />
     </verb>
@@ -51,18 +52,22 @@
 
   <sprite>
     <name>smallFlowerPots</name>
+    <verboseName>flowers</verboseName>
   </sprite>
   
   <sprite>
     <name>smallFlowerPots2</name>
+    <verboseName>flowers</verboseName>    
   </sprite>
   
   <sprite>
     <name>largeFlowerBox</name>
+    <verboseName>flowers</verboseName>
   </sprite>
   
   <sprite>
     <name>backyardStars</name>
+    <verboseName>stars</verboseName>
   </sprite>
   
   <sprite>
