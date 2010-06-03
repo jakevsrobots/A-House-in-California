@@ -32,10 +32,41 @@
   <sprite>
     <name>moonFountain</name>
     <verboseName>small fountain</verboseName>
+    <verb name="Remember">
+      <behavior type="transitionToRoom" targetRoom="aFountainInABackYard" />
+    </verb>
   </sprite>
   
   <sprite>
     <name>dome</name>
+  </sprite>
+
+  <!-- Room #3 - A Fountain in a Back Yard -->
+  <sprite>
+    <name>fountain</name>
+    <verb name="Forget">
+      <behavior type="transitionToRoom" targetRoom="theSurfaceOfTheMoon" />
+    </verb>
+  </sprite>
+
+  <sprite>
+    <name>smallFlowerPots</name>
+  </sprite>
+  
+  <sprite>
+    <name>smallFlowerPots2</name>
+  </sprite>
+  
+  <sprite>
+    <name>largeFlowerBox</name>
+  </sprite>
+  
+  <sprite>
+    <name>backyardStars</name>
+  </sprite>
+  
+  <sprite>
+    <name>window</name>
   </sprite>
   
 </sprites>

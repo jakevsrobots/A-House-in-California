@@ -6,39 +6,48 @@
     <workingDirectory>.</workingDirectory>
   </settings>
   <objects>
-    <!-- ################# Backgrounds ############### -->
-    <object name="houseBackground" image="../backgrounds/home-background.png"
-            width="320" height="160" />
-    <object name="moonBackground" image="../backgrounds/the-surface-of-the-moon-background.png"
-            width="320" height="160" />
-    <object name="fountainBackground" image="../backgrounds/a-fountain-in-a-back-yard-background.png"
-            width="320" height="160" />
-
-    <!-- ################# Sprites ############### -->
-    
     <!-- ### LOIS ### -->
     <!-- Home -->
-    <object name="lampPost" image="../sprites/lamppost.png"
-            width="13" height="29" />
-    <object name="moon" image="../sprites/moon.png"
-            width="29" height="29" />
+    <folder name="lois-home">
+      <object name="houseBackground" image="../backgrounds/home-background.png"
+              width="320" height="160" />
+      
+      <object name="lampPost" image="../sprites/lamppost.png"
+              width="13" height="29" />
+      <object name="moon" image="../sprites/moon.png"
+              width="29" height="29" />
+    </folder>
     <!-- Moon -->
-    <object name="moonStars" image="../sprites/moon-stars.png"
-            width="320" height="95" />
-    <object name="moonFountain" image="../sprites/moon-fountain.png"
-            width="21" height="23" />
-    <object name="dome" image="../sprites/dome.png"
-            width="42" height="25" />
-    <!-- Fountain -->
-    <object name="fountain" image="../sprites/back-yard-fountain.png"
-            width="64" height="41" />
-    <object name="smallFlowerPots" image="../sprites/small-flower-pots.png"
-            width="23" height="7" />
-    <object name="smallFlowerPots2" image="../sprites/small-flower-pots-2.png"
-            width="11" height="7" />
-    <object name="largeFlowerBox" image="../sprites/large-flower-box.png"
-            width="23" height="19" />
-
+    <folder name="lois-moon">
+      <object name="moonBackground" image="../backgrounds/the-surface-of-the-moon-background.png"
+              width="320" height="160" />
+      
+      <object name="moonStars" image="../sprites/moon-stars.png"
+              width="320" height="95" />
+      <object name="moonFountain" image="../sprites/moon-fountain.png"
+              width="21" height="23" />
+      <object name="dome" image="../sprites/dome.png"
+              width="42" height="25" />
+    </folder>
+    <!-- Fountain in a back yard -->
+    <folder name="lois-fountain">
+      <object name="fountainBackground" image="../backgrounds/a-fountain-in-a-back-yard-background.png"
+              width="320" height="160" />
+      
+      <object name="fountain" image="../sprites/back-yard-fountain.png"
+              width="64" height="41" />
+      <object name="smallFlowerPots" image="../sprites/small-flower-pots.png"
+              width="23" height="7" />
+      <object name="smallFlowerPots2" image="../sprites/small-flower-pots-2.png"
+              width="11" height="7" />
+      <object name="largeFlowerBox" image="../sprites/large-flower-box.png"
+              width="23" height="19" />
+      <object name="backyardStars" image="../sprites/back-yard-stars.png"
+              width="156" height="78" />
+      <object name="window" image="../sprites/window.png"
+              width="51" height="31" />
+    </folder>
+    
   </objects>
   <layers>
     <objects name="background" gridSize="8" exportAsObjects="true" />

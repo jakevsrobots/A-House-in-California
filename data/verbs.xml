@@ -14,14 +14,17 @@
 
   <verb>
     <name>Remember</name>
+    <moveTo />
   </verb>
 
   <verb>
     <name>Forget</name>
+    <moveTo />    
   </verb>
 
   <verb>
     <name>Lift</name>
+    <moveTo />    
   </verb>
 
 </verbs>

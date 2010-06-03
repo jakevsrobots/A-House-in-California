@@ -11,5 +11,7 @@
     <largeFlowerBox x="213" y="127"/>
     <largeFlowerBox x="243" y="127"/>
     <largeFlowerBox x="273" y="127"/>
+    <window x="174" y="48"/>
+    <backyardStars x="0" y="0"/>
   </sprites>
 </level>

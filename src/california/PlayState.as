@@ -102,7 +102,7 @@ package california {
                             cursorOverlappedSprite = true;
 
                             if(FlxG.mouse.justPressed()) {
-                                FlxG.log('attempting to handle verb ' + currentVerb + ' with sprite ' + sprite);
+                                FlxG.log('attempting to handle verb ' + currentVerb.name + ' with sprite ' + sprite);
                                 sprite.handleVerb(currentVerb);
                             }
                         }
@@ -149,7 +149,6 @@ package california {
             backgroundGroup = currentRoom.backgrounds;
             spriteGroup = currentRoom.sprites;
             
-            player = new LoisPlayer(145, 135);
             if(spriteGroup.members.indexOf(player) == -1) {
                 spriteGroup.add(player);
             }
