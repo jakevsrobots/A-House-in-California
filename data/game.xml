@@ -87,6 +87,10 @@
     <sprite>
       <name>dome</name>
     </sprite>
+    
+    <sprite spriteClass="TrappedFireflies">
+      <name>moonFireflyCluster</name>
+    </sprite>
 
     <!-- Room #3 - A Fountain in a Back Yard -->
     <sprite>

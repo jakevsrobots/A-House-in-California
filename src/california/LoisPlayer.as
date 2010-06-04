@@ -13,17 +13,5 @@ package california {
             addAnimation("walk", [0,1,2,3], 12);
             addAnimation("stopped", [9]);
         }
-
-        override public function handleVerb(verb:Verb):void {
-            switch (verb.name) {
-                case 'Look':
-                PlayState.dialog.showText('It is Lois.');
-                break;
-                
-                //-------
-                default:
-                verbFailure();
-            }
-        }
     }
 }

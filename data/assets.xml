@@ -13,6 +13,9 @@
   <!-- ################################################### -->
   <!-- ################# Images ########################## -->
   <!-- ################################################### -->
+
+  <asset name="oneFirefly" file="sprites/one-firefly.png"
+         type="image" />
   
   <!-- Lois Home -->
   <asset name="houseBackground" file="backgrounds/home-background.png"

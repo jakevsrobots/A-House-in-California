@@ -14,11 +14,16 @@ package california {
         [Embed(source="/../data/sound/fail.mp3")]
         private var FailSound:Class;
         
-        public function GameSprite(name:String, X:Number, Y:Number):void {
+        public function GameSprite(name:String, X:Number, Y:Number, loadImage:Boolean=true):void {
             this.name = name;
             this.data = GameSprite.spriteDatabase[name];
 
-            var ImageClass:Class = Main.library.getAsset(name);
+            var ImageClass:Class
+            if(loadImage) {
+                ImageClass = Main.library.getAsset(name);
+            } else {
+                ImageClass = null;
+            }
             
             super(X,Y,ImageClass);
         }
@@ -48,23 +53,25 @@ package california {
             }
         }
  
-       protected function verbFailure():void {
+        protected function verbFailure():void {
             FlxG.play(FailSound);
         }
 
-        override public function update():void {
-            super.update();
-        }
-        
         //--------------------------------------------------------------------
         // Static
         //--------------------------------------------------------------------
         public static var spriteDatabase:Object;
+        public static var spriteClasses:Object;
         
         // Parse the XML sprite database into an actionscript Object
         // for easy inflation into an actual GameSprite instance as needed.
         
         public static function createSpriteDatabase():void {
+            // Any custom sprite classes
+            spriteClasses = {
+                "TrappedFireflies": TrappedFireflies
+            };
+            
             GameSprite.spriteDatabase = {};
             
             var xml:XML = Main.gameXML.sprites[0];
@@ -78,6 +85,12 @@ package california {
                     spriteObject['verboseName'] = spriteNode.verboseName.toString();
                 } else {
                     spriteObject['verboseName'] = spriteNode.name.toString();
+                }
+
+                if(spriteNode.@spriteClass.toString()) {
+                    spriteObject['spriteClass'] = spriteClasses[spriteNode.@spriteClass.toString()];
+                } else {
+                    spriteObject['spriteClass'] = GameSprite;
                 }
 
                 // Verbs that this sprite can respond to

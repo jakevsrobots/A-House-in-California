@@ -8,7 +8,7 @@ package california {
         private var walkTargetCallback:Function;
         
         public function Player(name:String, X:Number, Y:Number):void {
-            super(name,X,Y);
+            super(name,X,Y,false);
 
             moveSpeed = 64;
             minTargetDistance = 2; // At this point the character will stop accelerating towards its target.

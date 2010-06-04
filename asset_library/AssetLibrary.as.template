@@ -18,6 +18,9 @@ package {
         }
 
         public function getAsset(assetName:String):Class {
+            if(!library.hasOwnProperty(assetName)) {
+                throw new Error("No valid asset named '" + assetName + "'");
+            }
             return library[assetName];
         }
     }

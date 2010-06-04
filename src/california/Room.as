@@ -33,8 +33,10 @@ package california {
             for each (var spriteNode:XML in xml.sprites.children()) {
                 FlxG.log('loading sprite ' + spriteNode.localName());
 
+                var SpriteClass:Class = GameSprite.spriteDatabase[spriteNode.localName()]['spriteClass'];
+                
                 sprites.add(
-                    new GameSprite(spriteNode.localName(), spriteNode.@x, spriteNode.@y)
+                    new SpriteClass(spriteNode.localName(), spriteNode.@x, spriteNode.@y)
                 );
             }
 

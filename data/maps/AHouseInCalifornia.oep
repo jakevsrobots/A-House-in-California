@@ -28,6 +28,8 @@
               width="21" height="23" />
       <object name="dome" image="../sprites/dome.png"
               width="42" height="25" />
+      <object name="moonFireflyCluster" image="../sprites/firefly-cluster.png"
+              width="16" height="16" />
     </folder>
     <!-- Fountain in a back yard -->
     <folder name="lois-fountain">
