@@ -95,7 +95,7 @@ package california {
                     }
 
                     var cursorOverlappedSprite:Boolean = false;
-
+                    
                     for each(var sprite:GameSprite in currentRoom.sprites.members) {
                         if(cursor.spriteHitBox.overlaps(sprite)) {
                             cursor.setText(sprite.getVerbText(currentVerb));
@@ -103,6 +103,7 @@ package california {
 
                             if(FlxG.mouse.justPressed()) {
                                 sprite.handleVerb(currentVerb);
+                                break;
                             }
                         }
                     }
@@ -110,14 +111,6 @@ package california {
                     if(!cursorOverlappedSprite) {
                         cursor.setText(currentVerb.name);                    
                     }
-
-                    /*
-                    if(FlxG.mouse.justPressed()) {
-                        if(currentVerb.name == 'Walk') {
-                            player.setWalkTarget(FlxG.mouse.x);
-                        }
-                    }
-                    */
                 }
             }
             super.update();

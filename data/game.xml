@@ -1,4 +1,12 @@
 <game>
+  <world>
+    <!-- Lois -->
+    <room name="loisHome" title="A House in California" />
+    <room name="theSurfaceOfTheMoon" title="The Surface of the Moon" />
+    <room name="aFountainInABackYard" title="A Fountain in a Back Yard" />
+
+  </world>
+  
   <!-- ######################################################### -->    
   <!-- ######################### VERBS ######################### -->
   <!-- ######################################################### -->    

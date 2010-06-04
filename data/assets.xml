@@ -1,0 +1,54 @@
+<assets>
+  <!-- ################################################### -->
+  <!-- ################## Maps ########################### -->
+  <!-- ################################################### -->
+  <asset name="loisHome" file="maps/Level-1-1-AHouseInCalifornia.oel"
+         type="xml" />
+  <asset name="theSurfaceOfTheMoon" file="maps/Level-1-2-TheSurfaceOfTheMoon.oel"
+         type="xml" />
+  <asset name="aFountainInABackYard" file="maps/Level-1-3-AFountainInABackYard.oel"
+         type="xml" />
+
+  
+  <!-- ################################################### -->
+  <!-- ################# Images ########################## -->
+  <!-- ################################################### -->
+  
+  <!-- Lois Home -->
+  <asset name="houseBackground" file="backgrounds/home-background.png"
+         type="image" />
+  
+  <asset name="lampPost" file="sprites/lamppost.png"
+         type="image" />
+  <asset name="moon" file="sprites/moon.png"
+         type="image" />
+
+  <!-- Moon -->
+  <asset name="moonBackground" file="backgrounds/the-surface-of-the-moon-background.png"
+         type="image" />
+  
+  <asset name="moonStars" file="sprites/moon-stars.png"
+         type="image" />
+  <asset name="moonFountain" file="sprites/moon-fountain.png"
+         type="image" />
+  <asset name="dome" file="sprites/dome.png"
+         type="image" />
+  
+  <!-- Fountain in a back yard -->
+  <asset name="fountainBackground" file="backgrounds/a-fountain-in-a-back-yard-background.png"
+         type="image" />
+  
+  <asset name="fountain" file="sprites/back-yard-fountain.png"
+         type="image" />
+  <asset name="smallFlowerPots" file="sprites/small-flower-pots.png"
+         type="image" />
+  <asset name="smallFlowerPots2" file="sprites/small-flower-pots-2.png"
+         type="image" />
+  <asset name="largeFlowerBox" file="sprites/large-flower-box.png"
+         type="image" />
+  <asset name="backyardStars" file="sprites/back-yard-stars.png"
+         type="image" />
+  <asset name="window" file="sprites/window.png"
+         type="image" />
+  
+</assets>

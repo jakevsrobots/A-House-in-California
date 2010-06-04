@@ -2,39 +2,22 @@ package california {
     import org.flixel.*;
 
     public class World {
-        [Embed(source="/../data/maps/Level-1-1-AHouseInCalifornia.oel",
-                mimeType="application/octet-stream")]
-        private var Level_1_1_MapFile:Class;
-            
-        [Embed(source="/../data/maps/Level-1-2-TheSurfaceOfTheMoon.oel",
-                mimeType="application/octet-stream")]
-        private var Level_1_2_MapFile:Class;
-
-        [Embed(source="/../data/maps/Level-1-3-AFountainInABackYard.oel",
-                mimeType="application/octet-stream")]
-        private var Level_1_3_MapFile:Class;
-
         private var roomStates:Object; // The actual current states of the rooms
-        private var roomDescriptions:Object; // A map of room names to level files
+        private var roomDescriptions:Object; // Original data about rooms
 
         public function World():void {
             roomStates = {};
+            roomDescriptions = {};
             
-            // Map room names to map files
-            roomDescriptions = {
-                'loisHome': {
-                    'data': Level_1_1_MapFile,
-                    'title': "A House in California"
-                },
-                'theSurfaceOfTheMoon': {
-                    'data': Level_1_2_MapFile,
-                    'title': "The Surface of the Moon"
-                },
-                'aFountainInABackYard': {
-                    'data': Level_1_3_MapFile,
-                    'title': "A Fountain in a Back Yard"
-                }
-            };
+            for each(var roomNode:XML in Main.gameXML.world[0].room) {
+                var roomObject:Object = {
+                    'name': roomNode.@name.toString(),
+                    'title': roomNode.@title.toString(),
+                    'data': Main.library.getAsset(roomNode.@name)
+                };
+
+                roomDescriptions[roomObject['name']] = roomObject;
+            }
         }
         
         public function getRoom(roomName:String):Room {
