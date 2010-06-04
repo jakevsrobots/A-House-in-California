@@ -2,14 +2,11 @@ package california {
     import org.flixel.*;
     
     public class Vocabulary {
-        [Embed(source='/../data/verbs.xml', mimeType="application/octet-stream")]
-        private var VerbListXMLData:Class;
-
         public var verbData:Object;
         public var currentVerbs:FlxGroup;
 
         public function Vocabulary(maxCurrentVerbs:uint = 5):void {
-            var verbListXML:XML = new XML(new VerbListXMLData());
+            var verbListXML:XML = Main.gameXML.verbs[0];
 
             verbData = {};
             currentVerbs = new FlxGroup();

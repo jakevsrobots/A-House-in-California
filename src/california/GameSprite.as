@@ -47,8 +47,8 @@ package california {
                 verbFailure();
             }
         }
-
-        protected function verbFailure():void {
+ 
+       protected function verbFailure():void {
             FlxG.play(FailSound);
         }
 
@@ -59,9 +59,6 @@ package california {
         //--------------------------------------------------------------------
         // Static
         //--------------------------------------------------------------------
-        [Embed(source="/../data/sprites.xml",
-                mimeType="application/octet-stream")]
-        public static var SpritesXML:Class;
         public static var spriteDatabase:Object;
         
         // Parse the XML sprite database into an actionscript Object
@@ -70,7 +67,7 @@ package california {
         public static function createSpriteDatabase():void {
             GameSprite.spriteDatabase = {};
             
-            var xml:XML = new XML(new GameSprite.SpritesXML());
+            var xml:XML = Main.gameXML.sprites[0];
 
             for each(var spriteNode:XML in xml.sprite) {
                 var spriteObject:Object = {};

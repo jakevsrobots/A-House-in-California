@@ -1,0 +1,116 @@
+<game>
+  <!-- ######################################################### -->    
+  <!-- ######################### VERBS ######################### -->
+  <!-- ######################################################### -->    
+  <verbs>
+
+    <!--
+       <verb>
+         <name>Walk</name>
+         <template>Walk to</template>
+         <persist>1</persist>
+       </verb>
+       -->
+    
+    <verb>
+      <name>Look</name>
+      <template>Look at</template>
+    </verb>
+
+    <verb>
+      <name>Remember</name>
+    </verb>
+
+    <verb>
+      <name>Forget</name>
+    </verb>
+
+    <verb>
+      <name>Learn</name>
+    </verb>
+
+  </verbs>
+  
+
+  <!-- ######################################################### -->    
+  <!-- ######################## SPRITES ######################## -->
+  <!-- ######################################################### -->    
+  
+  <sprites>
+    <!-- ######################### LOIS ######################### -->
+    
+    <!-- Room #1 - A House in California -->
+    <sprite>
+      <name>Lois</name>
+      <look>It is Lois.</look>
+    </sprite>
+    
+    <sprite>
+      <name>lampPost</name>
+      <verboseName>lamp post</verboseName>
+      <look>The lamp is out. It is dark, and a little scary.</look>
+    </sprite>
+
+    <sprite>
+      <name>moon</name>
+      <verb name="Remember" moveTo="1">
+        <behavior type="transitionToRoom" targetRoom="theSurfaceOfTheMoon" />
+      </verb>
+    </sprite>
+
+    <!-- Room #2 - The Surface of the Moon -->  
+    <sprite>
+      <name>moonStars</name>
+      <verboseName>stars</verboseName>
+      <look>Some are further away than others.</look>    
+      <verb name="Forget">
+        <behavior type="transitionToRoom" targetRoom="loisHome" />
+      </verb>
+    </sprite>
+    
+    <sprite>
+      <name>moonFountain</name>
+      <verboseName>small fountain</verboseName>
+      <verb name="Remember">
+        <behavior type="transitionToRoom" targetRoom="aFountainInABackYard" />
+      </verb>
+    </sprite>
+    
+    <sprite>
+      <name>dome</name>
+    </sprite>
+
+    <!-- Room #3 - A Fountain in a Back Yard -->
+    <sprite>
+      <name>fountain</name>
+      <verb name="Forget">
+        <behavior type="transitionToRoom" targetRoom="theSurfaceOfTheMoon" />
+      </verb>
+    </sprite>
+
+    <sprite>
+      <name>smallFlowerPots</name>
+      <verboseName>flowers</verboseName>
+    </sprite>
+    
+    <sprite>
+      <name>smallFlowerPots2</name>
+      <verboseName>flowers</verboseName>    
+    </sprite>
+    
+    <sprite>
+      <name>largeFlowerBox</name>
+      <verboseName>flowers</verboseName>
+    </sprite>
+    
+    <sprite>
+      <name>backyardStars</name>
+      <verboseName>stars</verboseName>
+    </sprite>
+    
+    <sprite>
+      <name>window</name>
+    </sprite>
+    
+  </sprites>
+</game>
