@@ -1,10 +1,12 @@
 <game>
   <world>
     <!-- Lois -->
-    <room name="loisHome" title="A House in California" />
-    <room name="theSurfaceOfTheMoon" title="The Surface of the Moon" />
-    <room name="aFountainInABackYard" title="A Fountain in a Back Yard" />
-
+    <room name="loisHome" title="A House in California"
+          darkness="1" />
+    <room name="theSurfaceOfTheMoon" title="The Surface of the Moon"
+          darkness="1" />
+    <room name="aFountainInABackYard" title="A Fountain in a Back Yard"
+          darkness="1" />
   </world>
   
   <!-- ######################################################### -->    
@@ -59,7 +61,7 @@
       <look>The lamp is out. It is dark, and a little scary.</look>
     </sprite>
 
-    <sprite>
+    <sprite spriteClass="Moon">
       <name>moon</name>
       <verb name="Remember" moveTo="1">
         <behavior type="transitionToRoom" targetRoom="theSurfaceOfTheMoon" />

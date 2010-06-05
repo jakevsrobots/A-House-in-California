@@ -10,10 +10,12 @@ package california {
 
         public var title:String;
         private var roomName:String;
-
-        public function Room(RoomData:Class, _title:String, _roomName:String):void {
+        public var darkness:Boolean;
+        
+        public function Room(RoomData:Class, _title:String, _roomName:String, _darkness:Boolean=false):void {
             title = _title;
             roomName = _roomName;
+            darkness = _darkness;
             
             var xml:XML = new XML(new RoomData());
 

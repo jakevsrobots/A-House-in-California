@@ -69,7 +69,8 @@ package california {
         public static function createSpriteDatabase():void {
             // Any custom sprite classes
             spriteClasses = {
-                "TrappedFireflies": TrappedFireflies
+                "TrappedFireflies": TrappedFireflies,
+                "Moon": Moon
             };
             
             GameSprite.spriteDatabase = {};

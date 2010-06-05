@@ -11,7 +11,7 @@ package california {
         private var background:FlxSprite;
         public static var player:Player;
 
-        private var darkness_color:uint = 0xaa000000;
+        private var darkness_color:uint = 0xd0000000;
         private var darkness:FlxSprite;
         
         public static var WORLD_LIMITS:FlxPoint;
@@ -39,7 +39,13 @@ package california {
 
             // Set up global vocabulary
             vocabulary = new Vocabulary();
-            
+
+            // Darkness overlay
+            darkness = new FlxSprite(0,0);
+            darkness.createGraphic(FlxG.width, FlxG.height - 24, darkness_color);
+            darkness.blend = "multiply";
+            darkness.alpha = 1.0;
+             
             // Player
             //player = new Player(145, 135);
             player = new LoisPlayer(145, 135);
@@ -116,6 +122,23 @@ package california {
             super.update();
         }
 
+        override public function render():void {
+            if(currentRoom.darkness) {
+                darkness.fill(darkness_color);
+                
+                for each(var sprite:GameSprite in spriteGroup.members) {
+                    if(sprite.hasOwnProperty('glow')) {
+                        var glow:FlxSprite = sprite['glow'];
+                        
+                        
+                        darkness.draw(glow, glow.x, glow.y);
+                    }
+                }
+            }
+            
+            super.render();
+        }
+        
         static public function transitionToRoom(roomName:String):void {
             var fadeDuration:Number = 0.5;
             
@@ -150,10 +173,17 @@ package california {
             roomGroup.add(backgroundGroup);
             roomGroup.add(spriteGroup);            
 
+            if(currentRoom.darkness) {
+                FlxG.log('ADDING DARK');
+                roomGroup.add(darkness);
+            } else {
+                FlxG.log('NO DARK');
+            }
+            
             roomTitle = new FlxText(8, 8, FlxG.width, currentRoom.title);
             roomTitle.setFormat(null, 8, 0xffffffff);
             roomGroup.add(roomTitle);
-
+            
             FlxG.log('finished loading room ' + roomName);
        }
     }

@@ -25,6 +25,8 @@
          type="image" />
   <asset name="moon" file="sprites/moon.png"
          type="image" />
+  <asset name="moonGlow" file="sprites/moonGlow.png"
+         type="image" />
 
   <!-- Moon -->
   <asset name="moonBackground" file="backgrounds/the-surface-of-the-moon-background.png"
