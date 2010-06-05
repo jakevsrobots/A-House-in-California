@@ -70,7 +70,8 @@ package california {
             // Any custom sprite classes
             spriteClasses = {
                 "TrappedFireflies": TrappedFireflies,
-                "Moon": Moon
+                "Moon": Moon,
+                "Window": Window
             };
             
             GameSprite.spriteDatabase = {};

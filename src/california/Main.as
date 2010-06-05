@@ -7,9 +7,8 @@ package california {
     //[SWF(width="640", height="440", backgroundColor="#000000")];
     
     public class Main extends FlxGame {
-        public static var bgcolor:uint = 0xff303030;
-        public static var bug_color:uint = 0xffffa000;
-        public static var bug_count:uint = 24;
+        //public static var bgcolor:uint = 0xff303030;
+        public static var bgcolor:uint = 0xff000000;
 
         public static var library:AssetLibrary;
 

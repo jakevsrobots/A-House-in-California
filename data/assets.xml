@@ -55,5 +55,7 @@
          type="image" />
   <asset name="window" file="sprites/window.png"
          type="image" />
+  <asset name="windowGlow" file="sprites/window-glow.png"
+         type="image" />
   
 </assets>

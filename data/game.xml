@@ -122,7 +122,7 @@
       <verboseName>stars</verboseName>
     </sprite>
     
-    <sprite>
+    <sprite spriteClass="Window">
       <name>window</name>
     </sprite>
     
