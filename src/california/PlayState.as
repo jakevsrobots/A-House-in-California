@@ -72,6 +72,7 @@ package california {
             var verb:Verb; // used to iterate thru verbs below in a few places
 
             if(PlayState.hasMouseFocus) {
+                cursor.visible = true;
                 if(FlxG.mouse.y > 146) {
                     // UI area mouse behavior
                     cursor.setText(null);
@@ -118,6 +119,8 @@ package california {
                         cursor.setText(currentVerb.name);                    
                     }
                 }
+            } else {
+                cursor.visible = false;
             }
             super.update();
         }
