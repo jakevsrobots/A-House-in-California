@@ -10,11 +10,12 @@ package california.sprites {
 
             // A naive firefly setup, just for testing
             fireflies = new FlxGroup;
-            
-            var FireflyImage:Class = Main.library.getAsset('oneFirefly');
+
+            var minPosition:FlxPoint = new FlxPoint(X, Y);
+            var maxPosition:FlxPoint = new FlxPoint(X + 15, Y + 15);
             
             for(var i:uint = 0; i < 3; i++) {
-                fireflies.add(new FlxSprite(X + (i*2), Y, FireflyImage));
+                fireflies.add(new Firefly(X + (i*2), Y, minPosition, maxPosition));
             }
         }
 
