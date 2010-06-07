@@ -1,13 +1,15 @@
-package california {
+package california.sprites {
     import org.flixel.*;
 
-    public class Moon extends GameSprite {
+    import california.Main;
+    
+    public class Window extends GameSprite {
         public var glow:FlxSprite;
         
-        public function Moon(name:String, X:Number, Y:Number):void {
+        public function Window(name:String, X:Number, Y:Number):void {
             super(name, X, Y);
             
-            glow = new FlxSprite(X,Y,Main.library.getAsset('moonGlow'));
+            glow = new FlxSprite(X,Y,Main.library.getAsset('windowGlow'));
             glow.blend = "screen";
 
             var spriteCenter:FlxPoint = new FlxPoint(

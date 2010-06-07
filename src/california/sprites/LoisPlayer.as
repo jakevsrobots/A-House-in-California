@@ -1,4 +1,4 @@
-package california {
+package california.sprites {
     import org.flixel.*;
     
     public class LoisPlayer extends Player {

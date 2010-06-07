@@ -1,6 +1,6 @@
-package california {
+package california.sprites {
     import org.flixel.*;
-
+    
     public class Player extends GameSprite {
         private var moveSpeed:uint;
         private var walkTarget:int;

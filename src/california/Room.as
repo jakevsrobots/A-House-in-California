@@ -1,5 +1,6 @@
 package california {
     import org.flixel.*;
+    import california.sprites.GameSprite;
     
     public class Room {
         public var sprites:FlxGroup;

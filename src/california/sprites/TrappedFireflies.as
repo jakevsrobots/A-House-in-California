@@ -1,5 +1,6 @@
-package california {
+package california.sprites {
     import org.flixel.*;
+    import california.Main;
     
     public class TrappedFireflies extends GameSprite {
         private var fireflies:FlxGroup;

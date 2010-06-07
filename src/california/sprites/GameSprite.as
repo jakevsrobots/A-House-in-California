@@ -1,9 +1,13 @@
-package california {
+package california.sprites {
     import org.flixel.*;
 
     import california.behaviors.Behavior;
     import california.behaviors.DialogBehavior;
 
+    import california.Verb;
+    import california.Main;
+    import california.PlayState;
+    
     public class GameSprite extends FlxSprite {
         //--------------------------------------------------------------------
         // Instance
