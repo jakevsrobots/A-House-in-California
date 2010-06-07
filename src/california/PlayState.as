@@ -51,8 +51,8 @@ package california {
             player = new LoisPlayer(145, 135);
             
             // Load room
-            //loadRoom('loisHome');
-            loadRoom('aFountainInABackYard');
+            loadRoom('loisHome');
+            //loadRoom('aFountainInABackYard');
 
             currentVerb = vocabulary.verbData['Look'];
             

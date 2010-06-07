@@ -63,6 +63,7 @@
 
     <sprite spriteClass="Moon">
       <name>moon</name>
+      <look>Enough moonlight to walk by, but that's about it.</look>
       <verb name="Remember" moveTo="1">
         <behavior type="transitionToRoom" targetRoom="theSurfaceOfTheMoon" />
       </verb>
@@ -81,6 +82,7 @@
     <sprite>
       <name>moonFountain</name>
       <verboseName>small fountain</verboseName>
+      <look>It looks familiar but somehow ... smaller?  Could be a trick of the moonlight</look>
       <verb name="Remember">
         <behavior type="transitionToRoom" targetRoom="aFountainInABackYard" />
       </verb>
@@ -88,6 +90,7 @@
     
     <sprite>
       <name>dome</name>
+      <look>It's a protective dome.</look>
     </sprite>
     
     <sprite spriteClass="TrappedFireflies">
