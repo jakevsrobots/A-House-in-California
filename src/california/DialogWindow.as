@@ -4,7 +4,6 @@ package california {
     public class DialogWindow extends FlxGroup {
         private var overlay:FlxSprite;        
         private var backgroundLayer:FlxSprite;
-        private var frameLayer:FlxSprite;        
         private var text:FlxText;
         private var labelText:FlxText;        
 
@@ -15,13 +14,16 @@ package california {
         private var dialogWidth:uint;
         private var dialogHeight:uint;
 
+        [Embed(source="/../data/dialog-frame.png")]
+        private var DialogWindowImage:Class;
+        
         public function DialogWindow():void {
             super();
 
             dialogWidth = FlxG.width - 80;
             dialogHeight = FlxG.height - 80;
             maxOverlayOpacity = 0.8;
-            fadeSpeed = 4.0;
+            fadeSpeed = 2.0;
             
             overlay = new FlxSprite(0,0);
             overlay.width = FlxG.width;
@@ -30,17 +32,7 @@ package california {
             overlay.alpha = 0.0;
             add(overlay);
             
-            frameLayer = new FlxSprite(38,38);
-            frameLayer.width = dialogWidth + 4;
-            frameLayer.height = dialogHeight + 4;
-            frameLayer.createGraphic(dialogWidth + 4, dialogHeight + 4, 0xffffffff);
-            frameLayer.alpha = 0.0;
-            add(frameLayer);
-            
-            backgroundLayer = new FlxSprite(40,40);
-            backgroundLayer.width = dialogWidth;
-            backgroundLayer.height = dialogHeight;
-            backgroundLayer.createGraphic(dialogWidth, dialogHeight, 0xff000000);
+            backgroundLayer = new FlxSprite(40, 40, DialogWindowImage);
             backgroundLayer.alpha = 0.0;
             add(backgroundLayer);
             
@@ -96,7 +88,6 @@ package california {
 
             text.alpha = backgroundLayer.alpha;
             labelText.alpha = backgroundLayer.alpha;
-            frameLayer.alpha = backgroundLayer.alpha;
             super.update();
         }
         
