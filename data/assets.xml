@@ -16,6 +16,8 @@
 
   <asset name="oneFirefly" file="sprites/one-firefly.png"
          type="image" />
+  <asset name="fireflyGlow" file="sprites/glow-light.png"
+         type="image" />
   
   <!-- Lois Home -->
   <asset name="houseBackground" file="backgrounds/home-background.png"

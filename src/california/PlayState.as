@@ -104,16 +104,18 @@ package california {
 
                     var cursorOverlappedSprite:Boolean = false;
                     
-                    for each(var sprite:GameSprite in currentRoom.sprites.members) {
+                    for each(var sprite:GameSprite in currentRoom.sprites.members.concat().reverse()) {
                         if(cursor.spriteHitBox.overlaps(sprite)) {
                             cursor.setText(sprite.getVerbText(currentVerb));
                             cursorOverlappedSprite = true;
 
                             if(FlxG.mouse.justPressed()) {
                                 sprite.handleVerb(currentVerb);
-                                break;
                             }
+                            
+                            break;
                         }
+
                     }
 
                     if(!cursorOverlappedSprite) {
@@ -132,10 +134,16 @@ package california {
                 
                 for each(var sprite:GameSprite in spriteGroup.members) {
                     if(sprite.hasOwnProperty('glow')) {
-                        var glow:FlxSprite = sprite['glow'];
-                        
-                        
-                        darkness.draw(glow, glow.x, glow.y);
+                        var glow:FlxSprite;
+                        if(sprite['glow'] is FlxSprite) {
+                            glow = sprite['glow'];
+                            
+                            darkness.draw(glow, glow.x, glow.y);
+                        } else if(sprite['glow'] is FlxGroup) {
+                            for each(glow in sprite['glow'].members) {
+                                darkness.draw(glow, glow.x, glow.y);   
+                            }
+                        }
                     }
                 }
             }

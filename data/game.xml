@@ -36,7 +36,12 @@
     </verb>
 
     <verb>
+      <name>Play</name>
+    </verb>
+    
+    <verb>
       <name>Learn</name>
+      <template>Learn about</template>
     </verb>
 
   </verbs>
@@ -52,7 +57,7 @@
     <!-- Room #1 - A House in California -->
     <sprite>
       <name>Lois</name>
-      <look>It is Lois.</look>
+      <look>Lois is a schoolteacher and an eager participant in the personal computing revolution.</look>
     </sprite>
     
     <sprite>
@@ -63,12 +68,17 @@
 
     <sprite spriteClass="Moon">
       <name>moon</name>
-      <look>Enough moonlight to walk by, but that's about it.</look>
+      <look>It looks familiar, but smaller and dimmer. Enough moonlight to walk by, but that's about it.</look>
       <verb name="Remember" moveTo="1">
         <behavior type="transitionToRoom" targetRoom="theSurfaceOfTheMoon" />
       </verb>
     </sprite>
 
+    <sprite spriteClass="LooseFireflies">
+      <name>looseFireflies</name>
+      <look>A swarm of fireflies. Tiny flying beetles who make their rear ends glow. Why? Maybe just for fun.</look>
+    </sprite>
+    
     <!-- Room #2 - The Surface of the Moon -->  
     <sprite>
       <name>moonStars</name>
@@ -82,7 +92,7 @@
     <sprite>
       <name>moonFountain</name>
       <verboseName>small fountain</verboseName>
-      <look>It looks familiar but somehow ... smaller?  Could be a trick of the moonlight</look>
+      <look>It looks familiar but somehow ... smaller?  Could be a trick of the moonlight.</look>
       <verb name="Remember">
         <behavior type="transitionToRoom" targetRoom="aFountainInABackYard" />
       </verb>
@@ -90,11 +100,13 @@
     
     <sprite>
       <name>dome</name>
-      <look>It's a protective dome.</look>
+      <look>It's a protective dome. A masterful blow could crack it open, but those fireflies are trapped for now.</look>
     </sprite>
-    
+
     <sprite spriteClass="TrappedFireflies">
       <name>moonFireflyCluster</name>
+      <verboseName>fireflies</verboseName>
+      <look>A swarm of fireflies trapped in a dome on the moon. They seem anxious.</look>
     </sprite>
 
     <!-- Room #3 - A Fountain in a Back Yard -->
@@ -103,30 +115,36 @@
       <verb name="Forget">
         <behavior type="transitionToRoom" targetRoom="theSurfaceOfTheMoon" />
       </verb>
+      <look>It takes care to maintain a fountain like this. It's at the center of the yard, the focal point of this domestic garden.</look>
     </sprite>
 
     <sprite>
       <name>smallFlowerPots</name>
       <verboseName>flowers</verboseName>
+      <look>Lillies and pimpernels.</look>
     </sprite>
     
     <sprite>
       <name>smallFlowerPots2</name>
-      <verboseName>flowers</verboseName>    
+      <verboseName>flowers</verboseName>
+      <look>Hydrangeas and poinsettas.</look>
     </sprite>
     
     <sprite>
       <name>largeFlowerBox</name>
       <verboseName>flowers</verboseName>
+      <look>Dahlias and daisies.</look>
     </sprite>
     
     <sprite>
       <name>backyardStars</name>
       <verboseName>stars</verboseName>
+      <look>Some of them seem further away.</look>
     </sprite>
     
     <sprite spriteClass="Window">
       <name>window</name>
+      <look>It looks familiar, but smaller.</look>
     </sprite>
     
   </sprites>
