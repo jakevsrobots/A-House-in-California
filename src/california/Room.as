@@ -32,6 +32,7 @@ package california {
                                                                backgroundNode.@x, backgroundNode.@y);
                     backgrounds.add(background.image);
                 }
+                
             // Load sprites
             for each (var spriteNode:XML in xml.sprites.children()) {
                 FlxG.log('loading sprite ' + spriteNode.localName());
@@ -43,6 +44,20 @@ package california {
                 );
             }
 
+            // Run init events, events that happen when the room
+            // is first loaded/visited
+            for each (var eventNode:XML in Main.gameXML.world[0].room.(@name==roomName).initEvent) {
+                FlxG.log('processing event node ' + eventNode.toString());
+                
+                if(eventNode.@type.toString() == "vocabulary") {
+                    // Re-set the active vocabulary to a specific list.
+                    var verbList:Array = [];
+                    for each (var verbNode:XML in eventNode.verb) {
+                        verbList.push(verbNode.@name.toString());
+                    }
+                    PlayState.vocabulary.setCurrentVerbsByName(verbList);
+                }
+            }
         }
     }
 }

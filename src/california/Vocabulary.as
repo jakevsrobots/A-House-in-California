@@ -32,6 +32,17 @@ package california {
             sortVerbs();
         }
 
+        public function setCurrentVerbsByName(verbList:Array):void {
+            // Set the list of current verbs from an array of verb names
+            currentVerbs.members.length = 0;
+
+            for each (var verbName:String in verbList) {
+                currentVerbs.add(verbData[verbName]);
+            }
+
+            sortVerbs();
+        }
+        
         public function sortVerbs():void {
             // Re-flow verb layout
             var xSum:uint = 4;
