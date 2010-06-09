@@ -25,6 +25,7 @@ def build_assets():
 
     embed_templates = {
         'image': "[Embed(source='%(asset_path)s')] private var %(asset_class_name)s:Class;\n",
+        'mp3': "[Embed(source='%(asset_path)s')] private var %(asset_class_name)s:Class;\n",
         'xml': "[Embed(source='%(asset_path)s', mimeType=\"application/octet-stream\")] private var %(asset_class_name)s:Class;\n"
     }
     

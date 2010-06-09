@@ -1,5 +1,11 @@
 <assets>
   <!-- ################################################### -->
+  <!-- ################## Music ########################### -->
+  <!-- ################################################### -->
+  <asset name="loisMusic" file="music/lois_a-house-in-california.mp3"
+         type="mp3" />
+  
+  <!-- ################################################### -->
   <!-- ################## Maps ########################### -->
   <!-- ################################################### -->
   <asset name="loisHome" file="maps/Level-1-1-AHouseInCalifornia.oel"
@@ -8,7 +14,8 @@
          type="xml" />
   <asset name="aFountainInABackYard" file="maps/Level-1-3-AFountainInABackYard.oel"
          type="xml" />
-
+  <asset name="aComputerInAGuestRoom" file="maps/Level-1-4-AComputerInAGuestRoom.oel"
+         type="xml" />
   
   <!-- ################################################### -->
   <!-- ################# Images ########################## -->
@@ -58,6 +65,17 @@
   <asset name="window" file="sprites/window.png"
          type="image" />
   <asset name="windowGlow" file="sprites/window-glow.png"
+         type="image" />
+
+  <!-- Computer in a guest room -->
+  <asset name="computerBackground" file="backgrounds/an-old-computer-in-a-guest-room-background.png"
+         type="image" />
+  
+  <asset name="floppyDisk" file="sprites/floppy-disk.png"
+         type="image" />
+  <asset name="painting" file="sprites/painting.png"
+         type="image" />
+  <asset name="computer" file="sprites/computer.png"
          type="image" />
   
 </assets>

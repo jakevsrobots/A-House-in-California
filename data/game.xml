@@ -14,6 +14,8 @@
           darkness="1" />
     <room name="aFountainInABackYard" title="A Fountain in a Back Yard"
           darkness="1" />
+    <room name="aComputerInAGuestRoom" title="A Computer in a Guest Room"
+          darkness="1" />
   </world>
   
   <!-- ######################################################### -->    
@@ -152,6 +154,30 @@
     <sprite spriteClass="Window">
       <name>window</name>
       <look>It looks familiar, but smaller.</look>
+      <verb name="Remember">
+        <behavior type="transitionToRoom" targetRoom="aComputerInAGuestRoom" />
+      </verb>
+    </sprite>
+
+    <!-- Room #4 - A Computer in a guest room -->    
+    <sprite>
+      <name>floppyDisk</name>
+      <verboseName>floppy disk</verboseName>
+      <look>It's a floppy disk copy of "Rocky's Boots" for the Apple II.</look>
+    </sprite>
+
+    <sprite>
+      <name>painting</name>
+      <verboseName>strange painting</verboseName>
+      <look>It's a watercolor painting of a vine growing up through a manhole. In the background there's a fire hydrant. It's a crude rendition, but there's something familiar about it; that fire hydrant almost looks touchable.</look>
+    </sprite>
+
+    <sprite>
+      <name>computer</name>
+      <look>It's an Apple II. A programmable machine, from a more civilized age.</look>
+      <verb name="Forget">
+        <behavior type="transitionToRoom" targetRoom="aFountainInABackYard" />
+      </verb>
     </sprite>
     
   </sprites>

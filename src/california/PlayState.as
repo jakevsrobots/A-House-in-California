@@ -67,6 +67,8 @@ package california {
             add(dialog);
 
             PlayState.instance = this;
+
+            FlxG.playMusic(Main.library.getAsset('loisMusic'));
         }
 
         override public function update():void {
