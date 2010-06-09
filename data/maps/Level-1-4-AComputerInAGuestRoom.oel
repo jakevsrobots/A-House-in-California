@@ -1,0 +1,13 @@
+<level>
+  <width>320</width>
+  <height>160</height>
+  <background>
+    <computerBackground x="0" y="0"/>
+  </background>
+  <sprites>
+    <painting x="26" y="0"/>
+    <floppyDisk x="55" y="107"/>
+    <computer x="116" y="23"/>
+    <computerScreen x="144" y="41"/>
+  </sprites>
+</level>

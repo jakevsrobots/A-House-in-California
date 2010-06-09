@@ -164,12 +164,24 @@
       <name>floppyDisk</name>
       <verboseName>floppy disk</verboseName>
       <look>It's a floppy disk copy of "Rocky's Boots" for the Apple II.</look>
+      <verb name="Play">
+        <behavior type="replaceSprite" oldSprite="computerScreen"
+                  newSprite="computerScreenRockysBoots" />
+        <behavior type="replaceSprite" oldSprite="computerScreenBoy"
+                  newSprite="computerScreenRockysBoots" />
+      </verb>
     </sprite>
 
     <sprite>
       <name>painting</name>
       <verboseName>strange painting</verboseName>
       <look>It's a watercolor painting of a vine growing up through a manhole. In the background there's a fire hydrant. It's a crude rendition, but there's something familiar about it; that fire hydrant almost looks touchable.</look>
+      <verb name="Play">
+        <behavior type="replaceSprite" oldSprite="computerScreen"
+                  newSprite="computerScreenBoy" />
+        <behavior type="replaceSprite" oldSprite="computerScreenRockysBoots"
+                  newSprite="computerScreenBoy" />
+      </verb>
     </sprite>
 
     <sprite>
@@ -178,6 +190,24 @@
       <verb name="Forget">
         <behavior type="transitionToRoom" targetRoom="aFountainInABackYard" />
       </verb>
+    </sprite>
+
+    <sprite>
+      <name>computerScreen</name>
+      <look>The screen is dark, nothing's running right now.</look>
+      <verb name="Forget">
+        <behavior type="transitionToRoom" targetRoom="aFountainInABackYard" />
+      </verb>
+    </sprite>
+
+    <sprite>
+      <name>computerScreenRockysBoots</name>
+      <look>Rocky's Boots is running on the computer right now. It's a diagram of a kicking machine.</look>
+    </sprite>
+    
+    <sprite>
+      <name>computerScreenBoy</name>
+      <look>A small boy on the computer screen.</look>
     </sprite>
     
   </sprites>

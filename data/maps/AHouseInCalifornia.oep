@@ -63,6 +63,8 @@
               width="78" height="70" />
       <object name="computer" image="../sprites/computer.png"
               width="185" height="113" />
+      <object name="computerScreen" image="../sprites/computer-screen.png"
+              width="71" height="48" />
     </folder>
     
   </objects>

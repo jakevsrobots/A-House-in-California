@@ -15,6 +15,10 @@ package california.behaviors {
                 case "transitionToRoom":
                 behavior = new TransitionToRoomBehavior(behaviorNode.@targetRoom.toString());
                 break;
+                
+                case "replaceSprite":
+                behavior = new ReplaceSpriteBehavior(behaviorNode.@oldSprite, behaviorNode.@newSprite);
+                break;
             }
             
             return behavior;

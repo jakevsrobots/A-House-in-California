@@ -44,7 +44,7 @@ package california {
                 );
             }
 
-            // Run init events, events that happen when the room
+            // run init events, events that happen when the room
             // is first loaded/visited
             for each (var eventNode:XML in Main.gameXML.world[0].room.(@name==roomName).initEvent) {
                 FlxG.log('processing event node ' + eventNode.toString());
@@ -58,6 +58,16 @@ package california {
                     PlayState.vocabulary.setCurrentVerbsByName(verbList);
                 }
             }
+        }
+
+        public function getSprite(spriteName:String):GameSprite {
+            for each(var sprite:GameSprite in sprites.members) {
+                if(sprite.name == spriteName) {
+                    return sprite;
+                }
+            }
+            
+            return null;
         }
     }
 }

@@ -51,8 +51,8 @@ package california {
             player = new LoisPlayer(145, 135);
             
             // Load room
-            loadRoom('loisHome');
-            //loadRoom('aFountainInABackYard');
+            //loadRoom('loisHome');
+            loadRoom('aComputerInAGuestRoom');
 
             currentVerb = vocabulary.verbData['Look'];
             
@@ -168,6 +168,20 @@ package california {
                 });
         }
         
+        static public function replaceSprite(oldSpriteName:String, newSpriteName:String):void {
+            FlxG.log('trying to replace ' + oldSpriteName + ' with ' + newSpriteName);
+            var oldSprite:GameSprite = PlayState.instance.currentRoom.getSprite(oldSpriteName);
+
+            if(oldSprite != null) {
+                var SpriteClass:Class = GameSprite.spriteDatabase[newSpriteName]['spriteClass'];
+                var newSprite:GameSprite = new SpriteClass(newSpriteName, oldSprite.x, oldSprite.y);
+                
+                PlayState.instance.currentRoom.sprites.replace(oldSprite, newSprite);
+            } else {
+                FlxG.log('old sprite was null: ' + oldSpriteName);
+            }
+        }
+
         private function loadRoom(roomName:String):void {
             // I will have to see how this affects performance; clearing
             // the list instead of calling 'destroy()'.

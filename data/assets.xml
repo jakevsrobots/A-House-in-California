@@ -77,5 +77,11 @@
          type="image" />
   <asset name="computer" file="sprites/computer.png"
          type="image" />
+  <asset name="computerScreen" file="sprites/computer-screen.png"
+         type="image" />
+  <asset name="computerScreenRockysBoots" file="sprites/computer-screen-rockys-boots.png"
+         type="image" />
+  <asset name="computerScreenBoy" file="sprites/computer-screen-boy.png"
+         type="image" />
   
 </assets>
