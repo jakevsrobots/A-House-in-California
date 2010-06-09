@@ -194,19 +194,22 @@
 
     <sprite>
       <name>computerScreen</name>
+      <verboseName>computer screen</verboseName>      
       <look>The screen is dark, nothing's running right now.</look>
       <verb name="Forget">
         <behavior type="transitionToRoom" targetRoom="aFountainInABackYard" />
       </verb>
     </sprite>
 
-    <sprite>
+    <sprite spriteClass="ComputerScreenRockysBoots">
       <name>computerScreenRockysBoots</name>
+      <verboseName>Rocky's Boots on computer screen</verboseName>      
       <look>Rocky's Boots is running on the computer right now. It's a diagram of a kicking machine.</look>
     </sprite>
     
-    <sprite>
+    <sprite spriteClass="ComputerScreenBoy">
       <name>computerScreenBoy</name>
+      <verboseName>boy on computer screen</verboseName>
       <look>A small boy on the computer screen.</look>
     </sprite>
     

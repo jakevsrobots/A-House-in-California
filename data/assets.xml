@@ -83,5 +83,9 @@
          type="image" />
   <asset name="computerScreenBoy" file="sprites/computer-screen-boy.png"
          type="image" />
+  <asset name="computerScreenRockysBootsGlow" file="sprites/rockys-boots-screen-glow.png"
+         type="image" />
+  <asset name="computerScreenBoyGlow" file="sprites/boy-screen-glow.png"
+         type="image" />
   
 </assets>

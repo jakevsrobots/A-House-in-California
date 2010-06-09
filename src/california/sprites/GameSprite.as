@@ -75,7 +75,9 @@ package california.sprites {
             spriteClasses = {
                 "TrappedFireflies": TrappedFireflies,
                 "Moon": Moon,
-                "Window": Window
+                "Window": Window,
+                "ComputerScreenBoy": ComputerScreenBoy,
+                "ComputerScreenRockysBoots": ComputerScreenRockysBoots
             };
             
             GameSprite.spriteDatabase = {};
