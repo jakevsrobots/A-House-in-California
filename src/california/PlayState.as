@@ -26,8 +26,20 @@ package california {
         public static var dialog:DialogWindow;
         public static var hasMouseFocus:Boolean = true;
         public static var instance:PlayState;
+
+        private var startingRoomName:String;
+        
+        public function PlayState(startingRoomName:String) {
+            this.startingRoomName = startingRoomName;
+            
+            super();
+        }
         
         override public function create():void {
+            FlxG.flash.start(0xff000000, 1.0, function():void {
+                    FlxG.flash.stop();
+                });
+            
             GameSprite.createSpriteDatabase();
             
             roomGroup = new FlxGroup();
@@ -51,8 +63,9 @@ package california {
             player = new LoisPlayer(145, 135);
             
             // Load room
+            loadRoom(this.startingRoomName);
             //loadRoom('loisHome');
-            loadRoom('aComputerInAGuestRoom');
+            //loadRoom('aComputerInAGuestRoom');
 
             currentVerb = vocabulary.verbData['Look'];
             

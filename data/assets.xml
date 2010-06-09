@@ -21,6 +21,15 @@
   <!-- ################# Images ########################## -->
   <!-- ################################################### -->
 
+  <!-- Menu -->
+  <asset name="loisLevelIcon" file="sprites/lois-level-icon.png"
+         type="image" />
+  <asset name="blankLevelIcon" file="sprites/blank-level-icon.png"
+         type="image" />
+  <asset name="menuBackground" file="backgrounds/menu-background.png"
+         type="image" />
+
+  
   <asset name="oneFirefly" file="sprites/one-firefly.png"
          type="image" />
   <asset name="fireflyGlow" file="sprites/glow-light.png"
