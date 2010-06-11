@@ -13,12 +13,11 @@ package california {
             
             for each (var verbNode:XML in verbListXML.verb) {
                 var verbObject:Verb = new Verb(verbNode.name);
-                
+
                 // ex. "Sing to Bird" or by default just "Sing Bird"
                 if(verbNode.template.toString() != '') {
                     verbObject.template = verbNode.template;
                 } else {
-                    FlxG.log('no template for ' + verbNode.name);
                     verbObject.template = verbNode.name;
                 }
 
@@ -74,6 +73,18 @@ package california {
             }
         }
 
+        public function addVerbByName(verbName:String):void {
+            var newVerb:Verb = verbData[verbName];
+            if(!newVerb) {
+                FlxG.log('could not find verb ' + verbName);
+                FlxG.log(verbData);
+                return;
+            }
+            
+            currentVerbs.add(newVerb);
+            sortVerbs();
+        }
+        
         public function getVerb(verbName:String):Verb {
             return verbData[verbName];
         }

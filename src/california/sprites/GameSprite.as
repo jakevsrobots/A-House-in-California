@@ -33,6 +33,12 @@ package california.sprites {
         }
 
         public function getVerbText(verb:Verb):String {
+            if(this.data.verbs.hasOwnProperty(verb.name)) {
+                if(this.data.verbs[verb.name].hasOwnProperty('verbText')) {
+                    return this.data.verbs[verb.name]['verbText'];
+                }
+            }
+            
             return verb.template + ' ' + this.data.verboseName;
         }
 
@@ -78,7 +84,8 @@ package california.sprites {
                 "Window": Window,
                 "ComputerScreenBoy": ComputerScreenBoy,
                 "ComputerScreenRockysBoots": ComputerScreenRockysBoots,
-                "JarOfBugs": JarOfBugs
+                "JarOfBugs": JarOfBugs,
+                "LooseFireflies": LooseFireflies
             };
             
             GameSprite.spriteDatabase = {};
@@ -122,6 +129,10 @@ package california.sprites {
                         verbObject['behaviors'].push(Behavior.getBehaviorFromXML(behaviorNode));
                     }
 
+                    if(verbNode.@verbText.toString()) {
+                        verbObject['verbText'] = verbNode.@verbText.toString();
+                    }
+                    
                     spriteObject['verbs'][verbNode.@name] = verbObject;
                 }
 

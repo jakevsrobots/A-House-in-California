@@ -7,7 +7,7 @@
         <verb name="Look" />
         <verb name="Remember" />
         <verb name="Forget" />
-        <verb name="Play" />        
+        <verb name="Play" />
       </initEvent>
     </room>
     <room name="theSurfaceOfTheMoon" title="The Surface of the Moon"
@@ -52,6 +52,10 @@
     <verb>
       <name>Learn</name>
       <template>Learn about</template>
+    </verb>
+
+    <verb>
+      <name>Kick</name>
     </verb>
 
   </verbs>
@@ -99,12 +103,10 @@
       </verb>
     </sprite>
 
-    <!--
     <sprite spriteClass="LooseFireflies">
       <name>looseFireflies</name>
       <look>A swarm of fireflies. Tiny flying beetles who make their rear ends glow. Why? Maybe just for fun.</look>
     </sprite>
-    -->
     
     <!-- Room #2 - The Surface of the Moon -->  
     <sprite>
@@ -128,6 +130,13 @@
     <sprite>
       <name>dome</name>
       <look>It's a protective dome. A masterful blow could crack it open, but those fireflies are trapped for now.</look>
+      
+      <verb name="Kick" moveTo="1">
+        <behavior type="soundEffect" soundName="glassBreak" />
+        <behavior type="flash" />
+        <behavior type="replaceSprite" oldSprite="dome" newSprite="brokenDome" />
+        <behavior type="replaceSprite" oldSprite="moonFireflyCluster" newSprite="looseFireflies" />
+      </verb>
     </sprite>
 
     <sprite spriteClass="TrappedFireflies">
@@ -146,6 +155,25 @@
       </verb>
     </sprite>
 
+    <sprite>
+      <name>brokenDome</name>
+      <verboseName>broken dome</verboseName>
+      <look>The dome is cracked open.</look>
+
+      <verb name="Remember" moveTo="1">
+        <behavior type="dialog">Fireflies used to be trapped in this dome, but now it's cracked wide open.</behavior>
+      </verb>
+      <verb name="Forget" moveTo="1">
+        <behavior type="dialog">How did this happen?</behavior>
+      </verb>
+      <verb name="Play" moveTo="1">
+        <behavior type="dialog">It would be dangerous to play around this broken glass.</behavior>
+      </verb>
+      <verb name="Kick" moveTo="1">
+        <behavior type="dialog">It's already broken.</behavior>
+      </verb>
+    </sprite>
+    
     <!-- Room #3 - A Fountain in a Back Yard -->
     <sprite>
       <name>fountain</name>
@@ -264,6 +292,10 @@
       <name>computerScreenRockysBoots</name>
       <verboseName>Rocky's Boots on computer screen</verboseName>      
       <look>Rocky's Boots is running on the computer right now. It's a diagram of a kicking machine.</look>
+      <verb name="Learn" verbText="Learn about kicking machine" moveTo="1">
+        <behavior type="dialog">The player of "Rocky's Boots" learns to build a machine that kicks. Through this process, one can learn more about both electronics and kicking.</behavior>
+        <behavior type="addVerb" newVerb="Kick" />
+      </verb>
     </sprite>
     
     <sprite spriteClass="ComputerScreenBoy">

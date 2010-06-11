@@ -27,7 +27,7 @@ package california {
         public static var hasMouseFocus:Boolean = true;
         public static var instance:PlayState;
 
-        private var startingRoomName:String = 'aFountainInABackYard';
+        private var startingRoomName:String = 'loiseHome';
         
         public function PlayState(startingRoomName:String=null) {
             if(startingRoomName != null) {
@@ -197,6 +197,10 @@ package california {
             }
         }
 
+        static public function addVerb(newVerbName:String):void {
+            PlayState.vocabulary.addVerbByName(newVerbName);
+        }
+        
         private function loadRoom(roomName:String):void {
             // I will have to see how this affects performance; clearing
             // the list instead of calling 'destroy()'.

@@ -4,6 +4,12 @@
   <!-- ################################################### -->
   <asset name="loisMusic" file="music/lois_a-house-in-california.mp3"
          type="mp3" />
+
+  <!-- ################################################### -->
+  <!-- ############## Sound Effects ###################### -->
+  <!-- ################################################### -->
+  <asset name="glassBreak" file="sound/glassBreak.mp3"
+         type="mp3" />
   
   <!-- ################################################### -->
   <!-- ################## Maps ########################### -->
@@ -55,6 +61,8 @@
   <asset name="moonFountain" file="sprites/moon-fountain.png"
          type="image" />
   <asset name="dome" file="sprites/dome.png"
+         type="image" />
+  <asset name="brokenDome" file="sprites/broken-dome.png"
          type="image" />
   
   <!-- Fountain in a back yard -->

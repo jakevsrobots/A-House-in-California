@@ -19,6 +19,18 @@ package california.behaviors {
                 case "replaceSprite":
                 behavior = new ReplaceSpriteBehavior(behaviorNode.@oldSprite, behaviorNode.@newSprite);
                 break;
+                
+                case "addVerb":
+                behavior = new AddVerbBehavior(behaviorNode.@newVerb);
+                break;
+
+                case "flash":
+                behavior = new FlashBehavior();
+                break;
+                
+                case "soundEffect":
+                behavior = new SoundEffectBehavior(behaviorNode.@soundName);
+                break;
             }
             
             return behavior;

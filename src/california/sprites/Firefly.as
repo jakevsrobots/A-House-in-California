@@ -9,8 +9,8 @@ package california.sprites {
         private var destination:FlxPoint;
         private var moveSpeed:uint = 120;
 
-        private var minPosition:FlxPoint;
-        private var maxPosition:FlxPoint;        
+        public var minPosition:FlxPoint;
+        public var maxPosition:FlxPoint;        
 
         private var glowOffset:FlxPoint;
 
