@@ -75,7 +75,11 @@
          type="image" />
   <asset name="windowGlow" file="sprites/window-glow.png"
          type="image" />
-
+  <asset name="jar" file="sprites/jar.png"
+         type="image" />
+  <asset name="table" file="sprites/table.png"
+         type="image" />
+  
   <!-- Computer in a guest room -->
   <asset name="computerBackground" file="backgrounds/an-old-computer-in-a-guest-room-background.png"
          type="image" />

@@ -22,7 +22,8 @@ package california {
             library = new AssetLibrary();
             gameXML = new XML(new GameXMLFile());
             
-            super(320, 170, MenuState, 2);
+            //super(320, 170, MenuState, 2);
+            super(320, 170, PlayState, 2);
             
             FlxState.bgColor = Main.bgcolor;
         }

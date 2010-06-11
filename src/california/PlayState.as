@@ -27,10 +27,12 @@ package california {
         public static var hasMouseFocus:Boolean = true;
         public static var instance:PlayState;
 
-        private var startingRoomName:String;
+        private var startingRoomName:String = 'aFountainInABackYard';
         
-        public function PlayState(startingRoomName:String) {
-            this.startingRoomName = startingRoomName;
+        public function PlayState(startingRoomName:String=null) {
+            if(startingRoomName != null) {
+                this.startingRoomName = startingRoomName;
+            }
             
             super();
         }

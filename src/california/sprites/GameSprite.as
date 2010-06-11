@@ -77,7 +77,8 @@ package california.sprites {
                 "Moon": Moon,
                 "Window": Window,
                 "ComputerScreenBoy": ComputerScreenBoy,
-                "ComputerScreenRockysBoots": ComputerScreenRockysBoots
+                "ComputerScreenRockysBoots": ComputerScreenRockysBoots,
+                "JarOfBugs": JarOfBugs
             };
             
             GameSprite.spriteDatabase = {};
@@ -96,7 +97,11 @@ package california.sprites {
                 }
 
                 if(spriteNode.@spriteClass.toString()) {
-                    spriteObject['spriteClass'] = spriteClasses[spriteNode.@spriteClass.toString()];
+                    if(spriteClasses.hasOwnProperty(spriteNode.@spriteClass.toString())) {
+                        spriteObject['spriteClass'] = spriteClasses[spriteNode.@spriteClass.toString()];
+                    } else {
+                        throw new Error('No sprite class registered under the name ' + spriteNode.@spriteClass.toString());
+                    }
                 } else {
                     spriteObject['spriteClass'] = GameSprite;
                 }

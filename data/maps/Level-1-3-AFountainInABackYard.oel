@@ -5,13 +5,13 @@
     <fountainBackground x="0" y="0"/>
   </background>
   <sprites>
-    <fountain x="100" y="105"/>
-    <smallFlowerPots2 x="68" y="139"/>
-    <smallFlowerPots2 x="35" y="139"/>
-    <largeFlowerBox x="213" y="127"/>
-    <largeFlowerBox x="243" y="127"/>
-    <largeFlowerBox x="273" y="127"/>
+    <fountain x="66" y="105"/>
+    <smallFlowerPots2 x="289" y="139"/>
+    <largeFlowerBox x="177" y="127"/>
     <window x="174" y="48"/>
     <backyardStars x="0" y="0"/>
+    <smallFlowerPots x="20" y="139"/>
+    <table x="238" y="131"/>
+    <jar x="247" y="122"/>
   </sprites>
 </level>

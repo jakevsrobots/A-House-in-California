@@ -50,6 +50,10 @@
               width="156" height="78" />
       <object name="window" image="../sprites/window.png"
               width="51" height="31" />
+      <object name="jar" image="../sprites/jar.png"
+              width="7" height="10" />
+      <object name="table" image="../sprites/table.png"
+              width="27" height="15" />
     </folder>
     
     <!-- A Computer in a guest room -->

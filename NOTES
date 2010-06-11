@@ -36,7 +36,7 @@ Characters
 
 New Rooms
 ---------
-Lois
+Lois (remember/forget)
   1. A house in California
      - The Moon
        - Remember the moon to go to #2
@@ -60,18 +60,28 @@ Lois
      - A fountain
        - Forget the fountain to go to #2
      - A table
-       - Lift the table to spill the insects out of the jar
+       - Play under the table to spill the insects out of the jar
      - A jar of glowing insects
-       - Disappears after the table is lifted (releases fireflies)
+       - Disappears after the jar is knocked over (releases fireflies)
        
   4. An old computer in a guest room
      - A computer
        - Forget the computer to go to #3
-     - A "Rocky's Boots" game box
+     - A "Rocky's Boots" floppy disk
+       - Play to get rocky's boots on the screen
+     - "Rocky's boots" running on the screen
        - Learn about kicking to get the "Kick" verb
-     - A boy (sprite on computer screen)
+     - A strange painting
+       - Play painting to get boy on computer screen
+     - Boy on computer screen
        - Remember the boy and he turns into fireflies
-  
+
+Beulah (read/write)
+  1. A house in California
+  2. A room at the top of a hill
+  3. A long table in a nice restaurant
+  4. A chapel in a field
+       
 Old Map (left-to-right)
 -------------------
 Lois

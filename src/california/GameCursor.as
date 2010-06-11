@@ -30,14 +30,15 @@ package california {
             graphic.alpha = maxAlpha;
 
             // A special hit box for colliding the cursor with sprites
-            spriteHitBox = new FlxObject(0,0,24,24);
+            spriteHitBox = new FlxObject(0,0,8,8);
         }
 
         override public function update():void {
             graphic.x = FlxG.mouse.x - (graphic.width / 2);
             graphic.y = FlxG.mouse.y - (graphic.height / 2);
-            label.x = FlxG.mouse.x - ((label.text.length * 8) / 2 );
+            label.x = FlxG.mouse.x - ((label.text.length * 6) / 2 );
             label.y = FlxG.mouse.y - 8;
+            
             spriteHitBox.x = FlxG.mouse.x - spriteHitBox.width / 2;
             spriteHitBox.y = FlxG.mouse.y - spriteHitBox.height / 2;            
             
@@ -68,7 +69,8 @@ package california {
                 graphic.visible = true;
                 label.visible = false;
             } else {
-                graphic.visible = false;
+                //graphic.visible = false;
+                graphic.visible = true;
                 label.visible = true;
                 label.text = newText;
             }

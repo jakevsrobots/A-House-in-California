@@ -46,6 +46,7 @@
 
     <verb>
       <name>Play</name>
+      <template>Play with</template>
     </verb>
     
     <verb>
@@ -73,6 +74,15 @@
       <name>lampPost</name>
       <verboseName>lamp post</verboseName>
       <look>The lamp is out. It is dark, and a little scary.</look>
+      <verb name="Remember" moveTo="1">
+        <behavior type="dialog">It wasn't always like this. There was something in the lamp that lit the house...</behavior>
+      </verb>
+      <verb name="Forget" moveTo="1">
+        <behavior type="dialog">Maybe it has always been like this.</behavior>
+      </verb>
+      <verb name="Play" moveTo="1">
+        <behavior type="dialog">It's too dark, swinging around the lamp post like a monkey will have to wait.</behavior>
+      </verb>
     </sprite>
 
     <sprite spriteClass="Moon">
@@ -81,12 +91,20 @@
       <verb name="Remember" moveTo="1">
         <behavior type="transitionToRoom" targetRoom="theSurfaceOfTheMoon" />
       </verb>
+      <verb name="Forget" moveTo="1">
+        <behavior type="dialog">Once forgotten, it's like a whole new moon.</behavior>
+      </verb>
+      <verb name="Play" moveTo="1">
+        <behavior type="dialog">There's a game called "Pretend to Remember a Visit to the Moon." It's a one-player game.</behavior>
+      </verb>
     </sprite>
 
+    <!--
     <sprite spriteClass="LooseFireflies">
       <name>looseFireflies</name>
       <look>A swarm of fireflies. Tiny flying beetles who make their rear ends glow. Why? Maybe just for fun.</look>
     </sprite>
+    -->
     
     <!-- Room #2 - The Surface of the Moon -->  
     <sprite>
@@ -116,15 +134,32 @@
       <name>moonFireflyCluster</name>
       <verboseName>fireflies</verboseName>
       <look>A swarm of fireflies trapped in a dome on the moon. They seem anxious.</look>
+
+      <verb name="Remember" moveTo="1">
+        <behavior type="dialog">These fireflies used to live in the lamp outside the house. Now it's just a matter of getting them out from this dome.</behavior>
+      </verb>
+      <verb name="Forget" moveTo="1">
+        <behavior type="dialog">Hard to say where these fireflies came from.</behavior>
+      </verb>
+      <verb name="Play" moveTo="1">
+        <behavior type="dialog">The fireflies are so anxious under that dome, they don't seem interested in playing.</behavior>
+      </verb>
     </sprite>
 
     <!-- Room #3 - A Fountain in a Back Yard -->
     <sprite>
       <name>fountain</name>
+      <look>It takes care to maintain a fountain like this. It's at the center of the yard, the focal point of this domestic garden.</look>
+      
       <verb name="Forget">
         <behavior type="transitionToRoom" targetRoom="theSurfaceOfTheMoon" />
       </verb>
-      <look>It takes care to maintain a fountain like this. It's at the center of the yard, the focal point of this domestic garden.</look>
+      <verb name="Remember" moveTo="1">
+        <behavior type="dialog">This fountain has been here for at least 20 years, a tranquilizing presence in the back yard.</behavior>
+      </verb>
+      <verb name="Play" moveTo="1">
+        <behavior type="dialog">Not allowed to play in the fountain.</behavior>
+      </verb>
     </sprite>
 
     <sprite>
@@ -148,7 +183,7 @@
     <sprite>
       <name>backyardStars</name>
       <verboseName>stars</verboseName>
-      <look>Some of them seem further away.</look>
+      <look>Some of them seem closer than others.</look>
     </sprite>
     
     <sprite spriteClass="Window">
@@ -159,6 +194,27 @@
       </verb>
     </sprite>
 
+    <sprite>
+      <name>table</name>
+      <look>The table looks unstable.</look>
+      <verb name="Kick">
+        <behavior type="dialog">So aggressive!</behavior>
+      </verb>
+    </sprite>
+    
+    <sprite spriteClass="JarOfBugs">
+      <name>jar</name>
+      <verboseName>jar of glowing bugs</verboseName>
+      <look>A jar full of fireflies.</look>
+      <verb name="Remember">
+        <behavior type="dialog">These fireflies have come a long way.</behavior>
+      </verb>
+      <verb name="Forget">
+        <behavior type="dialog">Home sweet home.</behavior>
+      </verb>
+    </sprite>
+
+    
     <!-- Room #4 - A Computer in a guest room -->    
     <sprite>
       <name>floppyDisk</name>
@@ -198,6 +254,9 @@
       <look>The screen is dark, nothing's running right now.</look>
       <verb name="Forget">
         <behavior type="transitionToRoom" targetRoom="aFountainInABackYard" />
+      </verb>
+      <verb name="Remember">
+        <behavior type="dialog"></behavior>
       </verb>
     </sprite>
 
