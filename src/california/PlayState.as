@@ -27,7 +27,7 @@ package california {
         public static var hasMouseFocus:Boolean = true;
         public static var instance:PlayState;
 
-        private var startingRoomName:String = 'loiseHome';
+        private var startingRoomName:String = 'loisHome';
         
         public function PlayState(startingRoomName:String=null) {
             if(startingRoomName != null) {
