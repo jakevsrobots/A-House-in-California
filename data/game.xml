@@ -8,6 +8,7 @@
         <verb name="Remember" />
         <verb name="Forget" />
         <verb name="Play" />
+        <verb name="Learn" />        
       </initEvent>
     </room>
     <room name="theSurfaceOfTheMoon" title="The Surface of the Moon"
@@ -110,6 +111,11 @@
     <sprite spriteClass="LooseFireflies">
       <name>looseFireflies</name>
       <look>A swarm of fireflies. Tiny flying beetles who make their rear ends glow. Why? Maybe just for fun.</look>
+
+      <verb name="Catch" moveTo="1">
+        <behavior type="removeSprite" targetSprite="looseFireflies" />
+        <behavior type="dialog">These fireflies will help light the lamp.</behavior>
+      </verb>
     </sprite>
     
     <!-- Room #2 - The Surface of the Moon -->  
@@ -140,6 +146,7 @@
         <behavior type="flash" />
         <behavior type="replaceSprite" oldSprite="dome" newSprite="brokenDome" />
         <behavior type="replaceSprite" oldSprite="moonFireflyCluster" newSprite="looseFireflies" />
+        <behavior type="replaceVerb" oldVerb="Kick" newVerb="Catch" />
       </verb>
     </sprite>
 

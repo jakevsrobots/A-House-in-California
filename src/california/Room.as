@@ -10,7 +10,7 @@ package california {
         private var height:uint;
 
         public var title:String;
-        private var roomName:String;
+        public var roomName:String;
         public var darkness:Boolean;
         
         public function Room(RoomData:Class, _title:String, _roomName:String, _darkness:Boolean=false):void {

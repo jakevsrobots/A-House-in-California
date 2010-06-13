@@ -1,9 +1,12 @@
 package california {
     import org.flixel.*;
-
     import AssetLibrary;
+    import SWFStats.*;
     
     [SWF(width="640", height="340", backgroundColor="#000000")];
+
+    [Frame(factoryClass="Preloader")]
+    
     //[SWF(width="640", height="440", backgroundColor="#000000")];
     
     public class Main extends FlxGame {
@@ -21,9 +24,9 @@ package california {
         public function Main():void {
             library = new AssetLibrary();
             gameXML = new XML(new GameXMLFile());
-            
-            //super(320, 170, MenuState, 2);
-            super(320, 170, PlayState, 2);
+
+            super(320, 170, MenuState, 2);
+            //super(320, 170, PlayState, 2);
             
             FlxState.bgColor = Main.bgcolor;
         }

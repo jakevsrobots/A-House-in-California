@@ -1,6 +1,7 @@
 package california {
     import org.flixel.*;
-
+    import SWFStats.*;
+    
     public class MenuState extends FlxState {
         private var roomTitle:FlxText;
         private var copyrightText:FlxText;        
@@ -11,6 +12,8 @@ package california {
         private var cursor:GameCursor;
 
         override public function create():void {
+            Log.View(540, "9f491e53-4116-4945-85e7-803052dc1b05", root.loaderInfo.loaderURL, true);
+            
             FlxG.flash.start(0xff000000, 1.0, function():void {
                     FlxG.flash.stop();
                 });

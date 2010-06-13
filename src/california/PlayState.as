@@ -1,6 +1,7 @@
 package california {
     import org.flixel.*;
     import california.sprites.*;
+    import SWFStats.*;
     
     public class PlayState extends FlxState {
         private var roomGroup:FlxGroup;    
@@ -38,6 +39,8 @@ package california {
         }
         
         override public function create():void {
+            Log.Play();
+            
             FlxG.flash.start(0xff000000, 1.0, function():void {
                     FlxG.flash.stop();
                 });
@@ -127,6 +130,7 @@ package california {
                             cursorOverlappedSprite = true;
 
                             if(FlxG.mouse.justPressed()) {
+                                Log.CustomMetric(currentVerb.name + '|' + sprite.name + '|' + currentRoom.roomName, "Verb action");
                                 sprite.handleVerb(currentVerb);
                             }
                             
@@ -182,6 +186,16 @@ package california {
                         });
                 });
         }
+
+        static public function removeSprite(targetSpriteName:String):void {
+            var targetSprite:GameSprite = PlayState.instance.currentRoom.getSprite(targetSpriteName);
+
+            if(targetSprite != null) {
+                PlayState.instance.currentRoom.sprites.remove(targetSprite, true);
+            } else {
+                FlxG.log('target sprite was null: ' + targetSpriteName);
+            }
+        }
         
         static public function replaceSprite(oldSpriteName:String, newSpriteName:String):void {
             FlxG.log('trying to replace ' + oldSpriteName + ' with ' + newSpriteName);
@@ -232,6 +246,8 @@ package california {
             roomGroup.add(roomTitle);
             
             FlxG.log('finished loading room ' + roomName);
+
+            Log.CustomMetric(currentRoom.roomName, "Room entry");
        }
     }
 }
