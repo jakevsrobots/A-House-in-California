@@ -6,8 +6,8 @@
   </background>
   <sprites>
     <moonStars x="0" y="1"/>
-    <moonFountain x="276" y="123"/>
-    <dome x="162" y="121"/>
-    <moonFireflyCluster x="174" y="128"/>
+    <moonFountain x="239" y="123"/>
+    <dome x="96" y="121"/>
+    <moonFireflyCluster x="108" y="128"/>
   </sprites>
 </level>

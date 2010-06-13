@@ -20,13 +20,16 @@ package california {
         private var GameXMLFile:Class;
 
         public static var gameXML:XML;
-        
+
+        public static var logViewInitialized:Boolean;
+
         public function Main():void {
             library = new AssetLibrary();
             gameXML = new XML(new GameXMLFile());
-
-            super(320, 170, MenuState, 2);
-            //super(320, 170, PlayState, 2);
+            logViewInitialized = false;
+            
+            //super(320, 170, MenuState, 2);
+            super(320, 170, PlayState, 2);
             
             FlxState.bgColor = Main.bgcolor;
         }

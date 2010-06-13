@@ -29,6 +29,7 @@ package california {
         public static var instance:PlayState;
 
         private var startingRoomName:String = 'loisHome';
+        //private var startingRoomName:String = 'theSurfaceOftheMoon';
         
         public function PlayState(startingRoomName:String=null) {
             if(startingRoomName != null) {
@@ -39,6 +40,11 @@ package california {
         }
         
         override public function create():void {
+            if(!Main.logViewInitialized) {
+                Log.View(540, "9f491e53-4116-4945-85e7-803052dc1b05", root.loaderInfo.loaderURL);
+                Main.logViewInitialized = true;
+            }
+            
             Log.Play();
             
             FlxG.flash.start(0xff000000, 1.0, function():void {
