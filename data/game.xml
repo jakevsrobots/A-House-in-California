@@ -8,7 +8,8 @@
         <verb name="Remember" />
         <verb name="Forget" />
         <verb name="Play" />
-        <verb name="Learn" />        
+        <verb name="Learn" />
+        <verb name="Catch" />
       </initEvent>
     </room>
     <room name="theSurfaceOfTheMoon" title="The Surface of the Moon"
@@ -18,7 +19,8 @@
         <verb name="Remember" />
         <verb name="Forget" />
         <verb name="Play" />
-        <verb name="Kick" />        
+        <verb name="Kick" />
+        <verb name="Catch" />        
       </initEvent>
       
     </room>
@@ -72,6 +74,10 @@
       <name>Catch</name>
     </verb>
 
+    <verb>
+      <name>Light</name>
+    </verb>
+
   </verbs>
   
 
@@ -119,6 +125,7 @@
 
     <sprite spriteClass="LooseFireflies">
       <name>looseFireflies</name>
+      <verboseName>loose fireflies</verboseName>>
       <look>A swarm of fireflies. Tiny flying beetles who make their rear ends glow. Why? Maybe just for fun.</look>
 
       <verb name="Catch" moveTo="1">
@@ -155,7 +162,7 @@
         <behavior type="flash" />
         <behavior type="replaceSprite" oldSprite="dome" newSprite="brokenDome" />
         <behavior type="replaceSprite" oldSprite="moonFireflyCluster" newSprite="looseFireflies" />
-        <behavior type="replaceVerb" oldVerb="Kick" newVerb="Catch" />
+        <behavior type="removeVerb" targetVerb="Kick" />
       </verb>
     </sprite>
 
@@ -322,6 +329,12 @@
       <name>computerScreenBoy</name>
       <verboseName>boy on computer screen</verboseName>
       <look>A small boy on the computer screen.</look>
+      <verb name="Remember">
+        <behavior type="flash" />        
+        <behavior type="replaceSprite" oldSprite="computerScreenBoy"
+                  newSprite="computerScreen" />
+        <behavior type="addSprite" spriteName="looseFireflies" x="168" y="64" />
+      </verb>
     </sprite>
     
   </sprites>

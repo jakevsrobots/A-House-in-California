@@ -15,8 +15,8 @@ package california.sprites {
             // A naive firefly setup, just for testing
             fireflies = new FlxGroup;
 
-            width = 20;
-            height = 15;
+            width = 30;
+            height = 25;
             
             minPosition = new FlxPoint(X, Y);
             maxPosition = new FlxPoint(X + width, Y + height);

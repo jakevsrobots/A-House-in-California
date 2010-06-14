@@ -4,7 +4,7 @@ package california.behaviors {
     public class RemoveSpriteBehavior extends Behavior {
         private var targetSpriteName:String;        
         
-        public function ReplaceSpriteBehavior(targetSpriteName:String):void {
+        public function RemoveSpriteBehavior(targetSpriteName:String):void {
             this.targetSpriteName = targetSpriteName;            
         }
 

@@ -65,12 +65,12 @@ package california {
         public function replaceVerb(oldVerbName:String, newVerbName:String):void {
             var oldVerb:Verb = verbData[oldVerbName];
             var newVerb:Verb = verbData[newVerbName];
-            
-            var oldVerbPosition:uint = currentVerbs.members.indexOf(oldVerb);
 
-            if(oldVerbPosition != -1) {
-                currentVerbs.members[oldVerbPosition] = newVerb;
+            if(oldVerb != null && newVerb != null) {
+                currentVerbs.replace(oldVerb, newVerb);
             }
+
+            sortVerbs();
         }
 
         public function addVerbByName(verbName:String):void {
@@ -82,6 +82,17 @@ package california {
             }
             
             currentVerbs.add(newVerb);
+            sortVerbs();
+        }
+
+        public function removeVerbByName(verbName:String):void {
+            var targetVerb:Verb = verbData[verbName];
+
+            if(!targetVerb) {
+                return;
+            }
+
+            currentVerbs.remove(targetVerb, true);
             sortVerbs();
         }
         

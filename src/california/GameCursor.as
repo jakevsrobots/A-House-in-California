@@ -69,7 +69,8 @@ package california {
                 graphic.visible = true;
                 label.visible = false;
             } else {
-                graphic.visible = false;
+                //graphic.visible = false;
+                graphic.visible = true;
                 label.visible = true;
                 label.text = newText;
             }

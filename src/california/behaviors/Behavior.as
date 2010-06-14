@@ -20,6 +20,14 @@ package california.behaviors {
                 behavior = new ReplaceSpriteBehavior(behaviorNode.@oldSprite, behaviorNode.@newSprite);
                 break;
                 
+                case "removeSprite":
+                behavior = new RemoveSpriteBehavior(behaviorNode.@targetSprite);
+                break;
+                
+                case "addSprite":
+                behavior = new AddSpriteBehavior(behaviorNode.@spriteName, behaviorNode.@x, behaviorNode.@y);
+                break;
+                
                 case "addVerb":
                 behavior = new AddVerbBehavior(behaviorNode.@newVerb);
                 break;
@@ -30,6 +38,18 @@ package california.behaviors {
                 
                 case "soundEffect":
                 behavior = new SoundEffectBehavior(behaviorNode.@soundName);
+                break;
+                
+                case "removeVerb":
+                behavior = new RemoveVerbBehavior(behaviorNode.@targetVerb);
+                break;
+                
+                case "replaceVerb":
+                behavior = new ReplaceVerbBehavior(behaviorNode.@oldVerb, behaviorNode.@newVerb);
+                break;
+
+                case "addFirefly":
+                behavior = new AddFireflyBehavior();
                 break;
             }
             

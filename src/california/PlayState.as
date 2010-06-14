@@ -27,9 +27,15 @@ package california {
         public static var dialog:DialogWindow;
         public static var hasMouseFocus:Boolean = true;
         public static var instance:PlayState;
-
+        
         private var startingRoomName:String = 'loisHome';
         //private var startingRoomName:String = 'theSurfaceOftheMoon';
+
+        //-----------------------------
+        // Game data
+        //-----------------------------        
+        public var fireflyCount:uint = 0;
+        public var firefliesNeeded:uint = 3;
         
         public function PlayState(startingRoomName:String=null) {
             if(startingRoomName != null) {
@@ -44,13 +50,13 @@ package california {
                 Log.View(540, "9f491e53-4116-4945-85e7-803052dc1b05", root.loaderInfo.loaderURL);
                 Main.logViewInitialized = true;
             }
-            
+
             Log.Play();
             
             FlxG.flash.start(0xff000000, 1.0, function():void {
                     FlxG.flash.stop();
                 });
-            
+
             GameSprite.createSpriteDatabase();
             
             roomGroup = new FlxGroup();
@@ -194,6 +200,7 @@ package california {
         }
 
         static public function removeSprite(targetSpriteName:String):void {
+            FlxG.log('trying to remove sprite ' + targetSpriteName);
             var targetSprite:GameSprite = PlayState.instance.currentRoom.getSprite(targetSpriteName);
 
             if(targetSprite != null) {
@@ -201,6 +208,13 @@ package california {
             } else {
                 FlxG.log('target sprite was null: ' + targetSpriteName);
             }
+        }
+
+        static public function addSprite(spriteName:String, x:uint, y:uint):void {
+            var SpriteClass:Class = GameSprite.spriteDatabase[spriteName]['spriteClass'];
+            var newSprite:GameSprite = new SpriteClass(spriteName, x, y);
+
+            PlayState.instance.currentRoom.sprites.add(newSprite);
         }
         
         static public function replaceSprite(oldSpriteName:String, newSpriteName:String):void {
@@ -220,7 +234,11 @@ package california {
         static public function addVerb(newVerbName:String):void {
             PlayState.vocabulary.addVerbByName(newVerbName);
         }
-        
+
+        static public function removeVerb(targetVerbName:String):void {
+            PlayState.vocabulary.removeVerbByName(targetVerbName);
+        }
+
         private function loadRoom(roomName:String):void {
             // I will have to see how this affects performance; clearing
             // the list instead of calling 'destroy()'.
