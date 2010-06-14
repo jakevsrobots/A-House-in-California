@@ -25,7 +25,7 @@ package california.behaviors {
                 break;
                 
                 case "addSprite":
-                behavior = new AddSpriteBehavior(behaviorNode.@spriteName, behaviorNode.@x, behaviorNode.@y);
+                behavior = new AddSpriteBehavior(behaviorNode.@spriteName, behaviorNode.@x, behaviorNode.@y, behaviorNode.@width, behaviorNode.@height);
                 break;
                 
                 case "addVerb":

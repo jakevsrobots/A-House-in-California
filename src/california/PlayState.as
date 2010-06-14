@@ -27,8 +27,9 @@ package california {
         public static var dialog:DialogWindow;
         public static var hasMouseFocus:Boolean = true;
         public static var instance:PlayState;
-        
-        private var startingRoomName:String = 'loisHome';
+
+        private var startingRoomName:String = 'aComputerInAGuestRoom';
+        //private var startingRoomName:String = 'loisHome';
         //private var startingRoomName:String = 'theSurfaceOftheMoon';
 
         //-----------------------------
@@ -210,9 +211,15 @@ package california {
             }
         }
 
-        static public function addSprite(spriteName:String, x:uint, y:uint):void {
+        static public function addSprite(spriteName:String, x:uint, y:uint, width:Number=NaN, height:Number=NaN):void {
             var SpriteClass:Class = GameSprite.spriteDatabase[spriteName]['spriteClass'];
-            var newSprite:GameSprite = new SpriteClass(spriteName, x, y);
+            var newSprite:GameSprite;
+
+            if(!isNaN(width) && !isNaN(height)) {
+                newSprite = new SpriteClass(spriteName, x, y, width, height);
+            } else {
+                newSprite = new SpriteClass(spriteName, x, y);
+            }
 
             PlayState.instance.currentRoom.sprites.add(newSprite);
         }

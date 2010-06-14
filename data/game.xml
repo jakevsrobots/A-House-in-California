@@ -14,20 +14,20 @@
     </room>
     <room name="theSurfaceOfTheMoon" title="The Surface of the Moon"
           darkness="1">
+    </room>
+    <room name="aFountainInABackYard" title="A Fountain in a Back Yard"
+          darkness="1" />
+    <room name="aComputerInAGuestRoom" title="A Computer in a Guest Room"
+          darkness="1">
       <initEvent type="vocabulary">
         <verb name="Look" />
         <verb name="Remember" />
         <verb name="Forget" />
         <verb name="Play" />
-        <verb name="Kick" />
-        <verb name="Catch" />        
-      </initEvent>
-      
+        <verb name="Learn" />
+        <verb name="Catch" />
+      </initEvent>      
     </room>
-    <room name="aFountainInABackYard" title="A Fountain in a Back Yard"
-          darkness="1" />
-    <room name="aComputerInAGuestRoom" title="A Computer in a Guest Room"
-          darkness="1" />
   </world>
   
   <!-- ######################################################### -->    
@@ -333,7 +333,8 @@
         <behavior type="flash" />        
         <behavior type="replaceSprite" oldSprite="computerScreenBoy"
                   newSprite="computerScreen" />
-        <behavior type="addSprite" spriteName="looseFireflies" x="168" y="64" />
+        <behavior type="addSprite" spriteName="looseFireflies" x="150" y="46"
+                  width="51" height="34" />
       </verb>
     </sprite>
     
