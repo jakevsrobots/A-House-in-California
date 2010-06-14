@@ -15,8 +15,8 @@ package california.sprites {
             // A naive firefly setup, just for testing
             fireflies = new FlxGroup;
 
-            this.width = width ? width : 30;
-            this.height = height ? height : 25;
+            this.width = !isNaN(width) ? width : 30;
+            this.height = !isNaN(height) ? height : 20;
             
             minPosition = new FlxPoint(X, Y);
             maxPosition = new FlxPoint(X + width, Y + height);
@@ -32,7 +32,7 @@ package california.sprites {
             //getNewSwarmCenter();
 
             // for some reason overlap() needs this graphic?
-            createGraphic(width, height, 0xffff0000);
+            createGraphic(this.width, this.height, 0xffff0000);
         }
 
         override public function update():void {

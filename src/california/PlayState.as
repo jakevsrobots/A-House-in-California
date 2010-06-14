@@ -28,8 +28,8 @@ package california {
         public static var hasMouseFocus:Boolean = true;
         public static var instance:PlayState;
 
-        private var startingRoomName:String = 'aComputerInAGuestRoom';
-        //private var startingRoomName:String = 'loisHome';
+        //private var startingRoomName:String = 'aComputerInAGuestRoom';
+        private var startingRoomName:String = 'loisHome';
         //private var startingRoomName:String = 'theSurfaceOftheMoon';
 
         //-----------------------------
