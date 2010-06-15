@@ -13,7 +13,7 @@ package california {
 
         override public function create():void {
             if(!Main.logViewInitialized) {
-                Log.View(540, "9f491e53-4116-4945-85e7-803052dc1b05", root.loaderInfo.loaderURL, true);
+                Log.View(540, "9f491e53-4116-4945-85e7-803052dc1b05", root.loaderInfo.loaderURL);
                 Main.logViewInitialized = true;
             }
             

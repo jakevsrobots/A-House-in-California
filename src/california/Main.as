@@ -28,8 +28,8 @@ package california {
             gameXML = new XML(new GameXMLFile());
             logViewInitialized = false;
             
-            //super(320, 170, MenuState, 2);
-            super(320, 170, PlayState, 2);
+            super(320, 170, MenuState, 2);
+            //super(320, 170, PlayState, 2);
             
             FlxState.bgColor = Main.bgcolor;
         }

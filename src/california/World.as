@@ -25,6 +25,7 @@ package california {
 
                 roomDescriptions[roomObject['name']] = roomObject;
             }
+
         }
         
         public function getRoom(roomName:String):Room {
@@ -32,11 +33,16 @@ package california {
                 // Return the existing room
                 return roomStates[roomName];
             } else {
+                if(!roomDescriptions.hasOwnProperty(roomName)) {
+                    throw new Error('No such room "' + roomName + '"');
+                }
                 // Create a new room
                 roomStates[roomName] = new Room(roomDescriptions[roomName]['data'],
                                                 roomDescriptions[roomName]['title'],
                                                 roomName,
                                                 roomDescriptions[roomName]['darkness']);
+            
+                                            
                 return roomStates[roomName];
             }
         }

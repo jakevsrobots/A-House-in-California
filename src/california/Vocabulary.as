@@ -80,6 +80,11 @@ package california {
                 FlxG.log(verbData);
                 return;
             }
+
+            // Don't add a verb redundantly
+            if(currentVerbs.members.indexOf(newVerb) != -1) {
+                return;
+            }
             
             currentVerbs.add(newVerb);
             sortVerbs();
