@@ -18,7 +18,7 @@ package california {
         public static var WORLD_LIMITS:FlxPoint;
 
         private var world:World;
-        private var currentRoom:Room;
+        public var currentRoom:Room;
         private var roomTitle:FlxText;
         private var cursor:GameCursor;
 
@@ -28,16 +28,15 @@ package california {
         public static var hasMouseFocus:Boolean = true;
         public static var instance:PlayState;
 
-        //private var startingRoomName:String = 'aComputerInAGuestRoom';
-        //private var startingRoomName:String = 'aFountainInABackYard';
         private var startingRoomName:String = 'loisHome';
         //private var startingRoomName:String = 'theSurfaceOfTheMoon';
-
+        //private var startingRoomName:String = 'aFountainInABackYard';
+        //private var startingRoomName:String = 'aComputerInAGuestRoom';
+        
         //-----------------------------
         // Game data
-        //-----------------------------        
-        public var fireflyCount:uint = 0;
-        public var firefliesNeeded:uint = 3;
+        //-----------------------------
+        public var fireflyRoomStatus:Object;
         
         public function PlayState(startingRoomName:String=null) {
             if(startingRoomName != null) {
@@ -202,13 +201,10 @@ package california {
         }
 
         static public function removeSprite(targetSpriteName:String):void {
-            FlxG.log('trying to remove sprite ' + targetSpriteName);
             var targetSprite:GameSprite = PlayState.instance.currentRoom.getSprite(targetSpriteName);
 
             if(targetSprite != null) {
                 PlayState.instance.currentRoom.sprites.remove(targetSprite, true);
-            } else {
-                FlxG.log('target sprite was null: ' + targetSpriteName);
             }
         }
 
@@ -225,17 +221,27 @@ package california {
             PlayState.instance.currentRoom.sprites.add(newSprite);
         }
         
-        static public function replaceSprite(oldSpriteName:String, newSpriteName:String):void {
-            FlxG.log('trying to replace ' + oldSpriteName + ' with ' + newSpriteName);
+        static public function replaceSprite(oldSpriteName:String, newSpriteName:String, x:uint, y:uint):void {
             var oldSprite:GameSprite = PlayState.instance.currentRoom.getSprite(oldSpriteName);
 
+            if(!GameSprite.spriteDatabase.hasOwnProperty(newSpriteName)) {
+                throw new Error("No sprite data found for " + newSpriteName);
+            }
+            
             if(oldSprite != null) {
                 var SpriteClass:Class = GameSprite.spriteDatabase[newSpriteName]['spriteClass'];
-                var newSprite:GameSprite = new SpriteClass(newSpriteName, oldSprite.x, oldSprite.y);
+
+                if(isNaN(y)) {
+                    y = oldSprite.y;
+                }
+
+                if(isNaN(x)) {
+                    x = oldSprite.x;
+                }
+                
+                var newSprite:GameSprite = new SpriteClass(newSpriteName, x, y);
                 
                 PlayState.instance.currentRoom.sprites.replace(oldSprite, newSprite);
-            } else {
-                FlxG.log('old sprite was null: ' + oldSpriteName);
             }
         }
 
@@ -267,17 +273,12 @@ package california {
             roomGroup.add(spriteGroup);            
 
             if(currentRoom.darkness) {
-                FlxG.log('ADDING DARK');
                 roomGroup.add(darkness);
-            } else {
-                FlxG.log('NO DARK');
             }
             
             roomTitle = new FlxText(8, 8, FlxG.width, currentRoom.title);
             roomTitle.setFormat(null, 8, 0xffffffff);
             roomGroup.add(roomTitle);
-            
-            FlxG.log('finished loading room ' + roomName);
 
             Log.CustomMetric(currentRoom.roomName, "Room entry");
        }

@@ -120,6 +120,7 @@
       <look>A swarm of fireflies. Tiny flying beetles who make their rear ends glow. Why? Maybe just for fun.</look>
 
       <verb name="Catch" moveTo="1">
+        <behavior type="catchFireflies" />
         <behavior type="removeSprite" targetSprite="looseFireflies" />
         <behavior type="dialog">These fireflies will help light the lamp.</behavior>
       </verb>
@@ -243,8 +244,32 @@
     <sprite>
       <name>table</name>
       <look>The table looks unstable.</look>
+      <verb name="Remember">
+        <behavior type="dialog">Children used to play vigorously under this table, spilling any drinks resting on it, often as not.</behavior>
+      </verb>
       <verb name="Kick">
         <behavior type="dialog">So aggressive!</behavior>
+      </verb>
+      <verb name="Play" moveTo="1">
+        <behavior type="soundEffect" soundName="glassBreak" />
+        <behavior type="flash" />
+        <behavior type="replaceSprite" oldSprite="jar" newSprite="brokenJar"
+                  x="244" y="124" />
+        <behavior type="addSprite" spriteName="looseFireflies"
+                  x="250" y="117" width="15" height="10" />
+        <behavior type="dialog">What fun ... whoops!</behavior>        
+        <!--
+        <conditionalBehaviors flagName="backyardJarBroken" value="0">
+          <behavior type="setFlag" flagName="backyardJarBroken" value="1" />
+          <behavior type="soundEffect" soundName="glassBreak" />
+          <behavior type="flash" />
+          <behavior type="replaceSprite" oldSprite="jar" newSprite="brokenJar"
+                    x="244" y="125" />
+          <behavior type="addSprite" spriteName="looseFireflies"
+                    x="250" y="117" />
+          <behavior type="dialog">What fun ... whoops!</behavior>
+        </conditionalBehaviors>
+        -->
       </verb>
     </sprite>
     
@@ -257,6 +282,18 @@
       </verb>
       <verb name="Forget">
         <behavior type="dialog">Home sweet home.</behavior>
+      </verb>
+    </sprite>
+
+    <sprite>
+      <name>brokenJar</name>
+      <verboseName>broken jar</verboseName>
+      <look>The jar is broken.</look>
+      <verb name="Remember">
+        <behavior type="dialog">This jar used to have fireflies trapped in it.</behavior>
+      </verb>
+      <verb name="Forget">
+        <behavior type="dialog">What happened to this jar?</behavior>
       </verb>
     </sprite>
 

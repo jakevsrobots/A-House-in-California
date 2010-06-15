@@ -92,7 +92,6 @@ package california {
         }
         
         public function showText(text:String):void {
-            FlxG.log('dialog showing: ' + text);
             this.text.text = text;
             visibilityState = 'fading in';
         }

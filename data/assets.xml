@@ -85,6 +85,8 @@
          type="image" />
   <asset name="jar" file="sprites/jar.png"
          type="image" />
+  <asset name="brokenJar" file="sprites/brokenJar.png"
+         type="image" />
   <asset name="table" file="sprites/table.png"
          type="image" />
   

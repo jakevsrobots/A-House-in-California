@@ -8,6 +8,7 @@ from xml.dom import minidom
 BASE_PATH = os.path.join(os.path.dirname(__file__), 'asset_library')
 ASSET_BASE = '/../data/'
 ASSET_XML_FILE = os.path.join(BASE_PATH, '../data/assets.xml')
+OUTPUT_FILENAME = os.path.join(BASE_PATH, 'AssetLibrary.as')
 #--------------------------------------
 
 
@@ -20,6 +21,11 @@ def build_assets():
     Build the 'AssetLibrary' class file.
     """
 
+    # only process if the output file is older than the input xml
+    if os.path.exists(OUTPUT_FILENAME):
+        if os.path.getmtime(OUTPUT_FILENAME) > os.path.getmtime(ASSET_XML_FILE):
+            return
+    
     # templates
     template = open(os.path.join(BASE_PATH, 'AssetLibrary.as.template'), 'r').read()
 
@@ -68,7 +74,7 @@ def build_assets():
     }
         
     # render
-    output_f = open(os.path.join(BASE_PATH, 'AssetLibrary.as'), 'w')
+    output_f = open(OUTPUT_FILENAME, 'w')
     output_f.write(output)
 
 def build_swf():

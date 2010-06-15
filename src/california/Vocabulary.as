@@ -52,8 +52,6 @@ package california {
                 verb.y = yOffset;
                 verb.x = xSum;
 
-                FlxG.log(verb.name + ',' + verb.x + ',' + verb.y);
-                
                 // Add this verb's width to x_sum
                 xSum += verb.width;
                 
@@ -76,8 +74,6 @@ package california {
         public function addVerbByName(verbName:String):void {
             var newVerb:Verb = verbData[verbName];
             if(!newVerb) {
-                FlxG.log('could not find verb ' + verbName);
-                FlxG.log(verbData);
                 return;
             }
 

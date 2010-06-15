@@ -17,7 +17,7 @@ package california.behaviors {
                 break;
                 
                 case "replaceSprite":
-                behavior = new ReplaceSpriteBehavior(behaviorNode.@oldSprite, behaviorNode.@newSprite);
+                behavior = new ReplaceSpriteBehavior(behaviorNode.@oldSprite, behaviorNode.@newSprite, behaviorNode.@x, behaviorNode.@y);
                 break;
                 
                 case "removeSprite":
@@ -48,8 +48,8 @@ package california.behaviors {
                 behavior = new ReplaceVerbBehavior(behaviorNode.@oldVerb, behaviorNode.@newVerb);
                 break;
 
-                case "addFirefly":
-                behavior = new AddFireflyBehavior();
+                case "catchFireflies":
+                behavior = new CatchFirefliesBehavior();
                 break;
             }
             

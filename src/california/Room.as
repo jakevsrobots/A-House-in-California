@@ -35,8 +35,6 @@ package california {
 
             // Load sprites
             for each (var spriteNode:XML in xml.sprites.children()) {
-                FlxG.log('loading sprite ' + spriteNode.localName());
-
                 var SpriteClass:Class = GameSprite.spriteDatabase[spriteNode.localName()]['spriteClass'];
                 
                 sprites.add(
@@ -48,8 +46,6 @@ package california {
             // is first loaded/visited
 
             for each (var eventNode:XML in Main.gameXML.world[0].room.(@name==roomName).initEvent) {
-                FlxG.log('processing event node ' + eventNode.toString());
-                
                 if(eventNode.@type.toString() == "vocabulary") {
                     // Re-set the active vocabulary to a specific list.
                     var verbList:Array = [];

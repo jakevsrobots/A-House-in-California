@@ -58,7 +58,6 @@ package california.sprites {
                     aggregateBehaviorFunction();
                 }
             } else {
-                FlxG.log('no handler for verb ' + verb.name + ' with sprite ' + this.name);
                 verbFailure();
             }
         }
