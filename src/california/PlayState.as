@@ -179,13 +179,12 @@ package california {
             if(preMenuFade) {
                 PlayState.hasMouseFocus = false;
                 if(fadeStartTimer > 0) {
-                    FlxG.log('fade start timer = ' + fadeStartTimer);
                     fadeStartTimer -= FlxG.elapsed;
                 } else {
                     preMenuFade = false;
-                    FlxG.log('starting fade');
                     FlxG.fade.start(0xffffffff, 2, function():void {
-                            FlxG.state = new MenuState(0xffffffff);
+                            //FlxG.state = new MenuState(0xffffffff);
+                            FlxG.state = new ThanksForTestingState(0xffffffff);
                             FlxG.fade.stop();
                         });
                 }
@@ -298,7 +297,6 @@ package california {
         }
 
         public function fadeToMenu(delay:Number):void {
-            FlxG.log('setting fade to menu');
             this.preMenuFade = true;
             this.fadeStartTimer = delay;
         }

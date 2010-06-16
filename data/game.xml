@@ -10,7 +10,6 @@
         <verb name="Play" />
         <verb name="Learn" />
         <verb name="Catch" />
-        <verb name="Light" />        
       </initEvent>
     </room>
     <room name="theSurfaceOfTheMoon" title="The Surface of the Moon"
@@ -89,6 +88,21 @@
       <name>loisHouse</name>
       <verboseName>house</verboseName>
       <look>A house in California.</look>
+      <verb name="Remember" moveTo="1">
+        <behavior type="dialog">The house was in Lodi, it had a back yard with a fountain. It was always warm and bright.</behavior>
+      </verb>
+      <verb name="Forget" moveTo="1">
+        <behavior type="dialog">Why is it so dark?</behavior>
+      </verb>
+      <verb name="Play" moveTo="1">
+        <behavior type="dialog">Running around the house is discouraged, something might be knocked off a table and broken.</behavior>
+      </verb>
+      <verb name="Learn" moveTo="1">
+        <behavior type="dialog">The house was built in the 1960s.</behavior>
+      </verb>
+      <verb name="Catch" moveTo="1">
+        <behavior type="dialog">The house isn't going anywhere.</behavior>
+      </verb>
     </sprite>
     
     <sprite>
@@ -107,7 +121,12 @@
       <verb name="Light" moveTo="1">
         <behavior type="addSprite" spriteName="lampFireflies" x="200" y="123" />
         <behavior type="fadeToMenu" delay="1" />
-        <!-- <behavior type="unlockLevel" levelName="" /> -->
+      </verb>
+      <verb name="Learn" moveTo="1">
+        <behavior type="dialog">The first street lights to be built in the United States was in Cleveland, Ohio. That's 2,408 miles from here.</behavior>
+      </verb>
+      <verb name="Catch" moveTo="1">
+        <behavior type="dialog">The lamp post isn't going anywhere.</behavior>
       </verb>
     </sprite>
 
@@ -126,7 +145,13 @@
         <behavior type="dialog">Once forgotten, it's like a whole new moon.</behavior>
       </verb>
       <verb name="Play" moveTo="1">
-        <behavior type="dialog">There's a game called "Pretend to Remember a Visit to the Moon." It's a one-player game.</behavior>
+        <behavior type="dialog">Once, there was a boy who pretended to be the moon. He played with fireflies, pretending they were stars. That was a long time ago.</behavior>
+      </verb>
+      <verb name="Learn" moveTo="1">
+        <behavior type="dialog">On average, the moon is roughly 230,000 miles from here.</behavior>
+      </verb>
+      <verb name="Catch" moveTo="1">
+        <behavior type="dialog">It's too far away to catch, remember?</behavior>
       </verb>
     </sprite>
 
@@ -147,6 +172,20 @@
           <behavior type="dialog">That's enough fireflies to light the lamp post.</behavior>
         </conditionalBehaviors>          
       </verb>
+      
+      <verb name="Remember" moveTo="1">
+        <behavior type="dialog">These fireflies used to help light the lamp post, but they all got loose somehow.</behavior>        
+      </verb>
+      <verb name="Forget" moveTo="1">
+        <behavior type="dialog">Where did these fireflies come from?</behavior>        
+      </verb>
+      <verb name="Play" moveTo="1">
+        <behavior type="dialog">Once, there was a boy who pretended to be a firefly. He looked at the moon and pretended it was one of his glowing firefly friends.</behavior>
+      </verb>
+      <verb name="Learn" moveTo="1">
+        <behavior type="dialog">The glow of a firefly is called 'cold light' because it has no infrared or ultraviolet components.</behavior>
+      </verb>
+      
     </sprite>
     
     <!-- Room #2 - The Surface of the Moon -->  
@@ -157,6 +196,20 @@
       <verb name="Forget">
         <behavior type="transitionToRoom" targetRoom="loisHome" />
       </verb>
+
+      <verb name="Remember">
+        <behavior type="dialog">All of these stars are older than the phenomenon of memory.</behavior>
+      </verb>
+      <verb name="Play">
+        <behavior type="dialog">Once, there was a boy who pretended to be a star, trillions of miles away. He looked at the stars and pretended one of them was Earth.</behavior>
+      </verb>
+      <verb name="Learn">
+        <behavior type="dialog">The nearest star is 25 trillion miles from here.</behavior>
+      </verb>
+      <verb name="Catch">
+        <behavior type="dialog">They look small from here, but they're actually too large to get a grip on.</behavior>
+      </verb>
+      
     </sprite>
     
     <sprite>
@@ -165,6 +218,19 @@
       <look>It looks familiar but somehow ... smaller?  Could be a trick of the moonlight.</look>
       <verb name="Remember">
         <behavior type="transitionToRoom" targetRoom="aFountainInABackYard" />
+      </verb>
+      
+      <verb name="Forget" moveTo="1">
+        <behavior type="dialog">A perfectly normal moon fountain.</behavior>
+      </verb>
+      <verb name="Play" moveTo="1">
+        <behavior type="dialog">Not allowed to play in the fountain.</behavior>
+      </verb>
+      <verb name="Learn" moveTo="1">
+        <behavior type="dialog">This kind of fountain belongs in a back yard.</behavior>
+      </verb>
+      <verb name="Catch" moveTo="1">
+        <behavior type="dialog">There are no fish to catch in this fountain.</behavior>
       </verb>
     </sprite>
     
@@ -179,6 +245,23 @@
         <behavior type="replaceSprite" oldSprite="moonFireflyCluster" newSprite="looseFireflies" />
         <behavior type="removeVerb" targetVerb="Kick" />
       </verb>
+
+      <verb name="Remember" moveTo="1">
+        <behavior type="dialog">This dome was built as a firefly trap. But how does it work? It's a mystery.</behavior>
+      </verb>
+      <verb name="Forget" moveTo="1">
+        <behavior type="dialog">What could this dome be for?</behavior>
+      </verb>
+      <verb name="Play" moveTo="1">
+        <behavior type="dialog">Sliding down the sides of a giant glass dome is even more fun in low gravity.</behavior>
+      </verb>
+      <verb name="Learn" moveTo="1">
+        <behavior type="dialog">The first man-made domes were built with Mammoth tusks over 20,000 years ago.</behavior>
+      </verb>
+      <verb name="Catch" moveTo="1">
+        <behavior type="dialog">It's the fireflies that need catching, not the dome.</behavior>
+      </verb>
+      
     </sprite>
 
     <sprite spriteClass="TrappedFireflies">
@@ -194,6 +277,12 @@
       </verb>
       <verb name="Play" moveTo="1">
         <behavior type="dialog">The fireflies are so anxious under that dome, they don't seem interested in playing.</behavior>
+      </verb>
+      <verb name="Learn" moveTo="1">
+        <behavior type="dialog">This study of firefly-in-dome anxiety has yielded about all the data it's ever going to.</behavior>
+      </verb>
+      <verb name="Catch" moveTo="1">
+        <behavior type="dialog">The protective dome is in the way.</behavior>
       </verb>
     </sprite>
 
@@ -214,12 +303,19 @@
       <verb name="Kick" moveTo="1">
         <behavior type="dialog">It's already broken.</behavior>
       </verb>
+      <verb name="Catch" moveTo="1">
+        <behavior type="dialog">It's the fireflies that need catching, not the dome.</behavior>        
+      </verb>
+      <verb name="Learn" moveTo="1">
+        <behavior type="dialog">The first man-made domes were built with Mammoth tusks over 20,000 years ago. Perhaps they met a similar fate.</behavior>
+      </verb>
+      
     </sprite>
     
     <!-- Room #3 - A Fountain in a Back Yard -->
     <sprite>
       <name>fountain</name>
-      <look>It takes care to maintain a fountain like this. It's at the center of the yard, the focal point of this domestic garden.</look>
+      <look>It takes care to maintain a fountain like this. It's the focal point of the back yard.</look>
       
       <verb name="Forget">
         <behavior type="transitionToRoom" targetRoom="theSurfaceOfTheMoon" />
@@ -230,30 +326,97 @@
       <verb name="Play" moveTo="1">
         <behavior type="dialog">Not allowed to play in the fountain.</behavior>
       </verb>
+      <verb name="Catch" moveTo="1">
+        <behavior type="dialog">There are fish in this fountain, but they look happy undisturbed.</behavior>
+      </verb>
+      <verb name="Learn" moveTo="1">
+        <behavior type="dialog">Early fountains in towns and cities were used as public sources of drinking water. Now they're mostly decorative.</behavior>
+      </verb>
     </sprite>
 
     <sprite>
       <name>smallFlowerPots</name>
       <verboseName>flowers</verboseName>
       <look>Lillies and pimpernels.</look>
+      <verb name="Forget" moveTo="1">
+        <behavior type="dialog">Hard to say who planted these flowers, maybe this is the home of a gardener.</behavior>
+      </verb>
+      <verb name="Remember" moveTo="1">
+        <behavior type="dialog">These wild flowers were planted here by the wind.</behavior>
+      </verb>
+      <verb name="Play" moveTo="1">
+        <behavior type="dialog">Once, there was a boy who pretended to be a flower. He buried himself in the dirt and then slowly crawled out into the sun.</behavior>
+      </verb>
+      <verb name="Catch" moveTo="1">
+        <behavior type="dialog">The bees hovering around these flowers will sting if they're caught.</behavior>
+      </verb>
+      <verb name="Learn" moveTo="1">
+        <behavior type="dialog">There are over a hundred different kinds of lillies, maybe more.</behavior>
+      </verb>
     </sprite>
     
     <sprite>
       <name>smallFlowerPots2</name>
       <verboseName>flowers</verboseName>
       <look>Hydrangeas and poinsettas.</look>
+      <verb name="Forget" moveTo="1">
+        <behavior type="dialog">Hard to say who planted these flowers, maybe this is the home of a gardener.</behavior>
+      </verb>
+      <verb name="Remember" moveTo="1">
+        <behavior type="dialog">These wild flowers were planted here by the wind.</behavior>
+      </verb>
+      <verb name="Play" moveTo="1">
+        <behavior type="dialog">Once, there was a boy who pretended to be a flower. He closed his eyes, drank a glass of water, then slowly opened them.</behavior>
+      </verb>
+      <verb name="Catch" moveTo="1">
+        <behavior type="dialog">The bees hovering around these flowers will sting if they're caught.</behavior>
+      </verb>
+      <verb name="Learn" moveTo="1">
+        <behavior type="dialog">There are over a seventy-five different kinds of hydrangeas, maybe more.</behavior>
+      </verb>
     </sprite>
     
     <sprite>
       <name>largeFlowerBox</name>
       <verboseName>flowers</verboseName>
       <look>Dahlias and daisies.</look>
+      <verb name="Forget">
+        <behavior type="dialog">Hard to say who planted these flowers, maybe this is the home of a gardener.</behavior>
+      </verb>
+      <verb name="Remember" moveTo="1">
+        <behavior type="dialog">These wild flowers were planted here by the wind.</behavior>
+      </verb>
+      <verb name="Play" moveTo="1">
+        <behavior type="dialog">Once, there was a boy who pretended to be a flower. He held his arms tightly against his chest, stood in the sun, then slowly lifted his hands into the air.</behavior>
+      </verb>
+      <verb name="Catch" moveTo="1">
+        <behavior type="dialog">The bees hovering around these flowers will sting if they're caught.</behavior>
+      </verb>
+      <verb name="Learn" moveTo="1">
+        <behavior type="dialog">There are over a thirty-five different kinds of dahlias, maybe more.</behavior>
+      </verb>
     </sprite>
     
     <sprite>
       <name>backyardStars</name>
       <verboseName>stars</verboseName>
-      <look>Some of them seem closer than others.</look>
+      <look>Some are closer than others.</look>
+      <verb name="Forget" moveTo="1">
+        <behavior type="dialog"></behavior>
+      </verb>
+      <verb name="Remember" moveTo="1">
+        <behavior type="dialog"></behavior>
+      </verb>
+      <verb name="Play" moveTo="1">
+        <behavior type="dialog"></behavior>
+      </verb>
+      <verb name="Catch" moveTo="1">
+        <behavior type="dialog"></behavior>
+      </verb>
+      <verb name="Learn" moveTo="1">
+        <behavior type="dialog"></behavior>
+      </verb>
+      
     </sprite>
     
     <sprite spriteClass="Window">
