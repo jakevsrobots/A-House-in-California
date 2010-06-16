@@ -64,6 +64,10 @@ package california.behaviors {
                 behavior = new CatchFirefliesBehavior();
                 break;
 
+                case "fadeToMenu":
+                behavior = new FadeToMenuBehavior(behaviorNode.@delay);
+                break;
+                
                 case "setFlag":
                 behavior = new SetFlagBehavior(behaviorNode.@flagName, behaviorNode.@value);
                 break;

@@ -11,13 +11,21 @@ package california {
         
         private var cursor:GameCursor;
 
+        private var fadeFromColor:uint;
+        
+        public function MenuState(fadeFromColor:uint=0x000000):void {
+            this.fadeFromColor = fadeFromColor;
+            
+            super();
+        }
+        
         override public function create():void {
             if(!Main.logViewInitialized) {
                 Log.View(540, "9f491e53-4116-4945-85e7-803052dc1b05", root.loaderInfo.loaderURL);
                 Main.logViewInitialized = true;
             }
             
-            FlxG.flash.start(0xff000000, 1.0, function():void {
+            FlxG.flash.start(this.fadeFromColor, 1.0, function():void {
                     FlxG.flash.stop();
                 });
 

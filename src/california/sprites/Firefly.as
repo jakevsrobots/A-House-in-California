@@ -23,14 +23,21 @@ package california.sprites {
 
         private var glow_fade_up_speed:Number = 3.0;
         private var glow_fade_down_speed:Number = 2.0;
+
+        private var glowMaxAlpha:Number;
         
-        public function Firefly(X:Number, Y:Number, minPosition:FlxPoint, maxPosition:FlxPoint):void {
+        public function Firefly(X:Number, Y:Number, minPosition:FlxPoint, maxPosition:FlxPoint, glowScale:Number=1.0, glowMaxAlpha:Number=1.0):void {
             var FireflyImage:Class = Main.library.getAsset('oneFirefly');
             super(X, Y, FireflyImage);
 
             glow = new FlxSprite(X,Y,Main.library.getAsset('fireflyGlow'));
             glow.blend = "screen";
 
+            glow.scale.x = glow.scale.y = glowScale;
+
+            this.glowMaxAlpha = glowMaxAlpha;
+            glow.alpha = glowMaxAlpha;
+            
             var spriteCenter:FlxPoint = new FlxPoint(
                 this.width / 2,
                 this.height / 2
@@ -91,7 +98,7 @@ package california.sprites {
 
             // Update glow state
             if(glow_state == GLOW_START) {
-                if(glow.alpha < 1.0) {
+                if(glow.alpha < glowMaxAlpha) {
                     glow.alpha += glow_fade_up_speed * FlxG.elapsed;
                 } else {
                     glow_state = GLOW_FADE;

@@ -10,6 +10,7 @@
         <verb name="Play" />
         <verb name="Learn" />
         <verb name="Catch" />
+        <verb name="Light" />        
       </initEvent>
     </room>
     <room name="theSurfaceOfTheMoon" title="The Surface of the Moon"
@@ -103,8 +104,18 @@
       <verb name="Play" moveTo="1">
         <behavior type="dialog">It's too dark, swinging around the lamp post like a monkey will have to wait.</behavior>
       </verb>
+      <verb name="Light" moveTo="1">
+        <behavior type="addSprite" spriteName="lampFireflies" x="200" y="123" />
+        <behavior type="fadeToMenu" delay="1" />
+        <!-- <behavior type="unlockLevel" levelName="" /> -->
+      </verb>
     </sprite>
 
+    <sprite spriteClass="LampFireflies">
+      <name>lampFireflies</name>
+      <verboseName>fireflies</verboseName>
+    </sprite>
+    
     <sprite spriteClass="Moon">
       <name>moon</name>
       <look>It looks familiar, but smaller and dimmer. Enough moonlight to walk by, but that's about it.</look>

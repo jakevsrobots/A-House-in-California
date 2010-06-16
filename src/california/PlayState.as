@@ -14,6 +14,11 @@ package california {
 
         private var darkness_color:uint = 0xd0000000;
         private var darkness:FlxSprite;
+        private var fadeDarkness:Boolean = false;
+
+        // end of level fadeout
+        private var preMenuFade:Boolean = false;
+        private var fadeStartTimer:Number;
         
         public static var WORLD_LIMITS:FlxPoint;
 
@@ -161,6 +166,31 @@ package california {
             } else {
                 cursor.visible = false;
             }
+
+            // Update darkness fade
+            if(currentRoom.darkness && fadeDarkness) {
+                darkness.alpha -= 0.5 * FlxG.elapsed;
+                if(darkness.alpha < 0) {
+                    darkness.alpha = 0;
+                }
+            }
+
+            // Update end of level fade
+            if(preMenuFade) {
+                PlayState.hasMouseFocus = false;
+                if(fadeStartTimer > 0) {
+                    FlxG.log('fade start timer = ' + fadeStartTimer);
+                    fadeStartTimer -= FlxG.elapsed;
+                } else {
+                    preMenuFade = false;
+                    FlxG.log('starting fade');
+                    FlxG.fade.start(0xffffffff, 2, function():void {
+                            FlxG.state = new MenuState(0xffffffff);
+                            FlxG.fade.stop();
+                        });
+                }
+            }
+            
             super.update();
         }
 
@@ -267,6 +297,16 @@ package california {
             PlayState.vocabulary.removeVerbByName(targetVerbName);
         }
 
+        public function fadeToMenu(delay:Number):void {
+            FlxG.log('setting fade to menu');
+            this.preMenuFade = true;
+            this.fadeStartTimer = delay;
+        }
+        
+        public function removeDarkness():void {
+            fadeDarkness = true;
+        }
+        
         private function loadRoom(roomName:String):void {
             // I will have to see how this affects performance; clearing
             // the list instead of calling 'destroy()'.
