@@ -251,25 +251,25 @@
         <behavior type="dialog">So aggressive!</behavior>
       </verb>
       <verb name="Play" moveTo="1">
+        <!--
         <behavior type="soundEffect" soundName="glassBreak" />
         <behavior type="flash" />
         <behavior type="replaceSprite" oldSprite="jar" newSprite="brokenJar"
                   x="244" y="124" />
         <behavior type="addSprite" spriteName="looseFireflies"
                   x="250" y="117" width="15" height="10" />
-        <behavior type="dialog">What fun ... whoops!</behavior>        
-        <!--
+        <behavior type="dialog">What fun ... whoops!</behavior>
+        -->
         <conditionalBehaviors flagName="backyardJarBroken" value="0">
-          <behavior type="setFlag" flagName="backyardJarBroken" value="1" />
           <behavior type="soundEffect" soundName="glassBreak" />
           <behavior type="flash" />
           <behavior type="replaceSprite" oldSprite="jar" newSprite="brokenJar"
                     x="244" y="125" />
           <behavior type="addSprite" spriteName="looseFireflies"
-                    x="250" y="117" />
+                    x="250" y="117" width="15" height="10"  />
           <behavior type="dialog">What fun ... whoops!</behavior>
+          <behavior type="setFlag" flagName="backyardJarBroken" value="1" />
         </conditionalBehaviors>
-        -->
       </verb>
     </sprite>
     

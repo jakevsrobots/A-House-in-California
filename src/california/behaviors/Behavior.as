@@ -4,6 +4,10 @@ package california.behaviors {
     public class Behavior {
         // Find the appropriate Behavior subclass and instantiate it
         // properly.
+        public var conditional:Boolean = false;
+        public var flagName:String;
+        public var flagValue:Boolean;
+        
         public static function getBehaviorFromXML(behaviorNode:XML):Behavior {
             var behavior:Behavior = null;
             
@@ -51,7 +55,19 @@ package california.behaviors {
                 case "catchFireflies":
                 behavior = new CatchFirefliesBehavior();
                 break;
+
+                case "setFlag":
+                behavior = new SetFlagBehavior(behaviorNode.@flagName, behaviorNode.@value);
+                break;
             }
+
+            //FlxG.log('parent node name ' + behaviorNode.parent().name());
+            if(behaviorNode.parent().name() == 'conditionalBehaviors') {
+                behavior.conditional = true;
+                behavior.flagName = behaviorNode.parent().@flagName;
+                behavior.flagValue = behaviorNode.parent().@value == "1" ? true : false;
+            }
+
             
             return behavior;
         }

@@ -46,7 +46,9 @@ package california.sprites {
             if(this.data.verbs.hasOwnProperty(verb.name)) {
                 var aggregateBehaviorFunction:Function = function():void {
                     for each(var behavior:Behavior in data.verbs[verb.name].behaviors) {
-                        behavior.run();
+                        if(!behavior.conditional || PlayState.getFlag(behavior.flagName) == behavior.flagValue) {
+                            behavior.run();
+                        }
                     }
                 }
                 
@@ -124,10 +126,10 @@ package california.sprites {
                     }
                     
                     verbObject['behaviors'] = [];
-                    for each(var behaviorNode:XML in verbNode.behavior) {
+                    for each(var behaviorNode:XML in verbNode..behavior) {
                         verbObject['behaviors'].push(Behavior.getBehaviorFromXML(behaviorNode));
                     }
-
+                    
                     if(verbNode.@verbText.toString()) {
                         verbObject['verbText'] = verbNode.@verbText.toString();
                     }

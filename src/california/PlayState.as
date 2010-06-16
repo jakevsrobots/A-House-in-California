@@ -28,15 +28,15 @@ package california {
         public static var hasMouseFocus:Boolean = true;
         public static var instance:PlayState;
 
-        private var startingRoomName:String = 'loisHome';
+        //private var startingRoomName:String = 'loisHome';
         //private var startingRoomName:String = 'theSurfaceOfTheMoon';
-        //private var startingRoomName:String = 'aFountainInABackYard';
+        private var startingRoomName:String = 'aFountainInABackYard';
         //private var startingRoomName:String = 'aComputerInAGuestRoom';
         
         //-----------------------------
         // Game data
         //-----------------------------
-        public var fireflyRoomStatus:Object;
+        public var flags:Object;
         
         public function PlayState(startingRoomName:String=null) {
             if(startingRoomName != null) {
@@ -53,6 +53,8 @@ package california {
             }
 
             Log.Play();
+            
+            flags = {};
             
             FlxG.flash.start(0xff000000, 1.0, function():void {
                     FlxG.flash.stop();
@@ -200,6 +202,18 @@ package california {
                 });
         }
 
+        static public function getFlag(flagName:String):Boolean {
+            if(PlayState.instance.flags.hasOwnProperty(flagName) && instance.flags[flagName]) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+
+        static public function setFlag(flagName:String, flagValue:Boolean):void {
+            PlayState.instance.flags[flagName] = flagValue;
+        }
+        
         static public function removeSprite(targetSpriteName:String):void {
             var targetSprite:GameSprite = PlayState.instance.currentRoom.getSprite(targetSpriteName);
 

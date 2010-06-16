@@ -6,6 +6,7 @@ package california.behaviors {
         }
 
         override public function run():void {
+            /*
             // Set up the fireflyRoomStatus object to track which fireflies have
             // been caught.
             if(PlayState.instance.fireflyRoomStatus == null) {
@@ -29,6 +30,8 @@ package california.behaviors {
                 PlayState.instance.fireflyRoomStatus['aComputerInAGuestRoom'] ) {
                 PlayState.vocabulary.replaceVerb('Catch', 'Light');
             }
+
+            */
         }
     }
 }
