@@ -3,7 +3,7 @@ package california.sprites {
     
     public class Player extends GameSprite {
         private var moveSpeed:uint;
-        private var walkTarget:int;
+        private var walkTarget:Number;
         private var minTargetDistance:uint;
         private var walkTargetCallback:Function;
         
@@ -50,7 +50,7 @@ package california.sprites {
             super.update();
         }
 
-        public function setWalkTarget(X:uint, callback:Function = null):void {
+        public function setWalkTarget(X:Number, callback:Function = null):void {
             walkTarget = X;
             walkTargetCallback = callback;
         }

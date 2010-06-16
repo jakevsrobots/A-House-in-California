@@ -28,9 +28,9 @@ package california {
         public static var hasMouseFocus:Boolean = true;
         public static var instance:PlayState;
 
-        //private var startingRoomName:String = 'loisHome';
+        private var startingRoomName:String = 'loisHome';
         //private var startingRoomName:String = 'theSurfaceOfTheMoon';
-        private var startingRoomName:String = 'aFountainInABackYard';
+        //private var startingRoomName:String = 'aFountainInABackYard';
         //private var startingRoomName:String = 'aComputerInAGuestRoom';
         
         //-----------------------------
@@ -222,7 +222,7 @@ package california {
             }
         }
 
-        static public function addSprite(spriteName:String, x:uint, y:uint, width:Number=NaN, height:Number=NaN):void {
+        static public function addSprite(spriteName:String, x:Number, y:Number, width:Number=NaN, height:Number=NaN):void {
             var SpriteClass:Class = GameSprite.spriteDatabase[spriteName]['spriteClass'];
             var newSprite:GameSprite;
 
@@ -235,7 +235,7 @@ package california {
             PlayState.instance.currentRoom.sprites.add(newSprite);
         }
         
-        static public function replaceSprite(oldSpriteName:String, newSpriteName:String, x:uint, y:uint):void {
+        static public function replaceSprite(oldSpriteName:String, newSpriteName:String, x:Number, y:Number):void {
             var oldSprite:GameSprite = PlayState.instance.currentRoom.getSprite(oldSpriteName);
 
             if(!GameSprite.spriteDatabase.hasOwnProperty(newSpriteName)) {
@@ -247,11 +247,19 @@ package california {
 
                 if(isNaN(y)) {
                     y = oldSprite.y;
+                    FlxG.log('y is nan');
+                } else {
+                    FlxG.log('y is not nan ' + y);
                 }
 
                 if(isNaN(x)) {
                     x = oldSprite.x;
+                    FlxG.log('x is nan');                    
+                } else {
+                    FlxG.log('x is not nan ' + x);
                 }
+
+                FlxG.log('new sprite position: ' + x + ',' + y);
                 
                 var newSprite:GameSprite = new SpriteClass(newSpriteName, x, y);
                 

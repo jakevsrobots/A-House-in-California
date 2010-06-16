@@ -122,7 +122,13 @@
       <verb name="Catch" moveTo="1">
         <behavior type="catchFireflies" />
         <behavior type="removeSprite" targetSprite="looseFireflies" />
-        <behavior type="dialog">These fireflies will help light the lamp.</behavior>
+        <conditionalBehaviors flagName="allFirefliesCaught" value="0">        
+          <behavior type="dialog">These fireflies will help light the lamp, but there aren't quite enough of them yet.</behavior>
+        </conditionalBehaviors>
+
+        <conditionalBehaviors flagName="allFirefliesCaught" value="1">
+          <behavior type="dialog">That's enough fireflies to light the lamp.</behavior>
+        </conditionalBehaviors>          
       </verb>
     </sprite>
     
@@ -251,15 +257,6 @@
         <behavior type="dialog">So aggressive!</behavior>
       </verb>
       <verb name="Play" moveTo="1">
-        <!--
-        <behavior type="soundEffect" soundName="glassBreak" />
-        <behavior type="flash" />
-        <behavior type="replaceSprite" oldSprite="jar" newSprite="brokenJar"
-                  x="244" y="124" />
-        <behavior type="addSprite" spriteName="looseFireflies"
-                  x="250" y="117" width="15" height="10" />
-        <behavior type="dialog">What fun ... whoops!</behavior>
-        -->
         <conditionalBehaviors flagName="backyardJarBroken" value="0">
           <behavior type="soundEffect" soundName="glassBreak" />
           <behavior type="flash" />
@@ -268,6 +265,7 @@
           <behavior type="addSprite" spriteName="looseFireflies"
                     x="250" y="117" width="15" height="10"  />
           <behavior type="dialog">What fun ... whoops!</behavior>
+
           <behavior type="setFlag" flagName="backyardJarBroken" value="1" />
         </conditionalBehaviors>
       </verb>

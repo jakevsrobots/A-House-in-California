@@ -16,6 +16,8 @@
               width="13" height="29" />
       <object name="moon" image="../sprites/moon.png"
               width="29" height="29" />
+      <object name="looseFireflies" image="../sprites/looseFireflies.png"
+              width="8" height="8" />
     </folder>
     
     <!-- Moon -->

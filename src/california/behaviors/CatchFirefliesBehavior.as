@@ -6,32 +6,19 @@ package california.behaviors {
         }
 
         override public function run():void {
-            /*
-            // Set up the fireflyRoomStatus object to track which fireflies have
-            // been caught.
-            if(PlayState.instance.fireflyRoomStatus == null) {
-                PlayState.instance.fireflyRoomStatus = {
-                    //'loisHome': false,
-                    'theSurfaceOfTheMoon': false,
-                    'aFountainInABackYard': false,
-                    'aComputerInAGuestRoom': false
-                };
-            }
-
-            if(!PlayState.instance.fireflyRoomStatus[PlayState.instance.currentRoom]) {
-                PlayState.instance.fireflyRoomStatus[PlayState.instance.currentRoom] = true;
+            var flagName:String = PlayState.instance.currentRoom.roomName + '-firefliesCaught';
+            if(!PlayState.getFlag(flagName)) {
+                PlayState.setFlag(flagName, true);
                 //PlayState.instance.player.increaseGlow();
             }
 
             // Check if all the fireflies have been caught
             if(
-                PlayState.instance.fireflyRoomStatus['theSurfaceOfTheMoon'] &&
-                PlayState.instance.fireflyRoomStatus['aFountainInABackYard'] &&
-                PlayState.instance.fireflyRoomStatus['aComputerInAGuestRoom'] ) {
+                PlayState.getFlag('theSurfaceOfTheMoon-firefliesCaught') &&
+                PlayState.getFlag('aFountainInABackYard-firefliesCaught') &&
+                PlayState.getFlag('aComputerInAGuestRoom-firefliesCaught') ) {
                 PlayState.vocabulary.replaceVerb('Catch', 'Light');
             }
-
-            */
         }
     }
 }

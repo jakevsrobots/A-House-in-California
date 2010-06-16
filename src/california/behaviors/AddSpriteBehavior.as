@@ -3,13 +3,13 @@ package california.behaviors {
     
     public class AddSpriteBehavior extends Behavior {
         private var spriteName:String;
-        private var x:uint;
-        private var y:uint;        
+        private var x:Number;
+        private var y:Number;
 
-        private var width:uint;
-        private var height:uint;        
+        private var width:Number;
+        private var height:Number;        
         
-        public function AddSpriteBehavior(spriteName:String, x:uint, y:uint, width:uint=NaN, height:uint=NaN):void {
+        public function AddSpriteBehavior(spriteName:String, x:Number, y:Number, width:Number=NaN, height:Number=NaN):void {
             this.spriteName = spriteName;
             this.x = x;
             this.y = y;

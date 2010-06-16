@@ -17,9 +17,9 @@ package california.sprites {
 
             this.width = !isNaN(width) ? width : 30;
             this.height = !isNaN(height) ? height : 20;
-            
+
             minPosition = new FlxPoint(X, Y);
-            maxPosition = new FlxPoint(X + width, Y + height);
+            maxPosition = new FlxPoint(X + this.width, Y + this.height);
 
             glow = new FlxGroup();
             

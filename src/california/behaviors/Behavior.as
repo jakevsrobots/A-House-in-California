@@ -7,6 +7,14 @@ package california.behaviors {
         public var conditional:Boolean = false;
         public var flagName:String;
         public var flagValue:Boolean;
+
+        public static function stringToNumber(value:String):Number {
+            if(value == '') {
+                return NaN;
+            } else {
+                return Number(value);
+            }
+        }
         
         public static function getBehaviorFromXML(behaviorNode:XML):Behavior {
             var behavior:Behavior = null;
@@ -21,7 +29,7 @@ package california.behaviors {
                 break;
                 
                 case "replaceSprite":
-                behavior = new ReplaceSpriteBehavior(behaviorNode.@oldSprite, behaviorNode.@newSprite, behaviorNode.@x, behaviorNode.@y);
+                behavior = new ReplaceSpriteBehavior(behaviorNode.@oldSprite, behaviorNode.@newSprite, stringToNumber(behaviorNode.@x), stringToNumber(behaviorNode.@y));
                 break;
                 
                 case "removeSprite":
@@ -29,7 +37,7 @@ package california.behaviors {
                 break;
                 
                 case "addSprite":
-                behavior = new AddSpriteBehavior(behaviorNode.@spriteName, behaviorNode.@x, behaviorNode.@y, behaviorNode.@width, behaviorNode.@height);
+                behavior = new AddSpriteBehavior(behaviorNode.@spriteName, behaviorNode.@x, behaviorNode.@y, stringToNumber(behaviorNode.@width), stringToNumber(behaviorNode.@height));
                 break;
                 
                 case "addVerb":
@@ -71,7 +79,6 @@ package california.behaviors {
             
             return behavior;
         }
-
         public function run():void {
             // all subclasses should override this
         }
