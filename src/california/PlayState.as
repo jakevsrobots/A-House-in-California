@@ -247,19 +247,11 @@ package california {
 
                 if(isNaN(y)) {
                     y = oldSprite.y;
-                    FlxG.log('y is nan');
-                } else {
-                    FlxG.log('y is not nan ' + y);
                 }
 
                 if(isNaN(x)) {
                     x = oldSprite.x;
-                    FlxG.log('x is nan');                    
-                } else {
-                    FlxG.log('x is not nan ' + x);
                 }
-
-                FlxG.log('new sprite position: ' + x + ',' + y);
                 
                 var newSprite:GameSprite = new SpriteClass(newSpriteName, x, y);
                 

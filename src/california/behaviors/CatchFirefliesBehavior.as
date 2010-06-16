@@ -17,6 +17,7 @@ package california.behaviors {
                 PlayState.getFlag('theSurfaceOfTheMoon-firefliesCaught') &&
                 PlayState.getFlag('aFountainInABackYard-firefliesCaught') &&
                 PlayState.getFlag('aComputerInAGuestRoom-firefliesCaught') ) {
+                PlayState.setFlag('allFirefliesCaught', true);
                 PlayState.vocabulary.replaceVerb('Catch', 'Light');
             }
         }

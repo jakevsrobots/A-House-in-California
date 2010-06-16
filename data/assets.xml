@@ -35,7 +35,8 @@
   <asset name="menuBackground" file="backgrounds/menu-background.png"
          type="image" />
 
-  
+
+  <!-- general -->
   <asset name="oneFirefly" file="sprites/one-firefly.png"
          type="image" />
   <asset name="fireflyGlow" file="sprites/glow-light.png"
@@ -44,7 +45,9 @@
   <!-- Lois Home -->
   <asset name="houseBackground" file="backgrounds/home-background.png"
          type="image" />
-  
+
+  <asset name="loisHouse" file="sprites/house.png"
+         type="image" />
   <asset name="lampPost" file="sprites/lamppost.png"
          type="image" />
   <asset name="moon" file="sprites/moon.png"

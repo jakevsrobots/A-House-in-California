@@ -78,11 +78,16 @@
   
   <sprites>
     <!-- ######################### LOIS ######################### -->
-    
-    <!-- Room #1 - A House in California -->
     <sprite>
       <name>Lois</name>
       <look>Lois is a schoolteacher and an eager participant in the personal computing revolution.</look>
+    </sprite>
+
+    <!-- Room #1 - A House in California -->
+    <sprite>
+      <name>loisHouse</name>
+      <verboseName>house</verboseName>
+      <look>A house in California.</look>
     </sprite>
     
     <sprite>
@@ -122,12 +127,13 @@
       <verb name="Catch" moveTo="1">
         <behavior type="catchFireflies" />
         <behavior type="removeSprite" targetSprite="looseFireflies" />
+        
         <conditionalBehaviors flagName="allFirefliesCaught" value="0">        
-          <behavior type="dialog">These fireflies will help light the lamp, but there aren't quite enough of them yet.</behavior>
+          <behavior type="dialog">These fireflies will help light the lamp post, but there aren't quite enough of them yet.</behavior>
         </conditionalBehaviors>
 
         <conditionalBehaviors flagName="allFirefliesCaught" value="1">
-          <behavior type="dialog">That's enough fireflies to light the lamp.</behavior>
+          <behavior type="dialog">That's enough fireflies to light the lamp post.</behavior>
         </conditionalBehaviors>          
       </verb>
     </sprite>

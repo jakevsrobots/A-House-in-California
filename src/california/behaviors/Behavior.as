@@ -69,7 +69,6 @@ package california.behaviors {
                 break;
             }
 
-            //FlxG.log('parent node name ' + behaviorNode.parent().name());
             if(behaviorNode.parent().name() == 'conditionalBehaviors') {
                 behavior.conditional = true;
                 behavior.flagName = behaviorNode.parent().@flagName;

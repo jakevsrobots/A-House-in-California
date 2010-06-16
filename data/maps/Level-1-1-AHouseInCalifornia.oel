@@ -1,6 +1,6 @@
 <level>
   <width>320</width>
-  <height>160</height>
+  <height>170</height>
   <background>
     <houseBackground x="0" y="0"/>
   </background>
@@ -8,5 +8,6 @@
     <looseFireflies x="240" y="120"/>
     <lampPost x="196" y="117"/>
     <moon x="267" y="17"/>
+    <loisHouse x="40" y="47"/>
   </sprites>
 </level>

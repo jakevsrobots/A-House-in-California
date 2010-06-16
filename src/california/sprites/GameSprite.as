@@ -54,7 +54,7 @@ package california.sprites {
                 
                 if(this.data.verbs[verb.name].moveTo) {
                     // Walk to the sprite before any behaviors
-                    PlayState.player.setWalkTarget(this.x, aggregateBehaviorFunction);
+                    PlayState.player.setWalkTarget(this.x + this.width * 0.5, aggregateBehaviorFunction);
                 } else {
                     // Just perform the behaviors now
                     aggregateBehaviorFunction();
