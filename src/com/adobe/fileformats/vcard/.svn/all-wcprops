@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/55/trunk/src/com/adobe/fileformats/vcard
+END
+VCard.as
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/55/trunk/src/com/adobe/fileformats/vcard/VCard.as
+END
+Address.as
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/55/trunk/src/com/adobe/fileformats/vcard/Address.as
+END
+Email.as
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/55/trunk/src/com/adobe/fileformats/vcard/Email.as
+END
+Phone.as
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/55/trunk/src/com/adobe/fileformats/vcard/Phone.as
+END
+VCardParser.as
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/55/trunk/src/com/adobe/fileformats/vcard/VCardParser.as
+END

@@ -1,0 +1,58 @@
+10
+
+dir
+118
+http://as3corelib.googlecode.com/svn/trunk/src/com/adobe
+http://as3corelib.googlecode.com/svn
+
+
+
+2009-11-19T15:19:47.079485Z
+113
+mikechambers@gmail.com
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+374f7c76-8224-0410-aa2b-53cc4844e527
+
+utils
+dir
+
+crypto
+dir
+
+protocols
+dir
+
+images
+dir
+
+net
+dir
+
+webapis
+dir
+
+fileformats
+dir
+
+air
+dir
+
+errors
+dir
+
+serialization
+dir
+

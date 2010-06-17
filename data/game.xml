@@ -81,6 +81,25 @@
     <sprite>
       <name>Lois</name>
       <look>Lois is a schoolteacher and an eager participant in the personal computing revolution.</look>
+
+      <verb name="Remember">
+        <behavior type="dialog">Lois has a cupboard full of mugs and plates with cats printed on them.</behavior>
+      </verb>
+      <verb name="Forget">
+        <behavior type="dialog">To forget oneself for a moment can be a relief - but for any longer than that might be trouble.</behavior>
+      </verb>
+      <verb name="Play">
+        <behavior type="dialog">Jumping, walking in circles, remembering, and humming. All games that can be played by oneself.</behavior>
+      </verb>
+      <verb name="Learn">
+        <behavior type="dialog">Lois has a lot to teach, she was a schoolteacher and a mother for decades.</behavior>
+      </verb>
+      <verb name="Catch">
+        <behavior type="dialog">Catch your breath, catch your eye, catch your fancy?</behavior>
+      </verb>
+      <verb name="Kick">
+        <behavior type="dialog">Ouch!</behavior>
+      </verb>
     </sprite>
 
     <!-- Room #1 - A House in California -->
@@ -103,6 +122,9 @@
       <verb name="Catch" moveTo="1">
         <behavior type="dialog">The house isn't going anywhere.</behavior>
       </verb>
+      <verb name="Kick" moveTo="1">
+        <behavior type="dialog">Nothing will come of that but a stubbed toe.</behavior>
+      </verb>
     </sprite>
     
     <sprite>
@@ -110,7 +132,7 @@
       <verboseName>lamp post</verboseName>
       <look>The lamp is out. It is dark, and a little scary.</look>
       <verb name="Remember" moveTo="1">
-        <behavior type="dialog">It wasn't always like this. There was something in the lamp that lit the house...</behavior>
+        <behavior type="dialog">It wasn't always like this. There was something in the lamp that lit the house ...</behavior>
       </verb>
       <verb name="Forget" moveTo="1">
         <behavior type="dialog">Maybe it has always been like this.</behavior>
@@ -123,10 +145,13 @@
         <behavior type="fadeToMenu" delay="1" />
       </verb>
       <verb name="Learn" moveTo="1">
-        <behavior type="dialog">The first street lights to be built in the United States was in Cleveland, Ohio. That's 2,408 miles from here.</behavior>
+        <behavior type="dialog">The first street lights to be built in the United States were in Cleveland, Ohio. That's 2,408 miles from here.</behavior>
       </verb>
       <verb name="Catch" moveTo="1">
         <behavior type="dialog">The lamp post isn't going anywhere.</behavior>
+      </verb>
+      <verb name="Kick" moveTo="1">
+        <behavior type="dialog">Nothing will come of that but a stubbed toe.</behavior>
       </verb>
     </sprite>
 
@@ -152,6 +177,9 @@
       </verb>
       <verb name="Catch" moveTo="1">
         <behavior type="dialog">It's too far away to catch, remember?</behavior>
+      </verb>
+      <verb name="Kick" moveTo="1">
+        <behavior type="dialog">It does look rather like a soccer ball ... but it's too far away.</behavior>
       </verb>
     </sprite>
 
@@ -185,6 +213,9 @@
       <verb name="Learn" moveTo="1">
         <behavior type="dialog">The glow of a firefly is called 'cold light' because it has no infrared or ultraviolet components.</behavior>
       </verb>
+      <verb name="Kick" moveTo="1">
+        <behavior type="dialog">They'll never cooperate once they've been kicked.</behavior>
+      </verb>
       
     </sprite>
     
@@ -201,13 +232,16 @@
         <behavior type="dialog">All of these stars are older than the phenomenon of memory.</behavior>
       </verb>
       <verb name="Play">
-        <behavior type="dialog">Once, there was a boy who pretended to be a star, trillions of miles away. He looked at the stars and pretended one of them was Earth.</behavior>
+        <behavior type="dialog">Once, there was a boy who pretended to be a star, trillions of miles away. He looked at the stars in the sky and pretended one of them was Earth.</behavior>
       </verb>
       <verb name="Learn">
         <behavior type="dialog">The nearest star is 25 trillion miles from here.</behavior>
       </verb>
       <verb name="Catch">
         <behavior type="dialog">They look small from here, but they're actually too large to get a grip on.</behavior>
+      </verb>
+      <verb name="Kick" moveTo="1">
+        <behavior type="dialog">That might damage the stars.</behavior>
       </verb>
       
     </sprite>
@@ -232,6 +266,10 @@
       <verb name="Catch" moveTo="1">
         <behavior type="dialog">There are no fish to catch in this fountain.</behavior>
       </verb>
+      <verb name="Kick" moveTo="1">
+        <behavior type="dialog">That might damage the fountain.</behavior>
+      </verb>
+      
     </sprite>
     
     <sprite>
@@ -284,6 +322,15 @@
       <verb name="Catch" moveTo="1">
         <behavior type="dialog">The protective dome is in the way.</behavior>
       </verb>
+
+      <verb name="Kick" moveTo="1">
+        <behavior type="soundEffect" soundName="glassBreak" />
+        <behavior type="flash" />
+        <behavior type="replaceSprite" oldSprite="dome" newSprite="brokenDome" />
+        <behavior type="replaceSprite" oldSprite="moonFireflyCluster" newSprite="looseFireflies" />
+        <behavior type="removeVerb" targetVerb="Kick" />
+      </verb>
+      
     </sprite>
 
     <sprite>
@@ -332,48 +379,60 @@
       <verb name="Learn" moveTo="1">
         <behavior type="dialog">Early fountains in towns and cities were used as public sources of drinking water. Now they're mostly decorative.</behavior>
       </verb>
+      <verb name="Kick" moveTo="1">
+        <behavior type="dialog">That might damage the fountain.</behavior>
+      </verb>
+      
     </sprite>
 
     <sprite>
       <name>smallFlowerPots</name>
       <verboseName>flowers</verboseName>
       <look>Lillies and pimpernels.</look>
-      <verb name="Forget" moveTo="1">
+      <verb name="Forget">
         <behavior type="dialog">Hard to say who planted these flowers, maybe this is the home of a gardener.</behavior>
       </verb>
-      <verb name="Remember" moveTo="1">
+      <verb name="Remember">
         <behavior type="dialog">These wild flowers were planted here by the wind.</behavior>
       </verb>
-      <verb name="Play" moveTo="1">
+      <verb name="Play">
         <behavior type="dialog">Once, there was a boy who pretended to be a flower. He buried himself in the dirt and then slowly crawled out into the sun.</behavior>
       </verb>
-      <verb name="Catch" moveTo="1">
+      <verb name="Catch">
         <behavior type="dialog">The bees hovering around these flowers will sting if they're caught.</behavior>
       </verb>
-      <verb name="Learn" moveTo="1">
+      <verb name="Learn">
         <behavior type="dialog">There are over a hundred different kinds of lillies, maybe more.</behavior>
       </verb>
+      <verb name="Kick" moveTo="1">
+        <behavior type="dialog">That might damage the flowers.</behavior>
+      </verb>
+      
     </sprite>
     
     <sprite>
       <name>smallFlowerPots2</name>
       <verboseName>flowers</verboseName>
       <look>Hydrangeas and poinsettas.</look>
-      <verb name="Forget" moveTo="1">
+      <verb name="Forget">
         <behavior type="dialog">Hard to say who planted these flowers, maybe this is the home of a gardener.</behavior>
       </verb>
-      <verb name="Remember" moveTo="1">
+      <verb name="Remember">
         <behavior type="dialog">These wild flowers were planted here by the wind.</behavior>
       </verb>
-      <verb name="Play" moveTo="1">
+      <verb name="Play">
         <behavior type="dialog">Once, there was a boy who pretended to be a flower. He closed his eyes, drank a glass of water, then slowly opened them.</behavior>
       </verb>
-      <verb name="Catch" moveTo="1">
+      <verb name="Catch">
         <behavior type="dialog">The bees hovering around these flowers will sting if they're caught.</behavior>
       </verb>
-      <verb name="Learn" moveTo="1">
+      <verb name="Learn">
         <behavior type="dialog">There are over a seventy-five different kinds of hydrangeas, maybe more.</behavior>
       </verb>
+      <verb name="Kick" moveTo="1">
+        <behavior type="dialog">That might damage the flowers.</behavior>
+      </verb>
+      
     </sprite>
     
     <sprite>
@@ -383,38 +442,46 @@
       <verb name="Forget">
         <behavior type="dialog">Hard to say who planted these flowers, maybe this is the home of a gardener.</behavior>
       </verb>
-      <verb name="Remember" moveTo="1">
+      <verb name="Remember">
         <behavior type="dialog">These wild flowers were planted here by the wind.</behavior>
       </verb>
-      <verb name="Play" moveTo="1">
+      <verb name="Play">
         <behavior type="dialog">Once, there was a boy who pretended to be a flower. He held his arms tightly against his chest, stood in the sun, then slowly lifted his hands into the air.</behavior>
       </verb>
-      <verb name="Catch" moveTo="1">
+      <verb name="Catch">
         <behavior type="dialog">The bees hovering around these flowers will sting if they're caught.</behavior>
       </verb>
-      <verb name="Learn" moveTo="1">
+      <verb name="Learn">
         <behavior type="dialog">There are over a thirty-five different kinds of dahlias, maybe more.</behavior>
       </verb>
+      <verb name="Kick" moveTo="1">
+        <behavior type="dialog">That might damage the flowers.</behavior>
+      </verb>
+      
     </sprite>
     
     <sprite>
       <name>backyardStars</name>
       <verboseName>stars</verboseName>
       <look>Some are closer than others.</look>
-      <verb name="Forget" moveTo="1">
-        <behavior type="dialog"></behavior>
+      
+      <verb name="Forget">
+        <behavior type="dialog">It's like someone just threw glitter on the ceiling.</behavior>
       </verb>
-      <verb name="Remember" moveTo="1">
-        <behavior type="dialog"></behavior>
+      <verb name="Remember">
+        <behavior type="dialog">Laying under these stars at night, they felt close enough to touch.</behavior>
       </verb>
-      <verb name="Play" moveTo="1">
-        <behavior type="dialog"></behavior>
+      <verb name="Play">
+        <behavior type="dialog">"Count the stars" is a long game.</behavior>
       </verb>
-      <verb name="Catch" moveTo="1">
-        <behavior type="dialog"></behavior>
+      <verb name="Catch">
+        <behavior type="dialog">They're just tiny pricks of light, too small to get a grip on.</behavior>
       </verb>
-      <verb name="Learn" moveTo="1">
-        <behavior type="dialog"></behavior>
+      <verb name="Learn">
+        <behavior type="dialog">The smallest kind of star is  called a "red dwarf." The closest star to earth is one of these.</behavior>
+      </verb>
+      <verb name="Kick" moveTo="1">
+        <behavior type="dialog">That might damage the stars.</behavior>
       </verb>
       
     </sprite>
@@ -425,6 +492,22 @@
       <verb name="Remember">
         <behavior type="transitionToRoom" targetRoom="aComputerInAGuestRoom" />
       </verb>
+      <verb name="Forget">
+        <behavior type="dialog">Doesn't look familiar.</behavior>
+      </verb>
+      <verb name="Play">
+        <behavior type="dialog">Playing near windows can be dangerous.</behavior>
+      </verb>
+      <verb name="Learn">
+        <behavior type="dialog">The word "window" comes from the Norse word vindauga, which means "Wind Eye".</behavior>
+      </verb>
+      <verb name="Catch">
+        <behavior type="dialog">It's stuck to the building.</behavior>
+      </verb>
+      <verb name="Kick" moveTo="1">
+        <behavior type="dialog">That might damage the window.</behavior>
+      </verb>
+      
     </sprite>
 
     <sprite>
@@ -449,6 +532,15 @@
           <behavior type="setFlag" flagName="backyardJarBroken" value="1" />
         </conditionalBehaviors>
       </verb>
+      <verb name="Learn">
+        <behavior type="dialog">The table has four legs, which are meant to keep it stable. But one of the legs is too short; it's all a bit precarious.</behavior>
+      </verb>
+      <verb name="Forget">
+        <behavior type="dialog">Perfectly normal back yard table.</behavior>
+      </verb>
+      <verb name="Catch">
+        <behavior type="dialog">There's a game called "eeny-meeny-miny-moe, catch a table by the leg."</behavior>
+      </verb>
     </sprite>
     
     <sprite spriteClass="JarOfBugs">
@@ -461,6 +553,18 @@
       <verb name="Forget">
         <behavior type="dialog">Home sweet home.</behavior>
       </verb>
+      <verb name="Play">
+        <behavior type="dialog">The fireflies are trapped in the jar, they can't really play anything but charades right now.</behavior>
+      </verb>
+      <verb name="Learn">
+        <behavior type="dialog">Mason jars are named after their inventor, John L. Mason, who created them in 1858 to store fruit and fireflies.</behavior>
+      </verb>
+      <verb name="Catch">
+        <behavior type="dialog">The fireflies are stuck in the jar.</behavior>
+      </verb>
+      <verb name="Kick">
+        <behavior type="dialog">It's too high to kick.</behavior>
+      </verb>
     </sprite>
 
     <sprite>
@@ -472,6 +576,18 @@
       </verb>
       <verb name="Forget">
         <behavior type="dialog">What happened to this jar?</behavior>
+      </verb>
+      <verb name="Play">
+        <behavior type="dialog">Playing with broken glass would be quite dangerous.</behavior>
+      </verb>
+      <verb name="Learn">
+        <behavior type="dialog">Jars like this are used to preserve fruit because they can be sealed to create a partial vacuum. But breaking the jar open renders it useless.</behavior>
+      </verb>
+      <verb name="Kick">
+        <behavior type="dialog">Kicking broken glass is a good way to get stitches, but that's about all.</behavior>
+      </verb>
+      <verb name="Catch">
+        <behavior type="dialog">Someone will probably clean it up later.</behavior>
       </verb>
     </sprite>
 
@@ -487,6 +603,22 @@
         <behavior type="replaceSprite" oldSprite="computerScreenBoy"
                   newSprite="computerScreenRockysBoots" />
       </verb>
+
+      <verb name="Remember">
+        <behavior type="dialog">This game was published in 1982, it taught players about logic gates and electronic circuits through puzzles, like building a kicking machine.</behavior>
+      </verb>
+      <verb name="Forget">
+        <behavior type="dialog">Must be a new release. Maybe a sports game?</behavior>
+      </verb>
+      <verb name="Learn">
+        <behavior type="dialog">The best way to learn from this game is to play it.</behavior>
+      </verb>
+      <verb name="Catch">
+        <behavior type="dialog">Hardly sporting, it's just laying there.</behavior>
+      </verb>
+      <verb name="Kick">
+        <behavior type="dialog">That might damage the disk.</behavior>
+      </verb>
     </sprite>
 
     <sprite>
@@ -494,10 +626,33 @@
       <verboseName>strange painting</verboseName>
       <look>It's a watercolor painting of a vine growing up through a manhole. In the background there's a fire hydrant. It's a crude rendition, but there's something familiar about it; that fire hydrant almost looks touchable.</look>
       <verb name="Play">
-        <behavior type="replaceSprite" oldSprite="computerScreen"
-                  newSprite="computerScreenBoy" />
-        <behavior type="replaceSprite" oldSprite="computerScreenRockysBoots"
-                  newSprite="computerScreenBoy" />
+        <conditionalBehaviors flagName="aComputerInAGuestRoom-firefliesCaught" value="0">
+          <behavior type="replaceSprite" oldSprite="computerScreen"
+                    newSprite="computerScreenBoy" />
+          <behavior type="replaceSprite" oldSprite="computerScreenRockysBoots"
+                    newSprite="computerScreenBoy" />
+        </conditionalBehaviors>
+        <conditionalBehaviors flagName="aComputerInAGuestRoom-firefliesCaught" value="1">
+          <behavior type="replaceSprite" oldSprite="computerScreenRockysBoots"
+                    newSprite="computerScreen" />
+          <behavior type="dialog">The boy is gone.</behavior>
+        </conditionalBehaviors>
+      </verb>
+
+      <verb name="Remember">
+        <behavior type="dialog">This is a painting of a scene from "The Manhole," a strange computer game about exploring a fantasy world.</behavior>
+      </verb>
+      <verb name="Forget">
+        <behavior type="dialog">After looking at it for a few minutes, it's hard to forget, really.</behavior>
+      </verb>
+      <verb name="Learn">
+        <behavior type="dialog">"The Manhole," the computer game this painting was drawn from, was designed by Rand and Robyn Miller in 1988. Later, they made "Myst".</behavior>
+      </verb>
+      <verb name="Catch">
+        <behavior type="dialog">In "The Manhole," the computer game this painting was drawn from, the player chases a rabbit. The rabbit does not appear in this painting, though.</behavior>
+      </verb>
+      <verb name="Kick">
+        <behavior type="dialog">That might damage the painting.</behavior>
       </verb>
     </sprite>
 
@@ -507,17 +662,46 @@
       <verb name="Forget">
         <behavior type="transitionToRoom" targetRoom="aFountainInABackYard" />
       </verb>
+
+      <verb name="Play">
+        <behavior type="dialog">The computer doesn't play anything by itself, it needs software.</behavior>
+      </verb>
+      <verb name="Remember">
+        <behavior type="dialog">This computer had gummy keys, like typing in jello.</behavior>
+      </verb>
+      <verb name="Learn">
+        <behavior type="dialog">This computer has more to teach when it's running some software.</behavior>
+      </verb>
+      <verb name="Kick">
+        <behavior type="dialog">That might damage the keyboard.</behavior>
+      </verb>
+      <verb name="Catch">
+        <behavior type="dialog">The Apple II?  It's much too fast to catch.</behavior>
+      </verb>
     </sprite>
 
     <sprite>
       <name>computerScreen</name>
-      <verboseName>computer screen</verboseName>      
+      <verboseName>computer screen</verboseName>
       <look>The screen is dark, nothing's running right now.</look>
       <verb name="Forget">
         <behavior type="transitionToRoom" targetRoom="aFountainInABackYard" />
       </verb>
+
+      <verb name="Play">
+        <behavior type="dialog">The computer doesn't play anything by itself, it needs software.</behavior>
+      </verb>
       <verb name="Remember">
-        <behavior type="dialog"></behavior>
+        <behavior type="dialog">When the screen was off, its cloudy, reflective surface was like a mirror made of charcoal.</behavior>
+      </verb>
+      <verb name="Learn">
+        <behavior type="dialog">This computer has more to teach when it's running some software.</behavior>
+      </verb>
+      <verb name="Kick">
+        <behavior type="dialog">That might damage the screen.</behavior>
+      </verb>
+      <verb name="Catch">
+        <behavior type="dialog">The Apple II?  It's much too fast to catch.</behavior>
       </verb>
     </sprite>
 
@@ -529,12 +713,33 @@
         <behavior type="dialog">The player of "Rocky's Boots" learns to build a machine that kicks. Through this process, one can learn more about both electronics and kicking.</behavior>
         <behavior type="addVerb" newVerb="Kick" />
       </verb>
+
+      <verb name="Play">
+        <behavior type="dialog">With "Rocky's Boots", it's a fine line between "playing" and "learning." This side of the line yields nothing concrete.</behavior>
+      </verb>
+      <verb name="Remember">
+        <behavior type="dialog">This game had so much to teach, with such a small vocabulary.</behavior>
+      </verb>
+      <verb name="Forget">
+        <behavior type="dialog">An alien world of raccoons, kicking machines, and inscrutable symbols.</behavior>
+      </verb>
+      <verb name="Kick">
+        <behavior type="dialog">That might damage the screen.</behavior>
+      </verb>      
     </sprite>
     
     <sprite spriteClass="ComputerScreenBoy">
       <name>computerScreenBoy</name>
       <verboseName>boy on computer screen</verboseName>
-      <look>A small boy on the computer screen.</look>
+      
+      <verb name="Look">
+        <behavior type="flash" />        
+        <behavior type="replaceSprite" oldSprite="computerScreenBoy"
+                  newSprite="computerScreen" />
+        <behavior type="addSprite" spriteName="looseFireflies" x="150" y="46"
+                  width="51" height="34" />
+      </verb>
+      
       <verb name="Remember">
         <behavior type="flash" />        
         <behavior type="replaceSprite" oldSprite="computerScreenBoy"
@@ -542,6 +747,47 @@
         <behavior type="addSprite" spriteName="looseFireflies" x="150" y="46"
                   width="51" height="34" />
       </verb>
+      
+      <verb name="Forget">
+        <behavior type="flash" />        
+        <behavior type="replaceSprite" oldSprite="computerScreenBoy"
+                  newSprite="computerScreen" />
+        <behavior type="addSprite" spriteName="looseFireflies" x="150" y="46"
+                  width="51" height="34" />
+      </verb>
+      
+      <verb name="Play">
+        <behavior type="flash" />        
+        <behavior type="replaceSprite" oldSprite="computerScreenBoy"
+                  newSprite="computerScreen" />
+        <behavior type="addSprite" spriteName="looseFireflies" x="150" y="46"
+                  width="51" height="34" />
+      </verb>
+      
+      <verb name="Learn">
+        <behavior type="flash" />        
+        <behavior type="replaceSprite" oldSprite="computerScreenBoy"
+                  newSprite="computerScreen" />
+        <behavior type="addSprite" spriteName="looseFireflies" x="150" y="46"
+                  width="51" height="34" />
+      </verb>
+      
+      <verb name="Catch">
+        <behavior type="flash" />        
+        <behavior type="replaceSprite" oldSprite="computerScreenBoy"
+                  newSprite="computerScreen" />
+        <behavior type="addSprite" spriteName="looseFireflies" x="150" y="46"
+                  width="51" height="34" />
+      </verb>
+      
+      <verb name="Kick">
+        <behavior type="flash" />        
+        <behavior type="replaceSprite" oldSprite="computerScreenBoy"
+                  newSprite="computerScreen" />
+        <behavior type="addSprite" spriteName="looseFireflies" x="150" y="46"
+                  width="51" height="34" />
+      </verb>
+      
     </sprite>
     
   </sprites>

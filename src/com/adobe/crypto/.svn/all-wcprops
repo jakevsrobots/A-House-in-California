@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/!svn/ver/90/trunk/src/com/adobe/crypto
+END
+MD5Stream.as
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/61/trunk/src/com/adobe/crypto/MD5Stream.as
+END
+WSSEUsernameToken.as
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/55/trunk/src/com/adobe/crypto/WSSEUsernameToken.as
+END
+SHA224.as
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/69/trunk/src/com/adobe/crypto/SHA224.as
+END
+MD5.as
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/69/trunk/src/com/adobe/crypto/MD5.as
+END
+SHA256.as
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/69/trunk/src/com/adobe/crypto/SHA256.as
+END
+HMAC.as
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/71/trunk/src/com/adobe/crypto/HMAC.as
+END
+SHA1.as
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/90/trunk/src/com/adobe/crypto/SHA1.as
+END

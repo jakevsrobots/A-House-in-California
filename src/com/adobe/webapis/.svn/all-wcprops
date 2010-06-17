@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/100/trunk/src/com/adobe/webapis
+END
+URLLoaderBase.as
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/55/trunk/src/com/adobe/webapis/URLLoaderBase.as
+END
+ServiceBase.as
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/55/trunk/src/com/adobe/webapis/ServiceBase.as
+END

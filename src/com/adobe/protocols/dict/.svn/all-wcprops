@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/108/trunk/src/com/adobe/protocols/dict
+END
+Response.as
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/89/trunk/src/com/adobe/protocols/dict/Response.as
+END
+MatchStrategy.as
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/89/trunk/src/com/adobe/protocols/dict/MatchStrategy.as
+END
+Dict.as
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/108/trunk/src/com/adobe/protocols/dict/Dict.as
+END
+Database.as
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/89/trunk/src/com/adobe/protocols/dict/Database.as
+END
+Definition.as
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/89/trunk/src/com/adobe/protocols/dict/Definition.as
+END
+DictionaryServer.as
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/89/trunk/src/com/adobe/protocols/dict/DictionaryServer.as
+END

@@ -1,4 +1,5 @@
 package california {
+    import Date;
     import org.flixel.*;
     import california.sprites.*;
     import SWFStats.*;
@@ -106,7 +107,8 @@ package california {
 
             PlayState.instance = this;
 
-            FlxG.playMusic(Main.library.getAsset('loisMusic'));
+            FlxG.playMusic(Main.library.getAsset('loisMusic'), 0.7);
+            FlxG.music.fadeIn(2);
         }
 
         override public function update():void {
@@ -181,6 +183,7 @@ package california {
                 if(fadeStartTimer > 0) {
                     fadeStartTimer -= FlxG.elapsed;
                 } else {
+                    FlxG.music.fadeOut(2);
                     preMenuFade = false;
                     FlxG.fade.start(0xffffffff, 2, function():void {
                             //FlxG.state = new MenuState(0xffffffff);

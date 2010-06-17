@@ -23,6 +23,8 @@ package california {
 
         public static var logViewInitialized:Boolean;
 
+        public static var instance:Main;
+        
         public function Main():void {
             library = new AssetLibrary();
             gameXML = new XML(new GameXMLFile());
@@ -33,6 +35,8 @@ package california {
             //super(320, 170, ThanksForTestingState, 2);
             
             FlxState.bgColor = Main.bgcolor;
+
+            Main.instance = this;
         }
     }
 }
