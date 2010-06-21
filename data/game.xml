@@ -58,7 +58,7 @@
     </verb>
 
     <verb>
-      <name>Kick</name>
+      <name>Repair</name>
     </verb>
 
     <verb>
@@ -97,8 +97,8 @@
       <verb name="Catch">
         <behavior type="dialog">Catch your breath, catch your eye, catch your fancy?</behavior>
       </verb>
-      <verb name="Kick">
-        <behavior type="dialog">Ouch!</behavior>
+      <verb name="Repari">
+        <behavior type="dialog">Lois is doing just fine.</behavior>
       </verb>
     </sprite>
 
@@ -122,8 +122,8 @@
       <verb name="Catch" moveTo="1">
         <behavior type="dialog">The house isn't going anywhere.</behavior>
       </verb>
-      <verb name="Kick" moveTo="1">
-        <behavior type="dialog">Nothing will come of that but a stubbed toe.</behavior>
+      <verb name="Repair" moveTo="1">
+        <behavior type="dialog">It's too dark to attempt any serious repairs.</behavior>
       </verb>
     </sprite>
     
@@ -150,8 +150,8 @@
       <verb name="Catch" moveTo="1">
         <behavior type="dialog">The lamp post isn't going anywhere.</behavior>
       </verb>
-      <verb name="Kick" moveTo="1">
-        <behavior type="dialog">Nothing will come of that but a stubbed toe.</behavior>
+      <verb name="Repair" moveTo="1">
+        <behavior type="dialog">The only repair this lamp post needs is something to light it.</behavior>
       </verb>
     </sprite>
 
@@ -178,8 +178,8 @@
       <verb name="Catch" moveTo="1">
         <behavior type="dialog">It's too far away to catch, remember?</behavior>
       </verb>
-      <verb name="Kick" moveTo="1">
-        <behavior type="dialog">It does look rather like a soccer ball ... but it's too far away.</behavior>
+      <verb name="Repair" moveTo="1">
+        <behavior type="dialog">Smoothing out the craters of the moon would rob it of its craggy charm.</behavior>
       </verb>
     </sprite>
 
@@ -213,8 +213,8 @@
       <verb name="Learn" moveTo="1">
         <behavior type="dialog">The glow of a firefly is called 'cold light' because it has no infrared or ultraviolet components.</behavior>
       </verb>
-      <verb name="Kick" moveTo="1">
-        <behavior type="dialog">They'll never cooperate once they've been kicked.</behavior>
+      <verb name="Repair" moveTo="1">
+        <behavior type="dialog">They seem to be doing just fine.</behavior>
       </verb>
       
     </sprite>
@@ -240,8 +240,8 @@
       <verb name="Catch">
         <behavior type="dialog">They look small from here, but they're actually too large to get a grip on.</behavior>
       </verb>
-      <verb name="Kick" moveTo="1">
-        <behavior type="dialog">That might damage the stars.</behavior>
+      <verb name="Repair" moveTo="1">
+        <behavior type="dialog">These stars can only be adjust with a stellar spanner.</behavior>
       </verb>
       
     </sprite>
@@ -266,8 +266,8 @@
       <verb name="Catch" moveTo="1">
         <behavior type="dialog">There are no fish to catch in this fountain.</behavior>
       </verb>
-      <verb name="Kick" moveTo="1">
-        <behavior type="dialog">That might damage the fountain.</behavior>
+      <verb name="Repair" moveTo="1">
+        <behavior type="dialog">The fountain is flowing normally.</behavior>
       </verb>
       
     </sprite>
@@ -275,14 +275,6 @@
     <sprite>
       <name>dome</name>
       <look>It's a protective dome. A masterful blow could crack it open, but those fireflies are trapped for now.</look>
-      
-      <verb name="Kick" moveTo="1">
-        <behavior type="soundEffect" soundName="glassBreak" />
-        <behavior type="flash" />
-        <behavior type="replaceSprite" oldSprite="dome" newSprite="brokenDome" />
-        <behavior type="replaceSprite" oldSprite="moonFireflyCluster" newSprite="looseFireflies" />
-        <behavior type="removeVerb" targetVerb="Kick" />
-      </verb>
 
       <verb name="Remember" moveTo="1">
         <behavior type="dialog">This dome was built as a firefly trap. But how does it work? It's a mystery.</behavior>
@@ -298,6 +290,9 @@
       </verb>
       <verb name="Catch" moveTo="1">
         <behavior type="dialog">It's the fireflies that need catching, not the dome.</behavior>
+      </verb>
+      <verb name="Repair" moveTo="1">
+        <behavior type="dialog">Nothing seems to be wrong with the dome.</behavior>
       </verb>
       
     </sprite>
@@ -322,13 +317,8 @@
       <verb name="Catch" moveTo="1">
         <behavior type="dialog">The protective dome is in the way.</behavior>
       </verb>
-
-      <verb name="Kick" moveTo="1">
-        <behavior type="soundEffect" soundName="glassBreak" />
-        <behavior type="flash" />
-        <behavior type="replaceSprite" oldSprite="dome" newSprite="brokenDome" />
-        <behavior type="replaceSprite" oldSprite="moonFireflyCluster" newSprite="looseFireflies" />
-        <behavior type="removeVerb" targetVerb="Kick" />
+      <verb name="Repair" moveTo="1">
+        <behavior type="dialog">The only repair for these fireflies' predicament is to break this dome open and release them.</behavior>
       </verb>
       
     </sprite>
@@ -347,8 +337,8 @@
       <verb name="Play" moveTo="1">
         <behavior type="dialog">It would be dangerous to play around this broken glass.</behavior>
       </verb>
-      <verb name="Kick" moveTo="1">
-        <behavior type="dialog">It's already broken.</behavior>
+      <verb name="Repair" moveTo="1">
+        <behavior type="dialog">There's not enough glue on the moon to repair this dome.</behavior>
       </verb>
       <verb name="Catch" moveTo="1">
         <behavior type="dialog">It's the fireflies that need catching, not the dome.</behavior>        
@@ -357,6 +347,27 @@
         <behavior type="dialog">The first man-made domes were built with Mammoth tusks over 20,000 years ago. Perhaps they met a similar fate.</behavior>
       </verb>
       
+    </sprite>
+
+    <sprite>
+      <name>kickingMachine</name>
+      <verboseName>broken kicking machine</verboseName>
+      <look>It's some kind of electronic kicking machine, but it seems to be broken.</look>
+
+      <verb name="Repair" moveTo="1">
+        <behavior type="soundEffect" soundName="glassBreak" />
+        <behavior type="flash" />
+        <behavior type="replaceSprite" oldSprite="dome" newSprite="brokenDome" />
+        <behavior type="replaceSprite" oldSprite="moonFireflyCluster" newSprite="looseFireflies" />
+        <behavior type="replaceSprite" oldSprite="kickingMachine" newSprite="kickingMachineKicked" />
+      </verb>
+      
+    </sprite>
+    
+    <sprite>
+      <name>kickingMachineKicked</name>
+      <verboseName>kicking machine</verboseName>
+      <look>It's some kind of electronic kicking machine. It's been repaired and then it immediately activated to break the dome.</look>
     </sprite>
     
     <!-- Room #3 - A Fountain in a Back Yard -->
@@ -379,8 +390,8 @@
       <verb name="Learn" moveTo="1">
         <behavior type="dialog">Early fountains in towns and cities were used as public sources of drinking water. Now they're mostly decorative.</behavior>
       </verb>
-      <verb name="Kick" moveTo="1">
-        <behavior type="dialog">That might damage the fountain.</behavior>
+      <verb name="Repair" moveTo="1">
+        <behavior type="dialog">The fountain is flowing normally.</behavior>
       </verb>
       
     </sprite>
@@ -388,7 +399,7 @@
     <sprite>
       <name>smallFlowerPots</name>
       <verboseName>flowers</verboseName>
-      <look>Lillies and pimpernels.</look>
+      <look>Lilies and pimpernels.</look>
       <verb name="Forget">
         <behavior type="dialog">Hard to say who planted these flowers, maybe this is the home of a gardener.</behavior>
       </verb>
@@ -402,10 +413,10 @@
         <behavior type="dialog">The bees hovering around these flowers will sting if they're caught.</behavior>
       </verb>
       <verb name="Learn">
-        <behavior type="dialog">There are over a hundred different kinds of lillies, maybe more.</behavior>
+        <behavior type="dialog">There are over a hundred different kinds of lilies, maybe more.</behavior>
       </verb>
-      <verb name="Kick" moveTo="1">
-        <behavior type="dialog">That might damage the flowers.</behavior>
+      <verb name="Repair" moveTo="1">
+        <behavior type="dialog">With a few adjustments, this flower arrangement is looking lovely.</behavior>
       </verb>
       
     </sprite>
@@ -413,7 +424,7 @@
     <sprite>
       <name>smallFlowerPots2</name>
       <verboseName>flowers</verboseName>
-      <look>Hydrangeas and poinsettas.</look>
+      <look>Hydrangeas and poinsettias.</look>
       <verb name="Forget">
         <behavior type="dialog">Hard to say who planted these flowers, maybe this is the home of a gardener.</behavior>
       </verb>
@@ -429,8 +440,8 @@
       <verb name="Learn">
         <behavior type="dialog">There are over a seventy-five different kinds of hydrangeas, maybe more.</behavior>
       </verb>
-      <verb name="Kick" moveTo="1">
-        <behavior type="dialog">That might damage the flowers.</behavior>
+      <verb name="Repair" moveTo="1">
+        <behavior type="dialog">A few stray petals to round up but otherwise these flowers are looking good.</behavior>
       </verb>
       
     </sprite>
@@ -454,8 +465,8 @@
       <verb name="Learn">
         <behavior type="dialog">There are over a thirty-five different kinds of dahlias, maybe more.</behavior>
       </verb>
-      <verb name="Kick" moveTo="1">
-        <behavior type="dialog">That might damage the flowers.</behavior>
+      <verb name="Repair" moveTo="1">
+        <behavior type="dialog">These flowers should probably be re-potted, but it's too dark now.</behavior>
       </verb>
       
     </sprite>
@@ -480,8 +491,8 @@
       <verb name="Learn">
         <behavior type="dialog">The smallest kind of star is  called a "red dwarf." The closest star to earth is one of these.</behavior>
       </verb>
-      <verb name="Kick" moveTo="1">
-        <behavior type="dialog">That might damage the stars.</behavior>
+      <verb name="Repair" moveTo="1">
+        <behavior type="dialog">They seem to be working normally.</behavior>
       </verb>
       
     </sprite>
@@ -499,13 +510,13 @@
         <behavior type="dialog">Playing near windows can be dangerous.</behavior>
       </verb>
       <verb name="Learn">
-        <behavior type="dialog">The word "window" comes from the Norse word vindauga, which means "Wind Eye".</behavior>
+        <behavior type="dialog">The word "window" comes from the Norse word "vindauga", which means "Wind Eye".</behavior>
       </verb>
       <verb name="Catch">
         <behavior type="dialog">It's stuck to the building.</behavior>
       </verb>
-      <verb name="Kick" moveTo="1">
-        <behavior type="dialog">That might damage the window.</behavior>
+      <verb name="Repair" moveTo="1">
+        <behavior type="dialog">The window isn't broken.</behavior>
       </verb>
       
     </sprite>
@@ -516,8 +527,8 @@
       <verb name="Remember">
         <behavior type="dialog">Children used to play vigorously under this table, spilling any drinks resting on it, often as not.</behavior>
       </verb>
-      <verb name="Kick">
-        <behavior type="dialog">So aggressive!</behavior>
+      <verb name="Repair">
+        <behavior type="dialog">That would require an carpentry skills, not electronics skills.</behavior>
       </verb>
       <verb name="Play" moveTo="1">
         <conditionalBehaviors flagName="backyardJarBroken" value="0">
@@ -562,8 +573,8 @@
       <verb name="Catch">
         <behavior type="dialog">The fireflies are stuck in the jar.</behavior>
       </verb>
-      <verb name="Kick">
-        <behavior type="dialog">It's too high to kick.</behavior>
+      <verb name="Repair">
+        <behavior type="dialog">The jar isn't broken; in fact it's working too well.</behavior>
       </verb>
     </sprite>
 
@@ -583,8 +594,8 @@
       <verb name="Learn">
         <behavior type="dialog">Jars like this are used to preserve fruit because they can be sealed to create a partial vacuum. But breaking the jar open renders it useless.</behavior>
       </verb>
-      <verb name="Kick">
-        <behavior type="dialog">Kicking broken glass is a good way to get stitches, but that's about all.</behavior>
+      <verb name="Repair">
+        <behavior type="dialog">Repairing broken jars is a good way to get stitches, but that's about all.</behavior>
       </verb>
       <verb name="Catch">
         <behavior type="dialog">Someone will probably clean it up later.</behavior>
@@ -616,8 +627,8 @@
       <verb name="Catch">
         <behavior type="dialog">Hardly sporting, it's just laying there.</behavior>
       </verb>
-      <verb name="Kick">
-        <behavior type="dialog">That might damage the disk.</behavior>
+      <verb name="Repair">
+        <behavior type="dialog">The disk looks like it will play as it is.</behavior>
       </verb>
     </sprite>
 
@@ -651,9 +662,9 @@
       <verb name="Catch">
         <behavior type="dialog">In "The Manhole," the computer game this painting was drawn from, the player chases a rabbit. The rabbit does not appear in this painting, though.</behavior>
       </verb>
-      <verb name="Kick">
-        <behavior type="dialog">That might damage the painting.</behavior>
-      </verb>
+      <verb name="Repair">
+        <behavior type="dialog">There's nothing broken about the painting; it almost seems alive.</behavior>
+n      </verb>
     </sprite>
 
     <sprite>
@@ -667,13 +678,13 @@
         <behavior type="dialog">The computer doesn't play anything by itself, it needs software.</behavior>
       </verb>
       <verb name="Remember">
-        <behavior type="dialog">This computer had gummy keys, like typing in jello.</behavior>
+        <behavior type="dialog">This computer had gummy keys, like typing in Jello.</behavior>
       </verb>
       <verb name="Learn">
         <behavior type="dialog">This computer has more to teach when it's running some software.</behavior>
       </verb>
-      <verb name="Kick">
-        <behavior type="dialog">That might damage the keyboard.</behavior>
+      <verb name="Repair">
+        <behavior type="dialog">The Apple II is running just as well today as it was in 1977; just load up some software and see.</behavior>
       </verb>
       <verb name="Catch">
         <behavior type="dialog">The Apple II?  It's much too fast to catch.</behavior>
@@ -697,8 +708,8 @@
       <verb name="Learn">
         <behavior type="dialog">This computer has more to teach when it's running some software.</behavior>
       </verb>
-      <verb name="Kick">
-        <behavior type="dialog">That might damage the screen.</behavior>
+      <verb name="Repair">
+        <behavior type="dialog">The screen fine, it just needs some software.</behavior>
       </verb>
       <verb name="Catch">
         <behavior type="dialog">The Apple II?  It's much too fast to catch.</behavior>
@@ -708,10 +719,10 @@
     <sprite spriteClass="ComputerScreenRockysBoots">
       <name>computerScreenRockysBoots</name>
       <verboseName>Rocky's Boots on computer screen</verboseName>      
-      <look>Rocky's Boots is running on the computer right now. It's a diagram of a kicking machine.</look>
+      <look>Rocky's Boots is running on the computer right now. It's a diagram of an electronic kicking machine.</look>
       <verb name="Learn" verbText="Learn about kicking machine" moveTo="1">
-        <behavior type="dialog">The player of "Rocky's Boots" learns to build a machine that kicks. Through this process, one can learn more about both electronics and kicking.</behavior>
-        <behavior type="addVerb" newVerb="Kick" />
+        <behavior type="dialog">The player of "Rocky's Boots" learns to build a machine that kicks. Through this process, one can learn more about both electronics and kicking machines.</behavior>
+        <behavior type="addVerb" newVerb="Repair" />
       </verb>
 
       <verb name="Play">
@@ -723,8 +734,8 @@
       <verb name="Forget">
         <behavior type="dialog">An alien world of raccoons, kicking machines, and inscrutable symbols.</behavior>
       </verb>
-      <verb name="Kick">
-        <behavior type="dialog">That might damage the screen.</behavior>
+      <verb name="Repair" verbText="Repair kicking machine">
+        <behavior type="dialog">This kicking machine is not broken. Perhaps there's another one in need of repair?</behavior>
       </verb>      
     </sprite>
     
@@ -780,7 +791,7 @@
                   width="51" height="34" />
       </verb>
       
-      <verb name="Kick">
+      <verb name="Repair">
         <behavior type="flash" />        
         <behavior type="replaceSprite" oldSprite="computerScreenBoy"
                   newSprite="computerScreen" />

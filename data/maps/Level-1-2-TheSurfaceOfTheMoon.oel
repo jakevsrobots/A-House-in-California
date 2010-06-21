@@ -9,5 +9,6 @@
     <moonFountain x="239" y="123"/>
     <dome x="96" y="121"/>
     <moonFireflyCluster x="108" y="128"/>
+    <kickingMachine x="143" y="101"/>
   </sprites>
 </level>

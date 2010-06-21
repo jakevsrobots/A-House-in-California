@@ -65,6 +65,10 @@
          type="image" />
   <asset name="dome" file="sprites/dome.png"
          type="image" />
+  <asset name="kickingMachine" file="sprites/kicking-machine.png"
+         type="image" />
+  <asset name="kickingMachineKicked" file="sprites/kicking-machine-kicked.png"
+         type="image" />
   <asset name="brokenDome" file="sprites/broken-dome.png"
          type="image" />
   
