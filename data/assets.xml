@@ -61,6 +61,8 @@
   
   <asset name="moonStars" file="sprites/moon-stars.png"
          type="image" />
+  <asset name="moonStarsGlow" file="sprites/moon-stars-glow.png"
+         type="image" />
   <asset name="moonFountain" file="sprites/moon-fountain.png"
          type="image" />
   <asset name="dome" file="sprites/dome.png"

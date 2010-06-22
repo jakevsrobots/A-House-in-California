@@ -220,7 +220,7 @@
     </sprite>
     
     <!-- Room #2 - The Surface of the Moon -->  
-    <sprite>
+    <sprite spriteClass="MoonStars">
       <name>moonStars</name>
       <verboseName>stars</verboseName>
       <look>Some are further away than others.</look>    

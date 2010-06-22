@@ -82,6 +82,7 @@ package california.sprites {
             spriteClasses = {
                 "TrappedFireflies": TrappedFireflies,
                 "Moon": Moon,
+                "MoonStars": MoonStars,
                 "Window": Window,
                 "ComputerScreenBoy": ComputerScreenBoy,
                 "ComputerScreenRockysBoots": ComputerScreenRockysBoots,
