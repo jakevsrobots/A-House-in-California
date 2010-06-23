@@ -147,16 +147,18 @@ package california {
                     var cursorOverlappedSprite:Boolean = false;
                     
                     for each(var sprite:GameSprite in currentRoom.sprites.members.concat().reverse()) {
-                        if(cursor.spriteHitBox.overlaps(sprite)) {
-                            cursor.setText(sprite.getVerbText(currentVerb));
-                            cursorOverlappedSprite = true;
+                        if(sprite.interactive) {
+                            if(cursor.spriteHitBox.overlaps(sprite)) {
+                                cursor.setText(sprite.getVerbText(currentVerb));
+                                cursorOverlappedSprite = true;
 
-                            if(FlxG.mouse.justPressed()) {
-                                Log.CustomMetric(currentVerb.name + '|' + sprite.name + '|' + currentRoom.roomName, "Verb action");
-                                sprite.handleVerb(currentVerb);
-                            }
-                            
-                            break;
+                                if(FlxG.mouse.justPressed()) {
+                                    Log.CustomMetric(currentVerb.name + '|' + sprite.name + '|' + currentRoom.roomName, "Verb action");
+                                    sprite.handleVerb(currentVerb);
+                                }
+                                
+                                break;
+                        }
                         }
 
                     }

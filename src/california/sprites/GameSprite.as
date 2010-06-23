@@ -13,6 +13,9 @@ package california.sprites {
         // Instance
         //--------------------------------------------------------------------
         public var name:String;
+        public var interactive:Boolean; // Whether this sprite can be interacted with
+                                        // (if set to 'false', it will not even appear 
+                                        // to mouseover
         private var data:Object; // locally store this sprite's data for ease of lookup
         
         [Embed(source="/../data/sound/fail.mp3")]
@@ -22,9 +25,11 @@ package california.sprites {
             this.name = name;
             this.data = GameSprite.spriteDatabase[name];
 
+            this.interactive = this.data['interactive']
+            
             var ImageClass:Class
             if(loadImage) {
-                ImageClass = Main.library.getAsset(name);
+                ImageClass = Main.library.getAsset(this.data['assetName']);
             } else {
                 ImageClass = null;
             }
@@ -107,6 +112,12 @@ package california.sprites {
                     spriteObject['verboseName'] = spriteNode.name.toString();
                 }
 
+                if(spriteNode.@assetName.toString()) {
+                    spriteObject['assetName'] = spriteNode.@assetName.toString();
+                } else {
+                    spriteObject['assetName'] = spriteObject['name'];
+                }
+                
                 if(spriteNode.@spriteClass.toString()) {
                     if(spriteClasses.hasOwnProperty(spriteNode.@spriteClass.toString())) {
                         spriteObject['spriteClass'] = spriteClasses[spriteNode.@spriteClass.toString()];
@@ -115,6 +126,12 @@ package california.sprites {
                     }
                 } else {
                     spriteObject['spriteClass'] = GameSprite;
+                }
+
+                if(spriteNode.@interactive == "0") {
+                    spriteObject['interactive'] = false;
+                } else {
+                    spriteObject['interactive'] = true;
                 }
 
                 // Verbs that this sprite can respond to

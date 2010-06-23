@@ -83,6 +83,8 @@
       <object name="beulahHouseBackground" image="../backgrounds/beulah-house-background.png"
               width="320" height="170" />
 
+      <object name="beulahHouse" image="../sprites/house.png"
+              width="124" height="99" />
       <object name="moonWaning" image="../sprites/moon-waning.png"
              type="image" width="27" height="29" />
       <object name="breadLoaf" image="../sprites/bread-loaf.png"

@@ -56,7 +56,7 @@
   <asset name="houseBackground" file="backgrounds/home-background.png"
          type="image" />
 
-  <asset name="loisHouse" file="sprites/house.png"
+  <asset name="house" file="sprites/house.png"
          type="image" />
   <asset name="lampPost" file="sprites/lamppost.png"
          type="image" />

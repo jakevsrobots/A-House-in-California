@@ -105,7 +105,7 @@
     </sprite>
 
     <!-- Room #1-1 - A House in California -->
-    <sprite>
+    <sprite assetName="house">
       <name>loisHouse</name>
       <verboseName>house</verboseName>
       <look>A house in California.</look>
@@ -842,7 +842,11 @@
       <name>beulahPlayer</name>
     </sprite>
     
-    <!-- Room #2-1 - A House in California -->    
+    <!-- Room #2-1 - A House in California -->
+    <sprite assetName="house">
+      <name>beulahHouse</name>
+    </sprite>
+    
     <sprite>
       <name>moonWaning</name>
     </sprite>
@@ -867,7 +871,7 @@
       <name>houseCloud2</name>
     </sprite>
 
-    <sprite>
+    <sprite interactive="0">
       <name>powerLinesLeft</name>
     </sprite>
 
