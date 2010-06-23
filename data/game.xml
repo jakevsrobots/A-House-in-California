@@ -79,9 +79,8 @@
   
   <sprites>
     <!-- ######################### LOIS ######################### -->
-    <sprite>
-      <name>loisPlayer</name>
-      <verboseName>Lois</verboseName>
+    <sprite name="loisPlayer"
+            verboseName="Lois">
       <look>Lois is a schoolteacher and an eager participant in the personal computing revolution.</look>
 
       <verb name="Remember">
@@ -105,9 +104,9 @@
     </sprite>
 
     <!-- Room #1-1 - A House in California -->
-    <sprite assetName="house">
-      <name>loisHouse</name>
-      <verboseName>house</verboseName>
+    <sprite name="loisHouse"
+            verboseName="house"
+            assetName="house">
       <look>A house in California.</look>
       <verb name="Remember" moveTo="1">
         <behavior type="dialog">The house was in Lodi, it had a back yard with a fountain. It was always warm and bright.</behavior>
@@ -129,9 +128,8 @@
       </verb>
     </sprite>
     
-    <sprite>
-      <name>lampPost</name>
-      <verboseName>lamp post</verboseName>
+    <sprite name="lampPost"
+            verboseName="lamp post">
       <look>The lamp is out. It is dark, and a little scary.</look>
       <verb name="Remember" moveTo="1">
         <behavior type="dialog">It wasn't always like this. There was something in the lamp that lit the house ...</behavior>
@@ -157,13 +155,15 @@
       </verb>
     </sprite>
 
-    <sprite spriteClass="LampFireflies">
+    <sprite name="lampFireflies"
+            verboseName="fireflies"
+            spriteClass="LampFireflies">
       <name>lampFireflies</name>
       <verboseName>fireflies</verboseName>
     </sprite>
     
-    <sprite spriteClass="Moon">
-      <name>moon</name>
+    <sprite name="moon"
+            spriteClass="Moon">
       <look>It looks familiar, but smaller and dimmer. Enough moonlight to walk by, but that's about it.</look>
       <verb name="Remember" moveTo="1">
         <behavior type="transitionToRoom" targetRoom="theSurfaceOfTheMoon" />
@@ -185,9 +185,9 @@
       </verb>
     </sprite>
 
-    <sprite spriteClass="LooseFireflies">
-      <name>looseFireflies</name>
-      <verboseName>loose fireflies</verboseName>>
+    <sprite name="looseFireflies"
+            verboseName="loose fireflies"
+            spriteClass="LooseFireflies">
       <look>A swarm of fireflies. Tiny flying beetles who make their rear ends glow. Why? Maybe just for fun.</look>
 
       <verb name="Catch" moveTo="1">
@@ -222,9 +222,9 @@
     </sprite>
     
     <!-- Room #1-2 - The Surface of the Moon -->  
-    <sprite spriteClass="MoonStars">
-      <name>moonStars</name>
-      <verboseName>stars</verboseName>
+    <sprite name="moonStars"
+            verboseName="stars"
+            spriteClass="MoonStars">
       <look>Some are further away than others.</look>    
       <verb name="Forget">
         <behavior type="transitionToRoom" targetRoom="loisHome" />
@@ -248,9 +248,8 @@
       
     </sprite>
     
-    <sprite>
-      <name>moonFountain</name>
-      <verboseName>small fountain</verboseName>
+    <sprite name="moonFountain"
+            verboseName="small fountain">
       <look>It looks familiar but somehow ... smaller?  Could be a trick of the moonlight.</look>
       <verb name="Remember">
         <behavior type="transitionToRoom" targetRoom="aFountainInABackYard" />
@@ -274,8 +273,7 @@
       
     </sprite>
     
-    <sprite>
-      <name>dome</name>
+    <sprite name="dome">
       <look>It's a protective dome. A swift kick could crack it open, but those fireflies are trapped for now.</look>
 
       <verb name="Remember" moveTo="1">
@@ -299,9 +297,9 @@
       
     </sprite>
 
-    <sprite spriteClass="TrappedFireflies">
-      <name>moonFireflyCluster</name>
-      <verboseName>fireflies</verboseName>
+    <sprite name="moonFireflyCluster"
+            verboseName="fireflies"
+            spriteClass="TrappedFireflies">
       <look>A swarm of fireflies trapped in a dome on the moon. They seem anxious.</look>
 
       <verb name="Remember" moveTo="1">
@@ -325,9 +323,8 @@
       
     </sprite>
 
-    <sprite>
-      <name>brokenDome</name>
-      <verboseName>broken dome</verboseName>
+    <sprite name="brokenDome"
+            verboseName="broken dome">
       <look>The dome is cracked open.</look>
 
       <verb name="Remember" moveTo="1">
@@ -351,9 +348,8 @@
       
     </sprite>
 
-    <sprite>
-      <name>kickingMachine</name>
-      <verboseName>broken kicking machine</verboseName>
+    <sprite name="kickingMachine"
+            verboseName="broken kicking machine">
       <look>It's some kind of electronic kicking machine, but it seems to be broken.</look>
 
       <verb name="Repair" moveTo="1">
@@ -383,9 +379,8 @@
       
     </sprite>
     
-    <sprite>
-      <name>kickingMachineKicked</name>
-      <verboseName>kicking machine</verboseName>
+    <sprite name="kickingMachineKicked"
+            verboseName="kicking machine">
       <look>It's some kind of electronic kicking machine. It's been repaired and then it immediately activated to break the dome.</look>
 
       <verb name="Remember" moveTo="1">
@@ -407,8 +402,7 @@
     </sprite>
     
     <!-- Room #1-3 - A Fountain in a Back Yard -->
-    <sprite>
-      <name>fountain</name>
+    <sprite name="fountain">
       <look>It takes care to maintain a fountain like this. It's the focal point of the back yard.</look>
       
       <verb name="Forget">
@@ -432,9 +426,9 @@
       
     </sprite>
 
-    <sprite>
-      <name>smallFlowerPots</name>
-      <verboseName>flowers</verboseName>
+    <sprite name="smallFlowerPots"
+            verboseName="flowers">
+      
       <look>Lilies and pimpernels.</look>
       <verb name="Forget">
         <behavior type="dialog">Hard to say who planted these flowers, maybe this is the home of a gardener.</behavior>
@@ -457,9 +451,9 @@
       
     </sprite>
     
-    <sprite>
-      <name>smallFlowerPots2</name>
-      <verboseName>flowers</verboseName>
+    <sprite name="smallFlowerPots2"
+            verboseName="flowers">
+      
       <look>Hydrangeas and poinsettias.</look>
       <verb name="Forget">
         <behavior type="dialog">Hard to say who planted these flowers, maybe this is the home of a gardener.</behavior>
@@ -482,9 +476,9 @@
       
     </sprite>
     
-    <sprite>
-      <name>largeFlowerBox</name>
-      <verboseName>flowers</verboseName>
+    <sprite name="largeFlowerBox"
+            verboseName="flowers">
+
       <look>Dahlias and daisies.</look>
       <verb name="Forget">
         <behavior type="dialog">Hard to say who planted these flowers, maybe this is the home of a gardener.</behavior>
@@ -507,9 +501,9 @@
       
     </sprite>
     
-    <sprite>
-      <name>backyardStars</name>
-      <verboseName>stars</verboseName>
+    <sprite name="backyardStars"
+            verboseName="stars">
+
       <look>Some are closer than others.</look>
       
       <verb name="Forget">
@@ -533,8 +527,9 @@
       
     </sprite>
     
-    <sprite spriteClass="Window">
-      <name>window</name>
+    <sprite name="window"
+            spriteClass="Window">
+
       <look>It looks familiar, but smaller.</look>
       <verb name="Remember">
         <behavior type="transitionToRoom" targetRoom="aComputerInAGuestRoom" />
@@ -557,8 +552,8 @@
       
     </sprite>
 
-    <sprite>
-      <name>table</name>
+    <sprite name="table">
+
       <look>The table looks unstable.</look>
       <verb name="Remember">
         <behavior type="dialog">Children used to play vigorously under this table, spilling any drinks resting on it, often as not.</behavior>
@@ -590,9 +585,10 @@
       </verb>
     </sprite>
     
-    <sprite spriteClass="JarOfBugs">
-      <name>jar</name>
-      <verboseName>jar of glowing bugs</verboseName>
+    <sprite name="jar"
+            verboseName="jar of glowing bugs"
+            spriteClass="JarOfBugs">
+
       <look>A jar full of fireflies.</look>
       <verb name="Remember">
         <behavior type="dialog">These fireflies have come a long way.</behavior>
@@ -614,9 +610,9 @@
       </verb>
     </sprite>
 
-    <sprite>
-      <name>brokenJar</name>
-      <verboseName>broken jar</verboseName>
+    <sprite name="brokenJar"
+            verboseName="broken jar">
+      
       <look>The jar is broken.</look>
       <verb name="Remember">
         <behavior type="dialog">This jar used to have fireflies trapped in it.</behavior>
@@ -640,9 +636,9 @@
 
     
     <!-- Room #1-4 - A Computer in a guest room -->    
-    <sprite>
-      <name>floppyDisk</name>
-      <verboseName>floppy disk</verboseName>
+    <sprite name="floppyDisk"
+            verboseName="floppy disk">
+      
       <look>It's a floppy disk copy of "Rocky's Boots" for the Apple II.</look>
       <verb name="Play">
         <behavior type="replaceSprite" oldSprite="computerScreen"
@@ -668,9 +664,9 @@
       </verb>
     </sprite>
 
-    <sprite>
-      <name>painting</name>
-      <verboseName>strange painting</verboseName>
+    <sprite name="painting"
+            verboseName="strange painting">
+
       <look>It's a watercolor painting of a vine growing up through a manhole. In the background there's a fire hydrant. It's a crude rendition, but there's something familiar about it; that fire hydrant almost looks touchable.</look>
       <verb name="Play">
         <conditionalBehaviors flagName="aComputerInAGuestRoom-firefliesCaught" value="0">
@@ -703,8 +699,8 @@
       </verb>
     </sprite>
 
-    <sprite>
-      <name>computer</name>
+    <sprite name="computer">
+
       <look>It's an Apple II. A programmable machine, from a more civilized age.</look>
       <verb name="Forget">
         <behavior type="transitionToRoom" targetRoom="aFountainInABackYard" />
@@ -727,9 +723,9 @@
       </verb>
     </sprite>
 
-    <sprite>
-      <name>computerScreen</name>
-      <verboseName>computer screen</verboseName>
+    <sprite name="computerScreen"
+            verboseName="computer screen">
+
       <look>The screen is dark, nothing's running right now.</look>
       <verb name="Forget">
         <behavior type="transitionToRoom" targetRoom="aFountainInABackYard" />
@@ -752,9 +748,10 @@
       </verb>
     </sprite>
 
-    <sprite spriteClass="ComputerScreenRockysBoots">
-      <name>computerScreenRockysBoots</name>
-      <verboseName>Rocky's Boots on computer screen</verboseName>      
+    <sprite name="computerScreenRockysBoots"
+            spriteClass="ComputerScreenRockysBoots"
+            verboseName="Rocky's Boots on computer screen">
+
       <look>Rocky's Boots is running on the computer right now. It's a diagram of an electronic kicking machine.</look>
       <verb name="Learn" verbText="Learn about kicking machine" moveTo="1">
         <behavior type="dialog">The player of "Rocky's Boots" learns to build a machine that kicks. Through this process, one can learn more about both electronics and kicking machines.</behavior>
@@ -775,9 +772,9 @@
       </verb>      
     </sprite>
     
-    <sprite spriteClass="ComputerScreenBoy">
-      <name>computerScreenBoy</name>
-      <verboseName>boy on computer screen</verboseName>
+    <sprite name="computerScreenBoy"
+            verboseName="boy on computer screen"
+            spriteClass="ComputerScreenBoy">
       
       <verb name="Look">
         <behavior type="flash" />        
@@ -838,49 +835,42 @@
     </sprite>
 
     <!-- ####################### BEULAH ####################### -->
-    <sprite>
-      <name>beulahPlayer</name>
+    <sprite name="beulahPlayer">
     </sprite>
     
     <!-- Room #2-1 - A House in California -->
-    <sprite assetName="house">
-      <name>beulahHouse</name>
+    <sprite name="beulahHouse"
+            assetName="house">
     </sprite>
     
-    <sprite>
-      <name>moonWaning</name>
+    <sprite name="moonWaning">
     </sprite>
 
-    <sprite>
-      <name>breadLoaf</name>
+    <sprite name="breadLoaf">
     </sprite>
 
-    <sprite>
-      <name>flaxBag</name>
+    <sprite name="flaxBag">
     </sprite>
 
-    <sprite>
-      <name>billboard</name>
+    <sprite name="billboard">
     </sprite>
 
-    <sprite spriteClass="HouseCloud">
-      <name>houseCloud</name>
+    <sprite name="houseCloud"
+            spriteClass="HouseCloud">
     </sprite>
 
-    <sprite spriteClass="HouseCloud">
-      <name>houseCloud2</name>
+    <sprite name="houseCloud2"
+            spriteClass="HouseCloud">
     </sprite>
 
-    <sprite interactive="0">
-      <name>powerLinesLeft</name>
+    <sprite name="powerLinesLeft"
+            interactive="0">
     </sprite>
 
-    <sprite>
-      <name>powerLinesRight</name>
+    <sprite name="powerLinesRight">
     </sprite>
 
-    <sprite>
-      <name>lightedLampPost</name>
+    <sprite name="lightedLampPost">
     </sprite>
     
   </sprites>

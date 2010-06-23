@@ -105,11 +105,11 @@ package california.sprites {
                 var spriteObject:Object = {};
 
                 // Core info
-                spriteObject['name'] = spriteNode.name.toString();
-                if(spriteNode.verboseName.length()) {
-                    spriteObject['verboseName'] = spriteNode.verboseName.toString();
+                spriteObject['name'] = spriteNode.@name.toString();
+                if(spriteNode.@verboseName.toString()) {
+                    spriteObject['verboseName'] = spriteNode.@verboseName.toString();
                 } else {
-                    spriteObject['verboseName'] = spriteNode.name.toString();
+                    spriteObject['verboseName'] = spriteNode.@name.toString();
                 }
 
                 if(spriteNode.@assetName.toString()) {
