@@ -274,7 +274,7 @@
     
     <sprite>
       <name>dome</name>
-      <look>It's a protective dome. A masterful blow could crack it open, but those fireflies are trapped for now.</look>
+      <look>It's a protective dome. A swift kick could crack it open, but those fireflies are trapped for now.</look>
 
       <verb name="Remember" moveTo="1">
         <behavior type="dialog">This dome was built as a firefly trap. But how does it work? It's a mystery.</behavior>
@@ -360,6 +360,23 @@
         <behavior type="replaceSprite" oldSprite="dome" newSprite="brokenDome" />
         <behavior type="replaceSprite" oldSprite="moonFireflyCluster" newSprite="looseFireflies" />
         <behavior type="replaceSprite" oldSprite="kickingMachine" newSprite="kickingMachineKicked" />
+        <behavior type="removeVerb" targetVerb="Repair" />        
+      </verb>
+
+      <verb name="Remember" moveTo="1">
+        <behavior type="dialog">It looks like the kicking machine from an old computer game, "Rocky's Boots."</behavior>
+      </verb>
+      <verb name="Forget" moveTo="1">
+        <behavior type="dialog">Who could have designed a machine like this?</behavior>
+      </verb>
+      <verb name="Play" moveTo="1">
+        <behavior type="dialog">It does look like something from a video game, doesn't it?</behavior>
+      </verb>
+      <verb name="Catch" moveTo="1">
+        <behavior type="dialog">The kicking machine isn't going anywhere.</behavior>        
+      </verb>
+      <verb name="Learn" moveTo="1">
+        <behavior type="dialog">It's important to lear how the kicking machine works in order to repair it, but that information doesn't seem to be here on the moon.</behavior>
       </verb>
       
     </sprite>
@@ -368,6 +385,23 @@
       <name>kickingMachineKicked</name>
       <verboseName>kicking machine</verboseName>
       <look>It's some kind of electronic kicking machine. It's been repaired and then it immediately activated to break the dome.</look>
+
+      <verb name="Remember" moveTo="1">
+        <behavior type="dialog">This kicking machine was broken at first, but once repaired it destroyed that dome.</behavior>
+      </verb>
+      <verb name="Forget" moveTo="1">
+        <behavior type="dialog">What kind of lunar chaos happened here?</behavior>
+      </verb>
+      <verb name="Play" moveTo="1">
+        <behavior type="dialog">Having seen what this kicking machine is capable of, it doesn't look safe to play around.</behavior>
+      </verb>
+      <verb name="Catch" moveTo="1">
+        <behavior type="dialog">What if it resisted? That could be dangerous.</behavior>
+      </verb>
+      <verb name="Learn" moveTo="1">
+        <behavior type="dialog">This kicking machine has already revealed all its secrets.</behavior>
+      </verb>
+      
     </sprite>
     
     <!-- Room #3 - A Fountain in a Back Yard -->

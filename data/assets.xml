@@ -36,10 +36,12 @@
          type="image" />
 
 
-  <!-- general -->
+  <!-- general lois -->
   <asset name="oneFirefly" file="sprites/one-firefly.png"
          type="image" />
   <asset name="fireflyGlow" file="sprites/glow-light.png"
+         type="image" />
+  <asset name="loisPlayer" file="sprites/lois-player.png"
          type="image" />
   
   <!-- Lois Home -->

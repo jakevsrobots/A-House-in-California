@@ -4,8 +4,6 @@ package california {
     public class GameCursor extends FlxGroup {
         [Embed(source="/../data/cursor.png")] private var CursorImage:Class;
 
-        private var MizuFont:String;
-        
         private var alphaDir:int = -1;
         private var fadeSpeed:Number = 5;
         private var minAlpha:Number = 0.5;

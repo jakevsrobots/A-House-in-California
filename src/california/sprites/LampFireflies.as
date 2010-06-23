@@ -22,9 +22,6 @@ package california.sprites {
                 fireflies.add(firefly);
                 glow.add(firefly.glow);
             }
-
-            // Remove world darkness
-            PlayState.instance.removeDarkness();
         }
 
         override public function update():void {
