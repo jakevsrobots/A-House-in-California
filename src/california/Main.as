@@ -3,6 +3,8 @@ package california {
     import AssetLibrary;
     import SWFStats.*;
     
+    import flash.net.SharedObject;
+    
     [SWF(width="640", height="340", backgroundColor="#000000")];
 
     [Frame(factoryClass="Preloader")]
@@ -20,10 +22,8 @@ package california {
         private var GameXMLFile:Class;
 
         public static var gameXML:XML;
-
         public static var logViewInitialized:Boolean;
-
-        public static var instance:Main;
+        public static var saveGame:SharedObject;
         
         public function Main():void {
             library = new AssetLibrary();
@@ -32,11 +32,16 @@ package california {
             
             super(320, 170, MenuState, 2);
             //super(320, 170, PlayState, 2);
-            //super(320, 170, ThanksForTestingState, 2);
             
             FlxState.bgColor = Main.bgcolor;
 
-            Main.instance = this;
+            saveGame = SharedObject.getLocal('aHouseInCalifornia_savedata');
+
+            saveGame.data['sectionsUnlocked'] = ['lois', 'beulah'];
+            
+            if(saveGame.data['sectionsUnlocked'] == null) {
+                saveGame.data['sectionsUnlocked'] = ['lois'];
+            }
         }
     }
 }

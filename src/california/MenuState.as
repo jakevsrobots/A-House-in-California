@@ -43,12 +43,35 @@ package california {
             var buttonPos:uint = 60;
 
             buttonGroup = new FlxGroup;
-            
-            var loisButton:MenuButton = new MenuButton(48, buttonPos, Main.library.getAsset('loisLevelIcon'), 'Lois', false, 'loisHome');
-            buttonGroup.add(loisButton);
 
-            for(var i:uint = 0; i < 3; i++) {
-                buttonGroup.add(new MenuButton(102 + (64 * i), buttonPos, Main.library.getAsset('blankLevelIcon'), '------', true, ''));
+            //var sections:Array = ['lois', 'beulah', 'connie', 'ann'];
+
+            if(Main.saveGame.data.sectionsUnlocked.indexOf('lois') != -1) {
+                var loisButton:MenuButton = new MenuButton(48, buttonPos, Main.library.getAsset('loisLevelIcon'), 'Lois', false, 'loisHome');
+                buttonGroup.add(loisButton);
+            } else {
+                buttonGroup.add(new MenuButton(48, buttonPos, Main.library.getAsset('blankLevelIcon'), '------', true, ''));                
+            }
+
+            if(Main.saveGame.data.sectionsUnlocked.indexOf('beulah') != -1) {
+                var beulahButton:MenuButton = new MenuButton(102, buttonPos, Main.library.getAsset('beulahLevelIcon'), 'Beulah', false, 'beulahHome');
+                buttonGroup.add(beulahButton);
+            } else {
+                buttonGroup.add(new MenuButton(102, buttonPos, Main.library.getAsset('blankLevelIcon'), '------', true, ''));                                
+            }
+
+            if(Main.saveGame.data.sectionsUnlocked.indexOf('connie') != -1) {
+                var connieButton:MenuButton = new MenuButton(166, buttonPos, Main.library.getAsset('loisLevelIcon'), 'Connie', false, 'connieHome');
+                buttonGroup.add(connieButton);
+            } else {
+                buttonGroup.add(new MenuButton(166, buttonPos, Main.library.getAsset('blankLevelIcon'), '------', true, ''));                                
+            }
+
+            if(Main.saveGame.data.sectionsUnlocked.indexOf('ann') != -1) {
+                var annButton:MenuButton = new MenuButton(230, buttonPos, Main.library.getAsset('loisLevelIcon'), 'Ann', false, 'annHome');
+                buttonGroup.add(annButton);
+            } else {
+                buttonGroup.add(new MenuButton(230, buttonPos, Main.library.getAsset('blankLevelIcon'), '------', true, ''));                                
             }
 
             add(buttonGroup);

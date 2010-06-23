@@ -1,6 +1,7 @@
 package california {
     import org.flixel.*;
     import california.sprites.GameSprite;
+    import california.sprites.Player;    
     
     public class Room {
         public var sprites:FlxGroup;
@@ -11,12 +12,10 @@ package california {
 
         public var title:String;
         public var roomName:String;
-        public var darkness:Boolean;
         
-        public function Room(RoomData:Class, _title:String, _roomName:String, _darkness:Boolean=false):void {
+        public function Room(RoomData:Class, _title:String, _roomName:String):void {
             title = _title;
             roomName = _roomName;
-            darkness = _darkness;
             
             var xml:XML = new XML(new RoomData());
 
@@ -25,7 +24,7 @@ package california {
 
             sprites = new FlxGroup();
             backgrounds = new FlxGroup();            
-
+            
             // Load backgrounds
             for each (var backgroundNode:XML in xml.background.children()) {
                     var background:Background = new Background(backgroundNode.localName(),
@@ -35,6 +34,11 @@ package california {
 
             // Load sprites
             for each (var spriteNode:XML in xml.sprites.children()) {
+
+                if(!GameSprite.spriteDatabase.hasOwnProperty(spriteNode.localName())) {
+                    throw new Error('Could not find sprite definition for ' + spriteNode.localName());
+                }
+                
                 var SpriteClass:Class = GameSprite.spriteDatabase[spriteNode.localName()]['spriteClass'];
                 
                 sprites.add(
@@ -53,6 +57,10 @@ package california {
                         verbList.push(verbNode.@name.toString());
                     }
                     PlayState.vocabulary.setCurrentVerbsByName(verbList);
+                } else if(eventNode.@type.toString() == "setPlayer") {
+                    if(PlayState.player.name != eventNode.@name) {
+                        PlayState.player = new Player(eventNode.@name, PlayState.player.x, PlayState.player.y);
+                    }
                 }
             }
         }

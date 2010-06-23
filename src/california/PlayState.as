@@ -85,8 +85,8 @@ package california {
             darkness.alpha = 1.0;
              
             // Player
-            //player = new Player(145, 135);
-            player = new LoisPlayer(145, 135);
+            player = new Player("loisPlayer", 145, 135);
+            //player = new LoisPlayer(145, 135);
             
             // Load room
             loadRoom(this.startingRoomName);
@@ -170,7 +170,7 @@ package california {
             }
 
             // Update darkness fade
-            if(currentRoom.darkness && fadeDarkness) {
+            if(fadeDarkness) {
                 darkness.alpha -= 0.5 * FlxG.elapsed;
                 if(darkness.alpha < 0) {
                     darkness.alpha = 0;
@@ -197,20 +197,18 @@ package california {
         }
 
         override public function render():void {
-            if(currentRoom.darkness) {
-                darkness.fill(darkness_color);
-                
-                for each(var sprite:GameSprite in spriteGroup.members) {
-                    if(sprite.hasOwnProperty('glow')) {
-                        var glow:FlxSprite;
-                        if(sprite['glow'] is FlxSprite) {
-                            glow = sprite['glow'];
-                            
-                            darkness.draw(glow, glow.x, glow.y);
-                        } else if(sprite['glow'] is FlxGroup) {
-                            for each(glow in sprite['glow'].members) {
-                                darkness.draw(glow, glow.x, glow.y);   
-                            }
+            darkness.fill(darkness_color);
+            
+            for each(var sprite:GameSprite in spriteGroup.members) {
+                if(sprite.hasOwnProperty('glow')) {
+                    var glow:FlxSprite;
+                    if(sprite['glow'] is FlxSprite) {
+                        glow = sprite['glow'];
+                        
+                        darkness.draw(glow, glow.x, glow.y);
+                    } else if(sprite['glow'] is FlxGroup) {
+                        for each(glow in sprite['glow'].members) {
+                            darkness.draw(glow, glow.x, glow.y);   
                         }
                     }
                 }
@@ -327,9 +325,7 @@ package california {
             roomGroup.add(backgroundGroup);
             roomGroup.add(spriteGroup);            
 
-            if(currentRoom.darkness) {
-                roomGroup.add(darkness);
-            }
+            roomGroup.add(darkness);
             
             roomTitle = new FlxText(8, 8, FlxG.width, currentRoom.title);
             roomTitle.setFormat(null, 8, 0xffffffff);

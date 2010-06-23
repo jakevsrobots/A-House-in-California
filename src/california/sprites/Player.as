@@ -1,5 +1,6 @@
 package california.sprites {
     import org.flixel.*;
+    import california.Main;
     
     public class Player extends GameSprite {
         private var moveSpeed:uint;
@@ -10,6 +11,13 @@ package california.sprites {
         public function Player(name:String, X:Number, Y:Number):void {
             super(name,X,Y,false);
 
+            var PlayerImage:Class = Main.library.getAsset(name);
+
+            this.loadGraphic(PlayerImage, true, true, 12, 12);
+
+            addAnimation("walk", [0,1,2,3], 12);
+            addAnimation("stopped", [9]);
+            
             moveSpeed = 64;
             minTargetDistance = 2; // At this point the character will stop accelerating towards its target.
             drag.x = 700;
@@ -19,7 +27,7 @@ package california.sprites {
             
             walkTarget = -1;
         }
-        
+
         override public function update():void {
             if(walkTarget >= 0) {
                 if(Math.abs(walkTarget - x) > minTargetDistance) {

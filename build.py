@@ -1,6 +1,6 @@
 #!/usr/bin/python
 
-import os
+import os, sys
 import commands
 from xml.dom import minidom
 
@@ -13,7 +13,9 @@ OUTPUT_FILENAME = os.path.join(BASE_PATH, 'AssetLibrary.as')
 
 
 def main():
+    sys.stdout.write("building assets\n")
     build_assets()
+    sys.stdout.write("compiling swf\n")
     build_swf()
 
 def build_assets():
@@ -24,6 +26,7 @@ def build_assets():
     # only process if the output file is older than the input xml
     if os.path.exists(OUTPUT_FILENAME):
         if os.path.getmtime(OUTPUT_FILENAME) > os.path.getmtime(ASSET_XML_FILE):
+            sys.stdout.write("assets already up-to-date\n")
             return
     
     # templates
@@ -86,7 +89,9 @@ def build_swf():
         print "no build command found for OS ", os.name
         return
         
-    print commands.getoutput(build_command)
+    sys.stdout.write(commands.getoutput(build_command))
+    
+    print ""
     
 if __name__ == '__main__':
     main()

@@ -88,7 +88,8 @@ package california.sprites {
                 "ComputerScreenRockysBoots": ComputerScreenRockysBoots,
                 "JarOfBugs": JarOfBugs,
                 "LooseFireflies": LooseFireflies,
-                "LampFireflies": LampFireflies
+                "LampFireflies": LampFireflies,
+                "HouseCloud": HouseCloud
             };
             
             GameSprite.spriteDatabase = {};

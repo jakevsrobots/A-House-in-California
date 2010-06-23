@@ -77,7 +77,34 @@
               width="71" height="48" />
     </folder>
     
+    <!-- ### BEULAH ### -->
+    <!-- Home -->
+    <folder name="beulah-home">
+      <object name="beulahHouseBackground" image="../backgrounds/beulah-house-background.png"
+              width="320" height="170" />
+
+      <object name="moonWaning" image="../sprites/moon-waning.png"
+             type="image" width="27" height="29" />
+      <object name="breadLoaf" image="../sprites/bread-loaf.png"
+             type="image" width="7" height="6" />
+      <object name="flaxBag" image="../sprites/flax-bag.png"
+             type="image" width="8" height="9" />
+      <object name="houseCloud" image="../sprites/house-cloud.png"
+             type="image" width="59" height="8" />
+      <object name="houseCloud2" image="../sprites/house-cloud-2.png"
+             type="image" width="43" height="8" />
+      <object name="powerLinesLeft" image="../sprites/power-lines-left.png"
+             type="image" width="45" height="13" />
+      <object name="powerLinesRight" image="../sprites/power-lines-right.png"
+             type="image" width="164" height="13" />
+      <object name="billboard" image="../sprites/billboard.png"
+             type="image" width="49" height="30" />
+      <object name="lightedLampPost" image="../sprites/lamppost.png"
+             type="image" width="13" height="29" />
+    </folder>
   </objects>
+
+  
   <layers>
     <objects name="background" gridSize="8" exportAsObjects="true" />
     <objects name="sprites" gridSize="1" exportAsObjects="true" />

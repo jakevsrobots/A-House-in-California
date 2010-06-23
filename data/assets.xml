@@ -14,6 +14,8 @@
   <!-- ################################################### -->
   <!-- ################## Maps ########################### -->
   <!-- ################################################### -->
+  
+  <!-- Lois -->
   <asset name="loisHome" file="maps/Level-1-1-AHouseInCalifornia.oel"
          type="xml" />
   <asset name="theSurfaceOfTheMoon" file="maps/Level-1-2-TheSurfaceOfTheMoon.oel"
@@ -22,6 +24,10 @@
          type="xml" />
   <asset name="aComputerInAGuestRoom" file="maps/Level-1-4-AComputerInAGuestRoom.oel"
          type="xml" />
+
+  <!-- Beulah -->  
+  <asset name="beulahHome" file="maps/Level-2-1-AHouseInCalifornia.oel"
+         type="xml" />
   
   <!-- ################################################### -->
   <!-- ################# Images ########################## -->
@@ -29,6 +35,8 @@
 
   <!-- Menu -->
   <asset name="loisLevelIcon" file="sprites/lois-level-icon.png"
+         type="image" />
+  <asset name="beulahLevelIcon" file="sprites/beulah-level-icon.png"
          type="image" />
   <asset name="blankLevelIcon" file="sprites/blank-level-icon.png"
          type="image" />
@@ -121,5 +129,34 @@
          type="image" />
   <asset name="computerScreenBoyGlow" file="sprites/boy-screen-glow.png"
          type="image" />
+
+
+  <!-- general beulah -->
+  <asset name="beulahPlayer" file="sprites/beulah-player.png"
+         type="image" />
+
+  <!-- Beulah Home -->
+  <asset name="beulahHouseBackground" file="backgrounds/beulah-house-background.png"
+         type="image" />
+  
+  <asset name="moonWaning" file="sprites/moon-waning.png"
+         type="image" />
+  <asset name="breadLoaf" file="sprites/bread-loaf.png"
+         type="image" />
+  <asset name="flaxBag" file="sprites/flax-bag.png"
+         type="image" />
+  <asset name="houseCloud" file="sprites/house-cloud.png"
+         type="image" />
+  <asset name="houseCloud2" file="sprites/house-cloud-2.png"
+         type="image" />
+  <asset name="powerLinesLeft" file="sprites/power-lines-left.png"
+         type="image" />
+  <asset name="powerLinesRight" file="sprites/power-lines-right.png"
+         type="image" />
+  <asset name="billboard" file="sprites/billboard.png"
+         type="image" />
+  <asset name="lightedLampPost" file="sprites/lamppost.png"
+         type="image" />
+  
   
 </assets>

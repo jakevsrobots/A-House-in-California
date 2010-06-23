@@ -15,13 +15,6 @@ package california {
                     'title': roomNode.@title.toString(),
                     'data': Main.library.getAsset(roomNode.@name)
                 };
- 
-                // TODO: refactor this into something more general & not hardcoded?
-                if(roomNode.@darkness.toString()) {
-                    roomObject['darkness'] = true;
-                } else {
-                    roomObject['darkness'] = false;
-                }
 
                 roomDescriptions[roomObject['name']] = roomObject;
             }
@@ -39,9 +32,7 @@ package california {
                 // Create a new room
                 roomStates[roomName] = new Room(roomDescriptions[roomName]['data'],
                                                 roomDescriptions[roomName]['title'],
-                                                roomName,
-                                                roomDescriptions[roomName]['darkness']);
-            
+                                                roomName);
                                             
                 return roomStates[roomName];
             }
