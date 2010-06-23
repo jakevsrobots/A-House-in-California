@@ -12,16 +12,16 @@ package california {
             currentVerbs = new FlxGroup();
             
             for each (var verbNode:XML in verbListXML.verb) {
-                var verbObject:Verb = new Verb(verbNode.name);
+                var verbObject:Verb = new Verb(verbNode.@name.toString());
 
                 // ex. "Sing to Bird" or by default just "Sing Bird"
-                if(verbNode.template.toString() != '') {
-                    verbObject.template = verbNode.template;
+                if(verbNode.@template.toString() != '') {
+                    verbObject.template = verbNode.@template.toString();
                 } else {
-                    verbObject.template = verbNode.name;
+                    verbObject.template = verbNode.@name.toString();
                 }
 
-                verbData[verbNode.name] = verbObject;
+                verbData[verbNode.@name.toString()] = verbObject;
 
                 if(currentVerbs.members.length < maxCurrentVerbs) {
                     currentVerbs.add(verbObject);

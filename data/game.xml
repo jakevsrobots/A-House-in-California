@@ -31,41 +31,25 @@
   <verbs>
     
     <!-- General -->
-    <verb>
-      <name>Look</name>
-      <template>Look at</template>
-    </verb>
+    <verb name="Look"
+          template="Look at" />
 
     <!-- Lois -->
-    <verb>
-      <name>Remember</name>
-    </verb>
+    <verb name="Remember" />
 
-    <verb>
-      <name>Forget</name>
-    </verb>
+    <verb name="Forget" />
 
-    <verb>
-      <name>Play</name>
-      <template>Play with</template>
-    </verb>
+    <verb name="Play"
+          template="Play with" />
     
-    <verb>
-      <name>Learn</name>
-      <template>Learn about</template>
-    </verb>
+    <verb name="Learn"
+          template="Learn about" />
+    
+    <verb name="Repair" />
 
-    <verb>
-      <name>Repair</name>
-    </verb>
+    <verb name="Catch" />
 
-    <verb>
-      <name>Catch</name>
-    </verb>
-
-    <verb>
-      <name>Light</name>
-    </verb>
+    <verb name="Light" />
 
     <!-- Beulah -->
     
@@ -843,23 +827,28 @@
             assetName="house">
     </sprite>
     
-    <sprite name="moonWaning">
+    <sprite name="moonWaning"
+            verboseName="moon">
     </sprite>
 
-    <sprite name="breadLoaf">
+    <sprite name="breadLoaf"
+            verboseName="loaf of bread">
     </sprite>
 
-    <sprite name="flaxBag">
+    <sprite name="flaxBag"
+            verboseName="bag of flax seed">
     </sprite>
 
     <sprite name="billboard">
     </sprite>
 
     <sprite name="houseCloud"
+            verboseName="cloud"
             spriteClass="HouseCloud">
     </sprite>
 
     <sprite name="houseCloud2"
+            verboseName="cloud"
             spriteClass="HouseCloud">
     </sprite>
 
@@ -867,10 +856,12 @@
             interactive="0">
     </sprite>
 
-    <sprite name="powerLinesRight">
+    <sprite name="powerLinesRight"
+            verboseName="power lines">
     </sprite>
 
-    <sprite name="lightedLampPost">
+    <sprite name="lightedLampPost"
+            verboseName="lamp post">
     </sprite>
     
   </sprites>
