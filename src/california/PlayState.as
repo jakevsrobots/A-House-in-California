@@ -34,10 +34,7 @@ package california {
         public static var hasMouseFocus:Boolean = true;
         public static var instance:PlayState;
 
-        private var startingRoomName:String = 'loisHome';
-        //private var startingRoomName:String = 'theSurfaceOfTheMoon';
-        //private var startingRoomName:String = 'aFountainInABackYard';
-        //private var startingRoomName:String = 'aComputerInAGuestRoom';
+        private var startingRoomName:String = 'beulahHome';
         
         //-----------------------------
         // Game data
@@ -66,8 +63,6 @@ package california {
                     FlxG.flash.stop();
                 });
 
-            GameSprite.createSpriteDatabase();
-            
             roomGroup = new FlxGroup();
             
             add(roomGroup);

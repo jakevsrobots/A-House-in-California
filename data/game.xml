@@ -52,7 +52,12 @@
     <verb name="Light" />
 
     <!-- Beulah -->
-    
+
+    <verb name="Befriend" />
+    <verb name="Read" />
+    <verb name="Write" />
+    <verb name="Extract" />
+    <verb name="Prepare" />
     
   </verbs>
   
@@ -824,6 +829,7 @@
     
     <!-- Room #2-1 - A House in California -->
     <sprite name="beulahHouse"
+            verboseName="house"
             assetName="house">
     </sprite>
     

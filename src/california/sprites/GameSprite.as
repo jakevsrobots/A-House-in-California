@@ -78,25 +78,21 @@ package california.sprites {
         //--------------------------------------------------------------------
         public static var spriteDatabase:Object;
         public static var spriteClasses:Object;
+
+        public static function registerSpriteClasses(spriteClasses:Object):void {
+            if(GameSprite.spriteClasses == null) {
+                GameSprite.spriteClasses = {};
+            }
+            
+            for(var className:Object in spriteClasses) {
+                GameSprite.spriteClasses[className] = spriteClasses[className];
+            }
+        }
         
         // Parse the XML sprite database into an actionscript Object
         // for easy inflation into an actual GameSprite instance as needed.
         
         public static function createSpriteDatabase():void {
-            // Any custom sprite classes
-            spriteClasses = {
-                "TrappedFireflies": TrappedFireflies,
-                "Moon": Moon,
-                "MoonStars": MoonStars,
-                "Window": Window,
-                "ComputerScreenBoy": ComputerScreenBoy,
-                "ComputerScreenRockysBoots": ComputerScreenRockysBoots,
-                "JarOfBugs": JarOfBugs,
-                "LooseFireflies": LooseFireflies,
-                "LampFireflies": LampFireflies,
-                "HouseCloud": HouseCloud
-            };
-            
             GameSprite.spriteDatabase = {};
             
             var xml:XML = Main.gameXML.sprites[0];

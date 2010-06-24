@@ -2,6 +2,7 @@ package california {
     import org.flixel.*;
     import AssetLibrary;
     import SWFStats.*;
+    import california.sprites.*;
     
     import flash.net.SharedObject;
     
@@ -28,17 +29,31 @@ package california {
         public function Main():void {
             library = new AssetLibrary();
             gameXML = new XML(new GameXMLFile());
+            
+            GameSprite.registerSpriteClasses({
+                    "TrappedFireflies": TrappedFireflies,
+                    "Moon": Moon,
+                    "MoonStars": MoonStars,
+                    "Window": Window,
+                    "ComputerScreenBoy": ComputerScreenBoy,
+                    "ComputerScreenRockysBoots": ComputerScreenRockysBoots,
+                    "JarOfBugs": JarOfBugs,
+                    "LooseFireflies": LooseFireflies,
+                    "LampFireflies": LampFireflies,
+                    "HouseCloud": HouseCloud
+                });
+        
+            GameSprite.createSpriteDatabase();
+        
             logViewInitialized = false;
             
             super(320, 170, MenuState, 2);
             //super(320, 170, PlayState, 2);
-            
+
             FlxState.bgColor = Main.bgcolor;
 
             saveGame = SharedObject.getLocal('aHouseInCalifornia_savedata');
-
             saveGame.data['sectionsUnlocked'] = ['lois', 'beulah'];
-            
             if(saveGame.data['sectionsUnlocked'] == null) {
                 saveGame.data['sectionsUnlocked'] = ['lois'];
             }
