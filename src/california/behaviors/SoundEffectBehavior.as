@@ -5,8 +5,8 @@ package california.behaviors {
     public class SoundEffectBehavior extends Behavior {
         private var soundName:String;
         
-        public function SoundEffectBehavior(soundName:String):void {
-            this.soundName = soundName;
+        public function SoundEffectBehavior(behaviorNode:XML):void {
+            this.soundName = behaviorNode.@soundName.toString();
         }
 
         override public function run():void {

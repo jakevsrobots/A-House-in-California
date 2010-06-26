@@ -9,13 +9,13 @@ package california.behaviors {
         private var width:Number;
         private var height:Number;        
         
-        public function AddSpriteBehavior(spriteName:String, x:Number, y:Number, width:Number=NaN, height:Number=NaN):void {
-            this.spriteName = spriteName;
-            this.x = x;
-            this.y = y;
+        public function AddSpriteBehavior(behaviorNode:XML):void {
+            this.spriteName = behaviorNode.@spriteName;
+            this.x = Behavior.stringToNumber(behaviorNode.@x);
+            this.y = Behavior.stringToNumber(behaviorNode.@y);
 
-            this.width = width;
-            this.height = height;                
+            this.width = Behavior.stringToNumber(behaviorNode.@width);
+            this.height = Behavior.stringToNumber(behaviorNode.@height);
         }
 
         override public function run():void {

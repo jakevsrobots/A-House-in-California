@@ -4,8 +4,8 @@ package california.behaviors {
     public class RemoveVerbBehavior extends Behavior {
         private var targetVerbName:String;        
         
-        public function RemoveVerbBehavior(targetVerbName:String):void {
-            this.targetVerbName = targetVerbName;            
+        public function RemoveVerbBehavior(behaviorNode:XML):void {
+            this.targetVerbName = behaviorNode.targetVerb.toString();
         }
 
         override public function run():void {

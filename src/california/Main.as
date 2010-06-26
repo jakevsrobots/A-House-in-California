@@ -3,6 +3,7 @@ package california {
     import AssetLibrary;
     import SWFStats.*;
     import california.sprites.*;
+    import california.behaviors.*;
     
     import flash.net.SharedObject;
     
@@ -29,6 +30,22 @@ package california {
         public function Main():void {
             library = new AssetLibrary();
             gameXML = new XML(new GameXMLFile());
+
+            Behavior.registerBehaviorClasses({
+                    "dialog": DialogBehavior,
+                    "transitionToRoom": TransitionToRoomBehavior,
+                    "replaceSprite": ReplaceSpriteBehavior,
+                    "removeSprite": RemoveSpriteBehavior,
+                    "addSprite": AddSpriteBehavior,
+                    "addVerb": AddVerbBehavior,
+                    "flash": FlashBehavior,
+                    "soundEffect": SoundEffectBehavior,
+                    "removeVerb": RemoveVerbBehavior,
+                    "replaceVerb": ReplaceVerbBehavior,
+                    "catchFireflies": CatchFirefliesBehavior,
+                    "fadeToMenu": FadeToMenuBehavior,
+                    "setFlag": SetFlagBehavior
+                });
             
             GameSprite.registerSpriteClasses({
                     "TrappedFireflies": TrappedFireflies,
@@ -42,7 +59,7 @@ package california {
                     "LampFireflies": LampFireflies,
                     "HouseCloud": HouseCloud
                 });
-        
+
             GameSprite.createSpriteDatabase();
         
             logViewInitialized = false;

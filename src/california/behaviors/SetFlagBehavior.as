@@ -5,9 +5,9 @@ package california.behaviors {
         private var setFlagName:String;
         private var value:Boolean;
 
-        public function SetFlagBehavior(setFlagName:String, rawValue:String):void {
-            this.setFlagName = setFlagName;
-            this.value = rawValue == "1" ? true : false;
+        public function SetFlagBehavior(behaviorNode:XML):void {
+            this.setFlagName = behaviorNode.@flagName.toString();
+            this.value = behaviorNode.@value.toString() == "1" ? true : false;
         }
 
         override public function run():void {

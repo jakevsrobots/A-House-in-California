@@ -2,7 +2,7 @@ package california.behaviors {
     import org.flixel.FlxG;
         
     public class FlashBehavior extends Behavior {
-        public function FlashBehavior():void {
+        public function FlashBehavior(behaviorNode:XML):void {
         }
 
         override public function run():void {

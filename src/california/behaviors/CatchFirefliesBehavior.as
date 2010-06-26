@@ -2,7 +2,7 @@ package california.behaviors {
     import california.PlayState;
 
     public class CatchFirefliesBehavior extends Behavior {
-        public function CatchFirefliesBehavior():void {
+        public function CatchFirefliesBehavior(behaviorNode:XML):void {
         }
 
         override public function run():void {

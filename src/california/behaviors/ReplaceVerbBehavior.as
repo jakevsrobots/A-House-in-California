@@ -5,9 +5,9 @@ package california.behaviors {
         private var oldVerbName:String;
         private var newVerbName:String;
 
-        public function ReplaceVerbBehavior(oldVerbName:String, newVerbName:String):void {
-            this.oldVerbName = oldVerbName;
-            this.newVerbName = newVerbName;
+        public function ReplaceVerbBehavior(behaviorNode:XML):void {
+            this.oldVerbName = behaviorNode.@oldVerb.toString();
+            this.newVerbName = behaviorNode.@newVerb.toString();
         }
 
         override public function run():void {

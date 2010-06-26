@@ -155,7 +155,7 @@ package california.sprites {
 
                 // Add a special 'look' shortcut, since it's so common
                 if(spriteNode.look.length()) {
-                    spriteObject['verbs']['Look'] = {'behaviors': [new DialogBehavior(spriteNode.look.toString())]}
+                    spriteObject['verbs']['Look'] = {'behaviors': [new DialogBehavior(spriteNode.look[0])]}
                 }
                 
                 spriteDatabase[spriteObject['name']] = spriteObject;

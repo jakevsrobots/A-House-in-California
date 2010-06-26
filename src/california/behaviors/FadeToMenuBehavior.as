@@ -4,8 +4,8 @@ package california.behaviors {
     public class FadeToMenuBehavior extends Behavior {
         private var delay:Number;
 
-        public function FadeToMenuBehavior(delay:Number):void {
-            this.delay = delay;
+        public function FadeToMenuBehavior(behaviorNode:XML):void {
+            this.delay = Behavior.stringToNumber(behaviorNode.@delay);
         }
 
         override public function run():void {

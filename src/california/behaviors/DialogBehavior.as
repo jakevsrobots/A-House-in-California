@@ -4,8 +4,8 @@ package california.behaviors {
     public class DialogBehavior extends Behavior {
         private var text:String;
         
-        public function DialogBehavior(text:String):void {
-            this.text = text;
+        public function DialogBehavior(behaviorNode:XML):void {
+            this.text = behaviorNode.toString();
         }
 
         override public function run():void {

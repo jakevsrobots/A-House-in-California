@@ -8,12 +8,12 @@ package california.behaviors {
         private var x:Number = NaN;
         private var y:Number = NaN;
         
-        public function ReplaceSpriteBehavior(oldSpriteName:String, newSpriteName:String, x:Number=NaN, y:Number=NaN):void {
-            this.oldSpriteName = oldSpriteName;
-            this.newSpriteName = newSpriteName;
+        public function ReplaceSpriteBehavior(behaviorNode:XML):void {
+            this.oldSpriteName = behaviorNode.@oldSprite.toString();
+            this.newSpriteName = behaviorNode.@newSprite.toString();
             
-            this.x = x;
-            this.y = y;
+            this.x = Behavior.stringToNumber(behaviorNode.@x);
+            this.y = Behavior.stringToNumber(behaviorNode.@y);
         }
 
         override public function run():void {

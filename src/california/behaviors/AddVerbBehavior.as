@@ -4,8 +4,8 @@ package california.behaviors {
     public class AddVerbBehavior extends Behavior {
         private var newVerbName:String;
 
-        public function AddVerbBehavior(newVerbName:String):void {
-            this.newVerbName = newVerbName;
+        public function AddVerbBehavior(behaviorNode:XML):void {
+            this.newVerbName = behaviorNode.@newVerb.toString();
         }
 
         override public function run():void {
