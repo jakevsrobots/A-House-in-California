@@ -1,7 +1,8 @@
 package california {
     import org.flixel.*;
     import california.sprites.GameSprite;
-    import california.sprites.Player;    
+    import california.sprites.Player;
+    import california.behaviors.Behavior;
     
     public class Room {
         public var sprites:FlxGroup;
@@ -12,6 +13,8 @@ package california {
 
         public var title:String;
         public var roomName:String;
+
+        private var enterBehaviors:Array;
         
         public function Room(RoomData:Class, _title:String, _roomName:String):void {
             title = _title;
@@ -46,25 +49,24 @@ package california {
                 );
             }
 
-            // run init events, events that happen when the room
-            // is first loaded/visited
-
-            for each (var eventNode:XML in Main.gameXML.world[0].room.(@name==roomName).initEvent) {
-                if(eventNode.@type.toString() == "vocabulary") {
-                    // Re-set the active vocabulary to a specific list.
-                    var verbList:Array = [];
-                    for each (var verbNode:XML in eventNode.verb) {
-                        verbList.push(verbNode.@name.toString());
-                    }
-                    PlayState.vocabulary.setCurrentVerbsByName(verbList);
-                } else if(eventNode.@type.toString() == "setPlayer") {
-                    if(PlayState.player.name != eventNode.@name) {
-                        PlayState.player = new Player(eventNode.@name, PlayState.player.x, PlayState.player.y);
-                    }
-                }
+            // load room 'enter behaviors', behaviors that run when the room is entered
+            enterBehaviors = [];
+            
+            for each (var behaviorNode:XML in Main.gameXML.world[0].room.(@name==roomName).behavior) {
+                enterBehaviors.push(Behavior.getBehaviorFromXML(behaviorNode));
             }
         }
 
+        // Run any entrance behaviors, or any other initialization stuff that needs
+        // to run every time a room is entered.
+        public function enterRoom():void {
+            for each(var behavior:Behavior in enterBehaviors) {
+                if(!behavior.conditional || PlayState.getFlag(behavior.flagName) == behavior.flagValue) {
+                    behavior.run();
+                }
+            }
+        }
+        
         public function getSprite(spriteName:String):GameSprite {
             for each(var sprite:GameSprite in sprites.members) {
                 if(sprite.name == spriteName) {

@@ -2,15 +2,15 @@
   <world>
     <!-- Lois -->
     <room name="loisHome" title="A House in California">
-      <initEvent type="setPlayer" name="loisPlayer" />      
-      <initEvent type="vocabulary">
+      <behavior type="setVocabulary">
         <verb name="Look" />
         <verb name="Remember" />
         <verb name="Forget" />
         <verb name="Play" />
         <verb name="Learn" />
         <verb name="Catch" />
-      </initEvent>
+      </behavior>
+      <behavior type="setPlayer" name="loisPlayer" />
     </room>
     <room name="theSurfaceOfTheMoon" title="The Surface of the Moon" />
     <room name="aFountainInABackYard" title="A Fountain in a Back Yard" />
@@ -18,10 +18,10 @@
 
     <!-- Beulah -->
     <room name="beulahHome" title="A House in California">
-      <initEvent type="vocabulary">
+      <behavior type="setVocabulary">
         <verb name="Look" />
-      </initEvent>
-      <initEvent type="setPlayer" name="beulahPlayer" />
+      </behavior>
+      <behavior type="setPlayer" name="beulahPlayer" />
     </room>
   </world>
   

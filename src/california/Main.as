@@ -44,7 +44,9 @@ package california {
                     "replaceVerb": ReplaceVerbBehavior,
                     "catchFireflies": CatchFirefliesBehavior,
                     "fadeToMenu": FadeToMenuBehavior,
-                    "setFlag": SetFlagBehavior
+                    "setFlag": SetFlagBehavior,
+                    "setVocabulary": SetVocabularyBehavior,
+                    "setPlayer": SetPlayerBehavior
                 });
             
             GameSprite.registerSpriteClasses({

@@ -329,6 +329,8 @@ package california {
             roomGroup.add(roomTitle);
 
             roomGroup.add(player);
+
+            currentRoom.enterRoom();
             
             Log.CustomMetric(currentRoom.roomName, "Room entry");
        }
