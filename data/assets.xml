@@ -4,7 +4,16 @@
   <!-- ################################################### -->
   <asset name="loisMusic" file="music/lois_a-house-in-california.mp3"
          type="mp3" />
+  
+  <!-- lois -->
+  <asset name="loisCrickets" file="music/crickets.mp3"
+         type="mp3" />
+  <asset name="loisSynth" file="music/synth.mp3"
+         type="mp3" />
+  <asset name="loisWhiteNoies" file="music/white-noise.mp3"
+         type="mp3" />
 
+  
   <!-- ################################################### -->
   <!-- ############## Sound Effects ###################### -->
   <!-- ################################################### -->
@@ -142,6 +151,8 @@
   <asset name="moonWaning" file="sprites/moon-waning.png"
          type="image" />
   <asset name="breadLoaf" file="sprites/bread-loaf.png"
+         type="image" />
+  <asset name="breadCrumbs" file="sprites/bread-crumbs.png"
          type="image" />
   <asset name="flaxBag" file="sprites/flax-bag.png"
          type="image" />
