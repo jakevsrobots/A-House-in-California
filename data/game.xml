@@ -55,8 +55,10 @@
 
     <verb name="Befriend" />
     <verb name="Read" />
-    <verb name="Write" />
-    <verb name="Extract" />
+    <verb name="Write"
+          template="Write about" />
+    <verb name="Extract"
+          template="Extract from" />
     <verb name="Prepare" />
     
   </verbs>
@@ -818,7 +820,7 @@
         <behavior type="replaceSprite" oldSprite="computerScreenBoy"
                   newSprite="computerScreen" />
         <behavior type="addSprite" spriteName="looseFireflies" x="150" y="46"
-                  width="51" height="34" />
+        <behavior type="dialog"></behavior>                  width="51" height="34" />
       </verb>
       
     </sprite>
@@ -831,43 +833,133 @@
     <sprite name="beulahHouse"
             verboseName="house"
             assetName="house">
+      <look>A house in California.</look>
+      <verb name="Befriend">
+        <behavior type="dialog">Once there was a boy who befriended a house. He climbed onto the roof and hugged the chimney.</behavior>
+      </verb>
+      <verb name="Read">
+        <behavior type="dialog">The only thing written on the house is the address number: 2602.</behavior>
+      </verb>
+      <verb name="Write">
+        <behavior type="dialog">"A House in California," an experimental novel about four people building a house together.</behavior>
+      </verb>
+      <verb name="Extract">
+        <behavior type="dialog">Perhaps some wood chips could be extracted from the house, but those would be of no use.</behavior>
+      </verb>
+      <verb name="Prepare">
+        <behavior type="dialog">Very few recipes call for a house.</behavior>
+      </verb>
     </sprite>
     
     <sprite name="moonWaning"
             verboseName="moon">
+      <look>The moon is waning.</look>
+      <verb name="Befriend">
+        <behavior type="dialog">Once there was a boy who befriended the Moon. He named it Leonard, or Lenny for short.</behavior>        
+      </verb>
+      <verb name="Read">
+        <behavior type="dialog">The moon has many secrets not legible from this distance.</behavior>
+      </verb>
+      <verb name="Write">
+        <behavior type="dialog">"45 Important Things Smaller Than the Moon," a magazine article.</behavior>
+      </verb>
+      <verb name="Extract">
+        <behavior type="dialog">Extract a bit of delicious Moon cheese? Alas it's just a myth.</behavior>
+      </verb>
+      <verb name="Prepare">
+        <behavior type="dialog">Very few recipes call for a Moon.</behavior>
+      </verb>
     </sprite>
 
     <sprite name="breadLoaf"
             verboseName="loaf of bread">
+      <look>A loaf of bread, full of delicious future breadcrumbs.</look>
+      <verb name="Befriend">
+        <behavior type="dialog">Once there was a boy who befriended a loaf of bread. He convinced his family not to eat it.</behavior>
+      </verb>
+      <verb name="Read">
+        <behavior type="dialog">The crumbs within this bread may each have their own stories to tell.</behavior>
+      </verb>
+      <verb name="Write">
+        <behavior type="dialog">"Shamefully Easy Beer and Honey Bread," a short sidebar recipe.</behavior>
+      </verb>
+      <verb name="Extract"
+            verbText="Extract crumbs from bread">
+        <behavior type="dialog">These crumbs should be useful in some recipe.</behavior>
+        <behavior type="replaceSprite" oldSprite="breadLoaf" newSprite="breadCrumbs" />
+      </verb>
+      <verb name="Prepare">
+        <behavior type="dialog">The bread is already prepared; perhaps it could be broken down into something useful elsewhere.</behavior>
+      </verb>      
     </sprite>
 
+    <sprite name="breadCrumbs"
+            verboseName="bread crumbs">
+      
+    </sprite>
+    
     <sprite name="flaxBag"
             verboseName="bag of flax seed">
+      <verb name="Befriend"></verb>
+      <verb name="Read"></verb>
+      <verb name="Write"></verb>
+      <verb name="Extract"></verb>
+      <verb name="Prepare"></verb>      
     </sprite>
 
     <sprite name="billboard">
+      <verb name="Befriend"></verb>
+      <verb name="Read"></verb>
+      <verb name="Write"></verb>
+      <verb name="Extract"></verb>
+      <verb name="Prepare"></verb>      
     </sprite>
 
     <sprite name="houseCloud"
             verboseName="cloud"
             spriteClass="HouseCloud">
+      <verb name="Befriend"></verb>
+      <verb name="Read"></verb>
+      <verb name="Write"></verb>
+      <verb name="Extract"></verb>
+      <verb name="Prepare"></verb>      
     </sprite>
 
     <sprite name="houseCloud2"
             verboseName="cloud"
             spriteClass="HouseCloud">
+      <verb name="Befriend"></verb>
+      <verb name="Read"></verb>
+      <verb name="Write"></verb>
+      <verb name="Extract"></verb>
+      <verb name="Prepare"></verb>      
     </sprite>
 
     <sprite name="powerLinesLeft"
             interactive="0">
+      <verb name="Befriend"></verb>
+      <verb name="Read"></verb>
+      <verb name="Write"></verb>
+      <verb name="Extract"></verb>
+      <verb name="Prepare"></verb>      
     </sprite>
 
     <sprite name="powerLinesRight"
             verboseName="power lines">
+      <verb name="Befriend"></verb>
+      <verb name="Read"></verb>
+      <verb name="Write"></verb>
+      <verb name="Extract"></verb>
+      <verb name="Prepare"></verb>      
     </sprite>
 
     <sprite name="lightedLampPost"
             verboseName="lamp post">
+      <verb name="Befriend"></verb>
+      <verb name="Read"></verb>
+      <verb name="Write"></verb>
+      <verb name="Extract"></verb>
+      <verb name="Prepare"></verb>      
     </sprite>
     
   </sprites>
