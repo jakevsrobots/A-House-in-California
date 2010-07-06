@@ -3,6 +3,8 @@ package california {
     import org.flixel.*;
     import california.sprites.*;
     import SWFStats.*;
+
+    import california.music.*;
     
     public class PlayState extends FlxState {
         private var roomGroup:FlxGroup;    
@@ -35,6 +37,8 @@ package california {
         public static var instance:PlayState;
 
         private var startingRoomName:String = 'beulahHome';
+
+        public static var musicPlayer:MusicPlayer;
         
         //-----------------------------
         // Game data
@@ -50,6 +54,8 @@ package california {
         }
         
         override public function create():void {
+            PlayState.instance = this;
+            
             if(!Main.logViewInitialized) {
                 Log.View(540, "9f491e53-4116-4945-85e7-803052dc1b05", root.loaderInfo.loaderURL);
                 Main.logViewInitialized = true;
@@ -100,10 +106,10 @@ package california {
             dialog = new DialogWindow();
             add(dialog);
 
-            PlayState.instance = this;
-
-            FlxG.playMusic(Main.library.getAsset('loisMusic'), 0.7);
-            FlxG.music.fadeIn(2);
+            //musicPlayer = new LoisMusicPlayer();
+            
+            //FlxG.playMusic(Main.library.getAsset('loisMusic'), 0.7);
+            //FlxG.music.fadeIn(2);
         }
 
         override public function update():void {
@@ -140,8 +146,12 @@ package california {
                     }
 
                     var cursorOverlappedSprite:Boolean = false;
+
+                    var spritesToCheck:Array = currentRoom.sprites.members.concat();
+                    spritesToCheck.push(PlayState.player);
+                    spritesToCheck = spritesToCheck.reverse();
                     
-                    for each(var sprite:GameSprite in currentRoom.sprites.members.concat().reverse()) {
+                    for each(var sprite:GameSprite in spritesToCheck) {
                         if(sprite.interactive) {
                             if(cursor.spriteHitBox.overlaps(sprite)) {
                                 cursor.setText(sprite.getVerbText(currentVerb));
@@ -149,11 +159,12 @@ package california {
 
                                 if(FlxG.mouse.justPressed()) {
                                     Log.CustomMetric(currentVerb.name + '|' + sprite.name + '|' + currentRoom.roomName, "Verb action");
+                                    FlxG.log('about to try handling verb ' + currentVerb.name + ' with sprite ' + sprite.name);
                                     sprite.handleVerb(currentVerb);
                                 }
                                 
                                 break;
-                        }
+                            }
                         }
 
                     }
@@ -294,6 +305,16 @@ package california {
             PlayState.vocabulary.removeVerbByName(targetVerbName);
         }
 
+        static public function changePlayer(newPlayer:Player):void {
+            //PlayState.instance.spriteGroup.replace(PlayState.player, newPlayer);
+            
+            PlayState.instance.roomGroup.replace(PlayState.player, newPlayer);
+            PlayState.instance.spriteGroup.replace(PlayState.player, newPlayer);
+            PlayState.player = newPlayer;            
+            FlxG.log('correct player in default group? ' + (PlayState.instance.defaultGroup.members.indexOf(newPlayer)));
+            FlxG.log('correct player in sprite group? ' + (PlayState.instance.spriteGroup.members.indexOf(newPlayer)));            
+        }
+        
         public function fadeToMenu(delay:Number):void {
             this.preMenuFade = true;
             this.fadeStartTimer = delay;
@@ -314,10 +335,12 @@ package california {
             currentRoom = world.getRoom(roomName);
             backgroundGroup = currentRoom.backgrounds;
             spriteGroup = currentRoom.sprites;
-            
+
+            /*
             if(spriteGroup.members.indexOf(player) == -1) {
                 spriteGroup.add(player);
             }
+            */
             
             roomGroup.add(backgroundGroup);
             roomGroup.add(spriteGroup);            

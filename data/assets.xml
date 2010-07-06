@@ -6,11 +6,11 @@
          type="mp3" />
   
   <!-- lois -->
-  <asset name="loisCrickets" file="music/crickets.mp3"
+  <asset name="loisCrickets" file="music/lois/crickets.mp3"
          type="mp3" />
-  <asset name="loisSynth" file="music/synth.mp3"
+  <asset name="loisSynth" file="music/lois/synth.mp3"
          type="mp3" />
-  <asset name="loisWhiteNoies" file="music/white-noise.mp3"
+  <asset name="loisWhiteNoise" file="music/lois/white-noise.mp3"
          type="mp3" />
 
   

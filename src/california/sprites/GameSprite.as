@@ -49,6 +49,7 @@ package california.sprites {
 
         public function handleVerb(verb:Verb):void {
             if(this.data.verbs.hasOwnProperty(verb.name)) {
+                FlxG.log('yes handler found for verb ' + verb.name + ' on sprite ' + this.name);
                 var aggregateBehaviorFunction:Function = function():void {
                     for each(var behavior:Behavior in data.verbs[verb.name].behaviors) {
                         if(!behavior.conditional || PlayState.getFlag(behavior.flagName) == behavior.flagValue) {
@@ -59,12 +60,15 @@ package california.sprites {
                 
                 if(this.data.verbs[verb.name].moveTo) {
                     // Walk to the sprite before any behaviors
-                    PlayState.player.setWalkTarget(this.x + this.width * 0.5, aggregateBehaviorFunction);
+                    FlxG.log('setting walk target for verb ' + verb.name + ' on sprite ' + this.name + ' to ' + (this.x + this.width * 0.5));
+                    PlayState.player.setWalkTarget((this.x + this.width * 0.5), aggregateBehaviorFunction);
                 } else {
                     // Just perform the behaviors now
+                    FlxG.log('immediately performing function for verb ' + verb.name + ' on sprite ' + this.name);
                     aggregateBehaviorFunction();
                 }
             } else {
+                FlxG.log('no handler found for verb ' + verb.name + ' on sprite ' + this.name);
                 verbFailure();
             }
         }

@@ -4,6 +4,7 @@ package california {
     import SWFStats.*;
     import california.sprites.*;
     import california.behaviors.*;
+    import california.music.*;
     
     import flash.net.SharedObject;
     
@@ -46,7 +47,8 @@ package california {
                     "fadeToMenu": FadeToMenuBehavior,
                     "setFlag": SetFlagBehavior,
                     "setVocabulary": SetVocabularyBehavior,
-                    "setPlayer": SetPlayerBehavior
+                    "setPlayer": SetPlayerBehavior,
+                    "playMusic": PlayMusicBehavior
                 });
             
             GameSprite.registerSpriteClasses({
@@ -63,7 +65,11 @@ package california {
                 });
 
             GameSprite.createSpriteDatabase();
-        
+
+            MusicPlayer.registerMusicClasses({
+                    "lois": LoisMusicPlayer
+                });
+            
             logViewInitialized = false;
             
             super(320, 170, MenuState, 2);

@@ -2,15 +2,20 @@
   <world>
     <!-- Lois -->
     <room name="loisHome" title="A House in California">
-      <behavior type="setVocabulary">
-        <verb name="Look" />
-        <verb name="Remember" />
-        <verb name="Forget" />
-        <verb name="Play" />
-        <verb name="Learn" />
-        <verb name="Catch" />
-      </behavior>
-      <behavior type="setPlayer" name="loisPlayer" />
+      <conditionalBehaviors flagName="loisSectionStarted" value="0">
+        <behavior type="setVocabulary">
+          <verb name="Look" />
+          <verb name="Remember" />
+          <verb name="Forget" />
+          <verb name="Play" />
+          <verb name="Learn" />
+          <verb name="Catch" />
+        </behavior>
+        <behavior type="setPlayer" name="loisPlayer" />
+        <behavior type="playMusic" musicName="lois" />
+        
+        <behavior type="setFlag" flagName="loisSectionStarted" value="1" />
+      </conditionalBehaviors>
     </room>
     <room name="theSurfaceOfTheMoon" title="The Surface of the Moon" />
     <room name="aFountainInABackYard" title="A Fountain in a Back Yard" />
@@ -18,10 +23,14 @@
 
     <!-- Beulah -->
     <room name="beulahHome" title="A House in California">
-      <behavior type="setVocabulary">
-        <verb name="Look" />
-      </behavior>
-      <behavior type="setPlayer" name="beulahPlayer" />
+      <conditionalBehaviors flagName="beulahSectionStarted" value="0">      
+        <behavior type="setVocabulary">
+          <verb name="Look" />
+        </behavior>
+        <behavior type="setPlayer" name="beulahPlayer" />
+
+        <behavior type="setFlag" flagName="beulahSectionStarted" value="1" />
+      </conditionalBehaviors>
     </room>
   </world>
   
@@ -819,8 +828,8 @@
         <behavior type="flash" />        
         <behavior type="replaceSprite" oldSprite="computerScreenBoy"
                   newSprite="computerScreen" />
-        <behavior type="addSprite" spriteName="looseFireflies" x="150" y="46"
-        <behavior type="dialog"></behavior>                  width="51" height="34" />
+        <behavior type="addSprite" spriteName="looseFireflies" x="150" y="46" width="51" height="34" />
+        <behavior type="dialog"></behavior>                  
       </verb>
       
     </sprite>
