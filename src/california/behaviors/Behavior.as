@@ -24,13 +24,13 @@ package california.behaviors {
             return Behavior.behaviorClasses[name];
         }
 
-        public static function registerBehaviorClasses(behaviorClasses:Object):void {
+        public static function registerBehaviorClasses(_behaviorClasses:Object):void {
             if(Behavior.behaviorClasses == null) {
                 Behavior.behaviorClasses = {};
             }
 
-            for(var className:Object in behaviorClasses) {
-                Behavior.behaviorClasses[className] = behaviorClasses[className];
+            for(var className:Object in _behaviorClasses) {
+                Behavior.behaviorClasses[className] = _behaviorClasses[className];
             }
         }
         

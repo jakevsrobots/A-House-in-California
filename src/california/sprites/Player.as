@@ -47,7 +47,6 @@ package california.sprites {
                     walkTarget = -1;
                     
                     if(walkTargetCallback != null) {
-                        FlxG.log('running walk target callback');
                         walkTargetCallback();
                         walkTargetCallback = null;
                     }
@@ -62,7 +61,6 @@ package california.sprites {
         public function setWalkTarget(X:Number, callback:Function = null):void {
             walkTarget = X;
             walkTargetCallback = callback;
-            FlxG.log('player walk target has been set to ' + X + ' for player ' + this.name);
         }
     }
 }

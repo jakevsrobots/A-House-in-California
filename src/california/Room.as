@@ -52,7 +52,7 @@ package california {
             // load room 'enter behaviors', behaviors that run when the room is entered
             enterBehaviors = [];
             
-            for each (var behaviorNode:XML in Main.gameXML.world[0].room.(@name==roomName).behavior) {
+            for each (var behaviorNode:XML in Main.gameXML.world[0].room.(@name==roomName)..behavior) {
                 enterBehaviors.push(Behavior.getBehaviorFromXML(behaviorNode));
             }
         }

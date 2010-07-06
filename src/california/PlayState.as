@@ -159,7 +159,6 @@ package california {
 
                                 if(FlxG.mouse.justPressed()) {
                                     Log.CustomMetric(currentVerb.name + '|' + sprite.name + '|' + currentRoom.roomName, "Verb action");
-                                    FlxG.log('about to try handling verb ' + currentVerb.name + ' with sprite ' + sprite.name);
                                     sprite.handleVerb(currentVerb);
                                 }
                                 
@@ -311,8 +310,6 @@ package california {
             PlayState.instance.roomGroup.replace(PlayState.player, newPlayer);
             PlayState.instance.spriteGroup.replace(PlayState.player, newPlayer);
             PlayState.player = newPlayer;            
-            FlxG.log('correct player in default group? ' + (PlayState.instance.defaultGroup.members.indexOf(newPlayer)));
-            FlxG.log('correct player in sprite group? ' + (PlayState.instance.spriteGroup.members.indexOf(newPlayer)));            
         }
         
         public function fadeToMenu(delay:Number):void {

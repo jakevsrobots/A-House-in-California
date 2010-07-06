@@ -66,7 +66,7 @@ package california {
 
             GameSprite.createSpriteDatabase();
 
-            MusicPlayer.registerMusicClasses({
+            MusicPlayer.registerMusicPlayerClasses({
                     "lois": LoisMusicPlayer
                 });
             
