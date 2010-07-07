@@ -87,11 +87,11 @@ package california {
         }
 
         public function removeVerbByName(verbName:String):void {
-            var targetVerb:Verb = verbData[verbName];
-
-            if(!targetVerb) {
+            if(!verbData.hasOwnProperty(verbName)) {
                 return;
             }
+            
+            var targetVerb:Verb = verbData[verbName];
 
             currentVerbs.remove(targetVerb, true);
             sortVerbs();

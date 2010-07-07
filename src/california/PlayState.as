@@ -190,12 +190,11 @@ package california {
                 if(fadeStartTimer > 0) {
                     fadeStartTimer -= FlxG.elapsed;
                 } else {
-                    FlxG.music.fadeOut(2);
                     preMenuFade = false;
                     FlxG.fade.start(0xffffffff, 2, function():void {
-                            //FlxG.state = new MenuState(0xffffffff);
-                            FlxG.state = new ThanksForTestingState(0xffffffff);
                             FlxG.fade.stop();
+                            FlxG.state = new MenuState(0xffffffff);
+                            //FlxG.state = new ThanksForTestingState(0xffffffff);
                         });
                 }
             }

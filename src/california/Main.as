@@ -61,7 +61,9 @@ package california {
                     "JarOfBugs": JarOfBugs,
                     "LooseFireflies": LooseFireflies,
                     "LampFireflies": LampFireflies,
-                    "HouseCloud": HouseCloud
+                    "HouseCloud": HouseCloud,
+                    "LightedLampPost": LightedLampPost,
+                    "Bird": Bird
                 });
 
             GameSprite.createSpriteDatabase();
@@ -78,7 +80,10 @@ package california {
             FlxState.bgColor = Main.bgcolor;
 
             saveGame = SharedObject.getLocal('aHouseInCalifornia_savedata');
-            saveGame.data['sectionsUnlocked'] = ['lois', 'beulah'];
+            
+            // saveGame.data['sectionsUnlocked'] = ['lois', 'beulah'];
+            saveGame.data['sectionsUnlocked'] = ['lois'];
+            
             if(saveGame.data['sectionsUnlocked'] == null) {
                 saveGame.data['sectionsUnlocked'] = ['lois'];
             }

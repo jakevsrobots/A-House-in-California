@@ -10,17 +10,16 @@
     <flaxBag x="249" y="137"/>
     <billboard x="189" y="29"/>
     <beulahHouse x="40" y="47"/>
-    <houseCloud x="29" y="33"/>
-    <houseCloud2 x="135" y="13"/>
-    <houseCloud x="200" y="42"/>
-    <houseCloud x="260" y="11"/>
-    <houseCloud2 x="102" y="32"/>
-    <houseCloud2 x="11" y="14"/>
+    <houseCloud2 x="135" y="11"/>
+    <houseCloud x="260" y="0"/>
+    <houseCloud2 x="114" y="59"/>
+    <houseCloud2 x="11" y="20"/>
     <houseCloud2 x="7" y="50"/>
     <powerLinesLeft x="0" y="65"/>
     <powerLinesRight x="156" y="65"/>
-    <lightedLampPost x="31" y="117"/>
-    <lightedLampPost x="299" y="117"/>
-    <lightedLampPost x="191" y="117"/>
+    <lightedLampPost x="48" y="117"/>
+    <lightedLampPost x="179" y="117"/>
+    <lightedLampPost x="276" y="117"/>
+    <pigeon x="189" y="20"/>
   </sprites>
 </level>

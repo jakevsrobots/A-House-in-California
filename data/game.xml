@@ -26,6 +26,11 @@
       <conditionalBehaviors flagName="beulahSectionStarted" value="0">      
         <behavior type="setVocabulary">
           <verb name="Look" />
+          <verb name="Read" />
+          <verb name="Write" />
+          <verb name="Extract" />
+          <verb name="Prepare" />
+          <verb name="Befriend" />
         </behavior>
         <behavior type="setPlayer" name="beulahPlayer" />
 
@@ -69,6 +74,8 @@
     <verb name="Extract"
           template="Extract from" />
     <verb name="Prepare" />
+    <verb name="Flax"
+          template="Add flax to" />
     
   </verbs>
   
@@ -107,7 +114,7 @@
     <sprite name="loisHouse"
             verboseName="house"
             assetName="house">
-      <look>A house in California.</look>
+      <look>A house in California. It's so dark.</look>
       <verb name="Remember" moveTo="1">
         <behavior type="dialog">The house was in Lodi, it had a back yard with a fountain. It was always warm and bright.</behavior>
       </verb>
@@ -358,7 +365,7 @@
         <behavior type="replaceSprite" oldSprite="dome" newSprite="brokenDome" />
         <behavior type="replaceSprite" oldSprite="moonFireflyCluster" newSprite="looseFireflies" />
         <behavior type="replaceSprite" oldSprite="kickingMachine" newSprite="kickingMachineKicked" />
-        <behavior type="removeVerb" targetVerb="Repair" />        
+        <behavior type="removeVerb" targetVerb="Repair" />
       </verb>
 
       <verb name="Remember" moveTo="1">
@@ -829,25 +836,45 @@
         <behavior type="replaceSprite" oldSprite="computerScreenBoy"
                   newSprite="computerScreen" />
         <behavior type="addSprite" spriteName="looseFireflies" x="150" y="46" width="51" height="34" />
-        <behavior type="dialog"></behavior>                  
       </verb>
       
     </sprite>
 
     <!-- ####################### BEULAH ####################### -->
-    <sprite name="beulahPlayer">
+    <sprite name="beulahPlayer"
+            verboseName="Beulah">
+      <look>Beulah is a novelist, cook, food writer and radio personality.</look>
+      <verb name="Befriend">
+        <behavior type="dialog">Many children dream up imaginary friends onto whom they can project different parts of themselves.</behavior>
+      </verb>
+      <verb name="Read">
+        <behavior type="dialog">Can a palm reader tell her own future?</behavior>
+      </verb>
+      <verb name="Write">
+        <behavior type="dialog">"Journal," the daily micro-memoirs of Beulah.</behavior>
+      </verb>
+      <verb name="Extract">
+        <behavior type="dialog">Beulah uses writing to extract secrets from fantasy, and tongs to extract beets from a steamer.</behavior>
+      </verb>
+      <verb name="Prepare">
+        <behavior type="dialog">Beulah puts a part of herself in every dish, but that's just a metaphor.</behavior>
+      </verb>
+      <verb name="Flax">
+        <behavior type="dialog">Flax seed is quite healthy, but so is Beulah.</behavior>
+      </verb>
+      
     </sprite>
     
     <!-- Room #2-1 - A House in California -->
     <sprite name="beulahHouse"
             verboseName="house"
             assetName="house">
-      <look>A house in California.</look>
+      <look>A house in California. It's so quiet.</look>
       <verb name="Befriend">
-        <behavior type="dialog">Once there was a boy who befriended a house. He climbed onto the roof and hugged the chimney.</behavior>
+        <behavior type="dialog">Once, there was a boy who befriended a house. Late at night, he put his ear to the wall and listened to it hum.</behavior>
       </verb>
       <verb name="Read">
-        <behavior type="dialog">The only thing written on the house is the address number: 2602.</behavior>
+        <behavior type="dialog">The only thing written on the house is the address number: 2602. No explanation of the </behavior>
       </verb>
       <verb name="Write">
         <behavior type="dialog">"A House in California," an experimental novel about four people building a house together.</behavior>
@@ -858,13 +885,16 @@
       <verb name="Prepare">
         <behavior type="dialog">Very few recipes call for a house.</behavior>
       </verb>
+      <verb name="Flax">
+        <behavior type="dialog">No amount of flax would make this house an appealing snack.</behavior>
+      </verb>
     </sprite>
     
     <sprite name="moonWaning"
             verboseName="moon">
       <look>The moon is waning.</look>
       <verb name="Befriend">
-        <behavior type="dialog">Once there was a boy who befriended the Moon. He named it Leonard, or Lenny for short.</behavior>        
+        <behavior type="dialog">Once, there was a boy who befriended the Moon. He named it Leonard, or Lenny for short.</behavior>        
       </verb>
       <verb name="Read">
         <behavior type="dialog">The moon has many secrets not legible from this distance.</behavior>
@@ -878,13 +908,16 @@
       <verb name="Prepare">
         <behavior type="dialog">Very few recipes call for a Moon.</behavior>
       </verb>
+      <verb name="Flax">
+        <behavior type="dialog">Throwing flax at the moon is a fun and healthy way to make a mess.</behavior>
+      </verb>
     </sprite>
 
     <sprite name="breadLoaf"
             verboseName="loaf of bread">
       <look>A loaf of bread, full of delicious future breadcrumbs.</look>
       <verb name="Befriend">
-        <behavior type="dialog">Once there was a boy who befriended a loaf of bread. He convinced his family not to eat it.</behavior>
+        <behavior type="dialog">Once, there was a boy who befriended a loaf of bread. He convinced his family not to eat it.</behavior>
       </verb>
       <verb name="Read">
         <behavior type="dialog">The crumbs within this bread may each have their own stories to tell.</behavior>
@@ -898,30 +931,85 @@
         <behavior type="replaceSprite" oldSprite="breadLoaf" newSprite="breadCrumbs" />
       </verb>
       <verb name="Prepare">
-        <behavior type="dialog">The bread is already prepared; perhaps it could be broken down into something useful elsewhere.</behavior>
-      </verb>      
+        <behavior type="dialog">The bread is already prepared; perhaps it could be broken down into something else useful.</behavior>
+      </verb>
+      <verb name="Flax">
+        <behavior type="dialog">The recipe calls for crumbs, not a whole loaf of bread.</behavior>
+      </verb>
     </sprite>
 
     <sprite name="breadCrumbs"
             verboseName="bread crumbs">
+      <look>A pile of bread crumbs. Probably delicious, but not quite enough to lure down the birds.</look>
+      <verb name="Befriend">
+        <behavior type="dialog">Once, there was a boy who befriended some bread crumbs. He helped them found a crumb village beneath the couch cushions.</behavior>
+      </verb>
+      <verb name="Read">
+        <behavior type="dialog">Some folks read the future in tea leaves or bread crumbs, but these crumbs look better suited for cooking.</behavior>
+      </verb>
+      <verb name="Write">
+        <behavior type="dialog">"The Lives of Crumbs," a children's book about about a village populated by friendly bread crumbs.</behavior>
+      </verb>
+      <verb name="Extract">
+        <behavior type="dialog">The crumbs have already been extracted from the bread.</behavior>
+      </verb>
+      <verb name="Prepare">
+        <behavior type="dialog">The crumbs themselves are ready; they just need another ingredient to make a bird snack.</behavior>
+      </verb>
+      <verb name="Flax">
+        <behavior type="replaceVerb" oldVerb="Flax" newVerb="Prepare" />
+        <behavior type="dialog">A delicious snack for a bird.</behavior>
+      </verb>
+    </sprite>
+
+    <sprite name="birdBread"
+            verboseName="bird bread"
+            assetName="birdBread">
       
     </sprite>
     
     <sprite name="flaxBag"
             verboseName="bag of flax seed">
-      <verb name="Befriend"></verb>
-      <verb name="Read"></verb>
-      <verb name="Write"></verb>
-      <verb name="Extract"></verb>
-      <verb name="Prepare"></verb>      
+      <look>A bag of flax seed; perhaps it was left here by some health-minded snack artist.</look>
+      <verb name="Befriend">
+        <behavior type="dialog">Once, there was a boy who befriended a bag of flax seed. He painted an ear on it and told it stories about trees.</behavior>
+      </verb>
+      <verb name="Read">
+        <behavior type="dialog"></behavior>
+      </verb>
+      <verb name="Write">
+        <behavior type="dialog">"Flax Seed Toothpaste and 9 Other Terrible Ideas," an article in a health food magazine.</behavior>
+      </verb>
+      <verb name="Extract">
+        <behavior type="dialog">The seeds are already extracted, they just need a bit of preparation.</behavior>
+      </verb>
+      <verb name="Prepare">
+        <behavior type="replaceVerb" oldVerb="Prepare" newVerb="Flax" />
+      </verb>
+      <verb name="Flax">
+        <behavior type="dialog">It's flaxy enough.</behavior>
+      </verb>
     </sprite>
 
     <sprite name="billboard">
-      <verb name="Befriend"></verb>
-      <verb name="Read"></verb>
-      <verb name="Write"></verb>
-      <verb name="Extract"></verb>
-      <verb name="Prepare"></verb>      
+      <verb name="Befriend">
+        <behavior type="dialog"></behavior>
+      </verb>
+      <verb name="Read">
+        <behavior type="dialog"></behavior>
+      </verb>
+      <verb name="Write">
+        <behavior type="dialog"></behavior>
+      </verb>
+      <verb name="Extract">
+        <behavior type="dialog"></behavior>
+      </verb>
+      <verb name="Prepare">
+        <behavior type="dialog"></behavior>
+      </verb>
+      <verb name="Flax">
+        <behavior type="dialog"></behavior>
+      </verb>
     </sprite>
 
     <sprite name="houseCloud"
@@ -963,7 +1051,17 @@
     </sprite>
 
     <sprite name="lightedLampPost"
-            verboseName="lamp post">
+            verboseName="lamp post"
+            spriteClass="LightedLampPost">
+      <verb name="Befriend"></verb>
+      <verb name="Read"></verb>
+      <verb name="Write"></verb>
+      <verb name="Extract"></verb>
+      <verb name="Prepare"></verb>      
+    </sprite>
+    
+    <sprite name="pigeon"
+            spriteClass="Bird">
       <verb name="Befriend"></verb>
       <verb name="Read"></verb>
       <verb name="Write"></verb>

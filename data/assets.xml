@@ -168,6 +168,8 @@
          type="image" />
   <asset name="lightedLampPost" file="sprites/lamppost.png"
          type="image" />
-  
+
+  <asset name="pigeon" file="sprites/pigeon.png"
+         type="image" />
   
 </assets>
