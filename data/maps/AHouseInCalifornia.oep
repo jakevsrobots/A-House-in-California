@@ -105,6 +105,10 @@
               width="13" height="29" />
       <object name="pigeon" image="../sprites/pigeon.png"
               width="10" height="9" />
+      <object name="dove" image="../sprites/dove.png"
+              width="10" height="9" />
+      <object name="magpie" image="../sprites/magpie.png"
+              width="7" height="5" />
     </folder>
   </objects>
   

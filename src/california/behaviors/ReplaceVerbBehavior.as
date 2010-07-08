@@ -11,7 +11,8 @@ package california.behaviors {
         }
 
         override public function run():void {
-            PlayState.vocabulary.replaceVerb(oldVerbName, newVerbName);
+            //PlayState.vocabulary.replaceVerb(oldVerbName, newVerbName);
+            PlayState.instance.replaceVerb(oldVerbName, newVerbName);
         }
     }
 }

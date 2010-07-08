@@ -179,7 +179,7 @@
         <behavior type="dialog">Once forgotten, it's like a whole new moon.</behavior>
       </verb>
       <verb name="Play" moveTo="1">
-        <behavior type="dialog">Once, there was a boy who pretended to be the moon. He played with fireflies, pretending they were stars. That was a long time ago.</behavior>
+        <behavior type="dialog">There was a boy who pretended to be the moon. He played with fireflies, pretending they were stars. That was a long time ago.</behavior>
       </verb>
       <verb name="Learn" moveTo="1">
         <behavior type="dialog">On average, the moon is roughly 230,000 miles from here.</behavior>
@@ -217,7 +217,7 @@
         <behavior type="dialog">Where did these fireflies come from?</behavior>        
       </verb>
       <verb name="Play" moveTo="1">
-        <behavior type="dialog">Once, there was a boy who pretended to be a firefly. He looked at the moon and pretended it was one of his glowing firefly friends.</behavior>
+        <behavior type="dialog">There was a boy who pretended to be a firefly. He looked at the moon and pretended it was one of his glowing firefly friends.</behavior>
       </verb>
       <verb name="Learn" moveTo="1">
         <behavior type="dialog">The glow of a firefly is called 'cold light' because it has no infrared or ultraviolet components.</behavior>
@@ -241,7 +241,7 @@
         <behavior type="dialog">All of these stars are older than the phenomenon of memory.</behavior>
       </verb>
       <verb name="Play">
-        <behavior type="dialog">Once, there was a boy who pretended to be a star, trillions of miles away. He looked at the stars in the sky and pretended one of them was Earth.</behavior>
+        <behavior type="dialog">There was a boy who pretended to be a star, trillions of miles away. He looked at the stars in the sky and pretended one of them was Earth.</behavior>
       </verb>
       <verb name="Learn">
         <behavior type="dialog">The nearest star is 25 trillion miles from here.</behavior>
@@ -444,7 +444,7 @@
         <behavior type="dialog">These wild flowers were planted here by the wind.</behavior>
       </verb>
       <verb name="Play">
-        <behavior type="dialog">Once, there was a boy who pretended to be a flower. He buried himself in the dirt and then slowly crawled out into the sun.</behavior>
+        <behavior type="dialog">There was a boy who pretended to be a flower. He buried himself in the dirt and then slowly crawled out into the sun.</behavior>
       </verb>
       <verb name="Catch">
         <behavior type="dialog">The bees hovering around these flowers will sting if they're caught.</behavior>
@@ -469,7 +469,7 @@
         <behavior type="dialog">These wild flowers were planted here by the wind.</behavior>
       </verb>
       <verb name="Play">
-        <behavior type="dialog">Once, there was a boy who pretended to be a flower. He closed his eyes, drank a glass of water, then slowly opened them.</behavior>
+        <behavior type="dialog">There was a boy who pretended to be a flower. He closed his eyes, drank a glass of water, then slowly opened them.</behavior>
       </verb>
       <verb name="Catch">
         <behavior type="dialog">The bees hovering around these flowers will sting if they're caught.</behavior>
@@ -494,7 +494,7 @@
         <behavior type="dialog">These wild flowers were planted here by the wind.</behavior>
       </verb>
       <verb name="Play">
-        <behavior type="dialog">Once, there was a boy who pretended to be a flower. He held his arms tightly against his chest, stood in the sun, then slowly lifted his hands into the air.</behavior>
+        <behavior type="dialog">There was a boy who pretended to be a flower. He held his arms tightly against his chest, stood in the sun, then slowly lifted his hands into the air.</behavior>
       </verb>
       <verb name="Catch">
         <behavior type="dialog">The bees hovering around these flowers will sting if they're caught.</behavior>
@@ -871,7 +871,7 @@
             assetName="house">
       <look>A house in California. It's so quiet.</look>
       <verb name="Befriend">
-        <behavior type="dialog">Once, there was a boy who befriended a house. Late at night, he put his ear to the wall and listened to it hum.</behavior>
+        <behavior type="dialog">There was a boy who befriended a house. Late at night, he put his ear to the wall and listened to it hum.</behavior>
       </verb>
       <verb name="Read">
         <behavior type="dialog">The only thing written on the house is the address number: 2602. No explanation of the </behavior>
@@ -894,7 +894,7 @@
             verboseName="moon">
       <look>The moon is waning.</look>
       <verb name="Befriend">
-        <behavior type="dialog">Once, there was a boy who befriended the Moon. He named it Leonard, or Lenny for short.</behavior>        
+        <behavior type="dialog">There was a boy who befriended the Moon. He named it Leonard, or Lenny for short.</behavior>        
       </verb>
       <verb name="Read">
         <behavior type="dialog">The moon has many secrets not legible from this distance.</behavior>
@@ -917,7 +917,7 @@
             verboseName="loaf of bread">
       <look>A loaf of bread, full of delicious future breadcrumbs.</look>
       <verb name="Befriend">
-        <behavior type="dialog">Once, there was a boy who befriended a loaf of bread. He convinced his family not to eat it.</behavior>
+        <behavior type="dialog">There was a boy who befriended a loaf of bread. He convinced his family not to eat it.</behavior>
       </verb>
       <verb name="Read">
         <behavior type="dialog">The crumbs within this bread may each have their own stories to tell.</behavior>
@@ -942,7 +942,7 @@
             verboseName="bread crumbs">
       <look>A pile of bread crumbs. Probably delicious, but not quite enough to lure down the birds.</look>
       <verb name="Befriend">
-        <behavior type="dialog">Once, there was a boy who befriended some bread crumbs. He helped them found a crumb village beneath the couch cushions.</behavior>
+        <behavior type="dialog">There was a boy who befriended some bread crumbs. He helped them found a crumb village beneath the couch cushions.</behavior>
       </verb>
       <verb name="Read">
         <behavior type="dialog">Some folks read the future in tea leaves or bread crumbs, but these crumbs look better suited for cooking.</behavior>
@@ -957,25 +957,29 @@
         <behavior type="dialog">The crumbs themselves are ready; they just need another ingredient to make a bird snack.</behavior>
       </verb>
       <verb name="Flax">
+        <behavior type="removeSprite" targetSprite="breadCrumbs" />
         <behavior type="replaceVerb" oldVerb="Flax" newVerb="Prepare" />
-        <behavior type="dialog">A delicious snack for a bird.</behavior>
+        <behavior type="moveSprite" targetSprite="pigeon" x="214" y="137" />
+        <behavior type="moveSprite" targetSprite="dove" x="226" y="137" />
+        <behavior type="moveSprite" targetSprite="magpie" x="232" y="141" />
+        <behavior type="dialog">A delicious snack for a bird! They fly down so quickly when they see something they like.</behavior>
+        <behavior type="setFlag" flagName="houseBirdsAccessible" value="1" />
       </verb>
     </sprite>
 
+    <!--
     <sprite name="birdBread"
             verboseName="bird bread"
-            assetName="birdBread">
-      
-    </sprite>
+            assetName="birdBread"></sprite> -->
     
     <sprite name="flaxBag"
             verboseName="bag of flax seed">
       <look>A bag of flax seed; perhaps it was left here by some health-minded snack artist.</look>
       <verb name="Befriend">
-        <behavior type="dialog">Once, there was a boy who befriended a bag of flax seed. He painted an ear on it and told it stories about trees.</behavior>
+        <behavior type="dialog">There was a boy who befriended a bag of flax seed. He painted an ear on it and told it stories about trees.</behavior>
       </verb>
       <verb name="Read">
-        <behavior type="dialog"></behavior>
+        <behavior type="dialog">A note on the back of the bag says this flax seed was harvested in Egypt and is commonly eaten there by Ostriches.</behavior>
       </verb>
       <verb name="Write">
         <behavior type="dialog">"Flax Seed Toothpaste and 9 Other Terrible Ideas," an article in a health food magazine.</behavior>
@@ -985,9 +989,7 @@
       </verb>
       <verb name="Prepare">
         <behavior type="replaceVerb" oldVerb="Prepare" newVerb="Flax" />
-      </verb>
-      <verb name="Flax">
-        <behavior type="dialog">It's flaxy enough.</behavior>
+        <behavior type="removeSprite" targetSprite="flaxBag" />
       </verb>
     </sprite>
 
@@ -1060,13 +1062,58 @@
       <verb name="Prepare"></verb>      
     </sprite>
     
-    <sprite name="pigeon"
-            spriteClass="Bird">
-      <verb name="Befriend"></verb>
+    <sprite name="pigeon">
+      <verb name="Befriend">
+        <conditionalBehaviors flagName="houseBirdsAccessible" value="0">
+          <behavior type="dialog">The birds look friendly, but they're too far away. Perhaps they could be lured down with a snack.</behavior>
+        </conditionalBehaviors>
+        <conditionalBehaviors flagName="houseBirdsAccessible" value="1">
+          <behavior type="removeSprite" targetSprite="pigeon" />
+          <behavior type="setFlag" flagName="pigeonBefriended" value="1"/>
+          <behavior type="updateBirds" />
+          <behavior type="dialog">The pigeon sings a song about streetlights and train stations. It will sit on the telephone wire and sing to the house.</behavior>
+        </conditionalBehaviors>
+      </verb>
       <verb name="Read"></verb>
       <verb name="Write"></verb>
       <verb name="Extract"></verb>
-      <verb name="Prepare"></verb>      
+      <verb name="Prepare"></verb>
+    </sprite>
+
+    <sprite name="dove">
+      <verb name="Befriend">
+        <conditionalBehaviors flagName="houseBirdsAccessible" value="0">
+          <behavior type="dialog">The birds look friendly, but they're too far away. Perhaps they could be lured down with a snack.</behavior>
+        </conditionalBehaviors>
+        <conditionalBehaviors flagName="houseBirdsAccessible" value="1">
+          <behavior type="removeSprite" targetSprite="dove" />          
+          <behavior type="setFlag" flagName="doveBefriended" value="1"/>
+          <behavior type="updateBirds" />          
+          <behavior type="dialog">The dove sings a song about candles and cathedrals. It will sit on the telephone wire and sing to the house.</behavior>
+        </conditionalBehaviors>
+      </verb>
+      <verb name="Read"></verb>
+      <verb name="Write"></verb>
+      <verb name="Extract"></verb>
+      <verb name="Prepare"></verb>
+    </sprite>
+    
+    <sprite name="magpie">
+      <verb name="Befriend">
+        <conditionalBehaviors flagName="houseBirdsAccessible" value="0">
+          <behavior type="dialog">The birds look friendly, but they're too far away. Perhaps they could be lured down with a snack.</behavior>
+        </conditionalBehaviors>
+        <conditionalBehaviors flagName="houseBirdsAccessible" value="1">
+          <behavior type="removeSprite" targetSprite="magpie" />
+          <behavior type="setFlag" flagName="magpieBefriended" value="1"/>
+          <behavior type="updateBirds" />
+          <behavior type="dialog">The magpie sings a song about mirrors and numbers. It will sit on the telephone wire and sing to the house.</behavior>
+        </conditionalBehaviors>
+      </verb>
+      <verb name="Read"></verb>
+      <verb name="Write"></verb>
+      <verb name="Extract"></verb>
+      <verb name="Prepare"></verb>
     </sprite>
     
   </sprites>

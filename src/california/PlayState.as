@@ -31,10 +31,11 @@ package california {
         private var cursor:GameCursor;
 
         public static var vocabulary:Vocabulary;
-        private var currentVerb:Verb;
         public static var dialog:DialogWindow;
         public static var hasMouseFocus:Boolean = true;
         public static var instance:PlayState;
+        
+        private var currentVerb:Verb;
 
         private var startingRoomName:String = 'beulahHome';
 
@@ -87,12 +88,9 @@ package california {
              
             // Player
             player = new Player("loisPlayer", 145, 135);
-            //player = new LoisPlayer(145, 135);
-            
+
             // Load room
             loadRoom(this.startingRoomName);
-            //loadRoom('loisHome');
-            //loadRoom('aComputerInAGuestRoom');
 
             currentVerb = vocabulary.verbData['Look'];
             
@@ -105,11 +103,6 @@ package california {
 
             dialog = new DialogWindow();
             add(dialog);
-
-            //musicPlayer = new LoisMusicPlayer();
-            
-            //FlxG.playMusic(Main.library.getAsset('loisMusic'), 0.7);
-            //FlxG.music.fadeIn(2);
         }
 
         override public function update():void {
@@ -295,12 +288,32 @@ package california {
             }
         }
 
+        static public function moveSprite(targetSpriteName:String, x:Number, y:Number):void {
+            var sprite:GameSprite = PlayState.instance.currentRoom.getSprite(targetSpriteName);
+
+            if(!isNaN(x)) {
+                sprite.x = x;
+            }
+
+            if(!isNaN(y)) {
+                sprite.y = y;
+            }
+        }
+        
         static public function addVerb(newVerbName:String):void {
             PlayState.vocabulary.addVerbByName(newVerbName);
         }
 
         static public function removeVerb(targetVerbName:String):void {
             PlayState.vocabulary.removeVerbByName(targetVerbName);
+        }
+
+        public function replaceVerb(oldVerbName:String, newVerbName:String):void {
+            PlayState.vocabulary.replaceVerb(oldVerbName, newVerbName);
+
+            if(currentVerb.name == oldVerbName) {
+                currentVerb = PlayState.vocabulary.verbData['Look'];
+            }
         }
 
         static public function changePlayer(newPlayer:Player):void {

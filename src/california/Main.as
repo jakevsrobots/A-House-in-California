@@ -48,7 +48,9 @@ package california {
                     "setFlag": SetFlagBehavior,
                     "setVocabulary": SetVocabularyBehavior,
                     "setPlayer": SetPlayerBehavior,
-                    "playMusic": PlayMusicBehavior
+                    "playMusic": PlayMusicBehavior,
+                    "moveSprite": MoveSpriteBehavior,
+                    "updateBirds": UpdateBirdsBehavior
                 });
             
             GameSprite.registerSpriteClasses({
@@ -74,15 +76,15 @@ package california {
             
             logViewInitialized = false;
             
-            super(320, 170, MenuState, 2);
-            //super(320, 170, PlayState, 2);
+            //super(320, 170, MenuState, 2);
+            super(320, 170, PlayState, 2);
 
             FlxState.bgColor = Main.bgcolor;
 
             saveGame = SharedObject.getLocal('aHouseInCalifornia_savedata');
             
-            // saveGame.data['sectionsUnlocked'] = ['lois', 'beulah'];
-            saveGame.data['sectionsUnlocked'] = ['lois'];
+            saveGame.data['sectionsUnlocked'] = ['lois', 'beulah'];
+            //saveGame.data['sectionsUnlocked'] = ['lois'];
             
             if(saveGame.data['sectionsUnlocked'] == null) {
                 saveGame.data['sectionsUnlocked'] = ['lois'];

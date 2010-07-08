@@ -21,5 +21,7 @@
     <lightedLampPost x="179" y="117"/>
     <lightedLampPost x="276" y="117"/>
     <pigeon x="189" y="20"/>
+    <dove x="207" y="20"/>
+    <magpie x="224" y="24"/>
   </sprites>
 </level>

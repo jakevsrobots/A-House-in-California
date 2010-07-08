@@ -171,5 +171,9 @@
 
   <asset name="pigeon" file="sprites/pigeon.png"
          type="image" />
+  <asset name="dove" file="sprites/dove.png"
+         type="image" />
+  <asset name="magpie" file="sprites/magpie.png"
+         type="image" />
   
 </assets>
