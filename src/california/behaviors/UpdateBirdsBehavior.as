@@ -34,6 +34,10 @@ package california.behaviors {
                         var birdData:Object = UpdateBirdsBehavior.birds[birdName];
                         
                         PlayState.addSprite(birdName, birdData['x'], birdData['y']);
+
+                        if(!PlayState.music.isPlaying(birdData['song'])) {
+                            PlayState.music.playAsset(birdData['song']);
+                        }
                     }
                 }
             }

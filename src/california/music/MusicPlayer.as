@@ -47,5 +47,17 @@ package california.music {
                 soundPlayers[soundName].play();
             }
         }
+
+        public function playAsset(soundAssetName:String):void {
+            soundPlayers[soundAssetName].play();            
+        }
+
+        public function setAssetVolume(soundAssetName:String, volume:Number):void {
+            soundPlayers[soundAssetName].volume = volume;
+        }
+
+        public function isPlaying(soundAssetName:String):Boolean {
+            return soundPlayers[soundAssetName].playing;
+        }
     }
 }

@@ -13,6 +13,14 @@
   <asset name="loisWhiteNoise" file="music/lois/white-noise.mp3"
          type="mp3" />
 
+  <!-- beulah -->
+  <asset name="pigeonSong" file="music/beulah/pigeon.mp3"
+         type="mp3" />
+  <asset name="doveSong" file="music/beulah/dove.mp3"
+         type="mp3" />
+  <asset name="magpieSong" file="music/beulah/magpie.mp3"
+         type="mp3" />
+  
   
   <!-- ################################################### -->
   <!-- ############## Sound Effects ###################### -->

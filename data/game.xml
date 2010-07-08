@@ -33,7 +33,8 @@
           <verb name="Befriend" />
         </behavior>
         <behavior type="setPlayer" name="beulahPlayer" />
-
+        <behavior type="playMusic" musicName="lois" />
+        
         <behavior type="setFlag" flagName="beulahSectionStarted" value="1" />
       </conditionalBehaviors>
     </room>
