@@ -22,7 +22,7 @@ package california.sprites {
             
             //glow.scale.x = glow.scale.y = 2;
             
-            speed = 25;
+            speed = 16;
         }
 
         override public function update():void {
