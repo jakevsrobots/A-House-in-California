@@ -977,9 +977,9 @@
       <verb name="Flax">
         <behavior type="removeSprite" targetSprite="breadCrumbs" />
         <behavior type="replaceVerb" oldVerb="Flax" newVerb="Prepare" />
-        <behavior type="moveSprite" targetSprite="pigeon" x="214" y="137" />
+        <behavior type="moveSprite" targetSprite="pigeon" x="212" y="137" />
         <behavior type="moveSprite" targetSprite="dove" x="226" y="137" />
-        <behavior type="moveSprite" targetSprite="magpie" x="232" y="141" />
+        <behavior type="moveSprite" targetSprite="magpie" x="238" y="141" />
         <behavior type="dialog">A delicious snack for a bird! They fly down so quickly when they see something they like.</behavior>
         <behavior type="setFlag" flagName="houseBirdsAccessible" value="1" />
       </verb>

@@ -6,9 +6,9 @@
   </background>
   <sprites>
     <moonWaning x="267" y="11"/>
-    <breadLoaf x="221" y="140"/>
-    <flaxBag x="249" y="137"/>
-    <billboard x="189" y="29"/>
+    <breadLoaf x="213" y="140"/>
+    <flaxBag x="240" y="137"/>
+    <billboard x="176" y="29"/>
     <beulahHouse x="40" y="47"/>
     <houseCloud2 x="135" y="11"/>
     <houseCloud x="260" y="0"/>
@@ -18,10 +18,9 @@
     <powerLinesLeft x="0" y="65"/>
     <powerLinesRight x="156" y="65"/>
     <lightedLampPost x="48" y="117"/>
-    <lightedLampPost x="179" y="117"/>
     <lightedLampPost x="276" y="117"/>
-    <pigeon x="189" y="20"/>
-    <dove x="207" y="20"/>
-    <magpie x="224" y="24"/>
+    <pigeon x="179" y="20"/>
+    <dove x="197" y="20"/>
+    <magpie x="214" y="24"/>
   </sprites>
 </level>

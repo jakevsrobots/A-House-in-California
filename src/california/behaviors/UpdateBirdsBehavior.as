@@ -12,8 +12,8 @@ package california.behaviors {
                 'panning': -1
             },
             'dove': {
-                'x': 199,
-                'y': 63,
+                'x': 206,
+                'y': 64,
                 'song': 'doveSong',
                 'panning': -0.7
             },
