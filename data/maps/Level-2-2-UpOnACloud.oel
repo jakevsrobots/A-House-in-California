@@ -5,17 +5,17 @@
     <upOnACloudBackground x="0" y="0"/>
   </background>
   <sprites>
-    <houseOnAHill x="62" y="23"/>
-    <cloudWithAHouseOnIt x="51" y="47"/>
-    <planeWithBanner x="197" y="83"/>
+    <houseOnAHill x="32" y="69"/>
+    <cloudWithAHouseOnIt x="23" y="92"/>
+    <planeWithBanner x="197" y="30"/>
     <berryTree x="237" y="70"/>
     <candle x="91" y="138"/>
-    <upInTheSkyCloud x="211" y="6"/>
-    <upInTheSkyCloud x="35" y="15"/>
-    <cloudWithBirdsOnIt x="178" y="37"/>
-    <tinyLampPost x="212" y="30"/>
-    <tinyLampPost x="183" y="30"/>
-    <tinyLampPost x="58" y="40"/>
-    <tinyLampPost x="72" y="32"/>
+    <upInTheSkyCloud x="211" y="78"/>
+    <upInTheSkyCloud x="76" y="10"/>
+    <cloudWithBirdsOnIt x="143" y="67"/>
+    <tinyLampPost x="177" y="60"/>
+    <tinyLampPost x="149" y="60"/>
+    <tinyLampPost x="27" y="85"/>
+    <tinyLampPost x="41" y="77"/>
   </sprites>
 </level>
