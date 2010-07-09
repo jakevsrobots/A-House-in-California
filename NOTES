@@ -102,11 +102,11 @@ Beulah (read/write)
        Sugar
        Candle
        
-     Peanut butter - Extract peanuts from shells, extract oil from peanuts, oil peanuts, prepare fan to blend, blend oily peanuts
-       Shelled peanuts
+     Peanut butter - Extract peanuts from shells, blend peanuts in fan
+       Peanuts
        Fan
        
-     Candy apple - Extract apple from tree, sweeten water with sugar to make syrup, coat apple with syrup, extract stick from lollypop(?), impale syrup-coated apple with stick.
+     Candy apple - Extract apple from tree, sweeten water with sugar to make syrup, coat apple with syrup
        Apple tree
        Glass of water
        Sugar
@@ -144,15 +144,33 @@ Beulah (read/write)
        - Write about the house to go to 'A room at the top of a hill'
      
   3. A room at the top of a hill (peanut butter)
-     + Books about cooking techniques to prepare bird snacks
-     + Sugar bowl
-     + Ingredients for bird snacks
-     
+     - Sugar bowl
+       - Prepare to get 'sweeten' verb
+     - Pile of peanuts
+       - Extract to get shelled peanuts
+     - Shelled peanuts
+       - Prepare to get the 'peanut' verb
+     - Fan
+       - Add peanuts to produce peanut butter
+     - Empty peanut butter jar
+       - Read to get peanut butter ingredients/instructions
+     - Cookbook
+       - Read to see a few hints:
+         - Syrup = water+sugar
+       
   4. A long table in a nice restaurant (candy apple)
+     - Kitschy painting
+       - Look at to see a description that a bird is eating a child's candy apple, and a description of a candy apple.
+     - Glass of water
+       - Sweeten to get syrup
+     - Glass of syrup
+       - Prepare to get 'syrup' verb
      - A boy at the table
        - Turns into an apple tree when any verb is performed on him
-       
-     + Ingredients for bird snacks
+     - Apple tree
+       - Extract apple
+     - Apple
+       - Syrup-coat apple to produce candy apple
        
 Old Map (left-to-right)
 -------------------

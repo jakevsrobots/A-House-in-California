@@ -321,6 +321,7 @@ package org.flixel
 				_console.update();
 			
 			//State updating
+			FlxObject._refreshBounds = false;
 			FlxG.updateInput();
 			FlxG.updateSounds();
 			if(_paused)
@@ -473,7 +474,7 @@ package org.flixel
 					FlxG.volume = soundPrefs.data.volume;
 				if(soundPrefs.data.mute != null)
 					FlxG.mute = soundPrefs.data.mute;
-				//showSoundTray(true);
+				showSoundTray(true);
 			}
 			
 			//All set!

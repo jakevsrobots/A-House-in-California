@@ -1,0 +1,22 @@
+<level>
+  <width>320</width>
+  <height>170</height>
+  <background>
+    <upOnACloudBackground x="0" y="0"/>
+  </background>
+  <sprites>
+    <houseOnAHill x="62" y="23"/>
+    <cloudWithAHouseOnIt x="51" y="47"/>
+    <planeWithBanner x="197" y="63"/>
+    <berryTree x="237" y="70"/>
+    <candle x="91" y="138"/>
+    <upInTheSkyCloud2 x="95" y="88"/>
+    <upInTheSkyCloud x="211" y="6"/>
+    <upInTheSkyCloud x="35" y="15"/>
+    <cloudWithBirdsOnIt x="178" y="37"/>
+    <tinyLampPost x="212" y="30"/>
+    <tinyLampPost x="183" y="30"/>
+    <tinyLampPost x="85" y="24"/>
+    <tinyLampPost x="58" y="40"/>
+  </sprites>
+</level>
