@@ -37,7 +37,8 @@ package california {
         
         private var currentVerb:Verb;
 
-        private var startingRoomName:String = 'upOnACloud';
+        //private var startingRoomName:String = 'upOnACloud';
+        private var startingRoomName:String = 'beulahHome';
 
         public static var musicPlayer:MusicPlayer;
         
@@ -357,7 +358,7 @@ package california {
             roomGroup.add(darkness);
             
             roomTitle = new FlxText(8, 8, FlxG.width, currentRoom.title);
-            roomTitle.setFormat(null, 8, 0xffffffff);
+            roomTitle.setFormat(Main.gameFontFamily, Main.gameFontSize, 0xffffffff);
             roomGroup.add(roomTitle);
 
             roomGroup.add(player);

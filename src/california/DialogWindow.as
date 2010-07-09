@@ -37,6 +37,7 @@ package california {
             add(backgroundLayer);
             
             text = new FlxText(48, 48, backgroundLayer.width - 16);
+            text.setFormat(Main.gameFontFamily, Main.gameFontSize);
             text.alpha = 0.0;
             add(text);
             
@@ -45,6 +46,7 @@ package california {
                 backgroundLayer.y + (backgroundLayer.height - 16),
                 FlxG.width,
                 '(click to continue)');
+            labelText.setFormat(Main.gameFontFamily, Main.gameFontSize);
             labelText.alpha = 0.0;
             add(labelText);
         }

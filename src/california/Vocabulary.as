@@ -53,10 +53,10 @@ package california {
                 verb.x = xSum;
 
                 // Add this verb's width to x_sum
-                xSum += verb.width;
+                xSum += verb.textWidth;
                 
                 // Add some padding between verbs
-                xSum += 2;
+                xSum += 8;
             }
         }
 

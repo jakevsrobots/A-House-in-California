@@ -33,11 +33,11 @@ package california {
             add(backgroundImage);
             
             roomTitle = new FlxText(8, 8, FlxG.width, 'A House in California');
-            roomTitle.setFormat(null, 8, 0xffffffff);
+            roomTitle.setFormat(Main.gameFontFamily, Main.gameFontSize, 0xffffffff);
             add(roomTitle);
 
             copyrightText = new FlxText(FlxG.width - 156, FlxG.height - 16, FlxG.width, '(c) 2010 Cardboard Computer');
-            copyrightText.setFormat(null, 8, 0xffffffff);
+            copyrightText.setFormat(Main.gameFontFamily, Main.gameFontSize, 0xffffffff);
             add(copyrightText);
 
             var buttonPos:uint = 60;

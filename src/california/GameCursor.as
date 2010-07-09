@@ -21,7 +21,7 @@ package california {
             add(graphic);
             
             label = new FlxText(0,0,FlxG.width);
-            label.setFormat(null, 8, 0xffcccccc);
+            label.setFormat(Main.gameFontFamily, Main.gameFontSize, 0xffcccccc);
             label.visible = false;
             add(label);
             

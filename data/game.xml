@@ -891,7 +891,7 @@
         <behavior type="dialog">There was a boy who befriended a house. Late at night, he put his ear to the wall and listened to it hum.</behavior>
       </verb>
       <verb name="Read">
-        <behavior type="dialog">The only thing written on the house is the address number: 2602. No explanation of the </behavior>
+        <behavior type="dialog">The only thing written on the house is the address number: 2602.</behavior>
       </verb>
       <verb name="Write">
         <behavior type="dialog">"A House in California," an experimental novel about four people building a house together.</behavior>

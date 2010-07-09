@@ -1,7 +1,7 @@
 package california {
     import org.flixel.*;
     
-    public class Verb extends FlxText {
+    public class Verb extends MyText {
         public var name:String;
         public var template:String;
         public var highlight:Boolean = false;
@@ -9,11 +9,12 @@ package california {
         public function Verb(_name:String):void {
             name = _name;
             
-            super(0, 0, this.name.length * 8, name);
-            
-            setFormat(null, 8, 0xffffffff);
+            super(0, 0, FlxG.width, name);
+            //super(0, 0, name.length * 8, name);
+            setFormat(Main.gameFontFamily, Main.gameFontSize, 0xffffffff);
+            height = 8;
 
-            height = 8;    
+            setWidth(textWidth + 8);
         }
 
         override public function update():void {
