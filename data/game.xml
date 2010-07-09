@@ -33,7 +33,23 @@
           <verb name="Befriend" />
         </behavior>
         <behavior type="setPlayer" name="beulahPlayer" />
-        <behavior type="playMusic" musicName="lois" />
+        <behavior type="playMusic" musicName="beulah" />
+        
+        <behavior type="setFlag" flagName="beulahSectionStarted" value="1" />
+      </conditionalBehaviors>
+    </room>
+    <room name="upOnACloud" title="Up On a Cloud">
+      <conditionalBehaviors flagName="beulahSectionStarted" value="0">      
+        <behavior type="setVocabulary">
+          <verb name="Look" />
+          <verb name="Read" />
+          <verb name="Write" />
+          <verb name="Extract" />
+          <verb name="Prepare" />
+          <verb name="Befriend" />
+        </behavior>
+        <behavior type="setPlayer" name="beulahPlayer" />
+        <behavior type="playMusic" musicName="beulah" />
         
         <behavior type="setFlag" flagName="beulahSectionStarted" value="1" />
       </conditionalBehaviors>
@@ -892,6 +908,7 @@
     </sprite>
     
     <sprite name="moonWaning"
+            spriteClass="Moon"
             verboseName="moon">
       <look>The moon is waning.</look>
       <verb name="Befriend">
@@ -1070,7 +1087,7 @@
         </conditionalBehaviors>
         <conditionalBehaviors flagName="houseBirdsAccessible" value="1">
           <behavior type="removeSprite" targetSprite="pigeon" />
-          <behavior type="setFlag" flagName="pigeonBefriended" value="1"/>
+          <behavior type="setFlag" flagName="pigeonBefriended" value="1" />
           <behavior type="updateBirds" />
           <behavior type="dialog">The pigeon sings a song about streetlights and train stations. It will sit on the telephone wire and sing to the house.</behavior>
         </conditionalBehaviors>
@@ -1116,6 +1133,31 @@
       <verb name="Extract"></verb>
       <verb name="Prepare"></verb>
     </sprite>
+
+    <!-- Room #2-2 - Up On a Cloud -->    
+    <sprite name="houseOnAHill" />
+    <sprite name="candle" />
+    <sprite name="berryTree" />
+    <sprite name="planeWithBanner"
+            verboseName="airplane with banner"
+            spriteClass="AirplaneWithBanner" />
+    <sprite name="cloudWithAHouseOnIt"
+            verboseName="cloud"            
+            assetName="houseCloud" />
+    <sprite name="cloudWithBirdsOnIt"
+            verboseName="cloud"            
+            assetName="houseCloud2" />
+    <sprite name="upInTheSkyCloud"
+            verboseName="cloud"
+            assetName="houseCloud"
+            spriteClass="HouseCloud" />
+    <sprite name="upInTheSkyCloud2"
+            verboseName="cloud"            
+            assetName="houseCloud2"
+            spriteClass="HouseCloud" />
+    <sprite name="tinyLampPost"
+            spriteClass="TinyLampPost"
+            verboseName="lampPost" />
     
   </sprites>
 </game>

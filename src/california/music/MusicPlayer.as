@@ -37,7 +37,7 @@ package california.music {
             soundPlayers = {};
 
             for each(var soundAssetName:String in soundAssetNames) {
-                soundPlayers[soundAssetName] = new FlxSound();
+                soundPlayers[soundAssetName] = new PannableSound();
                 soundPlayers[soundAssetName].loadEmbedded(Main.library.getAsset(soundAssetName), true);
             }
         }
@@ -49,14 +49,33 @@ package california.music {
         }
 
         public function playAsset(soundAssetName:String):void {
+            if(!soundPlayers.hasOwnProperty(soundAssetName)) {
+                throw new Error('No such sound asset added to this player: ' + soundAssetName);
+            }
             soundPlayers[soundAssetName].play();            
         }
 
         public function setAssetVolume(soundAssetName:String, volume:Number):void {
+            if(!soundPlayers.hasOwnProperty(soundAssetName)) {
+                throw new Error('No such sound asset added to this player: ' + soundAssetName);
+            }
+            
             soundPlayers[soundAssetName].volume = volume;
         }
 
+        public function setAssetPanning(soundAssetName:String, panning:Number):void {
+            if(!soundPlayers.hasOwnProperty(soundAssetName)) {
+                throw new Error('No such sound asset added to this player: ' + soundAssetName);
+            }
+            
+            soundPlayers[soundAssetName].setPanning(panning);
+        }
+
         public function isPlaying(soundAssetName:String):Boolean {
+            if(!soundPlayers.hasOwnProperty(soundAssetName)) {
+                throw new Error('No such sound asset added to this player: ' + soundAssetName);
+            }
+            
             return soundPlayers[soundAssetName].playing;
         }
     }

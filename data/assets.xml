@@ -45,6 +45,8 @@
   <!-- Beulah -->  
   <asset name="beulahHome" file="maps/Level-2-1-AHouseInCalifornia.oel"
          type="xml" />
+  <asset name="upOnACloud" file="maps/Level-2-2-UpOnACloud.oel"
+         type="xml" />
   
   <!-- ################################################### -->
   <!-- ################# Images ########################## -->
@@ -182,6 +184,23 @@
   <asset name="dove" file="sprites/dove.png"
          type="image" />
   <asset name="magpie" file="sprites/magpie.png"
+         type="image" />
+
+  <!-- Up On a Cloud -->
+  <asset name="upOnACloudBackground" file="backgrounds/up-on-a-cloud-background.png"
+         type="image" />
+
+  <asset name="houseOnAHill" file="sprites/house-on-a-hill.png"
+         type="image" />
+  <asset name="candle" file="sprites/candle.png"
+         type="image" />
+  <asset name="berryTree" file="sprites/berry-tree.png"
+         type="image" />
+  <asset name="planeWithBanner" file="sprites/plane.png"
+         type="image" />
+  <asset name="planeGlow" file="sprites/plane-glow.png"
+         type="image" />
+  <asset name="tinyLampPost" file="sprites/tiny-lamppost.png"
          type="image" />
   
 </assets>

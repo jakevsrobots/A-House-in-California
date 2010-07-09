@@ -8,17 +8,20 @@ package california.behaviors {
             'pigeon': {
                 'x': 174,
                 'y': 61,
-                'song': 'pigeonSong'
+                'song': 'pigeonSong',
+                'panning': -1
             },
             'dove': {
                 'x': 199,
                 'y': 63,
-                'song': 'doveSong'
+                'song': 'doveSong',
+                'panning': -0.7
             },
             'magpie': {
-                'x': 306,
-                'y': 68,
-                'song': 'magpieSong'
+                'x': 280,
+                'y': 65,
+                'song': 'magpieSong',
+                'panning': 1
             }
             
         };
@@ -35,8 +38,10 @@ package california.behaviors {
                         
                         PlayState.addSprite(birdName, birdData['x'], birdData['y']);
 
-                        if(!PlayState.music.isPlaying(birdData['song'])) {
-                            PlayState.music.playAsset(birdData['song']);
+                        if(!PlayState.musicPlayer.isPlaying(birdData['song'])) {
+                            PlayState.musicPlayer.playAsset(birdData['song']);
+                            PlayState.musicPlayer.setAssetVolume(birdData['song'], 0.3);
+                            PlayState.musicPlayer.setAssetPanning(birdData['song'], birdData['panning']);
                         }
                     }
                 }

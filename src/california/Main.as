@@ -65,7 +65,9 @@ package california {
                     "LampFireflies": LampFireflies,
                     "HouseCloud": HouseCloud,
                     "LightedLampPost": LightedLampPost,
-                    "Bird": Bird
+                    "Bird": Bird,
+                    "AirplaneWithBanner": AirplaneWithBanner,
+                    "TinyLampPost": TinyLampPost
                 });
 
             GameSprite.createSpriteDatabase();

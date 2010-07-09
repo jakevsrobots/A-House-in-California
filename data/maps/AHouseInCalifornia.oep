@@ -110,6 +110,31 @@
       <object name="magpie" image="../sprites/magpie.png"
               width="7" height="5" />
     </folder>
+
+    <folder name="beulah-cloud">
+      <object name="upOnACloudBackground" image="../backgrounds/up-on-a-cloud-background.png"
+         width="320" height="170" />
+      
+      <object name="houseOnAHill" image="../sprites/house-on-a-hill.png"
+             width="40" height="25" />
+      <object name="candle" image="../sprites/candle.png"
+             width="5" height="4" />
+      <object name="berryTree" image="../sprites/berry-tree.png"
+             width="60" height="75" />
+      <object name="planeWithBanner" image="../sprites/plane.png"
+             width="123" height="24" />
+      <object name="cloudWithAHouseOnIt" image="../sprites/house-cloud.png"
+              width="59" height="8" />
+      <object name="cloudWithBirdsOnIt" image="../sprites/house-cloud-2.png"
+              width="43" height="8" />
+      <object name="upInTheSkyCloud" image="../sprites/house-cloud.png"
+              width="59" height="8" />
+      <object name="upInTheSkyCloud2" image="../sprites/house-cloud-2.png"
+              width="43" height="8" />
+      <object name="tinyLampPost" image="../sprites/tiny-lamppost.png"
+              width="3" height="7" />
+      
+    </folder>
   </objects>
   
   <layers>
