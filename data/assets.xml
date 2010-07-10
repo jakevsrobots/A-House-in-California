@@ -1,4 +1,18 @@
 <assets>
+  
+  <!-- ################################################### -->
+  <!-- ################# Stills ########################## -->
+  <!-- ################################################### -->
+  <asset name="loisStill_1" file="stills/lois-1.png"
+         type="image" />
+  <asset name="loisStill_2" file="stills/lois-2.png"
+         type="image" />
+  <asset name="loisStill_3" file="stills/lois-3.png"
+         type="image" />
+  <asset name="loisStill_4" file="stills/lois-4.png"
+         type="image" />
+  
+  
   <!-- ################################################### -->
   <!-- ################## Music ########################### -->
   <!-- ################################################### -->

@@ -115,8 +115,8 @@ package california {
 
             FlxG.showBounds = false;
             
-            //super(320, 170, MenuState, 2);
-            super(320, 170, PlayState, 2);
+            super(320, 170, MenuState, 2);
+            //super(320, 170, PlayState, 2);
 
             FlxState.bgColor = Main.bgcolor;
 

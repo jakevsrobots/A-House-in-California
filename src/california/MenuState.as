@@ -47,7 +47,7 @@ package california {
             //var sections:Array = ['lois', 'beulah', 'connie', 'ann'];
 
             if(Main.saveGame.data.sectionsUnlocked.indexOf('lois') != -1) {
-                var loisButton:MenuButton = new MenuButton(48, buttonPos, Main.library.getAsset('loisLevelIcon'), 'Lois', false, 'loisHome');
+                var loisButton:MenuButton = new MenuButton(48, buttonPos, Main.library.getAsset('loisLevelIcon'), 'Lois', false, 'loisHome', 'lois');
                 buttonGroup.add(loisButton);
             } else {
                 buttonGroup.add(new MenuButton(48, buttonPos, Main.library.getAsset('blankLevelIcon'), '------', true, ''));                

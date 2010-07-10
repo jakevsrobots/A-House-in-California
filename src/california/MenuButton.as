@@ -6,6 +6,7 @@ package california {
         private var labelText:FlxText;        
         private var locked:Boolean;
         private var roomName:String;
+        private var cutSceneName:String;        
         
         private var FADE_IN:uint = 0;
         private var FADE_OUT:uint = 1;        
@@ -13,7 +14,7 @@ package california {
         private var minAlpha:Number = 0.5;
         private var fadeSpeed:Number = 2.0;
         
-        public function MenuButton(X:Number, Y:Number, IconGraphic:Class, label:String, locked:Boolean, roomName:String):void {
+        public function MenuButton(X:Number, Y:Number, IconGraphic:Class, label:String, locked:Boolean, roomName:String, cutSceneName:String=null):void {
             super();
             
             icon = new FlxSprite(X, Y, IconGraphic);
@@ -27,6 +28,7 @@ package california {
 
             this.locked = locked;
             this.roomName = roomName;
+            this.cutSceneName = cutSceneName;
         }
 
         override public function update():void {
@@ -36,7 +38,11 @@ package california {
                 if(FlxG.mouse.justPressed() && !this.locked) {
                     FlxG.fade.start(0xff000000, 1.0, function():void {
                             FlxG.fade.stop();
-                            FlxG.state = new PlayState(roomName);
+                            if(cutSceneName == null) {
+                                FlxG.state = new PlayState(roomName);
+                            } else {
+                                FlxG.state = new CutSceneState(cutSceneName, roomName);
+                            }
                         });
                 }
             } else {

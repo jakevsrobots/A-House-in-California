@@ -67,7 +67,7 @@ package california {
             
             flags = {};
             
-            FlxG.flash.start(0xff000000, 1.0, function():void {
+            FlxG.flash.start(0xff000000, 3.0, function():void {
                     FlxG.flash.stop();
                 });
 
