@@ -50,7 +50,7 @@ package california {
                 var loisButton:MenuButton = new MenuButton(48, buttonPos, Main.library.getAsset('loisLevelIcon'), 'Lois', false, 'loisHome', 'lois');
                 buttonGroup.add(loisButton);
             } else {
-                buttonGroup.add(new MenuButton(48, buttonPos, Main.library.getAsset('blankLevelIcon'), '------', true, ''));                
+                buttonGroup.add(new MenuButton(48, buttonPos, Main.library.getAsset('blankLevelIcon'), '------', true, ''));
             }
 
             if(Main.saveGame.data.sectionsUnlocked.indexOf('beulah') != -1) {

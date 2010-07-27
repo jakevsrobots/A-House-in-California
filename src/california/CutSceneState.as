@@ -8,9 +8,9 @@ package california {
                 'title': '1. Lois',
                 'text': [
                     'A boy said, "Grandma, the house is too dark! I can\'t sleep."',
-                    'Lois said, "Don\'t worry, boy"',
+                    'Lois said, "Don\'t worry, boy, the lamp has just gone out."',
                     '"Once, when I was young, we caught fireflies in jars."',
-                    '"The fireflies will light the house, I\'m sure."'
+                    '"I\'m sure The fireflies will light the street lamp now."'
                 ],
                 'sprites': [
                     /*
@@ -26,6 +26,7 @@ package california {
         public static var FADING_IN:uint = 0;
         public static var VISIBLE:uint = 1;
         public static var FADING_OUT:uint = 2;
+        public static var INITIAL_FADE_IN:uint = 3;
         
         // Instance
         private var roomName:String;   // what room to go to once this cutscene is done.
@@ -38,6 +39,7 @@ package california {
         private var sprites:FlxGroup;
         private var currentLineIndex:uint;
         private var fadeState:uint;
+        private var initialFadeInSpeed:Number = 1.0;
         private var fadeInSpeed:Number = 2.0;
         private var fadeOutSpeed:Number = 1.0;
         private var nextText:String;
@@ -55,13 +57,14 @@ package california {
             add(sprites);
 
             for each(var spriteAssetName:String in spriteAssetNames) {
-                sprites.add(new CutSceneSprite(spriteAssetName));
+                var sprite:CutSceneSprite = new CutSceneSprite(spriteAssetName);
+                sprites.add(sprite);
             }
 
             var textPaddingX:uint = 64;
             
             //text = new FlxText(textPaddingX, 64, FlxG.width - (textPaddingX * 2));
-            text = new FlxText(0, 80, FlxG.width);
+            text = new FlxText(0, 64, FlxG.width);
             text.setFormat(Main.gameFontFamily, Main.gameFontSize, 0xffffff, 'center');
             text.alpha = 0.0;
             add(text);
@@ -70,17 +73,17 @@ package california {
             titleText.setFormat(Main.gameFontFamily, Main.gameFontSize * 4, 0xffffff, 'center');
             titleText.alpha = 1.0;
             titleText.text = cutSceneData['title'];
-            add(titleText);
+            //add(titleText);
 
             labelText = new FlxText(-4, FlxG.height - 16, FlxG.width, '(click to continue)');
             labelText.setFormat(Main.gameFontFamily, Main.gameFontSize, 0xffffff, 'right');
-            labelText.alpha = 1.0;
+            labelText.alpha = 0.0;
             add(labelText);
 
             cursor = new GameCursor();
             add(cursor);
             
-            fadeState = CutSceneState.FADING_IN;
+            fadeState = CutSceneState.INITIAL_FADE_IN;
             
             currentLineIndex = 0;
             text.text = textLines[0];
@@ -105,6 +108,14 @@ package california {
                         fadeState = CutSceneState.FADING_IN;
                     }
                 }
+            } else if(fadeState == CutSceneState.INITIAL_FADE_IN) {
+                text.alpha += initialFadeInSpeed * FlxG.elapsed;
+                if(text.alpha >= 1.0) {
+                    fadeState = CutSceneState.VISIBLE;
+                    text.alpha = 1.0;
+                }
+                
+                labelText.alpha = text.alpha;
             }
 
             if(FlxG.mouse.justPressed()) {

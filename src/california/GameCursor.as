@@ -1,5 +1,8 @@
 package california {
     import org.flixel.*;
+	import flash.text.TextField;
+	import flash.text.TextFieldAutoSize;    
+	import flash.text.TextFormat;
 
     public class GameCursor extends FlxGroup {
         [Embed(source="/../data/cursor.png")] private var CursorImage:Class;
@@ -13,6 +16,9 @@ package california {
         public var graphic:FlxSprite
         public var spriteHitBox:FlxObject;
 
+        // A dummy text object for getting line lengths
+        private var dummyText:TextField;
+        
         public function GameCursor():void {
             super();
             
@@ -52,6 +58,18 @@ package california {
                 label.alpha = maxAlpha;
                 alphaDir = -1;
             }
+
+            // Check if this text is hanging off the edge of the screen.
+            if(label.visible) {
+                var labelWidth:Number = getLineWidth(label.text);
+                var labelOffset:Number = FlxG.mouse.x - (labelWidth / 2);
+                
+                if(labelOffset + labelWidth > FlxG.width) {
+                    label.x = FlxG.width - labelWidth;
+                } else if(labelOffset < 0) {
+                    label.x = 0;
+                }
+            }
             
             super.update();
         }
@@ -71,6 +89,19 @@ package california {
                 label.visible = true;
                 label.text = newText;
             }
+        }
+
+        private function getLineWidth(line:String):uint {
+            dummyText = new TextField();
+            dummyText.autoSize = TextFieldAutoSize.LEFT;
+            dummyText.embedFonts = true;
+            dummyText.sharpness = label._tf.sharpness;
+            dummyText.defaultTextFormat = label._tf.defaultTextFormat;
+            dummyText.setTextFormat(label._tf.defaultTextFormat);
+            
+            dummyText.text = line;
+            
+            return dummyText.width;
         }
 
     }

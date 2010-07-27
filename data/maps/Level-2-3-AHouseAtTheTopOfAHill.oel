@@ -1,0 +1,25 @@
+<level>
+  <width>320</width>
+  <height>170</height>
+  <background>
+    <houseOnAHillBackground x="0" y="0"/>
+  </background>
+  <sprites>
+    <streetSign x="256" y="44"/>
+    <bagOfPeanuts x="152" y="127"/>
+    <sugarBowl x="213" y="126"/>
+    <fan x="123" y="131"/>
+    <storyBook x="44" y="133"/>
+    <cookBook x="39" y="112"/>
+    <robin x="283" y="37"/>
+    <cardinal x="253" y="40"/>
+    <bluebird x="268" y="38"/>
+    <lightedLampPost x="260" y="117"/>
+    <smallLightbulb x="20" y="80"/>
+    <smallLightbulb x="46" y="80"/>
+    <smallLightbulb x="109" y="80"/>
+    <smallLightbulb x="134" y="80"/>
+    <smallLightbulb x="166" y="94"/>
+    <smallLightbulb x="227" y="94"/>
+  </sprites>
+</level>

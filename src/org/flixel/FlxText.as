@@ -13,7 +13,7 @@ package org.flixel
 	 */
 	public class FlxText extends FlxSprite
 	{
-		protected var _tf:TextField;
+		public var _tf:TextField;
 		protected var _regen:Boolean;
 		protected var _shadow:uint;
 		

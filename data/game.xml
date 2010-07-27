@@ -38,22 +38,8 @@
         <behavior type="setFlag" flagName="beulahSectionStarted" value="1" />
       </conditionalBehaviors>
     </room>
-    <room name="upOnACloud" title="Up On a Cloud">
-      <conditionalBehaviors flagName="beulahSectionStarted" value="0">      
-        <behavior type="setVocabulary">
-          <verb name="Look" />
-          <verb name="Read" />
-          <verb name="Write" />
-          <verb name="Extract" />
-          <verb name="Prepare" />
-          <verb name="Befriend" />
-        </behavior>
-        <behavior type="setPlayer" name="beulahPlayer" />
-        <behavior type="playMusic" musicName="beulah" />
-        
-        <behavior type="setFlag" flagName="beulahSectionStarted" value="1" />
-      </conditionalBehaviors>
-    </room>
+    <room name="upOnACloud" title="Up On a Cloud" />
+    <room name="aHouseAtTheTopOfAHill" title="A House at the Top of a Hill" />
   </world>
   
   <!-- ######################################################### -->    
@@ -1158,6 +1144,20 @@
     <sprite name="tinyLampPost"
             spriteClass="TinyLampPost"
             verboseName="lampPost" />
+
+    <!-- Room #2-3 - Up On a Cloud -->
+      <sprite name="bagOfPeanuts" />
+      <sprite name="fan" />
+      <sprite name="storyBook" />
+      <sprite name="cookBook" />
+      <sprite name="streetSign" />
+      <sprite name="sugarBowl" />
+      <sprite name="robin" />
+      <sprite name="cardinal" />
+      <sprite name="bluebird" />
+      <sprite name="smallLightbulb"
+              spriteClass="SmallLightbulb"
+              interactive="0" />
     
   </sprites>
 </game>

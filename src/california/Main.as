@@ -5,8 +5,10 @@ package california {
     import california.sprites.*;
     import california.behaviors.*;
     import california.music.*;
-    
+        
     import flash.net.SharedObject;
+
+    import nl.demonsters.debugger.MonsterDebugger;
     
     [SWF(width="640", height="340", backgroundColor="#000000")];
 
@@ -15,34 +17,6 @@ package california {
     //[SWF(width="640", height="440", backgroundColor="#000000")];
 
     public class Main extends FlxGame {
-        /*
-
-        // Alternate fonts?????
-        
-        [Embed(source='/../data/Antenna8.ttf', fontFamily='antenna8', embedAsCFF="false")]
-        public static var Antenna8FontClass:String;
-
-        [Embed(source='/../data/lilabit.ttf', fontFamily='lilabit', embedAsCFF="false")]
-        public static var LilabitFontClass:String;
-
-        [Embed(source='/../data/Pixilated.ttf', fontFamily='pixilated', embedAsCFF="false")]
-        public static var PixilatedFontClass:String;
-
-        [Embed(source='/../data/roundabout.ttf', fontFamily='roundabout', embedAsCFF="false")]
-        public static var RoundaboutFontClass:String;
-        
-        [Embed(source='/../data/handy00.ttf', fontFamily='handy', embedAsCFF="false")]
-        public static var HandyFontClass:String;
-
-        [Embed(source='/../data/fixed_01.ttf', fontFamily='fixed01', embedAsCFF="false")]
-        public static var Fixed01FontClass:String;
-        
-        [Embed(source='/../data/Nouveau_IBM.ttf', fontFamily='nouveau_ibm', embedAsCFF="false")]
-        public static var NouveauibmFontClass:String;
-        [Embed(source='/../data/Nouveau_IBM_Stretch.ttf', fontFamily='nouveau_ibm_stretch', embedAsCFF="false")]
-        public static var NouveauibmstretchFontClass:String;
-        */
-
         public static var gameFontFamily:String;
         public static var gameFontSize:uint;        
         
@@ -58,6 +32,8 @@ package california {
         public static var gameXML:XML;
         public static var logViewInitialized:Boolean;
         public static var saveGame:SharedObject;
+
+        public static var debugger:MonsterDebugger;
         
         public function Main():void {
             gameFontFamily = 'system';
@@ -101,7 +77,8 @@ package california {
                     "LightedLampPost": LightedLampPost,
                     "Bird": Bird,
                     "AirplaneWithBanner": AirplaneWithBanner,
-                    "TinyLampPost": TinyLampPost
+                    "TinyLampPost": TinyLampPost,
+                    "SmallLightbulb": SmallLightbulb                    
                 });
 
             GameSprite.createSpriteDatabase();
@@ -114,9 +91,12 @@ package california {
             logViewInitialized = false;
 
             FlxG.showBounds = false;
+
+            debugger = new MonsterDebugger(this);
+            MonsterDebugger.trace(this, "Debugger armed :)");
             
-            super(320, 170, MenuState, 2);
-            //super(320, 170, PlayState, 2);
+            //super(320, 170, MenuState, 2);
+            super(320, 170, PlayState, 2);
 
             FlxState.bgColor = Main.bgcolor;
 
@@ -124,10 +104,11 @@ package california {
             
             saveGame.data['sectionsUnlocked'] = ['lois', 'beulah'];
             //saveGame.data['sectionsUnlocked'] = ['lois'];
-            
+
+            /*
             if(saveGame.data['sectionsUnlocked'] == null) {
                 saveGame.data['sectionsUnlocked'] = ['lois'];
-            }
+            }*/
         }
     }
 }

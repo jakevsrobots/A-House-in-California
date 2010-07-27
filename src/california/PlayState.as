@@ -37,7 +37,7 @@ package california {
         
         private var currentVerb:Verb;
 
-        private var startingRoomName:String = 'upOnACloud';
+        private var startingRoomName:String = 'aHouseAtTheTopOfAHill';
         //private var startingRoomName:String = 'beulahHome';
 
         public static var musicPlayer:MusicPlayer;

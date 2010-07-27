@@ -135,6 +135,32 @@
               width="3" height="7" />
       
     </folder>
+
+    <folder name="beulah-hill-house">
+      <object name="houseOnAHillBackground" image="../backgrounds/a-house-at-the-top-of-a-hill-background.png"
+              width="320" height="170" />
+
+      <object name="bagOfPeanuts" image="../sprites/bag-of-peanuts.png"
+              width="13" height="19" />
+      <object name="fan" image="../sprites/fan.png"
+              width="12" height="15" />
+      <object name="storyBook" image="../sprites/story-book.png"
+              width="2" height="5" />
+      <object name="cookBook" image="../sprites/cook-book.png"
+              width="3" height="5" />
+      <object name="streetSign" image="../sprites/street-sign.png"
+              width="31" height="102" />
+      <object name="sugarBowl" image="../sprites/sugar-bowl.png"
+              width="7" height="6" />
+      <object name="robin" image="../sprites/robin.png"
+              width="6" height="7" />
+      <object name="cardinal" image="../sprites/cardinal.png"
+              width="8" height="9" />
+      <object name="bluebird" image="../sprites/bluebird.png"
+              width="8" height="9" />
+      <object name="smallLightbulb" image="../sprites/small-light-bulb.png"
+              width="3" height="1" />
+    </folder>
   </objects>
   
   <layers>

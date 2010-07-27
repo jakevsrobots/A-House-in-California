@@ -16,8 +16,6 @@
   <!-- ################################################### -->
   <!-- ################## Music ########################### -->
   <!-- ################################################### -->
-  <asset name="loisMusic" file="music/lois_a-house-in-california.mp3"
-         type="mp3" />
   
   <!-- lois -->
   <asset name="loisCrickets" file="music/lois/crickets.mp3"
@@ -28,6 +26,7 @@
          type="mp3" />
 
   <!-- beulah -->
+
   <asset name="pigeonSong" file="music/beulah/pigeon.mp3"
          type="mp3" />
   <asset name="doveSong" file="music/beulah/dove.mp3"
@@ -60,6 +59,8 @@
   <asset name="beulahHome" file="maps/Level-2-1-AHouseInCalifornia.oel"
          type="xml" />
   <asset name="upOnACloud" file="maps/Level-2-2-UpOnACloud.oel"
+         type="xml" />
+  <asset name="aHouseAtTheTopOfAHill" file="maps/Level-2-3-AHouseAtTheTopOfAHill.oel"
          type="xml" />
   
   <!-- ################################################### -->
@@ -215,6 +216,33 @@
   <asset name="planeGlow" file="sprites/plane-glow.png"
          type="image" />
   <asset name="tinyLampPost" file="sprites/tiny-lamppost.png"
+         type="image" />
+
+  <!-- A House at the Top of a Hill -->
+  <asset name="houseOnAHillBackground" file="backgrounds/a-house-at-the-top-of-a-hill-background.png"
+         type="image" />
+
+  <asset name="bagOfPeanuts" file="sprites/bag-of-peanuts.png"
+         type="image" />
+  <asset name="fan" file="sprites/fan.png"
+         type="image" />
+  <asset name="storyBook" file="sprites/story-book.png"
+         type="image" />
+  <asset name="cookBook" file="sprites/cook-book.png"
+         type="image" />
+  <asset name="streetSign" file="sprites/street-sign.png"
+         type="image" />
+  <asset name="sugarBowl" file="sprites/sugar-bowl.png"
+         type="image" />
+  <asset name="robin" file="sprites/robin.png"
+         type="image" />
+  <asset name="cardinal" file="sprites/cardinal.png"
+         type="image" />
+  <asset name="bluebird" file="sprites/bluebird.png"
+         type="image" />
+  <asset name="smallLightbulb" file="sprites/small-light-bulb.png"
+         type="image" />
+  <asset name="smallLightbulbGlow" file="sprites/small-light-bulb-glow.png"
          type="image" />
   
 </assets>
