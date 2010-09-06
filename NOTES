@@ -83,14 +83,12 @@ Beulah (read/write)
      Befriend - (befriend birds who then fly back to the house)
      Read - (move between rooms and get info about recipes+birds)
      Write -  (move between rooms and write stories about things)
-     Extract - (extract an ingredient from something)
-     Prepare - (prepare an ingredient for use in a bird snack / adds a verb about that ingredient)
-
+     Cook - (prepare meals for birds)
+     
   Birds & their meals:
      Pigeons, doves, magpies -              bird bread  
      Bluebirds, cardinals and robins -      berry cake
      Chickadees, sparrows and goldfinches - peanut butter
-     Woodpeckers, mockingbirds, warblers -  candy apple
 
   Recipes:
      Bird bread - Extract crumbs from bread and add flax
@@ -114,29 +112,18 @@ Beulah (read/write)
      
   1. A house in California (bird bread)
      - Bird bread advertisement
-       - Read to see a description of bird bread (crumbs+flax)
-     - A loaf of bread
-       - Extract crumbs to add the 'crumbs' sprite
-     - Flax seed
-       - Prepare to get the 'flaxify' verb
-     - Crumbs
-       - Flaxify to lure birds down
+       - Cook to create bird bread
      - Birds (pigeon, dove, magpie)
        - Flying too high at first, lure down with bird bread
        - Once lured down, befriend to get them to go on the telephone wire.
      - Telephone wire
-       - Once all 12 (4 sets of 3) birds are on the telephone wire, unlock the 'sing' verb and 'sing with birds' to complete the section
+       - Once all 9 (3 sets of 3) birds are on the telephone wire, unlock the 'sing' verb and 'sing with birds' to complete the section
      - Clouds
        - Write about clouds to go to 'A kitchen on a cloud'
 
   2. Up on a cloud (berry cake)
      - Airplane advertising berry cake
-       - Read to see a description of berry cake (bake sugary berries)
-     - Berry tree
-       - Add sugar to sweeten berries
-       - Add heat to bake berries
-     - Candle
-       - Extract heat to get 'heat' verb
+       - Cook to lure birds
      - Cloud
        - Read about cloud to go to 'A house in California'
      - House on a hill (on a cloud)
@@ -144,37 +131,39 @@ Beulah (read/write)
      - Bluebird, cardinal, robin
        
   3. A house at the top of a hill (peanut butter)
-     - Sugar bowl
-       - Prepare to get 'sweeten' verb
-     - Bag of peanuts
-       - Extract to get peanuts
-     - Peanuts
-       - Prepare to get the 'peanut' verb
-     - Fan
-       - Add peanuts to produce peanut butter
      - Empty peanut butter jar
-       - Read to get peanut butter ingredients/instructions
-     - Cookbook
-       - Read to see a few hints:
-         - Syrup = water+sugar
+       - Cook to create peanut butter and lure birds
      - Cloud catalog
        - Read to go to 'up on a cloud'
      - Chickadee, sparrow and goldfinch
-       
-  4. A long table in a nice restaurant (candy apple)
-     - Kitschy painting
-       - Look at to see a description that a bird is eating a child's candy apple, and a description of a candy apple.
-     - Glass of water
-       - Sweeten to get syrup
-     - Glass of syrup
-       - Prepare to get 'syrup' verb
-     - A boy at the table
-       - Turns into an apple tree when any verb is performed on him
-     - Apple tree
-       - Extract apple
-     - Apple
-       - Syrup-coat apple to produce candy apple
-       
+
+Connie (look/listen)
+  Looking at and listening to butterflies who fly around the house yields information about their dreams. Looking at and listening to different objects on the television add verbs that can entice butterflies to the house to sleep.
+
+
+  1. A House in California
+    Orange butterflies
+      - Land on the roof
+      - Dream of salvation
+    Yellow butterflies
+      - Land on the windows
+      - Dream of traveling through beautiful landscapes
+    Blue butterflies
+      - Land on the side of the house
+      - Dream of a place to rest
+
+  2. A TV Show About a Cathedral
+    - A cross at the top of the cathedral (save)
+    - A car in front of the cathedral (travel)
+
+    After the first two are done, unlock:
+    - A boy on the sidewalk (rest)
+    
+
+Anne
+  Use the 2 verbs from each character before to remember/forget, read/write, and look/listen to the lamp, birds and butterflies, to remove them.  Then learn/unlearn the house to remove it and reveal the boy.  Click on the boy to end the game.
+
+  
 Old Map (left-to-right)
 -------------------
 Lois
