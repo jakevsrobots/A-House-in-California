@@ -28,7 +28,7 @@ package california {
         private var world:World;
         public var currentRoom:Room;
         private var roomTitle:FlxText;
-        private var cursor:GameCursor;
+        public static var cursor:GameCursor;
 
         public static var vocabulary:Vocabulary;
         public static var dialog:DialogWindow;
@@ -102,11 +102,11 @@ package california {
             hudGroup.add(vocabulary.currentVerbs);
             add(hudGroup);
             
-            cursor = new GameCursor();
-            add(cursor);
-
             dialog = new DialogWindow();
             add(dialog);
+            
+            cursor = new GameCursor();
+            add(cursor);
         }
 
         override public function update():void {
@@ -121,6 +121,7 @@ package california {
                     for each (verb in vocabulary.currentVerbs.members) {
                         verb.highlight = false;
                     }
+                    
                     for each (verb in vocabulary.currentVerbs.members) {
                         if(cursor.graphic.overlaps(verb)) {
                             verb.highlight = true;

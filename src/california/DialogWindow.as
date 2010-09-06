@@ -81,7 +81,8 @@ package california {
                     PlayState.hasMouseFocus = true;
                 }
             } else if(visibilityState == 'visible') {
-                PlayState.hasMouseFocus = false;
+                PlayState.hasMouseFocus = true;
+                PlayState.cursor.setText(null);
                 
                 if(FlxG.mouse.justPressed()) {
                     visibilityState = 'fading out';
