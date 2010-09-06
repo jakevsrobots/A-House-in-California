@@ -60,8 +60,7 @@ package california {
                     "setPlayer": SetPlayerBehavior,
                     "playMusic": PlayMusicBehavior,
                     "moveSprite": MoveSpriteBehavior,
-                    "updateBirds": UpdateBirdsBehavior,
-                    "updateBirdSong": UpdateBirdSongBehavior
+                    "updateBirds": UpdateBirdsBehavior
                 });
             
             GameSprite.registerSpriteClasses({
@@ -96,8 +95,8 @@ package california {
             debugger = new MonsterDebugger(this);
             MonsterDebugger.trace(this, "Debugger armed :)");
             
-            //super(320, 170, MenuState, 2);
-            super(320, 170, PlayState, 2);
+            super(320, 170, MenuState, 2);
+            //super(320, 170, PlayState, 2);
 
             FlxState.bgColor = Main.bgcolor;
 

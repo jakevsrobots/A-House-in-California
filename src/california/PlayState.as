@@ -171,7 +171,7 @@ package california {
                     }
                 }
             } else {
-                cursor.visible = false;
+                //cursor.visible = false;
             }
 
             // Update darkness fade

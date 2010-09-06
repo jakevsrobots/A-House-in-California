@@ -54,6 +54,7 @@ package california {
         override public function update():void {
             if(visibilityState == 'fading in') {
                 PlayState.hasMouseFocus = false;                    
+                PlayState.cursor.setText(null);
 
                 overlay.alpha += fadeSpeed * FlxG.elapsed;
                 if(overlay.alpha >= maxOverlayOpacity) {
@@ -81,7 +82,7 @@ package california {
                     PlayState.hasMouseFocus = true;
                 }
             } else if(visibilityState == 'visible') {
-                PlayState.hasMouseFocus = true;
+                PlayState.hasMouseFocus = false;
                 PlayState.cursor.setText(null);
                 
                 if(FlxG.mouse.justPressed()) {

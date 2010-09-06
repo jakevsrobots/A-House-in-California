@@ -1102,7 +1102,7 @@
         <conditionalBehaviors flagName="cloudBirdsAccessible" value="1">
           <behavior type="removeSprite" targetSprite="robin" />
           <behavior type="setFlag" flagName="robinBefriended" value="1"/>
-          <behavior type="updateBirdSong" />          
+          <behavior type="updateBirds" />          
           <behavior type="dialog">The robin sings a song about ***********. It will sit on the telephone wire and sing to the house.</behavior>
         </conditionalBehaviors>
       </verb>
@@ -1119,7 +1119,7 @@
         <conditionalBehaviors flagName="cloudBirdsAccessible" value="1">
           <behavior type="removeSprite" targetSprite="cardinal" />
           <behavior type="setFlag" flagName="cardinalBefriended" value="1"/>
-          <behavior type="updateBirdSong" />
+          <behavior type="updateBirds" />
           <behavior type="dialog">The cardinal sings a song about *********. It will sit on the telephone wire and sing to the house.</behavior>
         </conditionalBehaviors>
       </verb>
@@ -1136,7 +1136,7 @@
         <conditionalBehaviors flagName="cloudBirdsAccessible" value="1">
           <behavior type="removeSprite" targetSprite="bluebird" />
           <behavior type="setFlag" flagName="bluebirdBefriended" value="1"/>
-          <behavior type="updateBirdSong" />
+          <behavior type="updateBirds" />
           <behavior type="dialog">The bluebird sings a song about ****************. It will sit on the telephone wire and sing to the house.</behavior>
         </conditionalBehaviors>
       </verb>
@@ -1222,7 +1222,7 @@
         <conditionalBehaviors flagName="hillBirdsAccessible" value="1">
           <behavior type="removeSprite" targetSprite="sparrow" />
           <behavior type="setFlag" flagName="sparrowBefriended" value="1"/>
-          <behavior type="updateBirdSong" />
+          <behavior type="updateBirds" />
           <behavior type="dialog">The sparrow sings a song about ****************. It will sit on the telephone wire and sing to the house.</behavior>
         </conditionalBehaviors>
       </verb>
@@ -1238,7 +1238,7 @@
         <conditionalBehaviors flagName="hillBirdsAccessible" value="1">
           <behavior type="removeSprite" targetSprite="goldfinch" />
           <behavior type="setFlag" flagName="goldfinchBefriended" value="1"/>
-          <behavior type="updateBirdSong" />
+          <behavior type="updateBirds" />
           <behavior type="dialog">The goldfinch sings a song about ****************. It will sit on the telephone wire and sing to the house.</behavior>
         </conditionalBehaviors>
       </verb>
@@ -1254,7 +1254,7 @@
         <conditionalBehaviors flagName="hillBirdsAccessible" value="1">
           <behavior type="removeSprite" targetSprite="chickadee" />
           <behavior type="setFlag" flagName="chickadeeBefriended" value="1"/>
-          <behavior type="updateBirdSong" />
+          <behavior type="updateBirds" />
           <behavior type="dialog">The chickadee sings a song about ****************. It will sit on the telephone wire and sing to the house.</behavior>
         </conditionalBehaviors>
       </verb>

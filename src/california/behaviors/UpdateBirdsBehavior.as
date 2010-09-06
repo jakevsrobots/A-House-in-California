@@ -70,18 +70,19 @@ package california.behaviors {
 
         override public function run():void {
             for (var birdName:String in UpdateBirdsBehavior.birds) {
-                
                 if(PlayState.getFlag(birdName + 'Befriended')) {
-                    if(PlayState.instance.currentRoom.getSprite(birdName) == null) {
-                        var birdData:Object = UpdateBirdsBehavior.birds[birdName];
-                        
-                        PlayState.addSprite(birdName, birdData['x'], birdData['y']);
-
-                        if(!PlayState.musicPlayer.isPlaying(birdData['song'])) {
-                            PlayState.musicPlayer.playAsset(birdData['song']);
-                            PlayState.musicPlayer.setAssetVolume(birdData['song'], 0.3);
-                            PlayState.musicPlayer.setAssetPanning(birdData['song'], birdData['panning']);
+                    var birdData:Object = UpdateBirdsBehavior.birds[birdName];
+                    
+                    if(PlayState.instance.currentRoom.roomName == 'beulahHome') {
+                        if(PlayState.instance.currentRoom.getSprite(birdName) == null) {                        
+                            PlayState.addSprite(birdName, birdData['x'], birdData['y']);
                         }
+                    }
+
+                    if(!PlayState.musicPlayer.isPlaying(birdData['song'])) {
+                        PlayState.musicPlayer.playAsset(birdData['song']);
+                        PlayState.musicPlayer.setAssetVolume(birdData['song'], 0.3);
+                        PlayState.musicPlayer.setAssetPanning(birdData['song'], birdData['panning']);
                     }
                 }
             }
