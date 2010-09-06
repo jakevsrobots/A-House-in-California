@@ -46,20 +46,20 @@ package california.behaviors {
 
             // A House at the Top of a Hill
             'sparrow': {
-                'x': 194,
-                'y': 68,
+                'x': 190,
+                'y': 65,
                 'song': 'sparrowSong',
                 'panning': -1
             },
             'goldfinch': {
-                'x': 252,
+                'x': 232,
                 'y': 70,
                 'song': 'goldfinchSong',
                 'panning': 0
             },
             'chickadee': {
-                'x': 274,
-                'y': 68,
+                'x': 270,
+                'y': 63,
                 'song': 'chickadeeSong',
                 'panning': 0.5
             }
