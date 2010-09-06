@@ -163,6 +163,38 @@
       <object name="chickadee" image="../sprites/chickadee.png"
               width="6" height="6" />
     </folder>
+
+    <!-- ### CONNIE ### -->
+    <!-- Home -->
+    <folder name="connie-home">
+      <object name="houseBackground" image="../backgrounds/home-background.png"
+              width="320" height="170" />
+
+      <object name="television" image="../sprites/television.png"
+              width="29" height="40" />
+
+      <object name="greenButterfly" image="../sprites/green-butterfly.png"
+              width="13" height="7" />
+      <object name="orangeButterfly" image="../sprites/orange-butterfly.png"
+              width="13" height="7" />
+      <object name="blueButterfly" image="../sprites/blue-butterfly.png"
+              width="13" height="7" />
+      
+    </folder>
+
+    <folder name="connie-cathedral">
+      <object name="cathedralBackground" image="../backgrounds/a-tv-show-about-a-cathedral-background.png"
+              width="320" height="170" />
+
+      <object name="cathedral" image="../sprites/cathedral.png"
+              width="76" height="122" />
+      <object name="car" image="../sprites/car.png"
+              width="85" height="17" />
+      <object name="floodlights" image="../sprites/floodlights.png"
+              width="20" height="9" />
+      <object name="cross" image="../sprites/cross.png"
+              width="40" height="44" />
+    </folder>
   </objects>
   
   <layers>

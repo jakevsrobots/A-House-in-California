@@ -2,7 +2,7 @@ package california {
     import Date;
     import org.flixel.*;
     import california.sprites.*;
-    import SWFStats.*;
+    //import SWFStats.*;
 
     import california.music.*;
     
@@ -60,13 +60,15 @@ package california {
         
         override public function create():void {
             PlayState.instance = this;
-            
+
+            /*
             if(!Main.logViewInitialized) {
                 Log.View(540, "9f491e53-4116-4945-85e7-803052dc1b05", root.loaderInfo.loaderURL);
                 Main.logViewInitialized = true;
             }
 
             Log.Play();
+            */
             
             flags = {};
             
@@ -156,7 +158,7 @@ package california {
                                 cursorOverlappedSprite = true;
 
                                 if(FlxG.mouse.justPressed()) {
-                                    Log.CustomMetric(currentVerb.name + '|' + sprite.name + '|' + currentRoom.roomName, "Verb action");
+                                    //Log.CustomMetric(currentVerb.name + '|' + sprite.name + '|' + currentRoom.roomName, "Verb action");
                                     sprite.handleVerb(currentVerb);
                                 }
                                 
@@ -373,7 +375,7 @@ package california {
 
             currentRoom.enterRoom();
             
-            Log.CustomMetric(currentRoom.roomName, "Room entry");
+            //Log.CustomMetric(currentRoom.roomName, "Room entry");
        }
     }
 }

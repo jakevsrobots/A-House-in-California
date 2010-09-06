@@ -78,6 +78,12 @@
          type="xml" />
   <asset name="aHouseAtTheTopOfAHill" file="maps/Level-2-3-AHouseAtTheTopOfAHill.oel"
          type="xml" />
+
+  <!-- Connie -->
+  <asset name="connieHome" file="maps/Level-3-1-AHouseInCalifornia.oel"
+         type="xml" />
+  <asset name="aTVShowAboutACathedral" file="maps/Level-3-2-ATVShowAboutACathedral.oel"
+         type="xml" />
   
   <!-- ################################################### -->
   <!-- ################# Images ########################## -->
@@ -271,5 +277,27 @@
   <asset name="chickadee" file="sprites/chickadee.png"
          type="image" />
 
+  <!-- Connie home -->
+  <asset name="television" file="sprites/television.png"
+         type="image" />
+  <asset name="greenButterfly" file="sprites/green-butterfly.png"
+         type="image" />
+  <asset name="orangeButterfly" file="sprites/orange-butterfly.png"
+         type="image" />
+  <asset name="blueButterfly" file="sprites/blue-butterfly.png"
+         type="image" />
+
+  <!-- TV Show about a cathedral -->
+  <asset name="cathedralBackground" file="backgrounds/a-tv-show-about-a-cathedral-background.png"
+         type="image" />
+
+  <asset name="cathedral" file="sprites/cathedral.png"
+         type="image" />
+  <asset name="car" file="sprites/car.png"
+         type="image" />
+  <asset name="floodlights" file="sprites/floodlights.png"
+         type="image" />
+  <asset name="cross" file="sprites/cross.png"
+         type="image" />
   
 </assets>

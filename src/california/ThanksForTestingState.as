@@ -14,7 +14,7 @@ package california {
         }
         
         override public function create():void {
-            Log.CustomMetric("completed testing game");
+            //Log.CustomMetric("completed testing game");
             
             FlxG.flash.start(this.fadeFromColor, 1.0, function():void {
                     FlxG.flash.stop();

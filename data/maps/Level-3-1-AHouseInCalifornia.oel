@@ -1,0 +1,35 @@
+<level>
+  <width>320</width>
+  <height>170</height>
+  <background>
+    <houseBackground x="0" y="0"/>
+  </background>
+  <sprites>
+    <television x="204" y="106"/>
+    <lightedLampPost x="291" y="117"/>
+    <lightedLampPost x="27" y="117"/>
+    <greenButterfly x="234" y="51"/>
+    <greenButterfly x="167" y="32"/>
+    <greenButterfly x="114" y="40"/>
+    <greenButterfly x="280" y="80"/>
+    <greenButterfly x="31" y="49"/>
+    <greenButterfly x="250" y="14"/>
+    <greenButterfly x="293" y="20"/>
+    <blueButterfly x="211" y="25"/>
+    <blueButterfly x="201" y="49"/>
+    <blueButterfly x="286" y="46"/>
+    <blueButterfly x="248" y="79"/>
+    <blueButterfly x="131" y="17"/>
+    <blueButterfly x="63" y="26"/>
+    <blueButterfly x="7" y="54"/>
+    <blueButterfly x="185" y="82"/>
+    <orangeButterfly x="100" y="14"/>
+    <orangeButterfly x="14" y="9"/>
+    <orangeButterfly x="73" y="42"/>
+    <orangeButterfly x="215" y="63"/>
+    <orangeButterfly x="226" y="14"/>
+    <orangeButterfly x="262" y="36"/>
+    <orangeButterfly x="305" y="93"/>
+    <orangeButterfly x="157" y="19"/>
+  </sprites>
+</level>

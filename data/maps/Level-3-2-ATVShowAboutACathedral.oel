@@ -1,0 +1,13 @@
+<level>
+  <width>320</width>
+  <height>170</height>
+  <background>
+    <cathedralBackground x="0" y="0"/>
+  </background>
+  <sprites>
+    <cathedral x="87" y="22"/>
+    <cross x="105" y="9"/>
+    <floodlights x="28" y="135"/>
+    <car x="228" y="138"/>
+  </sprites>
+</level>

@@ -1,15 +1,14 @@
 package california {
     import org.flixel.*;
     import AssetLibrary;
-    import SWFStats.*;
+    //import SWFStats.*;
     import california.sprites.*;
     import california.behaviors.*;
     import california.music.*;
         
     import flash.net.SharedObject;
+    import flash.display.StageDisplayState;
 
-    import nl.demonsters.debugger.MonsterDebugger;
-    
     [SWF(width="640", height="340", backgroundColor="#000000")];
 
     [Frame(factoryClass="Preloader")]
@@ -33,9 +32,11 @@ package california {
         public static var logViewInitialized:Boolean;
         public static var saveGame:SharedObject;
 
-        public static var debugger:MonsterDebugger;
+        public static var instance:Main;
         
         public function Main():void {
+            Main.instance = this;
+
             gameFontFamily = 'system';
             gameFontSize = 8;
             
@@ -92,9 +93,6 @@ package california {
 
             FlxG.showBounds = false;
 
-            debugger = new MonsterDebugger(this);
-            MonsterDebugger.trace(this, "Debugger armed :)");
-            
             super(320, 170, MenuState, 2);
             //super(320, 170, PlayState, 2);
 
@@ -102,13 +100,16 @@ package california {
 
             saveGame = SharedObject.getLocal('aHouseInCalifornia_savedata');
             
-            saveGame.data['sectionsUnlocked'] = ['lois', 'beulah'];
+            saveGame.data['sectionsUnlocked'] = ['lois', 'beulah', 'connie'];
             //saveGame.data['sectionsUnlocked'] = ['lois'];
 
             /*
             if(saveGame.data['sectionsUnlocked'] == null) {
                 saveGame.data['sectionsUnlocked'] = ['lois'];
             }*/
+
+            //stage.displayState = StageDisplayState.FULL_SCREEN_INTERACTIVE;
+            //stage.displayState = 'fullScreenInteractive';
         }
     }
 }

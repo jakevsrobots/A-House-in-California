@@ -61,6 +61,20 @@
         </behavior>
       </conditionalBehaviors>
     </room>
+
+    <!-- Connie -->
+    <room name="connieHome" title="A House in California">
+      <conditionalBehaviors flagName="connieSectionStarted" value="0">
+        <behavior type="setVocabulary">
+          <verb name="Look" />
+          <verb name="Listen" />
+        </behavior>
+      </conditionalBehaviors>
+    </room>
+    
+    <room name="aTVShowAboutACathedral" title="A TV Show About a Cathedral">
+    </room>
+    
   </world>
   
   <!-- ######################################################### -->    
@@ -98,6 +112,16 @@
     <verb name="Write"
           template="Write about" />
     <verb name="Cook" />
+
+    <!-- Connie -->
+    <verb name="Listen"
+          template="Listen to" />
+    <verb name="Free"
+          template="Free" />
+    <verb name="Save"
+          template="Save" />
+    <verb name="Rest"
+          template="Rest" />
     
   </verbs>
   
@@ -1336,5 +1360,34 @@
         </conditionalBehaviors>        
       </verb>
     </sprite>
+
+    <!-- ####################### CONNIE ######################### -->
+
+    <!-- Room #3-1 - A House in California -->    
+    <sprite name="television">
+    </sprite>
+    <sprite name="greenButterfly"
+            verboseName="green butterfly"
+            spriteClass="butterfly">
+    </sprite>
+    <sprite name="orangeButterfly"
+            verboseName="orange butterfly"
+            spriteClass="butterfly">
+    </sprite>
+    <sprite name="blueButterfly"
+            verboseName="blue butterfly"
+            spriteClass="butterfly">
+    </sprite>
+
+    <!-- Room #3-2 A TV Show About a Cathedral -->
+    <sprite name="cathedral">
+    </sprite>
+    <sprite name="car">
+    </sprite>
+    <sprite name="floodlights">
+    </sprite>
+    <sprite name="cross">
+    </sprite>
+    
   </sprites>
 </game>
