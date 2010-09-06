@@ -22,8 +22,47 @@ package california.behaviors {
                 'y': 65,
                 'song': 'magpieSong',
                 'panning': 1
+            },
+
+            // Up in the Clouds
+            'robin': {
+                'x': 248,
+                'y': 70,
+                'song': 'robinSong',
+                'panning': 0
+            },
+            'cardinal': {
+                'x': 306,
+                'y': 70,
+                'song': 'cardinalSong',
+                'panning': 1
+            },
+            'bluebird': {
+                'x': 169,
+                'y': 69,
+                'song': 'bluebirdSong',
+                'panning': -0.8
+            },
+
+            // A House at the Top of a Hill
+            'sparrow': {
+                'x': 194,
+                'y': 68,
+                'song': 'sparrowSong',
+                'panning': -1
+            },
+            'goldfinch': {
+                'x': 252,
+                'y': 70,
+                'song': 'goldfinchSong',
+                'panning': 0
+            },
+            'chickadee': {
+                'x': 274,
+                'y': 68,
+                'song': 'chickadeeSong',
+                'panning': 0.5
             }
-            
         };
         
         public function UpdateBirdsBehavior(behaviorNode:XML):void {

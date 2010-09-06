@@ -217,6 +217,12 @@
          type="image" />
   <asset name="tinyLampPost" file="sprites/tiny-lamppost.png"
          type="image" />
+  <asset name="robin" file="sprites/robin.png"
+         type="image" />
+  <asset name="cardinal" file="sprites/cardinal.png"
+         type="image" />
+  <asset name="bluebird" file="sprites/bluebird.png"
+         type="image" />
 
   <!-- A House at the Top of a Hill -->
   <asset name="houseOnAHillBackground" file="backgrounds/a-house-at-the-top-of-a-hill-background.png"
@@ -234,15 +240,16 @@
          type="image" />
   <asset name="sugarBowl" file="sprites/sugar-bowl.png"
          type="image" />
-  <asset name="robin" file="sprites/robin.png"
-         type="image" />
-  <asset name="cardinal" file="sprites/cardinal.png"
-         type="image" />
-  <asset name="bluebird" file="sprites/bluebird.png"
-         type="image" />
   <asset name="smallLightbulb" file="sprites/small-light-bulb.png"
          type="image" />
   <asset name="smallLightbulbGlow" file="sprites/small-light-bulb-glow.png"
          type="image" />
+  <asset name="sparrow" file="sprites/sparrow.png"
+         type="image" />
+  <asset name="goldfinch" file="sprites/goldfinch.png"
+         type="image" />
+  <asset name="chickadee" file="sprites/chickadee.png"
+         type="image" />
+
   
 </assets>

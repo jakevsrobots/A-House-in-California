@@ -23,13 +23,14 @@
 
     <!-- Beulah -->
     <room name="beulahHome" title="A House in California">
+      <behavior type="updateBirds" />
+      
       <conditionalBehaviors flagName="beulahSectionStarted" value="0">      
         <behavior type="setVocabulary">
           <verb name="Look" />
           <verb name="Read" />
           <verb name="Write" />
-          <verb name="Extract" />
-          <verb name="Prepare" />
+          <verb name="Cook" />
           <verb name="Befriend" />
         </behavior>
         <behavior type="setPlayer" name="beulahPlayer" />
@@ -38,7 +39,17 @@
         <behavior type="setFlag" flagName="beulahSectionStarted" value="1" />
       </conditionalBehaviors>
     </room>
-    <room name="upOnACloud" title="Up On a Cloud" />
+    <room name="upOnACloud" title="Up On a Cloud">
+      <conditionalBehaviors flagName="beulahSectionStarted" value="0">      
+        <behavior type="setVocabulary">
+          <verb name="Look" />
+          <verb name="Read" />
+          <verb name="Write" />
+          <verb name="Cook" />
+          <verb name="Befriend" />
+        </behavior>
+      </conditionalBehaviors>
+    </room>
     <room name="aHouseAtTheTopOfAHill" title="A House at the Top of a Hill" />
   </world>
   
@@ -74,11 +85,7 @@
     <verb name="Read" />
     <verb name="Write"
           template="Write about" />
-    <verb name="Extract"
-          template="Extract from" />
-    <verb name="Prepare" />
-    <verb name="Flax"
-          template="Add flax to" />
+    <verb name="Cook" />
     
   </verbs>
   
@@ -856,16 +863,9 @@
       <verb name="Write">
         <behavior type="dialog">"Journal," the daily micro-memoirs of Beulah.</behavior>
       </verb>
-      <verb name="Extract">
-        <behavior type="dialog">Beulah uses writing to extract secrets from fantasy, and tongs to extract beets from a steamer.</behavior>
-      </verb>
-      <verb name="Prepare">
+      <verb name="Cook">
         <behavior type="dialog">Beulah puts a part of herself in every dish, but that's just a metaphor.</behavior>
       </verb>
-      <verb name="Flax">
-        <behavior type="dialog">Flax seed is quite healthy, but so is Beulah.</behavior>
-      </verb>
-      
     </sprite>
     
     <!-- Room #2-1 - A House in California -->
@@ -882,14 +882,8 @@
       <verb name="Write">
         <behavior type="dialog">"A House in California," an experimental novel about four people building a house together.</behavior>
       </verb>
-      <verb name="Extract">
-        <behavior type="dialog">Perhaps some wood chips could be extracted from the house, but those would be of no use.</behavior>
-      </verb>
-      <verb name="Prepare">
+      <verb name="Cook">
         <behavior type="dialog">Very few recipes call for a house.</behavior>
-      </verb>
-      <verb name="Flax">
-        <behavior type="dialog">No amount of flax would make this house an appealing snack.</behavior>
       </verb>
     </sprite>
     
@@ -906,97 +900,11 @@
       <verb name="Write">
         <behavior type="dialog">"45 Important Things Smaller Than the Moon," a magazine article.</behavior>
       </verb>
-      <verb name="Extract">
-        <behavior type="dialog">Extract a bit of delicious Moon cheese? Alas it's just a myth.</behavior>
-      </verb>
-      <verb name="Prepare">
+      <verb name="Cook">
         <behavior type="dialog">Very few recipes call for a Moon.</behavior>
       </verb>
-      <verb name="Flax">
-        <behavior type="dialog">Throwing flax at the moon is a fun and healthy way to make a mess.</behavior>
-      </verb>
     </sprite>
-
-    <sprite name="breadLoaf"
-            verboseName="loaf of bread">
-      <look>A loaf of bread, full of delicious future breadcrumbs.</look>
-      <verb name="Befriend">
-        <behavior type="dialog">There was a boy who befriended a loaf of bread. He convinced his family not to eat it.</behavior>
-      </verb>
-      <verb name="Read">
-        <behavior type="dialog">The crumbs within this bread may each have their own stories to tell.</behavior>
-      </verb>
-      <verb name="Write">
-        <behavior type="dialog">"Shamefully Easy Beer and Honey Bread," a short sidebar recipe.</behavior>
-      </verb>
-      <verb name="Extract"
-            verbText="Extract crumbs from bread">
-        <behavior type="dialog">These crumbs should be useful in some recipe.</behavior>
-        <behavior type="replaceSprite" oldSprite="breadLoaf" newSprite="breadCrumbs" />
-      </verb>
-      <verb name="Prepare">
-        <behavior type="dialog">The bread is already prepared; perhaps it could be broken down into something else useful.</behavior>
-      </verb>
-      <verb name="Flax">
-        <behavior type="dialog">The recipe calls for crumbs, not a whole loaf of bread.</behavior>
-      </verb>
-    </sprite>
-
-    <sprite name="breadCrumbs"
-            verboseName="bread crumbs">
-      <look>A pile of bread crumbs. Probably delicious, but not quite enough to lure down the birds.</look>
-      <verb name="Befriend">
-        <behavior type="dialog">There was a boy who befriended some bread crumbs. He helped them found a crumb village beneath the couch cushions.</behavior>
-      </verb>
-      <verb name="Read">
-        <behavior type="dialog">Some folks read the future in tea leaves or bread crumbs, but these crumbs look better suited for cooking.</behavior>
-      </verb>
-      <verb name="Write">
-        <behavior type="dialog">"The Lives of Crumbs," a children's book about about a village populated by friendly bread crumbs.</behavior>
-      </verb>
-      <verb name="Extract">
-        <behavior type="dialog">The crumbs have already been extracted from the bread.</behavior>
-      </verb>
-      <verb name="Prepare">
-        <behavior type="dialog">The crumbs themselves are ready; they just need another ingredient to make a bird snack.</behavior>
-      </verb>
-      <verb name="Flax">
-        <behavior type="removeSprite" targetSprite="breadCrumbs" />
-        <behavior type="replaceVerb" oldVerb="Flax" newVerb="Prepare" />
-        <behavior type="moveSprite" targetSprite="pigeon" x="212" y="137" />
-        <behavior type="moveSprite" targetSprite="dove" x="226" y="137" />
-        <behavior type="moveSprite" targetSprite="magpie" x="238" y="141" />
-        <behavior type="dialog">A delicious snack for a bird! They fly down so quickly when they see something they like.</behavior>
-        <behavior type="setFlag" flagName="houseBirdsAccessible" value="1" />
-      </verb>
-    </sprite>
-
-    <!--
-    <sprite name="birdBread"
-            verboseName="bird bread"
-            assetName="birdBread"></sprite> -->
     
-    <sprite name="flaxBag"
-            verboseName="bag of flax seed">
-      <look>A bag of flax seed; perhaps it was left here by some health-minded snack artist.</look>
-      <verb name="Befriend">
-        <behavior type="dialog">There was a boy who befriended a bag of flax seed. He painted an ear on it and told it stories about trees.</behavior>
-      </verb>
-      <verb name="Read">
-        <behavior type="dialog">A note on the back of the bag says this flax seed was harvested in Egypt and is commonly eaten there by Ostriches.</behavior>
-      </verb>
-      <verb name="Write">
-        <behavior type="dialog">"Flax Seed Toothpaste and 9 Other Terrible Ideas," an article in a health food magazine.</behavior>
-      </verb>
-      <verb name="Extract">
-        <behavior type="dialog">The seeds are already extracted, they just need a bit of preparation.</behavior>
-      </verb>
-      <verb name="Prepare">
-        <behavior type="replaceVerb" oldVerb="Prepare" newVerb="Flax" />
-        <behavior type="removeSprite" targetSprite="flaxBag" />
-      </verb>
-    </sprite>
-
     <sprite name="billboard">
       <verb name="Befriend">
         <behavior type="dialog"></behavior>
@@ -1007,14 +915,17 @@
       <verb name="Write">
         <behavior type="dialog"></behavior>
       </verb>
-      <verb name="Extract">
-        <behavior type="dialog"></behavior>
-      </verb>
-      <verb name="Prepare">
-        <behavior type="dialog"></behavior>
-      </verb>
-      <verb name="Flax">
-        <behavior type="dialog"></behavior>
+      <verb name="Cook">
+        <conditionalBehaviors flagName="houseBirdsAccessible" value="1">
+          <behavior type="dialog">The birds did enjoy that bread. But now they're resting on the powerlines.</behavior>
+        </conditionalBehaviors>
+        <conditionalBehaviors flagName="houseBirdsAccessible" value="0">
+          <behavior type="moveSprite" targetSprite="pigeon" x="212" y="137" />
+          <behavior type="moveSprite" targetSprite="dove" x="226" y="137" />
+          <behavior type="moveSprite" targetSprite="magpie" x="238" y="141" />
+          <behavior type="dialog">A delicious snack for a bird! They fly down so quickly when they see something they like.</behavior>
+          <behavior type="setFlag" flagName="houseBirdsAccessible" value="1" />
+        </conditionalBehaviors>
       </verb>
     </sprite>
 
@@ -1023,9 +934,9 @@
             spriteClass="HouseCloud">
       <verb name="Befriend"></verb>
       <verb name="Read"></verb>
-      <verb name="Write"></verb>
-      <verb name="Extract"></verb>
-      <verb name="Prepare"></verb>      
+      <verb name="Write">
+        <behavior type="transitionToRoom" targetRoom="upOnACloud" />
+      </verb>
     </sprite>
 
     <sprite name="houseCloud2"
@@ -1033,9 +944,9 @@
             spriteClass="HouseCloud">
       <verb name="Befriend"></verb>
       <verb name="Read"></verb>
-      <verb name="Write"></verb>
-      <verb name="Extract"></verb>
-      <verb name="Prepare"></verb>      
+      <verb name="Write">
+        <behavior type="transitionToRoom" targetRoom="upOnACloud" />
+      </verb>
     </sprite>
 
     <sprite name="powerLinesLeft"
@@ -1043,8 +954,7 @@
       <verb name="Befriend"></verb>
       <verb name="Read"></verb>
       <verb name="Write"></verb>
-      <verb name="Extract"></verb>
-      <verb name="Prepare"></verb>      
+      <verb name="Cook"></verb>
     </sprite>
 
     <sprite name="powerLinesRight"
@@ -1052,8 +962,7 @@
       <verb name="Befriend"></verb>
       <verb name="Read"></verb>
       <verb name="Write"></verb>
-      <verb name="Extract"></verb>
-      <verb name="Prepare"></verb>      
+      <verb name="Cook"></verb>
     </sprite>
 
     <sprite name="lightedLampPost"
@@ -1062,8 +971,7 @@
       <verb name="Befriend"></verb>
       <verb name="Read"></verb>
       <verb name="Write"></verb>
-      <verb name="Extract"></verb>
-      <verb name="Prepare"></verb>      
+      <verb name="Cook"></verb>
     </sprite>
     
     <sprite name="pigeon">
@@ -1080,8 +988,7 @@
       </verb>
       <verb name="Read"></verb>
       <verb name="Write"></verb>
-      <verb name="Extract"></verb>
-      <verb name="Prepare"></verb>
+      <verb name="Cook"></verb>
     </sprite>
 
     <sprite name="dove">
@@ -1098,8 +1005,7 @@
       </verb>
       <verb name="Read"></verb>
       <verb name="Write"></verb>
-      <verb name="Extract"></verb>
-      <verb name="Prepare"></verb>
+      <verb name="Cook"></verb>
     </sprite>
     
     <sprite name="magpie">
@@ -1116,55 +1022,139 @@
       </verb>
       <verb name="Read"></verb>
       <verb name="Write"></verb>
-      <verb name="Extract"></verb>
-      <verb name="Prepare"></verb>
+      <verb name="Cook"></verb>
     </sprite>
 
     <!-- Room #2-2 - Up On a Cloud -->    
     <sprite name="houseOnAHill"
-            verboseName="house on a hill" />
-    <sprite name="candle" />
-    <sprite name="berryTree"
-            verboseName="berry tree" />
+            verboseName="house on a hill">
+      <verb name="Write">
+        <behavior type="transitionToRoom" targetRoom="aHouseAtTheTopOfAHill" />
+      </verb>
+    </sprite>
     <sprite name="planeWithBanner"
             verboseName="airplane with banner"
-            spriteClass="AirplaneWithBanner" />
+            spriteClass="AirplaneWithBanner">
+      <verb name="Cook">
+        <conditionalBehaviors flagName="cloudBirdsAccessible" value="1">
+          <behavior type="dialog">The birds have had plenty to eat.</behavior>
+        </conditionalBehaviors>
+        <conditionalBehaviors flagName="cloudBirdsAccessible" value="0">
+          <behavior type="moveSprite" targetSprite="robin" x="98" y="135" />
+          <behavior type="moveSprite" targetSprite="cardinal" x="114" y="135" />
+          <behavior type="moveSprite" targetSprite="bluebird" x="130" y="135" />
+          <behavior type="dialog">A delicious snack for a bird! They fly down so quickly when they see something they like.</behavior>
+          <behavior type="setFlag" flagName="cloudBirdsAccessible" value="1" />
+        </conditionalBehaviors>
+      </verb>
+    </sprite>
     <sprite name="cloudWithAHouseOnIt"
             verboseName="cloud"            
-            assetName="houseCloud" />
+            assetName="houseCloud">
+      <verb name="Read">
+        <behavior type="transitionToRoom" targetRoom="beulahHome" />
+      </verb>
+    </sprite>
     <sprite name="cloudWithBirdsOnIt"
             verboseName="cloud"            
-            assetName="houseCloud2" />
+            assetName="houseCloud2">
+      <verb name="Read">
+        <behavior type="transitionToRoom" targetRoom="beulahHome" />
+      </verb>
+    </sprite>
     <sprite name="upInTheSkyCloud"
             verboseName="cloud"
             assetName="houseCloud"
-            spriteClass="HouseCloud" />
+            spriteClass="HouseCloud">
+      <verb name="Read">
+        <behavior type="transitionToRoom" targetRoom="uponACloud" />
+      </verb>
+    </sprite>
     <sprite name="upInTheSkyCloud2"
             verboseName="cloud"            
             assetName="houseCloud2"
-            spriteClass="HouseCloud" />
+            spriteClass="HouseCloud">
+      <verb name="Read">
+        <behavior type="transitionToRoom" targetRoom="beulahHome" />
+      </verb>
+    </sprite>
+    
     <sprite name="tinyLampPost"
             spriteClass="TinyLampPost"
-            verboseName="lamp post" />
+            verboseName="lamp post">
+    </sprite>
 
+    <sprite name="robin">
+      <verb name="Befriend">
+        <conditionalBehaviors flagName="cloudBirdsAccessible" value="0">
+          <behavior type="dialog">The birds look friendly, but they're too far away. Perhaps they could be lured down with a snack.</behavior>
+        </conditionalBehaviors>
+        <conditionalBehaviors flagName="cloudBirdsAccessible" value="1">
+          <behavior type="removeSprite" targetSprite="robin" />
+          <behavior type="setFlag" flagName="robinBefriended" value="1"/>
+          <behavior type="dialog">The robin sings a song about ***********. It will sit on the telephone wire and sing to the house.</behavior>
+        </conditionalBehaviors>
+      </verb>
+      <verb name="Read"></verb>
+      <verb name="Write"></verb>
+      <verb name="Cook"></verb>
+    </sprite>
+    
+    <sprite name="cardinal">
+      <verb name="Befriend">
+        <conditionalBehaviors flagName="cloudBirdsAccessible" value="0">
+          <behavior type="dialog">The birds look friendly, but they're too far away. Perhaps they could be lured down with a snack.</behavior>
+        </conditionalBehaviors>
+        <conditionalBehaviors flagName="cloudBirdsAccessible" value="1">
+          <behavior type="removeSprite" targetSprite="cardinal" />
+          <behavior type="setFlag" flagName="cardinalBefriended" value="1"/>
+          <behavior type="dialog">The cardinal sings a song about *********. It will sit on the telephone wire and sing to the house.</behavior>
+        </conditionalBehaviors>
+      </verb>
+      <verb name="Read"></verb>
+      <verb name="Write"></verb>
+      <verb name="Cook"></verb>      
+    </sprite>
+    
+    <sprite name="bluebird">
+      <verb name="Befriend">
+        <conditionalBehaviors flagName="cloudBirdsAccessible" value="0">
+          <behavior type="dialog">The birds look friendly, but they're too far away. Perhaps they could be lured down with a snack.</behavior>
+        </conditionalBehaviors>
+        <conditionalBehaviors flagName="cloudBirdsAccessible" value="1">
+          <behavior type="removeSprite" targetSprite="bluebird" />
+          <behavior type="setFlag" flagName="bluebirdBefriended" value="1"/>
+          <behavior type="dialog">The bluebird sings a song about ***************8. It will sit on the telephone wire and sing to the house.</behavior>
+        </conditionalBehaviors>
+      </verb>
+      <verb name="Read"></verb>
+      <verb name="Write"></verb>
+      <verb name="Cook"></verb>      
+    </sprite>
+    
     <!-- Room #2-3 - A House at the Top of a Hill -->
     <sprite name="bagOfPeanuts"
             verboseName="bag of peanuts"/>
     <sprite name="fan" />
     <sprite name="storyBook"
-            verboseName="story book" />
+            verboseName="story book">
+      <verb name="Read">
+        <behavior type="transitionToRoom" targetRoom="upOnACloud" />
+      </verb>
+    </sprite>
     <sprite name="cookBook"
             verboseName="cook book" />
     <sprite name="streetSign"
             verboseName="street sign" />
     <sprite name="sugarBowl"
             verboseName="sugar bowl" />
-    <sprite name="robin" />
-    <sprite name="cardinal" />
-    <sprite name="bluebird" />
+    
     <sprite name="smallLightbulb"
             spriteClass="SmallLightbulb"
             interactive="0" />
-    
+
+    <sprite name="sparrow" />
+    <sprite name="goldfinch" />
+    <sprite name="chickadee" />    
   </sprites>
 </game>

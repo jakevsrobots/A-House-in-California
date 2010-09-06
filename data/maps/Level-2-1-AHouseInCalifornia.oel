@@ -6,8 +6,6 @@
   </background>
   <sprites>
     <moonWaning x="267" y="11"/>
-    <breadLoaf x="213" y="140"/>
-    <flaxBag x="240" y="137"/>
     <billboard x="176" y="29"/>
     <beulahHouse x="40" y="47"/>
     <houseCloud2 x="135" y="11"/>

@@ -8,12 +8,13 @@
     <houseOnAHill x="50" y="81"/>
     <cloudWithAHouseOnIt x="36" y="104"/>
     <planeWithBanner x="197" y="38"/>
-    <berryTree x="237" y="70"/>
-    <candle x="109" y="138"/>
     <upInTheSkyCloud x="76" y="5"/>
     <cloudWithBirdsOnIt x="148" y="80"/>
     <tinyLampPost x="182" y="73"/>
     <tinyLampPost x="41" y="97"/>
     <tinyLampPost x="61" y="90"/>
+    <robin x="153" y="73"/>
+    <cardinal x="172" y="73"/>
+    <bluebird x="162" y="72"/>
   </sprites>
 </level>
