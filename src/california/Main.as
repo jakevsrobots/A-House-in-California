@@ -60,7 +60,8 @@ package california {
                     "setPlayer": SetPlayerBehavior,
                     "playMusic": PlayMusicBehavior,
                     "moveSprite": MoveSpriteBehavior,
-                    "updateBirds": UpdateBirdsBehavior
+                    "updateBirds": UpdateBirdsBehavior,
+                    "updateBirdSong": UpdateBirdSongBehavior
                 });
             
             GameSprite.registerSpriteClasses({

@@ -4,7 +4,9 @@ package california.music {
             super([
                     'loisWhiteNoise', 'loisCrickets',
                     
-                    'pigeonSong', 'doveSong', 'magpieSong'
+                    'pigeonSong', 'doveSong', 'magpieSong',
+                    'robinSong', 'cardinalSong', 'bluebirdSong',
+                    'sparrowSong', 'goldfinchSong', 'chickadeeSong'
                 ]);
 
             soundPlayers['loisWhiteNoise'].play();

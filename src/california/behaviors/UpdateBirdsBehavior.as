@@ -6,8 +6,8 @@ package california.behaviors {
         public static var birds:Object = {
             // A House in California
             'pigeon': {
-                'x': 174,
-                'y': 61,
+                'x': 179,
+                'y': 62,
                 'song': 'pigeonSong',
                 'panning': -1
             },
@@ -27,19 +27,19 @@ package california.behaviors {
             // Up in the Clouds
             'robin': {
                 'x': 248,
-                'y': 70,
+                'y': 64,
                 'song': 'robinSong',
                 'panning': 0
             },
             'cardinal': {
                 'x': 306,
-                'y': 70,
+                'y': 66,
                 'song': 'cardinalSong',
                 'panning': 1
             },
             'bluebird': {
                 'x': 169,
-                'y': 69,
+                'y': 60,
                 'song': 'bluebirdSong',
                 'panning': -0.8
             },

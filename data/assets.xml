@@ -33,6 +33,21 @@
          type="mp3" />
   <asset name="magpieSong" file="music/beulah/magpie.mp3"
          type="mp3" />
+
+  <asset name="robinSong" file="music/beulah/robin.mp3"
+         type="mp3" />
+  <asset name="cardinalSong" file="music/beulah/cardinal.mp3"
+         type="mp3" />
+  <asset name="bluebirdSong" file="music/beulah/bluebird.mp3"
+         type="mp3" />
+
+  <asset name="sparrowSong" file="music/beulah/sparrow.mp3"
+         type="mp3" />
+  <asset name="goldfinchSong" file="music/beulah/goldfinch.mp3"
+         type="mp3" />
+  <asset name="chickadeeSong" file="music/beulah/chickadee.mp3"
+         type="mp3" />
+  
   
   
   <!-- ################################################### -->
