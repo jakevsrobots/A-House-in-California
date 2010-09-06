@@ -92,6 +92,8 @@
     <!-- Beulah -->
 
     <verb name="Befriend" />
+    <verb name="Sing"
+          template="Sing with" />    
     <verb name="Read" />
     <verb name="Write"
           template="Write about" />
@@ -995,10 +997,18 @@
           <behavior type="updateBirds" />
           <behavior type="dialog">The pigeon sings a song about streetlights and train stations. It will sit on the telephone wire and sing to the house.</behavior>
         </conditionalBehaviors>
+        <conditionalBehaviors flagName="allBirdsBefriended" value="1">
+          <behavior type="dialog">That should be enough birds to fill the house with music.</behavior>
+        </conditionalBehaviors>
       </verb>
       <verb name="Read"></verb>
       <verb name="Write"></verb>
       <verb name="Cook"></verb>
+      <verb name="Sing" moveTo="1">
+        <conditionalBehaviors flagName="allBirdsBefriended" value="1">
+          <behavior type="fadeToMenu" delay="1" />          
+        </conditionalBehaviors>        
+      </verb>
     </sprite>
 
     <sprite name="dove">
@@ -1012,10 +1022,18 @@
           <behavior type="updateBirds" />          
           <behavior type="dialog">The dove sings a song about candles and cathedrals. It will sit on the telephone wire and sing to the house.</behavior>
         </conditionalBehaviors>
+        <conditionalBehaviors flagName="allBirdsBefriended" value="1">
+          <behavior type="dialog">That should be enough birds to fill the house with music.</behavior>
+        </conditionalBehaviors>
       </verb>
       <verb name="Read"></verb>
       <verb name="Write"></verb>
       <verb name="Cook"></verb>
+      <verb name="Sing" moveTo="1">
+        <conditionalBehaviors flagName="allBirdsBefriended" value="1">
+          <behavior type="fadeToMenu" delay="1" />          
+        </conditionalBehaviors>        
+      </verb>
     </sprite>
     
     <sprite name="magpie">
@@ -1029,10 +1047,18 @@
           <behavior type="updateBirds" />
           <behavior type="dialog">The magpie sings a song about mirrors and numbers. It will sit on the telephone wire and sing to the house.</behavior>
         </conditionalBehaviors>
+        <conditionalBehaviors flagName="allBirdsBefriended" value="1">
+          <behavior type="dialog">That should be enough birds to fill the house with music.</behavior>
+        </conditionalBehaviors>
       </verb>
       <verb name="Read"></verb>
       <verb name="Write"></verb>
       <verb name="Cook"></verb>
+      <verb name="Sing" moveTo="1">
+        <conditionalBehaviors flagName="allBirdsBefriended" value="1">
+          <behavior type="fadeToMenu" delay="1" />          
+        </conditionalBehaviors>        
+      </verb>
     </sprite>
 
     <!-- Room #2-2 - Up On a Cloud -->    
@@ -1105,10 +1131,18 @@
           <behavior type="updateBirds" />          
           <behavior type="dialog">The robin sings a song about ***********. It will sit on the telephone wire and sing to the house.</behavior>
         </conditionalBehaviors>
+        <conditionalBehaviors flagName="allBirdsBefriended" value="1">
+          <behavior type="dialog">That should be enough birds to fill the house with music.</behavior>
+        </conditionalBehaviors>
       </verb>
       <verb name="Read"></verb>
       <verb name="Write"></verb>
       <verb name="Cook"></verb>
+      <verb name="Sing" moveTo="1">
+        <conditionalBehaviors flagName="allBirdsBefriended" value="1">
+          <behavior type="fadeToMenu" delay="1" />          
+        </conditionalBehaviors>        
+      </verb>
     </sprite>
     
     <sprite name="cardinal">
@@ -1122,10 +1156,18 @@
           <behavior type="updateBirds" />
           <behavior type="dialog">The cardinal sings a song about *********. It will sit on the telephone wire and sing to the house.</behavior>
         </conditionalBehaviors>
+        <conditionalBehaviors flagName="allBirdsBefriended" value="1">
+          <behavior type="dialog">That should be enough birds to fill the house with music.</behavior>
+        </conditionalBehaviors>
       </verb>
       <verb name="Read"></verb>
       <verb name="Write"></verb>
-      <verb name="Cook"></verb>      
+      <verb name="Cook"></verb>
+      <verb name="Sing" moveTo="1">
+        <conditionalBehaviors flagName="allBirdsBefriended" value="1">
+          <behavior type="fadeToMenu" delay="1" />          
+        </conditionalBehaviors>        
+      </verb>
     </sprite>
     
     <sprite name="bluebird">
@@ -1139,10 +1181,18 @@
           <behavior type="updateBirds" />
           <behavior type="dialog">The bluebird sings a song about ****************. It will sit on the telephone wire and sing to the house.</behavior>
         </conditionalBehaviors>
+        <conditionalBehaviors flagName="allBirdsBefriended" value="1">
+          <behavior type="dialog">That should be enough birds to fill the house with music.</behavior>
+        </conditionalBehaviors>
       </verb>
       <verb name="Read"></verb>
       <verb name="Write"></verb>
-      <verb name="Cook"></verb>      
+      <verb name="Cook"></verb>
+      <verb name="Sing" moveTo="1">
+        <conditionalBehaviors flagName="allBirdsBefriended" value="1">
+          <behavior type="fadeToMenu" delay="1" />          
+        </conditionalBehaviors>        
+      </verb>
     </sprite>
     
     <!-- Room #2-3 - A House at the Top of a Hill -->
@@ -1225,10 +1275,18 @@
           <behavior type="updateBirds" />
           <behavior type="dialog">The sparrow sings a song about ****************. It will sit on the telephone wire and sing to the house.</behavior>
         </conditionalBehaviors>
+        <conditionalBehaviors flagName="allBirdsBefriended" value="1">
+          <behavior type="dialog">That should be enough birds to fill the house with music.</behavior>
+        </conditionalBehaviors>
       </verb>
       <verb name="Read"></verb>
       <verb name="Write"></verb>
-      <verb name="Cook"></verb>      
+      <verb name="Cook"></verb>
+      <verb name="Sing" moveTo="1">
+        <conditionalBehaviors flagName="allBirdsBefriended" value="1">
+          <behavior type="fadeToMenu" delay="1" />          
+        </conditionalBehaviors>        
+      </verb>
     </sprite>
     <sprite name="goldfinch">
       <verb name="Befriend">
@@ -1241,10 +1299,18 @@
           <behavior type="updateBirds" />
           <behavior type="dialog">The goldfinch sings a song about ****************. It will sit on the telephone wire and sing to the house.</behavior>
         </conditionalBehaviors>
+        <conditionalBehaviors flagName="allBirdsBefriended" value="1">
+          <behavior type="dialog">That should be enough birds to fill the house with music.</behavior>
+        </conditionalBehaviors>        
       </verb>
       <verb name="Read"></verb>
       <verb name="Write"></verb>
-      <verb name="Cook"></verb>      
+      <verb name="Cook"></verb>
+      <verb name="Sing" moveTo="1">
+        <conditionalBehaviors flagName="allBirdsBefriended" value="1">
+          <behavior type="fadeToMenu" delay="1" />          
+        </conditionalBehaviors>        
+      </verb>      
     </sprite>
     <sprite name="chickadee">
       <verb name="Befriend">
@@ -1257,10 +1323,18 @@
           <behavior type="updateBirds" />
           <behavior type="dialog">The chickadee sings a song about ****************. It will sit on the telephone wire and sing to the house.</behavior>
         </conditionalBehaviors>
+        <conditionalBehaviors flagName="allBirdsBefriended" value="1">
+          <behavior type="dialog">That should be enough birds to fill the house with music.</behavior>
+        </conditionalBehaviors>        
       </verb>
       <verb name="Read"></verb>
       <verb name="Write"></verb>
-      <verb name="Cook"></verb>      
+      <verb name="Cook"></verb>
+      <verb name="Sing" moveTo="1">
+        <conditionalBehaviors flagName="allBirdsBefriended" value="1">
+          <behavior type="fadeToMenu" delay="1" />          
+        </conditionalBehaviors>        
+      </verb>
     </sprite>
   </sprites>
 </game>

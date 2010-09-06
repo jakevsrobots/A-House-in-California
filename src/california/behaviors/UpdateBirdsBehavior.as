@@ -69,6 +69,8 @@ package california.behaviors {
         }
 
         override public function run():void {
+            var allBirdsBefriended:Boolean = true;
+            
             for (var birdName:String in UpdateBirdsBehavior.birds) {
                 if(PlayState.getFlag(birdName + 'Befriended')) {
                     var birdData:Object = UpdateBirdsBehavior.birds[birdName];
@@ -84,7 +86,14 @@ package california.behaviors {
                         PlayState.musicPlayer.setAssetVolume(birdData['song'], 0.3);
                         PlayState.musicPlayer.setAssetPanning(birdData['song'], birdData['panning']);
                     }
+                } else {
+                    allBirdsBefriended = false;
                 }
+            }
+
+            if(allBirdsBefriended) {
+                PlayState.setFlag('allBirdsBefriended', true);
+                PlayState.vocabulary.replaceVerb('Befriend', 'Sing');
             }
         }
     }
