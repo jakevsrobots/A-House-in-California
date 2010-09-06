@@ -34,6 +34,7 @@
   <asset name="magpieSong" file="music/beulah/magpie.mp3"
          type="mp3" />
 
+
   <asset name="robinSong" file="music/beulah/robin.mp3"
          type="mp3" />
   <asset name="cardinalSong" file="music/beulah/cardinal.mp3"
@@ -256,6 +257,10 @@
   <asset name="sugarBowl" file="sprites/sugar-bowl.png"
          type="image" />
   <asset name="smallLightbulb" file="sprites/small-light-bulb.png"
+         type="image" />
+  <asset name="boy" file="sprites/boy.png"
+         type="image" />
+  <asset name="peanutButter" file="sprites/peanutButter.png"
          type="image" />
   <asset name="smallLightbulbGlow" file="sprites/small-light-bulb-glow.png"
          type="image" />

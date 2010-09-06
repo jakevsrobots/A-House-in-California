@@ -50,7 +50,17 @@
         </behavior>
       </conditionalBehaviors>
     </room>
-    <room name="aHouseAtTheTopOfAHill" title="A House at the Top of a Hill" />
+    <room name="aHouseAtTheTopOfAHill" title="A House at the Top of a Hill">
+      <conditionalBehaviors flagName="beulahSectionStarted" value="0">      
+        <behavior type="setVocabulary">
+          <verb name="Look" />
+          <verb name="Read" />
+          <verb name="Write" />
+          <verb name="Cook" />
+          <verb name="Befriend" />
+        </behavior>
+      </conditionalBehaviors>
+    </room>
   </world>
   
   <!-- ######################################################### -->    
@@ -212,7 +222,7 @@
         <behavior type="removeSprite" targetSprite="looseFireflies" />
         
         <conditionalBehaviors flagName="allFirefliesCaught" value="0">        
-          <behavior type="dialog">These fireflies will help light the lamp post, but there aren't quite enough of them yet.</behavior>
+          <behavior type="dialog">These fireflies will help light the lamp post, but there aren't quite enough of them yet. Surely there are more around ... perhaps on the moon?</behavior>
         </conditionalBehaviors>
 
         <conditionalBehaviors flagName="allFirefliesCaught" value="1">
@@ -1140,13 +1150,17 @@
             verboseName="bag of peanuts"/>
     <sprite name="fan" />
     <sprite name="storyBook"
-            verboseName="story book">
+            verboseName="book about clouds">
       <verb name="Read">
         <behavior type="transitionToRoom" targetRoom="upOnACloud" />
       </verb>
     </sprite>
     <sprite name="cookBook"
-            verboseName="cook book" />
+            verboseName="cook book">
+      <verb name="Read" moveTo="1">
+        <behavior type="addSprite" spriteName="peanutButterBoy" x="152" y="133" />
+      </verb>
+    </sprite>
     <sprite name="streetSign"
             verboseName="street sign" />
     <sprite name="sugarBowl"
@@ -1156,6 +1170,38 @@
             spriteClass="SmallLightbulb"
             interactive="0" />
 
+    <sprite name="peanutButterBoy" assetName="boy"
+            verboseName="boy who likes peanut butter">
+      <verb name="Befriend">
+        <behavior type="flash" />        
+        <behavior type="replaceSprite" oldSprite="peanutButterBoy"
+                  newSprite="peanutButter" x="153" y="136" />
+      </verb>
+      <verb name="Read">
+        <behavior type="flash" />        
+        <behavior type="replaceSprite" oldSprite="peanutButterBoy"
+                  newSprite="peanutButter" x="153" y="136" />
+      </verb>
+      <verb name="Write">
+        <behavior type="flash" />        
+        <behavior type="replaceSprite" oldSprite="peanutButterBoy"
+                  newSprite="peanutButter" x="153" y="136" />
+      </verb>
+      <verb name="Cook">
+        <behavior type="flash" />        
+        <behavior type="replaceSprite" oldSprite="peanutButterBoy"
+                  newSprite="peanutButter" x="153" y="136" />
+      </verb>
+    </sprite>
+
+    <sprite name="peanutButter" verboseName="empty jar of peanut butter">
+      <verb name="Look"></verb>
+      <verb name="Befriend"></verb>
+      <verb name="Read"></verb>
+      <verb name="Write"></verb>
+      <verb name="Cook"></verb>
+    </sprite>
+    
     <sprite name="sparrow">
       <verb name="Befriend">
         <conditionalBehaviors flagName="hillBirdsAccessible" value="0">

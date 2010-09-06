@@ -37,8 +37,10 @@ package california {
         
         private var currentVerb:Verb;
 
-        //private var startingRoomName:String = 'aHouseAtTheTopOfAHill';
-        private var startingRoomName:String = 'beulahHome';
+        //private var startingRoomName:String = 'loisHome';
+        
+        private var startingRoomName:String = 'aHouseAtTheTopOfAHill';
+        //private var startingRoomName:String = 'beulahHome';
         //private var startingRoomName:String = 'upOnACloud';
 
         public static var musicPlayer:MusicPlayer;
@@ -254,6 +256,10 @@ package california {
         }
 
         static public function addSprite(spriteName:String, x:Number, y:Number, width:Number=NaN, height:Number=NaN):void {
+            if(!GameSprite.spriteDatabase.hasOwnProperty(spriteName)) {
+                throw new Error('no sprite found in database when trying to add: ' + spriteName);
+            }
+            
             var SpriteClass:Class = GameSprite.spriteDatabase[spriteName]['spriteClass'];
             var newSprite:GameSprite;
 
