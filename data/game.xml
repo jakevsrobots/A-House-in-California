@@ -1121,9 +1121,11 @@
     </sprite>
 
     <!-- Room #2-2 - Up On a Cloud -->    
-    <sprite name="houseOnAHill" />
+    <sprite name="houseOnAHill"
+            verboseName="house on a hill" />
     <sprite name="candle" />
-    <sprite name="berryTree" />
+    <sprite name="berryTree"
+            verboseName="berry tree" />
     <sprite name="planeWithBanner"
             verboseName="airplane with banner"
             spriteClass="AirplaneWithBanner" />
@@ -1143,21 +1145,26 @@
             spriteClass="HouseCloud" />
     <sprite name="tinyLampPost"
             spriteClass="TinyLampPost"
-            verboseName="lampPost" />
+            verboseName="lamp post" />
 
-    <!-- Room #2-3 - Up On a Cloud -->
-      <sprite name="bagOfPeanuts" />
-      <sprite name="fan" />
-      <sprite name="storyBook" />
-      <sprite name="cookBook" />
-      <sprite name="streetSign" />
-      <sprite name="sugarBowl" />
-      <sprite name="robin" />
-      <sprite name="cardinal" />
-      <sprite name="bluebird" />
-      <sprite name="smallLightbulb"
-              spriteClass="SmallLightbulb"
-              interactive="0" />
+    <!-- Room #2-3 - A House at the Top of a Hill -->
+    <sprite name="bagOfPeanuts"
+            verboseName="bag of peanuts"/>
+    <sprite name="fan" />
+    <sprite name="storyBook"
+            verboseName="story book" />
+    <sprite name="cookBook"
+            verboseName="cook book" />
+    <sprite name="streetSign"
+            verboseName="street sign" />
+    <sprite name="sugarBowl"
+            verboseName="sugar bowl" />
+    <sprite name="robin" />
+    <sprite name="cardinal" />
+    <sprite name="bluebird" />
+    <sprite name="smallLightbulb"
+            spriteClass="SmallLightbulb"
+            interactive="0" />
     
   </sprites>
 </game>
