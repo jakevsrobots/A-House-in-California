@@ -1199,7 +1199,19 @@
       <verb name="Befriend"></verb>
       <verb name="Read"></verb>
       <verb name="Write"></verb>
-      <verb name="Cook"></verb>
+      <verb name="Cook">
+        <behavior type="removeSprite" targetSprite="peanutButter" />
+        <conditionalBehaviors flagName="hillBirdsAccessible" value="1">
+          <behavior type="dialog">The birds have had plenty to eat.</behavior>
+        </conditionalBehaviors>
+        <conditionalBehaviors flagName="hillBirdsAccessible" value="0">
+          <behavior type="moveSprite" targetSprite="sparrow" x="147" y="139" />
+          <behavior type="moveSprite" targetSprite="goldfinch" x="155" y="141" />
+          <behavior type="moveSprite" targetSprite="chickadee" x="164" y="139" />
+          <behavior type="dialog">A delicious snack for a bird! They fly down so quickly when they see something they like.</behavior>
+          <behavior type="setFlag" flagName="hillBirdsAccessible" value="1" />
+        </conditionalBehaviors>
+      </verb>
     </sprite>
     
     <sprite name="sparrow">
