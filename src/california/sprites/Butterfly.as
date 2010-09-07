@@ -14,6 +14,8 @@ package california.sprites {
         public static var RESTING:uint = 2;
         
         private var flightState:uint = 0;
+
+        private var maxY:Number = FlxG.height - 64;
         
         public function Butterfly(name:String, X:Number, Y:Number):void {
             super(name, X, Y);
@@ -22,7 +24,7 @@ package california.sprites {
             
             maxVelocity.x = maxVelocity.y = 200;
             
-            basePosition = new FlxPoint(Math.random() * FlxG.width, Math.random() * (FlxG.height - 64));
+            basePosition = new FlxPoint(Math.random() * FlxG.width, Math.random() * maxY);
             x = basePosition.x;
             y = basePosition.y;
             
@@ -35,7 +37,7 @@ package california.sprites {
             destination.y = basePosition.y + ((Math.random() - 0.5) * 50);
 
             if(destination.x < 0 || destination.x > FlxG.width ||
-                destination.y < 0 || destination.y > FlxG.height - 64) {
+                destination.y < 0 || destination.y > maxY) {
                 getNewDestination();
             }
         }
@@ -60,7 +62,7 @@ package california.sprites {
                     getNewDestination();
                 }
 
-                if(x < 0 || x > FlxG.width || y < 0 || y > FlxG.height - 25) {
+                if(x < 0 || x > FlxG.width || y < 0 || y > maxY) {
                     velocity.x = 0;
                     velocity.y = 0;
 
@@ -70,8 +72,8 @@ package california.sprites {
                         x = FlxG.width - (width / 2);
                     } if(y < 0) {
                         y = height / 2;
-                    } else if(y > FlxG.height - 64) {
-                        y = (FlxG.height - 64) - (height / 2);
+                    } else if(y > maxY) {
+                        y = maxY - (height / 2);
                     }
                     
                     getNewDestination();
