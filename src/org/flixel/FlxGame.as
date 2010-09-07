@@ -474,7 +474,7 @@ package org.flixel
 					FlxG.volume = soundPrefs.data.volume;
 				if(soundPrefs.data.mute != null)
 					FlxG.mute = soundPrefs.data.mute;
-				showSoundTray(true);
+				//showSoundTray(true);
 			}
 			
 			//All set!
