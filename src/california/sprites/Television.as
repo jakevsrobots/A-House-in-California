@@ -30,5 +30,14 @@ package california.sprites {
             glow.x = this.x + glowOffset.x;
             glow.y = this.y + glowOffset.y;
          }
+
+        override public function update():void {
+            super.update();
+
+            if(Math.random() > 0.88) {
+                glow.alpha = 0.2 + (Math.random() * 0.8);
+            }
+        }
+         
     }
 }

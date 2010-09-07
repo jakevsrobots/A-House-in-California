@@ -41,10 +41,11 @@ package california {
         //private var startingRoomName:String = 'aHouseAtTheTopOfAHill';
         //private var startingRoomName:String = 'beulahHome';
         //private var startingRoomName:String = 'upOnACloud';
-        private var startingRoomName:String = 'aTVShowAboutACathedral';
+        //private var startingRoomName:String = 'aTVShowAboutACathedral';
+        private var startingRoomName:String = 'connieHome';
 
         public static var musicPlayer:MusicPlayer;
-        
+
         //-----------------------------
         // Game data
         //-----------------------------
@@ -109,6 +110,8 @@ package california {
             
             cursor = new GameCursor();
             add(cursor);
+
+            PlayState.hasMouseFocus = true;
         }
 
         override public function update():void {
@@ -184,6 +187,10 @@ package california {
                 }
             }
 
+            if(FlxG.keys.justPressed('Q')) {
+                FlxG.state = new PlayState();
+            }
+            
             // Update end of level fade
             if(preMenuFade) {
                 PlayState.hasMouseFocus = false;
@@ -194,6 +201,7 @@ package california {
                     FlxG.fade.start(0xffffffff, 2, function():void {
                             FlxG.fade.stop();
                             FlxG.state = new MenuState(0xffffffff);
+                            //FlxG.state = new PlayState();
                             //FlxG.state = new ThanksForTestingState(0xffffffff);
                         });
                 }

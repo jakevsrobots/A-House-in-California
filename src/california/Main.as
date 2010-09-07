@@ -61,7 +61,8 @@ package california {
                     "setPlayer": SetPlayerBehavior,
                     "playMusic": PlayMusicBehavior,
                     "moveSprite": MoveSpriteBehavior,
-                    "updateBirds": UpdateBirdsBehavior
+                    "updateBirds": UpdateBirdsBehavior,
+                    "catchButterflies": CatchButterfliesBehavior
                 });
             
             GameSprite.registerSpriteClasses({
@@ -82,8 +83,7 @@ package california {
                     "SmallLightbulb": SmallLightbulb,
                     "Butterfly": Butterfly,
                     "Television": Television,
-                    "Car": Car,
-                    "Floodlights": Floodlights
+                    "Car": Car
                 });
 
             GameSprite.createSpriteDatabase();

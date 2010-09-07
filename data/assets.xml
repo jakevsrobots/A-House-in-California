@@ -11,7 +11,18 @@
          type="image" />
   <asset name="loisStill_4" file="stills/lois-4.png"
          type="image" />
-  
+
+  <asset name="beulahStill_1" file="stills/beulah-1.png"
+         type="image" />
+  <asset name="beulahStill_2" file="stills/beulah-2.png"
+         type="image" />
+  <asset name="beulahStill_3" file="stills/beulah-3.png"
+         type="image" />
+
+  <asset name="connieStill_1" file="stills/connie-1.png"
+         type="image" />
+  <asset name="connieStill_2" file="stills/connie-2.png"
+         type="image" />
   
   <!-- ################################################### -->
   <!-- ################## Music ########################### -->
@@ -279,6 +290,8 @@
 
   <!-- Connie home -->
   <asset name="television" file="sprites/television.png"
+         type="image" />
+  <asset name="televisionGlow" file="sprites/television-glow.png"
          type="image" />
   <asset name="greenButterfly" file="sprites/green-butterfly.png"
          type="image" />

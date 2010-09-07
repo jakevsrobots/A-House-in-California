@@ -13,12 +13,30 @@ package california {
                     '"I\'m sure The fireflies will light the street lamp now."'
                 ],
                 'sprites': [
-                    /*
-                    'loisPlayer', 'lampPost', 'moon', 'moonFountain',
-                    'dome', 'kickingMachine', 'jar', 'painting'
-                    */
-                    //'houseBackground', 'moonBackground', 'fountainBackground', 'computerBackground'
                     'loisStill_1', 'loisStill_2', 'loisStill_3', 'loisStill_4'
+                ]
+            },
+            'beulah': {
+                'title': '2. Beulah',
+                'text': [
+                    'A boy said, "Grandma, the house is too quiet. I\'m scared."',
+                    'Beulah said, "Don\'t worry; the birds have just gone to sleep.',
+                    '"When I was young, we fed the birds and listened to them sing."',
+                    '"Let\'s think of some snacks that birds like to eat."'
+                ],
+                'sprites': [
+                    'beulahStill_1', 'beulahStill_2', 'beulahStill_3'
+                ]
+            },
+            'connie': {
+                'title': '3. Connie',
+                'text': [
+                    'A boy said, "Grandma, the house is too gray. I\'m bored."',
+                    'Connie said, "Don\'t worry; the butterflies are just distracted"',
+                    '"When their daydreams are over they\'ll color the house."'
+                ],
+                'sprites': [
+                    'connieStill_1', 'connieStill_2'                    
                 ]
             }
         };

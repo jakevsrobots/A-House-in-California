@@ -59,14 +59,14 @@ package california {
             }
 
             if(Main.saveGame.data.sectionsUnlocked.indexOf('beulah') != -1) {
-                var beulahButton:MenuButton = new MenuButton(102, buttonPos, Main.library.getAsset('beulahLevelIcon'), 'Beulah', false, 'beulahHome');
+                var beulahButton:MenuButton = new MenuButton(102, buttonPos, Main.library.getAsset('beulahLevelIcon'), 'Beulah', false, 'beulahHome', 'beulah');
                 buttonGroup.add(beulahButton);
             } else {
                 buttonGroup.add(new MenuButton(102, buttonPos, Main.library.getAsset('blankLevelIcon'), '------', true, ''));                                
             }
 
             if(Main.saveGame.data.sectionsUnlocked.indexOf('connie') != -1) {
-                var connieButton:MenuButton = new MenuButton(166, buttonPos, Main.library.getAsset('loisLevelIcon'), 'Connie', false, 'connieHome');
+                var connieButton:MenuButton = new MenuButton(166, buttonPos, Main.library.getAsset('loisLevelIcon'), 'Connie', false, 'connieHome', 'connie');
                 buttonGroup.add(connieButton);
             } else {
                 buttonGroup.add(new MenuButton(166, buttonPos, Main.library.getAsset('blankLevelIcon'), '------', true, ''));                                

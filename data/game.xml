@@ -48,6 +48,8 @@
           <verb name="Cook" />
           <verb name="Befriend" />
         </behavior>
+
+        <behavior type="setFlag" flagName="beulahSectionStarted" value="1" />        
       </conditionalBehaviors>
     </room>
     <room name="aHouseAtTheTopOfAHill" title="A House at the Top of a Hill">
@@ -59,6 +61,8 @@
           <verb name="Cook" />
           <verb name="Befriend" />
         </behavior>
+
+        <behavior type="setFlag" flagName="beulahSectionStarted" value="1" />        
       </conditionalBehaviors>
     </room>
 
@@ -70,6 +74,8 @@
           <verb name="Watch" />          
           <verb name="Listen" />
         </behavior>
+
+        <behavior type="setFlag" flagName="connieSectionStarted" value="1" />        
       </conditionalBehaviors>
     </room>
     
@@ -80,7 +86,14 @@
           <verb name="Watch" />          
           <verb name="Listen" />
         </behavior>
+
+        <behavior type="setFlag" flagName="connieSectionStarted" value="1" />                
       </conditionalBehaviors>
+      <conditionalBehaviors flagName="readyToCreateSleepyBoy" value="1">
+        <behavior type="addSprite" spriteName="sleepyBoy" x="160" y="124" />
+        <behavior type="setFlag" flagName="readyToCreateSleepyBoy" value="0" />
+        <behavior type="setFlag" flagName="createdSleepyBoy" value="1" />        
+     </conditionalBehaviors>
     </room>
     
   </world>
@@ -130,7 +143,7 @@
     <verb name="Save"
           template="Save" />
     <verb name="Rest"
-          template="Rest" />
+          template="Rest with" />
     
   </verbs>
   
@@ -632,7 +645,6 @@
           <behavior type="addSprite" spriteName="looseFireflies"
                     x="250" y="117" width="15" height="10"  />
           <behavior type="dialog">What fun ... whoops!</behavior>
-
           <behavior type="setFlag" flagName="backyardJarBroken" value="1" />
         </conditionalBehaviors>
       </verb>
@@ -1382,14 +1394,26 @@
     <sprite name="greenButterfly"
             verboseName="green butterfly"
             spriteClass="Butterfly">
+      <verb name="Free">
+        <behavior type="catchButterflies" color="green" />
+        <behavior type="removeVerb" targetVerb="Free" />
+      </verb>
     </sprite>
     <sprite name="orangeButterfly"
             verboseName="orange butterfly"
             spriteClass="Butterfly">
+      <verb name="Save">
+        <behavior type="catchButterflies" color="orange" />
+        <behavior type="removeVerb" targetVerb="Save" />
+      </verb>
     </sprite>
     <sprite name="blueButterfly"
             verboseName="blue butterfly"
             spriteClass="Butterfly">
+      <verb name="Rest">
+        <behavior type="catchButterflies" color="blue" />
+        <behavior type="fadeToMenu" delay="2" />        
+      </verb>
     </sprite>
 
     <!-- Room #3-2 A TV Show About a Cathedral -->
@@ -1398,21 +1422,44 @@
         <behavior type="transitionToRoom" targetRoom="connieHome" />
       </verb>
     </sprite>
+    
     <sprite name="car"
             spriteClass="Car">
       <verb name="Listen">
-        <behavior type="transitionToRoom" targetRoom="connieHome" />
+          <behavior type="transitionToRoom" targetRoom="connieHome" />
       </verb>
-    </sprite>
-    <sprite name="floodlights"
-            spriteClass="Floodlights">
-      <verb name="Listen">
-        <behavior type="transitionToRoom" targetRoom="connieHome" />
+      <verb name="Watch">
+        <conditionalBehaviors flagName="greenButterfliesCaught" value="0">
+          <behavior type="addVerb" newVerb="Free" />
+        </conditionalBehaviors>
       </verb>
     </sprite>
     <sprite name="cross">
       <verb name="Listen">
         <behavior type="transitionToRoom" targetRoom="connieHome" />
+      </verb>
+      <verb name="Watch">
+        <conditionalBehaviors flagName="orangeButterfliesCaught" value="0">        
+          <behavior type="addVerb" newVerb="Save" />
+        </conditionalBehaviors>
+      </verb>
+    </sprite>
+    <sprite name="sleepyBoy" assetName="boy"
+            verboseName="sleepy boy">
+      <verb name="Look">
+        <behavior type="flash" />
+        <behavior type="removeSprite" targetSprite="sleepyBoy" />
+        <behavior type="addVerb" newVerb="Rest" />
+      </verb>
+      <verb name="Watch">
+        <behavior type="flash" />
+        <behavior type="removeSprite" targetSprite="sleepyBoy" />        
+        <behavior type="addVerb" newVerb="Rest" />
+      </verb>
+      <verb name="Listen">
+        <behavior type="flash" />
+        <behavior type="removeSprite" targetSprite="sleepyBoy" />        
+        <behavior type="addVerb" newVerb="Rest" />
       </verb>
     </sprite>
     
