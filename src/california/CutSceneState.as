@@ -64,6 +64,10 @@ package california {
         private var cursor:GameCursor;
         
         public function CutSceneState(sceneName:String, roomName:String):void {
+            FlxG.flash.start(0xff000000, 2.0, function():void {
+                    FlxG.fade.stop();
+                });
+            
             this.roomName = roomName;
             
             var cutSceneData:Object = CutSceneState.cutSceneDataBase[sceneName];
@@ -88,10 +92,10 @@ package california {
             add(text);
 
             titleText = new FlxText(0, 16, FlxG.width);
-            titleText.setFormat(Main.gameFontFamily, Main.gameFontSize * 4, 0xffffff, 'center');
+            titleText.setFormat(Main.gameFontFamily, Main.gameFontSize * 1, 0xffffff, 'center');
             titleText.alpha = 1.0;
             titleText.text = cutSceneData['title'];
-            //add(titleText);
+            add(titleText);
 
             labelText = new FlxText(-4, FlxG.height - 16, FlxG.width, '(click to continue)');
             labelText.setFormat(Main.gameFontFamily, Main.gameFontSize, 0xffffff, 'right');
@@ -155,7 +159,6 @@ package california {
 
         private function advanceText():void {
             currentLineIndex += 1;
-            FlxG.log('advancing to text index ' + currentLineIndex);
             
             nextText = textLines[currentLineIndex];
             
@@ -170,6 +173,7 @@ package california {
         }
 
         private function endState():void {
+            labelText.visible = false;
             FlxG.fade.start(0xff000000, 3, function():void {
                     FlxG.fade.stop();
                     FlxG.state = new PlayState(roomName);

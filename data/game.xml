@@ -217,7 +217,8 @@
       </verb>
       <verb name="Light" moveTo="1">
         <behavior type="addSprite" spriteName="lampFireflies" x="200" y="123" />
-        <behavior type="fadeToMenu" delay="1" />
+        <behavior type="fadeToCutScene" cutSceneName="beulah"
+                  roomName="beulahHome" delay="1" />
       </verb>
       <verb name="Learn" moveTo="1">
         <behavior type="dialog">The first street lights to be built in the United States were in Cleveland, Ohio. That's 2,408 miles from here.</behavior>
@@ -1051,8 +1052,9 @@
       <verb name="Cook"></verb>
       <verb name="Sing" moveTo="1">
         <conditionalBehaviors flagName="allBirdsBefriended" value="1">
-          <behavior type="fadeToMenu" delay="1" />          
-        </conditionalBehaviors>        
+          <behavior type="fadeToCutScene" cutSceneName="connie"
+                    roomName="connieHome" delay="0" />
+        </conditionalBehaviors>
       </verb>
     </sprite>
 
@@ -1076,7 +1078,8 @@
       <verb name="Cook"></verb>
       <verb name="Sing" moveTo="1">
         <conditionalBehaviors flagName="allBirdsBefriended" value="1">
-          <behavior type="fadeToMenu" delay="1" />          
+          <behavior type="fadeToCutScene" cutSceneName="connie"
+                    roomName="connieHome" delay="0" />
         </conditionalBehaviors>        
       </verb>
     </sprite>
@@ -1101,7 +1104,8 @@
       <verb name="Cook"></verb>
       <verb name="Sing" moveTo="1">
         <conditionalBehaviors flagName="allBirdsBefriended" value="1">
-          <behavior type="fadeToMenu" delay="1" />          
+          <behavior type="fadeToCutScene" cutSceneName="connie"
+                    roomName="connieHome" delay="0" />
         </conditionalBehaviors>        
       </verb>
     </sprite>
@@ -1185,7 +1189,8 @@
       <verb name="Cook"></verb>
       <verb name="Sing" moveTo="1">
         <conditionalBehaviors flagName="allBirdsBefriended" value="1">
-          <behavior type="fadeToMenu" delay="1" />          
+          <behavior type="fadeToCutScene" cutSceneName="connie"
+                    roomName="connieHome" delay="0" />
         </conditionalBehaviors>        
       </verb>
     </sprite>
@@ -1210,7 +1215,8 @@
       <verb name="Cook"></verb>
       <verb name="Sing" moveTo="1">
         <conditionalBehaviors flagName="allBirdsBefriended" value="1">
-          <behavior type="fadeToMenu" delay="1" />          
+          <behavior type="fadeToCutScene" cutSceneName="connie"
+                    roomName="connieHome" delay="0" />
         </conditionalBehaviors>        
       </verb>
     </sprite>
@@ -1235,7 +1241,8 @@
       <verb name="Cook"></verb>
       <verb name="Sing" moveTo="1">
         <conditionalBehaviors flagName="allBirdsBefriended" value="1">
-          <behavior type="fadeToMenu" delay="1" />          
+          <behavior type="fadeToCutScene" cutSceneName="connie"
+                    roomName="connieHome" delay="0" />
         </conditionalBehaviors>        
       </verb>
     </sprite>
@@ -1329,7 +1336,8 @@
       <verb name="Cook"></verb>
       <verb name="Sing" moveTo="1">
         <conditionalBehaviors flagName="allBirdsBefriended" value="1">
-          <behavior type="fadeToMenu" delay="1" />          
+          <behavior type="fadeToCutScene" cutSceneName="connie"
+                    roomName="connieHome" delay="0" />
         </conditionalBehaviors>        
       </verb>
     </sprite>
@@ -1353,7 +1361,8 @@
       <verb name="Cook"></verb>
       <verb name="Sing" moveTo="1">
         <conditionalBehaviors flagName="allBirdsBefriended" value="1">
-          <behavior type="fadeToMenu" delay="1" />          
+          <behavior type="fadeToCutScene" cutSceneName="connie"
+                    roomName="connieHome" delay="0" />
         </conditionalBehaviors>        
       </verb>      
     </sprite>
@@ -1377,7 +1386,8 @@
       <verb name="Cook"></verb>
       <verb name="Sing" moveTo="1">
         <conditionalBehaviors flagName="allBirdsBefriended" value="1">
-          <behavior type="fadeToMenu" delay="1" />          
+          <behavior type="fadeToCutScene" cutSceneName="connie"
+                    roomName="connieHome" delay="0" />
         </conditionalBehaviors>        
       </verb>
     </sprite>
@@ -1416,7 +1426,8 @@
             spriteClass="Butterfly">
       <verb name="Rest">
         <behavior type="catchButterflies" color="blue" />
-        <behavior type="fadeToMenu" delay="2" />        
+        <behavior type="fadeToCutScene" cutSceneName="ann"
+                  roomName="annHome" delay="2" />
       </verb>
     </sprite>
 
