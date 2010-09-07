@@ -299,5 +299,7 @@
          type="image" />
   <asset name="cross" file="sprites/cross.png"
          type="image" />
+  <asset name="carGlow" file="sprites/car-glow.png"
+         type="image" />
   
 </assets>

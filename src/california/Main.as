@@ -79,7 +79,11 @@ package california {
                     "Bird": Bird,
                     "AirplaneWithBanner": AirplaneWithBanner,
                     "TinyLampPost": TinyLampPost,
-                    "SmallLightbulb": SmallLightbulb                    
+                    "SmallLightbulb": SmallLightbulb,
+                    "Butterfly": Butterfly,
+                    "Television": Television,
+                    "Car": Car,
+                    "Floodlights": Floodlights
                 });
 
             GameSprite.createSpriteDatabase();
@@ -93,8 +97,8 @@ package california {
 
             FlxG.showBounds = false;
 
-            super(320, 170, MenuState, 2);
-            //super(320, 170, PlayState, 2);
+            //super(320, 170, MenuState, 2);
+            super(320, 170, PlayState, 2);
 
             FlxState.bgColor = Main.bgcolor;
 

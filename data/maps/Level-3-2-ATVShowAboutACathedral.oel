@@ -5,9 +5,8 @@
     <cathedralBackground x="0" y="0"/>
   </background>
   <sprites>
-    <cathedral x="87" y="22"/>
-    <cross x="105" y="9"/>
-    <floodlights x="28" y="135"/>
-    <car x="228" y="138"/>
+    <cathedral x="180" y="13"/>
+    <cross x="198" y="0"/>
+    <car x="10" y="129"/>
   </sprites>
 </level>

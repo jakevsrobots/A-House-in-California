@@ -34,7 +34,6 @@ package california.sprites {
             glow.blend = "screen";
 
             glow.scale.x = glow.scale.y = glowScale;
-
             this.glowMaxAlpha = glowMaxAlpha;
             glow.alpha = glowMaxAlpha;
             
