@@ -62,7 +62,8 @@ package california {
                     "playMusic": PlayMusicBehavior,
                     "moveSprite": MoveSpriteBehavior,
                     "updateBirds": UpdateBirdsBehavior,
-                    "catchButterflies": CatchButterfliesBehavior
+                    "catchButterflies": CatchButterfliesBehavior,
+                    "fadeToCutScene": FadeToCutSceneBehavior
                 });
             
             GameSprite.registerSpriteClasses({

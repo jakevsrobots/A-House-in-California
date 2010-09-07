@@ -1390,6 +1390,10 @@
       <verb name="Watch">
         <behavior type="transitionToRoom" targetRoom="aTVShowAboutACathedral" />
       </verb>
+      <verb name="Listen">
+        <behavior type="fadeToCutScene" cutSceneName="lois"
+                  roomName="loisHome" delay="0" />
+      </verb>
     </sprite>
     <sprite name="greenButterfly"
             verboseName="green butterfly"

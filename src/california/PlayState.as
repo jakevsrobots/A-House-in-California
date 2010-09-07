@@ -19,9 +19,13 @@ package california {
         private var darkness:FlxSprite;
         private var fadeDarkness:Boolean = false;
 
-        // end of level fadeout
-        private var preMenuFade:Boolean = false;
+        // end of level fadeouts
         private var fadeStartTimer:Number;
+        
+        private var preMenuFade:Boolean = false;
+        private var preCutSceneFade:Boolean = false;
+        private var queuedCutSceneName:String;
+        private var queuedRoomName:String;        
         
         public static var WORLD_LIMITS:FlxPoint;
 
@@ -187,11 +191,12 @@ package california {
                 }
             }
 
+            /*
             if(FlxG.keys.justPressed('Q')) {
                 FlxG.state = new PlayState();
-            }
+            }*/
             
-            // Update end of level fade
+            // Update menu level fade
             if(preMenuFade) {
                 PlayState.hasMouseFocus = false;
                 if(fadeStartTimer > 0) {
@@ -206,6 +211,21 @@ package california {
                         });
                 }
             }
+
+            // Update cutscene fade
+            if(preCutSceneFade) {
+                PlayState.hasMouseFocus = false;
+                if(fadeStartTimer > 0) {
+                    fadeStartTimer -= FlxG.elapsed;
+                } else {
+                    preCutSceneFade = false;
+                    FlxG.fade.start(0xff000000, 2, function():void {
+                            FlxG.fade.stop();
+                            FlxG.state = new CutSceneState(queuedCutSceneName, queuedRoomName);
+                        });
+                }
+            }
+            
             
             super.update();
         }
@@ -344,8 +364,16 @@ package california {
         }
         
         public function fadeToMenu(delay:Number):void {
-            this.preMenuFade = true;
-            this.fadeStartTimer = delay;
+            preMenuFade = true;
+            fadeStartTimer = delay;
+        }
+
+        public function fadeToCutScene(delay:Number, cutSceneName:String, roomName:String):void {
+            preCutSceneFade = true;
+            fadeStartTimer = delay;
+
+            queuedCutSceneName = cutSceneName;
+            queuedRoomName = roomName;
         }
         
         public function removeDarkness():void {
