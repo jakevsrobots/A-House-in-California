@@ -50,6 +50,12 @@ package california {
 
         public static var musicPlayer:MusicPlayer;
 
+        private var mouseActivityTimeoutLength:Number = 10 * 60;
+        private var mouseTimer:Number = 0;
+
+        private var oldMouseX:Number = 0;
+        private var oldMouseY:Number = 0;
+        
         //-----------------------------
         // Game data
         //-----------------------------
@@ -191,10 +197,9 @@ package california {
                 }
             }
 
-            /*
             if(FlxG.keys.justPressed('Q')) {
-                FlxG.state = new PlayState();
-            }*/
+                fadeToMenu(0);
+            }
             
             // Update menu level fade
             if(preMenuFade) {
@@ -203,9 +208,10 @@ package california {
                     fadeStartTimer -= FlxG.elapsed;
                 } else {
                     preMenuFade = false;
-                    FlxG.fade.start(0xffffffff, 2, function():void {
+                    FlxG.fade.start(0xff000000, 2, function():void {
                             FlxG.fade.stop();
-                            FlxG.state = new MenuState(0xffffffff);
+                            FlxG.state = new StartState();
+                            //FlxG.state = new MenuState(0xffffffff);
                             //FlxG.state = new PlayState();
                             //FlxG.state = new ThanksForTestingState(0xffffffff);
                         });
@@ -226,8 +232,21 @@ package california {
                 }
             }
             
-            
             super.update();
+
+            // Check for lack of mouse activity
+            if(oldMouseX != mouseX || oldMouseY != mouseY) {
+                mouseTimer = 0;
+            } else {
+                mouseTimer += FlxG.elapsed;
+                if(mouseTimer > mouseActivityTimeoutLength) {
+                    fadeToMenu(0);
+                }
+            }
+
+            oldMouseX = mouseX;
+            oldMouseY = mouseY;
+            
         }
 
         override public function render():void {
