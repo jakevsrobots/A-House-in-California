@@ -2,7 +2,10 @@ package california {
     import org.flixel.*;
     import SWFStats.*;
     import california.music.MenuMusicPlayer;
-    
+
+    import flash.display.StageDisplayState;
+    import flash.display.SimpleButton;
+
     public class StartState extends FlxState {
         private var roomTitle:FlxText;
         private var copyrightText:FlxText;        
@@ -12,6 +15,8 @@ package california {
         private var cursor:GameCursor;
 
         private var fadeFromColor:uint;
+
+        private var fullScreenButton:SimpleButton;
         
         public function StartState(fadeFromColor:uint=0xff000000):void {
             this.fadeFromColor = fadeFromColor;
@@ -58,6 +63,8 @@ package california {
             cursor = new GameCursor();
             cursor.setText(null);
             add(cursor);
+
+            //FlxG.stage.displayState = StageDisplayState.FULL_SCREEN;
         }
 
     }

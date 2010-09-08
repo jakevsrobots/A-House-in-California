@@ -193,6 +193,7 @@ package org.flixel
 		 */
 		static public function set pause(Pause:Boolean):void
 		{
+            /*
 			var op:Boolean = _pause;
 			_pause = Pause;
 			if(_pause != op)
@@ -208,6 +209,7 @@ package org.flixel
 					playSounds();
 				}
 			}
+            */
 		}
 		
 		/**

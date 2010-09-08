@@ -8,7 +8,12 @@ package california {
         
     import flash.net.SharedObject;
     import flash.display.StageDisplayState;
-
+    import flash.events.ContextMenuEvent;
+    import flash.ui.ContextMenu;
+    import flash.ui.ContextMenuItem;
+    import flash.ui.ContextMenuBuiltInItems;
+    
+    
     [SWF(width="640", height="340", backgroundColor="#000000")];
 
     [Frame(factoryClass="Preloader")]
@@ -33,7 +38,7 @@ package california {
         public static var saveGame:SharedObject;
 
         public static var instance:Main;
-        
+
         public function Main():void {
             Main.instance = this;
 
@@ -101,8 +106,9 @@ package california {
             FlxG.showBounds = false;
 
             //super(320, 170, MenuState, 2);
-            super(320, 170, PlayState, 2);
-            //super(320, 170, StartState, 2);
+            //super(320, 170, PlayState, 2);
+            //super(320, 170, StartState, 4);
+            super(320, 170, StartState, 2);
 
             FlxState.bgColor = Main.bgcolor;
 
@@ -118,6 +124,42 @@ package california {
 
             //stage.displayState = StageDisplayState.FULL_SCREEN_INTERACTIVE;
             //stage.displayState = 'fullScreenInteractive';
+
+            setUpFullScreenContextMenu();
+        }
+
+        private function setUpFullScreenContextMenu():void {
+            var fullScreenContextMenu:ContextMenu = new ContextMenu();
+            fullScreenContextMenu.addEventListener(ContextMenuEvent.MENU_SELECT, onContextMenuHandler);
+            fullScreenContextMenu.hideBuiltInItems();
+
+            var fullScreenItem:ContextMenuItem = new ContextMenuItem("Go Full Screen");
+            fullScreenItem.addEventListener(ContextMenuEvent.MENU_ITEM_SELECT, onShowFullScreen);
+            fullScreenContextMenu.customItems.push(fullScreenItem);
+
+            var exitFullScreenItem:ContextMenuItem = new ContextMenuItem("Exit Full Screen");
+            exitFullScreenItem.addEventListener(ContextMenuEvent.MENU_ITEM_SELECT, onShowNormalScreen);
+            fullScreenContextMenu.customItems.push(exitFullScreenItem);
+
+            this.contextMenu = fullScreenContextMenu;
+        }
+
+        public function onShowFullScreen(event:ContextMenuEvent):void {
+            FlxG.stage.displayState = StageDisplayState.FULL_SCREEN;
+        }
+
+        public function onShowNormalScreen(event:ContextMenuEvent):void {
+            FlxG.stage.displayState = StageDisplayState.NORMAL;
+        }
+
+        public function onContextMenuHandler(event:ContextMenuEvent):void {
+            if(FlxG.stage.displayState == StageDisplayState.NORMAL) {
+                event.target.customItems[0].enabled = true;
+                event.target.customItems[1].enabled = false;                
+            } else {
+                event.target.customItems[0].enabled = false;
+                event.target.customItems[1].enabled = true;                
+            }
         }
     }
 }

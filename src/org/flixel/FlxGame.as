@@ -274,6 +274,9 @@ package org.flixel
 		 */
 		protected function update(event:Event):void
 		{
+            _screen.scaleX = (stage.stageWidth / FlxG.width) / 2;
+            _screen.scaleY = (stage.stageHeight / FlxG.height) / 2;            
+            
 			var mark:uint = getTimer();
 			
 			var i:uint;
