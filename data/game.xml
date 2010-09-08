@@ -939,6 +939,9 @@
       <verb name="Cook">
         <behavior type="dialog">Beulah puts a part of herself in every dish, but that's just a metaphor.</behavior>
       </verb>
+      <verb name="Sing">
+        <behavior type="dialog">Singing alone in the dark: melancholy or carefree?</behavior>
+      </verb>
     </sprite>
     
     <!-- Room #2-1 - A House in California -->
@@ -958,6 +961,9 @@
       <verb name="Cook">
         <behavior type="dialog">Very few recipes call for a house.</behavior>
       </verb>
+      <verb name="Sing">
+        <behavior type="dialog">"Oh if this old house could talk / what a story it would tell..."</behavior>
+      </verb>
     </sprite>
     
     <sprite name="moonWaning"
@@ -965,7 +971,7 @@
             verboseName="moon">
       <look>The moon is waning.</look>
       <verb name="Befriend">
-        <behavior type="dialog">There was a boy who befriended the Moon. He named it Leonard, or Lenny for short.</behavior>        
+        <behavior type="dialog">There was a boy who befriended the Moon. He named it Leonard, or Lenny for short.</behavior>
       </verb>
       <verb name="Read">
         <behavior type="dialog">The moon has many secrets not legible from this distance.</behavior>
@@ -976,19 +982,23 @@
       <verb name="Cook">
         <behavior type="dialog">Very few recipes call for a Moon.</behavior>
       </verb>
+      <verb name="Sing">
+        <behavior type="dialog">"You got me chasin' rabbits, walkin' on my hands / and howlin' at the moon..."</behavior>
+      </verb>
     </sprite>
     
     <sprite name="billboard">
+      <look>The billboard seems to be advertising some kind of bird snack.</look>
       <verb name="Befriend">
-        <behavior type="dialog"></behavior>
+        <behavior type="dialog">There was a boy who befriended a billboard. He read it stories about long, empty highways to help it sleep at night.</behavior>
       </verb>
       <verb name="Read">
-        <behavior type="dialog"></behavior>
+        <behavior type="dialog">"Avian Mills 100% organic and Sawdust-Free Bird Bread. Baked daily from choice wheat and flaxseed."</behavior>
       </verb>
       <verb name="Write">
-        <behavior type="dialog"></behavior>
+        <behavior type="dialog">"Let the Little Shavers Grow," a history of billboard advertising since the 1930s.</behavior>
       </verb>
-      <verb name="Cook">
+      <verb name="Cook" verbText="Cook recipe on billboard">
         <conditionalBehaviors flagName="houseBirdsAccessible" value="1">
           <behavior type="dialog">The birds did enjoy that bread. But now they're resting on the powerlines.</behavior>
         </conditionalBehaviors>
@@ -1000,54 +1010,76 @@
           <behavior type="setFlag" flagName="houseBirdsAccessible" value="1" />
         </conditionalBehaviors>
       </verb>
+      <verb name="Sing">
+        <behavior type="dialog">The billboard is informational, but it's nothing to sing about.</behavior>
+      </verb>
     </sprite>
 
     <sprite name="houseCloud"
             verboseName="cloud"
             spriteClass="HouseCloud">
-      <verb name="Befriend"></verb>
-      <verb name="Read"></verb>
+      <look>A fluffy and serene storybook cumulonimbus.</look>
+      <verb name="Befriend">
+        <behavior type="dialog">There was a boy who befriended a cloud. When it rained, he shed a sympathetic tear.</behavior>
+      </verb>
+      <verb name="Read">
+        <behavior type="dialog">Skywriting used to be a hybrid of aviation and calligraphy. These days, it's mostly charted by satellite.</behavior>
+      </verb>
       <verb name="Write">
         <behavior type="transitionToRoom" targetRoom="upOnACloud" />
       </verb>
+      <verb name="Sing">
+        <behavior type="dialog">"Dark and stormy weather / It still inclines to rain..."</behavior>        
+      </verb>
     </sprite>
-
     <sprite name="houseCloud2"
             verboseName="cloud"
             spriteClass="HouseCloud">
-      <verb name="Befriend"></verb>
-      <verb name="Read"></verb>
+      <look>A fluffy and serene storybook cumulonimbus.</look>
+      <verb name="Befriend">
+        <behavior type="dialog">There was a boy who befriended a cloud. When it rained, he shed a sympathetic tear.</behavior>
+      </verb>
+      <verb name="Read">
+        <behavior type="dialog">Skywriting used to be a hybrid of aviation and calligraphy. These days, it's mostly charted by satellite.</behavior>
+      </verb>
       <verb name="Write">
         <behavior type="transitionToRoom" targetRoom="upOnACloud" />
+      </verb>
+      <verb name="Sing">
+        <behavior type="dialog">"Dark and stormy weather / It still inclines to rain..."</behavior>        
       </verb>
     </sprite>
 
     <sprite name="powerLinesLeft"
             interactive="0">
-      <verb name="Befriend"></verb>
-      <verb name="Read"></verb>
-      <verb name="Write"></verb>
-      <verb name="Cook"></verb>
     </sprite>
 
     <sprite name="powerLinesRight"
-            verboseName="power lines">
-      <verb name="Befriend"></verb>
-      <verb name="Read"></verb>
-      <verb name="Write"></verb>
-      <verb name="Cook"></verb>
+            interactive="0">
     </sprite>
 
     <sprite name="lightedLampPost"
             verboseName="lamp post"
             spriteClass="LightedLampPost">
-      <verb name="Befriend"></verb>
-      <verb name="Read"></verb>
-      <verb name="Write"></verb>
-      <verb name="Cook"></verb>
+      <look>The lamp is lit by a charming swarm of fireflies.</look>
+      <verb name="Befriend">
+        <behavior type="dialog">There was a boy who befriended a lamp post. He swung around it like a monkey.</behavior>
+      </verb>
+      <verb name="Read">
+        <behavior type="dialog">A small metal stamp at the bottom of the lamp post suggests it was built by the state of California.</behavior>
+      </verb>
+      <verb name="Write">
+        <behavior type="dialog">"Why Do Insects Glow?," a children's science book.</behavior>
+      </verb>
+      <verb name="Cook">
+        <behavior type="dialog">The light from a firefly's tail is strong enough to see by but not strong enough to heat food.</behavior>
+      </verb>
+      <verb name="Sing">
+        <behavior type="dialog">"I never cared much for moonlit skies / I never winked back at fireflies..."</behavior>
+      </verb>
     </sprite>
-    
     <sprite name="pigeon">
+      <look>A small, gray bird, with some mangy bits.</look>
       <verb name="Befriend">
         <conditionalBehaviors flagName="houseBirdsAccessible" value="0">
           <behavior type="dialog">The birds look friendly, but they're too far away. Perhaps they could be lured down with a snack.</behavior>
@@ -1062,9 +1094,15 @@
           <behavior type="dialog">That should be enough birds to fill the house with music.</behavior>
         </conditionalBehaviors>
       </verb>
-      <verb name="Read"></verb>
-      <verb name="Write"></verb>
-      <verb name="Cook"></verb>
+      <verb name="Read">
+        <behavior type="dialog">If this pigeon carried a letter, it would be a postcard from Chicago.</behavior>
+      </verb>
+      <verb name="Write">
+        <behavior type="dialog">"The Pigeon, Issue #28," a superhero comic book.</behavior>
+      </verb>
+      <verb name="Cook">
+        <behavior type="dialog">This pigeon is far too friendly for squab.</behavior>
+      </verb>
       <verb name="Sing" moveTo="1">
         <conditionalBehaviors flagName="allBirdsBefriended" value="1">
           <behavior type="stopMusic" />
@@ -1076,6 +1114,7 @@
     </sprite>
 
     <sprite name="dove">
+      <look>A lovely white bird.</look>
       <verb name="Befriend">
         <conditionalBehaviors flagName="houseBirdsAccessible" value="0">
           <behavior type="dialog">The birds look friendly, but they're too far away. Perhaps they could be lured down with a snack.</behavior>
@@ -1090,9 +1129,15 @@
           <behavior type="dialog">That should be enough birds to fill the house with music.</behavior>
         </conditionalBehaviors>
       </verb>
-      <verb name="Read"></verb>
-      <verb name="Write"></verb>
-      <verb name="Cook"></verb>
+      <verb name="Read">
+        <behavior type="dialog">Even if this dove were part of a religious engraving, the text would probably still be in Latin or something...</behavior>
+      </verb>
+      <verb name="Write">
+        <behavior type="dialog">"White Dove, Black Hole," a science fiction novel about time-traveling birds.</behavior>
+      </verb>
+      <verb name="Cook">
+        <behavior type="dialog">Serving guests dove meat is a gesture that might be misinterpreted.</behavior>
+      </verb>
       <verb name="Sing" moveTo="1">
         <conditionalBehaviors flagName="allBirdsBefriended" value="1">
           <behavior type="stopMusic" />
@@ -1104,6 +1149,7 @@
     </sprite>
     
     <sprite name="magpie">
+      <look>A small bird with a long tail.</look>
       <verb name="Befriend">
         <conditionalBehaviors flagName="houseBirdsAccessible" value="0">
           <behavior type="dialog">The birds look friendly, but they're too far away. Perhaps they could be lured down with a snack.</behavior>
@@ -1118,9 +1164,15 @@
           <behavior type="dialog">That should be enough birds to fill the house with music.</behavior>
         </conditionalBehaviors>
       </verb>
-      <verb name="Read"></verb>
-      <verb name="Write"></verb>
-      <verb name="Cook"></verb>
+      <verb name="Read">
+        <behavior type="dialog">If this magpie had a nametag, it would probably be a palindrome.</behavior>
+      </verb>
+      <verb name="Write">
+        <behavior type="dialog">"What the Magpie Sees," a master's thesis in the field of developmental psychology.</behavior>
+      </verb>
+      <verb name="Cook">
+        <behavior type="dialog">Magpies used to simply be called "pies," but it's a distinction worth making.</behavior>
+      </verb>
       <verb name="Sing" moveTo="1">
         <conditionalBehaviors flagName="allBirdsBefriended" value="1">
           <behavior type="stopMusic" />
@@ -1134,14 +1186,41 @@
     <!-- Room #2-2 - Up On a Cloud -->    
     <sprite name="houseOnAHill"
             verboseName="house on a hill">
+      <look>A small house at the top of the hill. It looks peaceful, like something from a story.</look>
+      <verb name="Befriend">
+        <behavior type="dialog">There was a boy who befriended a hill. He planted some flowers as a practical joke.</behavior>
+      </verb>
+      <verb name="Read">
+        <behavior type="dialog">It's too hard to read the address from here.</behavior>
+      </verb>
       <verb name="Write">
         <behavior type="transitionToRoom" targetRoom="aHouseAtTheTopOfAHill" />
       </verb>
+      <verb name="Cook">
+        <behavior type="dialog">If there are any herbs or vegetables growing on that hill, they're impossible to reach from here.</behavior>
+      </verb>
+      <verb name="Sing">
+        <behavior type="dialog">"High on a mountain top / we live, we love and we laugh a lot..."</behavior>
+      </verb>      
     </sprite>
+    
     <sprite name="planeWithBanner"
             verboseName="airplane with banner"
             spriteClass="AirplaneWithBanner">
-      <verb name="Cook">
+      <look>The plane is trailing a banner with some kind of advertisement.</look>
+      <verb name="Befriend">
+        <behavior type="dialog">There was a boy who befriended an airplane. He ran along beneath it until it passed the valley.</behavior>
+      </verb>
+      <verb name="Read">
+        <behavior type="dialog">"Try Avian Mills rich and crusty Berry Cake; your bird's feathers will sparkle whe she samples this delicious blend of raspberry, millet and strawberry frosting."</behavior>
+      </verb>
+      <verb name="Write">
+        <behavior type="dialog">"The Best Views Are Stolen," the autobiography of a plane thief.</behavior>
+      </verb>
+      <verb name="Sing">
+        <behavior type="dialog">"Here come the planes / they're American planes, made in America..."</behavior>
+      </verb>
+      <verb name="Cook" verbText="Cook recipe on banner">
         <conditionalBehaviors flagName="cloudBirdsAccessible" value="1">
           <behavior type="dialog">The birds have had plenty to eat.</behavior>
         </conditionalBehaviors>
@@ -1160,34 +1239,90 @@
       <verb name="Read">
         <behavior type="transitionToRoom" targetRoom="beulahHome" />
       </verb>
+      <look>A fluffy and serene storybook cumulonimbus.</look>
+      <verb name="Befriend">
+        <behavior type="dialog">There was a boy who befriended a cloud. When it rained, he shed a sympathetic tear.</behavior>
+      </verb>
+      <verb name="Write">
+        <behavior type="dialog">Skywriting used to be a hybrid of aviation and calligraphy. These days, it's mostly charted by satellite.</behavior>
+      </verb>
+      <verb name="Sing">
+        <behavior type="dialog">"Dark and stormy weather / It still inclines to rain..."</behavior>        
+      </verb>
     </sprite>
     <sprite name="cloudWithBirdsOnIt"
             verboseName="cloud"            
             assetName="houseCloud2">
+      <look>A fluffy and serene storybook cumulonimbus.</look>      
       <verb name="Read">
         <behavior type="transitionToRoom" targetRoom="beulahHome" />
+      </verb>
+      <verb name="Befriend">
+        <behavior type="dialog">There was a boy who befriended a cloud. When it rained, he shed a sympathetic tear.</behavior>
+      </verb>
+      <verb name="Write">
+        <behavior type="dialog">Skywriting used to be a hybrid of aviation and calligraphy. These days, it's mostly charted by satellite.</behavior>
+      </verb>
+      <verb name="Sing">
+        <behavior type="dialog">"Dark and stormy weather / It still inclines to rain..."</behavior>        
       </verb>
     </sprite>
     <sprite name="upInTheSkyCloud"
             verboseName="cloud"
             assetName="houseCloud"
             spriteClass="HouseCloud">
+      <look>A fluffy and serene storybook cumulonimbus.</look>      
       <verb name="Read">
         <behavior type="transitionToRoom" targetRoom="uponACloud" />
+      </verb>
+      <verb name="Befriend">
+        <behavior type="dialog">There was a boy who befriended a cloud. When it rained, he shed a sympathetic tear.</behavior>
+      </verb>
+      <verb name="Write">
+        <behavior type="dialog">Skywriting used to be a hybrid of aviation and calligraphy. These days, it's mostly charted by satellite.</behavior>
+      </verb>
+      <verb name="Sing">
+        <behavior type="dialog">"Dark and stormy weather / It still inclines to rain..."</behavior>        
       </verb>
     </sprite>
     <sprite name="upInTheSkyCloud2"
             verboseName="cloud"            
             assetName="houseCloud2"
             spriteClass="HouseCloud">
+      <look>A fluffy and serene storybook cumulonimbus.</look>      
       <verb name="Read">
         <behavior type="transitionToRoom" targetRoom="beulahHome" />
+      </verb>
+      <verb name="Befriend">
+        <behavior type="dialog">There was a boy who befriended a cloud. When it rained, he shed a sympathetic tear.</behavior>
+      </verb>
+      <verb name="Write">
+        <behavior type="dialog">Skywriting used to be a hybrid of aviation and calligraphy. These days, it's mostly charted by satellite.</behavior>
+      </verb>
+      <verb name="Sing">
+        <behavior type="dialog">"Dark and stormy weather / It still inclines to rain..."</behavior>        
       </verb>
     </sprite>
     
     <sprite name="tinyLampPost"
             spriteClass="TinyLampPost"
             verboseName="lamp post">
+      <look>The lamp is lit by a charming swarm of fireflies.</look>
+      <verb name="Befriend">
+        <behavior type="dialog">There was a boy who befriended a lamp post. He swung around it like a monkey.</behavior>
+      </verb>
+      <verb name="Read">
+        <behavior type="dialog">A small metal stamp at the bottom of the lamp post suggests it was built by the state of California.</behavior>
+      </verb>
+      <verb name="Write">
+        <behavior type="dialog">"Why Do Insects Glow?," a children's science book.</behavior>
+      </verb>
+      <verb name="Cook">
+        <behavior type="dialog">The light from a firefly's tail is strong enough to see by but not strong enough to heat food.</behavior>
+      </verb>
+      <verb name="Sing">
+        <behavior type="dialog">"I never cared much for moonlit skies / I never winked back at fireflies..."</behavior>
+      </verb>
     </sprite>
 
     <sprite name="robin">

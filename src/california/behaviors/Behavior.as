@@ -18,7 +18,7 @@ package california.behaviors {
 
         public static function getBehaviorClass(name:String):Class {
             if(!Behavior.behaviorClasses.hasOwnProperty(name)) {
-                throw new Error("No behavior registered with the name " + name);
+                throw new Error("No behavior registered with the name " + name + " name type " + typeof(name));
             }
 
             return Behavior.behaviorClasses[name];
@@ -35,7 +35,11 @@ package california.behaviors {
         }
         
         public static function getBehaviorFromXML(behaviorNode:XML):Behavior {
-            var behaviorClass:Class = Behavior.getBehaviorClass(behaviorNode.@type.toString());
+            try {
+                var behaviorClass:Class = Behavior.getBehaviorClass(behaviorNode.@type.toString());
+            } catch(e:Error) {
+                throw new Error('failed on node: ' + behaviorNode.toString());
+            }
             var behavior:Behavior = new behaviorClass(behaviorNode);
 
             if(behaviorNode.parent().name() == 'conditionalBehaviors') {
