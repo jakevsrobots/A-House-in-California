@@ -64,8 +64,8 @@ package california {
         private var cursor:GameCursor;
         
         public function CutSceneState(sceneName:String, roomName:String):void {
-            FlxG.flash.start(0xff000000, 2.0, function():void {
-                    FlxG.fade.stop();
+            FlxG.flash.start(0xff000000, 3.0, function():void {
+                    FlxG.flash.stop();
                 });
             
             this.roomName = roomName;

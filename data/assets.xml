@@ -23,6 +23,13 @@
          type="image" />
   <asset name="connieStill_2" file="stills/connie-2.png"
          type="image" />
+
+  <!-- Misc -->
+  <asset name="playButton" file="play-button.png"
+         type="image" />
+  <asset name="playButtonHover" file="play-button-hover.png"
+         type="image" />
+  
   
   <!-- ################################################### -->
   <!-- ################## Music ########################### -->
