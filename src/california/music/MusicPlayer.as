@@ -39,12 +39,14 @@ package california.music {
             for each(var soundAssetName:String in soundAssetNames) {
                 soundPlayers[soundAssetName] = new PannableSound();
                 soundPlayers[soundAssetName].loadEmbedded(Main.library.getAsset(soundAssetName), true);
+                soundPlayers[soundAssetName].survive = true;
             }
         }
 
         public function playAll():void {
             for (var soundName:String in soundPlayers) {
                 soundPlayers[soundName].play();
+                FlxG.sounds.push(soundPlayers[soundName]);
             }
         }
 
@@ -52,7 +54,8 @@ package california.music {
             if(!soundPlayers.hasOwnProperty(soundAssetName)) {
                 throw new Error('No such sound asset added to this player: ' + soundAssetName);
             }
-            soundPlayers[soundAssetName].play();            
+            soundPlayers[soundAssetName].play();
+            FlxG.sounds.push(soundPlayers[soundAssetName]);
         }
 
         public function setAssetVolume(soundAssetName:String, volume:Number):void {
@@ -77,6 +80,21 @@ package california.music {
             }
             
             return soundPlayers[soundAssetName].playing;
+        }
+
+        public function fadeOut(seconds:Number=5):void {
+            for (var soundAssetName:String in soundPlayers) {
+                if(soundPlayers[soundAssetName]) {
+                    if(soundPlayers[soundAssetName].playing) {
+                        FlxG.log('fading out: ' + soundAssetName);
+                        soundPlayers[soundAssetName].fadeOut(seconds);
+                    } else {
+                        FlxG.log('not playing: ' + soundAssetName);
+                    }
+                } else {
+                    FlxG.log('no sound: ' + soundAssetName);
+                }
+            }
         }
     }
 }

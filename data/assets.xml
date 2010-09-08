@@ -38,9 +38,15 @@
   <!-- lois -->
   <asset name="loisCrickets" file="music/lois/crickets.mp3"
          type="mp3" />
+  <asset name="loisCrickets2" file="music/lois/crickets-2.mp3"
+         type="mp3" />
   <asset name="loisSynth" file="music/lois/synth.mp3"
          type="mp3" />
+  <asset name="loisSynth2" file="music/lois/synth-2.mp3"
+         type="mp3" />
   <asset name="loisWhiteNoise" file="music/lois/white-noise.mp3"
+         type="mp3" />
+  <asset name="loisWhiteNoise2" file="music/lois/white-noise-2.mp3"
          type="mp3" />
 
   <!-- beulah -->

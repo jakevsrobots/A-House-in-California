@@ -1,6 +1,7 @@
 package california {
     import org.flixel.*;
     import SWFStats.*;
+    import california.music.MenuMusicPlayer;
     
     public class StartState extends FlxState {
         private var roomTitle:FlxText;
@@ -22,6 +23,8 @@ package california {
             //Main.stage.displayState = 'fullScreenInteractive';
             //FlxG.stage.displayState = 'fullScreen';
 
+            var musicPlayer:MenuMusicPlayer = new MenuMusicPlayer();
+            
             FlxG.flash.start(this.fadeFromColor, 2.0, function():void {
                     FlxG.flash.stop();
                 });
@@ -41,6 +44,7 @@ package california {
             var buttonPos:uint = 60;
 
             var playButton:FlxButton = new FlxButton(232, 25, function():void {
+                    //musicPlayer.fadeOut();
                     FlxG.fade.start(0xff000000, 2.0, function():void {
                             FlxG.fade.stop();
                             FlxG.state = new CutSceneState('lois', 'loisHome');

@@ -4,8 +4,10 @@ package california.music {
         public function LoisMusicPlayer():void {
             super([
                     "loisCrickets",
-                    "loisWhiteNoise",
-                    "loisSynth"
+                    "loisCrickets2",                    
+                    //"loisWhiteNoise",
+                    //"loisWhiteNoise2",                    
+//                    "loisSynth"
                 ]);
             
             playAll();

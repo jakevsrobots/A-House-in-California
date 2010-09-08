@@ -200,6 +200,9 @@ package california {
             if(FlxG.keys.justPressed('Q')) {
                 fadeToMenu(0);
             }
+            if(FlxG.keys.justPressed('N')) {
+                fadeToMenu(0);
+            }
             
             // Update menu level fade
             if(preMenuFade) {
@@ -210,6 +213,7 @@ package california {
                     preMenuFade = false;
                     FlxG.fade.start(0xff000000, 2, function():void {
                             FlxG.fade.stop();
+                            //PlayState.musicPlayer.fadeOut();
                             FlxG.state = new StartState();
                             //FlxG.state = new MenuState(0xffffffff);
                             //FlxG.state = new PlayState();
@@ -226,6 +230,7 @@ package california {
                 } else {
                     preCutSceneFade = false;
                     FlxG.fade.start(0xff000000, 2, function():void {
+                            //PlayState.musicPlayer.fadeOut();
                             FlxG.fade.stop();
                             FlxG.state = new CutSceneState(queuedCutSceneName, queuedRoomName);
                         });

@@ -1,6 +1,7 @@
 package california {
     import org.flixel.*;
-
+    import california.music.CutSceneMusicPlayer;
+    
     public class CutSceneState extends FlxState {
         // Static
         public static var cutSceneDataBase:Object = {
@@ -64,6 +65,8 @@ package california {
         private var cursor:GameCursor;
         
         public function CutSceneState(sceneName:String, roomName:String):void {
+            //var musicPlayer:CutSceneMusicPlayer = new CutSceneMusicPlayer();
+            
             FlxG.flash.start(0xff000000, 3.0, function():void {
                     FlxG.flash.stop();
                 });
