@@ -50,14 +50,12 @@
          type="mp3" />
 
   <!-- beulah -->
-
   <asset name="pigeonSong" file="music/beulah/pigeon.mp3"
          type="mp3" />
   <asset name="doveSong" file="music/beulah/dove.mp3"
          type="mp3" />
   <asset name="magpieSong" file="music/beulah/magpie.mp3"
          type="mp3" />
-
 
   <asset name="robinSong" file="music/beulah/robin.mp3"
          type="mp3" />
@@ -72,8 +70,9 @@
          type="mp3" />
   <asset name="chickadeeSong" file="music/beulah/chickadee.mp3"
          type="mp3" />
-  
-  
+
+  <asset name="allBirdsMusic" file="music/beulah/allbirds.mp3"
+         type="mp3" />
   
   <!-- ################################################### -->
   <!-- ############## Sound Effects ###################### -->

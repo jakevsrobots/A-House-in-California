@@ -63,7 +63,8 @@ package california {
                     "moveSprite": MoveSpriteBehavior,
                     "updateBirds": UpdateBirdsBehavior,
                     "catchButterflies": CatchButterfliesBehavior,
-                    "fadeToCutScene": FadeToCutSceneBehavior
+                    "fadeToCutScene": FadeToCutSceneBehavior,
+                    "stopMusic": StopMusicBehavior
                 });
             
             GameSprite.registerSpriteClasses({
@@ -91,7 +92,8 @@ package california {
 
             MusicPlayer.registerMusicPlayerClasses({
                     "lois": LoisMusicPlayer,
-                    "beulah": BeulahMusicPlayer
+                    "beulah": BeulahMusicPlayer,
+                    "allBirds": AllBirdsMusicPlayer
                 });
             
             logViewInitialized = false;

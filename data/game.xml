@@ -1067,6 +1067,8 @@
       <verb name="Cook"></verb>
       <verb name="Sing" moveTo="1">
         <conditionalBehaviors flagName="allBirdsBefriended" value="1">
+          <behavior type="stopMusic" />
+          <behavior type="playMusic" musicName="allBirds" />
           <behavior type="fadeToCutScene" cutSceneName="connie"
                     roomName="connieHome" delay="0" />
         </conditionalBehaviors>
@@ -1093,6 +1095,8 @@
       <verb name="Cook"></verb>
       <verb name="Sing" moveTo="1">
         <conditionalBehaviors flagName="allBirdsBefriended" value="1">
+          <behavior type="stopMusic" />
+          <behavior type="playMusic" musicName="allBirds" />
           <behavior type="fadeToCutScene" cutSceneName="connie"
                     roomName="connieHome" delay="0" />
         </conditionalBehaviors>        
@@ -1119,6 +1123,8 @@
       <verb name="Cook"></verb>
       <verb name="Sing" moveTo="1">
         <conditionalBehaviors flagName="allBirdsBefriended" value="1">
+          <behavior type="stopMusic" />
+          <behavior type="playMusic" musicName="allBirds" />
           <behavior type="fadeToCutScene" cutSceneName="connie"
                     roomName="connieHome" delay="0" />
         </conditionalBehaviors>        
@@ -1204,6 +1210,8 @@
       <verb name="Cook"></verb>
       <verb name="Sing" moveTo="1">
         <conditionalBehaviors flagName="allBirdsBefriended" value="1">
+          <behavior type="stopMusic" />
+          <behavior type="playMusic" musicName="allBirds" />
           <behavior type="fadeToCutScene" cutSceneName="connie"
                     roomName="connieHome" delay="0" />
         </conditionalBehaviors>        
@@ -1230,6 +1238,8 @@
       <verb name="Cook"></verb>
       <verb name="Sing" moveTo="1">
         <conditionalBehaviors flagName="allBirdsBefriended" value="1">
+          <behavior type="stopMusic" />
+          <behavior type="playMusic" musicName="allBirds" />
           <behavior type="fadeToCutScene" cutSceneName="connie"
                     roomName="connieHome" delay="0" />
         </conditionalBehaviors>        
@@ -1256,6 +1266,8 @@
       <verb name="Cook"></verb>
       <verb name="Sing" moveTo="1">
         <conditionalBehaviors flagName="allBirdsBefriended" value="1">
+          <behavior type="stopMusic" />
+          <behavior type="playMusic" musicName="allBirds" />
           <behavior type="fadeToCutScene" cutSceneName="connie"
                     roomName="connieHome" delay="0" />
         </conditionalBehaviors>        
@@ -1351,6 +1363,8 @@
       <verb name="Cook"></verb>
       <verb name="Sing" moveTo="1">
         <conditionalBehaviors flagName="allBirdsBefriended" value="1">
+          <behavior type="stopMusic" />
+          <behavior type="playMusic" musicName="allBirds" />
           <behavior type="fadeToCutScene" cutSceneName="connie"
                     roomName="connieHome" delay="0" />
         </conditionalBehaviors>        
@@ -1376,6 +1390,8 @@
       <verb name="Cook"></verb>
       <verb name="Sing" moveTo="1">
         <conditionalBehaviors flagName="allBirdsBefriended" value="1">
+          <behavior type="stopMusic" />
+          <behavior type="playMusic" musicName="allBirds" />
           <behavior type="fadeToCutScene" cutSceneName="connie"
                     roomName="connieHome" delay="0" />
         </conditionalBehaviors>        
@@ -1401,6 +1417,8 @@
       <verb name="Cook"></verb>
       <verb name="Sing" moveTo="1">
         <conditionalBehaviors flagName="allBirdsBefriended" value="1">
+          <behavior type="stopMusic" />
+          <behavior type="playMusic" musicName="allBirds" />
           <behavior type="fadeToCutScene" cutSceneName="connie"
                     roomName="connieHome" delay="0" />
         </conditionalBehaviors>        
