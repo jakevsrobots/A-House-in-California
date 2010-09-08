@@ -286,7 +286,7 @@
         <behavior type="removeSprite" targetSprite="looseFireflies" />
         
         <conditionalBehaviors flagName="allFirefliesCaught" value="0">        
-          <behavior type="dialog">These fireflies will help light the lamp post, but there aren't quite enough of them yet. Surely there are more around ... perhaps on the moon?</behavior>
+          <behavior type="dialog">These fireflies will help light the lamp post, but there aren't quite enough of them yet. Surely there are more around.</behavior>
         </conditionalBehaviors>
 
         <conditionalBehaviors flagName="allFirefliesCaught" value="1">

@@ -24,6 +24,9 @@
   <asset name="connieStill_2" file="stills/connie-2.png"
          type="image" />
 
+  <asset name="annStill_1" file="stills/lois-1.png"
+         type="image" />
+  
   <!-- Misc -->
   <asset name="playButton" file="play-button.png"
          type="image" />

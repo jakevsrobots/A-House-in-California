@@ -9,9 +9,9 @@ package california {
                 'title': '1. Lois',
                 'text': [
                     'A boy said, "Grandma, the house is too dark! I can\'t sleep."',
-                    'Lois said, "Don\'t worry, boy, the lamp has just gone out."',
-                    '"Once, when I was young, we caught fireflies in jars."',
-                    '"I\'m sure The fireflies will light the street lamp now."'
+                    'Lois said, "The lamp has just gone out."',
+                    '"Once, we searched for fireflies and caught them in jars."',
+                    '"The fireflies will light the street lamp now."'
                 ],
                 'sprites': [
                     'loisStill_1', 'loisStill_2', 'loisStill_3', 'loisStill_4'
@@ -21,8 +21,8 @@ package california {
                 'title': '2. Beulah',
                 'text': [
                     'A boy said, "Grandma, the house is too quiet. I\'m scared."',
-                    'Beulah said, "Don\'t worry; the birds have just gone to sleep.',
-                    '"When I was young, we fed the birds and listened to them sing."',
+                    'Beulah said, "The birds have just gone to sleep.',
+                    '"Once, we fed the birds and sang along with them."',
                     '"Let\'s think of some snacks that birds like to eat."'
                 ],
                 'sprites': [
@@ -33,11 +33,23 @@ package california {
                 'title': '3. Connie',
                 'text': [
                     'A boy said, "Grandma, the house is too gray. I\'m bored."',
-                    'Connie said, "Don\'t worry; the butterflies are just distracted"',
+                    'Connie said, "The butterflies are just distracted"',
+                    '"Once, we watched the butterflies and listened to them mumble."',
                     '"When their daydreams are over they\'ll color the house."'
                 ],
                 'sprites': [
                     'connieStill_1', 'connieStill_2'                    
+                ]
+            },
+            'ann': {
+                'title': '4. Ann',
+                'text': [
+                    'A boy said, "Grandma, I\'m not sleepy now."',
+                    'Ann said, "You\'re just paying too much attention."',
+                    '"Once, we sat still, closed our eyes, and listened to our breath."'
+                ],
+                'sprites': [
+                    'annStill_1', 'annStill_1'
                 ]
             }
         };
