@@ -1087,8 +1087,8 @@
         <conditionalBehaviors flagName="houseBirdsAccessible" value="1">
           <behavior type="removeSprite" targetSprite="pigeon" />
           <behavior type="setFlag" flagName="pigeonBefriended" value="1" />
-          <behavior type="updateBirds" />
           <behavior type="dialog">The pigeon sings a song about streetlights and train stations. It will sit on the telephone wire and sing to the house.</behavior>
+          <behavior type="updateBirds" />
         </conditionalBehaviors>
         <conditionalBehaviors flagName="allBirdsBefriended" value="1">
           <behavior type="dialog">That should be enough birds to fill the house with music.</behavior>
@@ -1122,8 +1122,8 @@
         <conditionalBehaviors flagName="houseBirdsAccessible" value="1">
           <behavior type="removeSprite" targetSprite="dove" />          
           <behavior type="setFlag" flagName="doveBefriended" value="1"/>
-          <behavior type="updateBirds" />          
           <behavior type="dialog">The dove sings a song about candles and cathedrals. It will sit on the telephone wire and sing to the house.</behavior>
+          <behavior type="updateBirds" />          
         </conditionalBehaviors>
         <conditionalBehaviors flagName="allBirdsBefriended" value="1">
           <behavior type="dialog">That should be enough birds to fill the house with music.</behavior>
@@ -1157,8 +1157,8 @@
         <conditionalBehaviors flagName="houseBirdsAccessible" value="1">
           <behavior type="removeSprite" targetSprite="magpie" />
           <behavior type="setFlag" flagName="magpieBefriended" value="1"/>
-          <behavior type="updateBirds" />
           <behavior type="dialog">The magpie sings a song about mirrors and numbers. It will sit on the telephone wire and sing to the house.</behavior>
+          <behavior type="updateBirds" />
         </conditionalBehaviors>
         <conditionalBehaviors flagName="allBirdsBefriended" value="1">
           <behavior type="dialog">That should be enough birds to fill the house with music.</behavior>
@@ -1300,7 +1300,7 @@
         <behavior type="dialog">Skywriting used to be a hybrid of aviation and calligraphy. These days, it's mostly charted by satellite.</behavior>
       </verb>
       <verb name="Sing">
-        <behavior type="dialog">"Dark and stormy weather / It still inclines to rain..."</behavior>        
+        <behavior type="dialog">"Dark and stormy weather / It still inclines to rain..."</behavior>
       </verb>
     </sprite>
     
@@ -1326,6 +1326,7 @@
     </sprite>
 
     <sprite name="robin">
+      <look>A tiny bird with a cheerful red breast.</look>
       <verb name="Befriend">
         <conditionalBehaviors flagName="cloudBirdsAccessible" value="0">
           <behavior type="dialog">The birds look friendly, but they're too far away. Perhaps they could be lured down with a snack.</behavior>
@@ -1333,16 +1334,22 @@
         <conditionalBehaviors flagName="cloudBirdsAccessible" value="1">
           <behavior type="removeSprite" targetSprite="robin" />
           <behavior type="setFlag" flagName="robinBefriended" value="1"/>
+          <behavior type="dialog">The robin sings a song about storms and hammers. It will sit on the telephone wire and sing to the house.</behavior>
           <behavior type="updateBirds" />          
-          <behavior type="dialog">The robin sings a song about ***********. It will sit on the telephone wire and sing to the house.</behavior>
         </conditionalBehaviors>
         <conditionalBehaviors flagName="allBirdsBefriended" value="1">
           <behavior type="dialog">That should be enough birds to fill the house with music.</behavior>
         </conditionalBehaviors>
       </verb>
-      <verb name="Read"></verb>
-      <verb name="Write"></verb>
-      <verb name="Cook"></verb>
+      <verb name="Read">
+        <behavior type="dialog">If this robin had a nametag, it would be "THOR".</behavior>
+      </verb>
+      <verb name="Write">
+        <behavior type="dialog">"Feathers, Blood and Thunder: The Robin in Norse and Early Christian Mythology ", a very scholarly text in the field of comparative ornithology.</behavior>
+      </verb>
+      <verb name="Cook">
+        <behavior type="dialog">Robins aren't typically eaten; perhaps because they are so cute.</behavior>
+      </verb>
       <verb name="Sing" moveTo="1">
         <conditionalBehaviors flagName="allBirdsBefriended" value="1">
           <behavior type="stopMusic" />
@@ -1354,6 +1361,7 @@
     </sprite>
     
     <sprite name="cardinal">
+      <look>A bright red bird with a vacant expression on its face.</look>
       <verb name="Befriend">
         <conditionalBehaviors flagName="cloudBirdsAccessible" value="0">
           <behavior type="dialog">The birds look friendly, but they're too far away. Perhaps they could be lured down with a snack.</behavior>
@@ -1361,16 +1369,22 @@
         <conditionalBehaviors flagName="cloudBirdsAccessible" value="1">
           <behavior type="removeSprite" targetSprite="cardinal" />
           <behavior type="setFlag" flagName="cardinalBefriended" value="1"/>
+          <behavior type="dialog">The cardinal sings a song about food and love. It will sit on the telephone wire and sing to the house.</behavior>
           <behavior type="updateBirds" />
-          <behavior type="dialog">The cardinal sings a song about *********. It will sit on the telephone wire and sing to the house.</behavior>
         </conditionalBehaviors>
         <conditionalBehaviors flagName="allBirdsBefriended" value="1">
           <behavior type="dialog">That should be enough birds to fill the house with music.</behavior>
         </conditionalBehaviors>
       </verb>
-      <verb name="Read"></verb>
-      <verb name="Write"></verb>
-      <verb name="Cook"></verb>
+      <verb name="Read">
+        <behavior type="dialog">If this cardinal were on the cover of a book, the title would probably be "100 Dishes to Feed Your Lover."</behavior>
+      </verb>
+      <verb name="Write">
+        <behavior type="dialog">"Cardinals on the Boulevard," a short story about two lovers sharing a bottle of wine outdoors.</behavior>
+      </verb>
+      <verb name="Cook">
+        <behavior type="dialog">Cardinals are not typically eaten by people, despite their candy-colored feathers.</behavior>
+      </verb>
       <verb name="Sing" moveTo="1">
         <conditionalBehaviors flagName="allBirdsBefriended" value="1">
           <behavior type="stopMusic" />
@@ -1382,6 +1396,7 @@
     </sprite>
     
     <sprite name="bluebird">
+      <look>A small blue bird with a red throat.</look>
       <verb name="Befriend">
         <conditionalBehaviors flagName="cloudBirdsAccessible" value="0">
           <behavior type="dialog">The birds look friendly, but they're too far away. Perhaps they could be lured down with a snack.</behavior>
@@ -1389,16 +1404,22 @@
         <conditionalBehaviors flagName="cloudBirdsAccessible" value="1">
           <behavior type="removeSprite" targetSprite="bluebird" />
           <behavior type="setFlag" flagName="bluebirdBefriended" value="1"/>
+          <behavior type="dialog">The bluebird sings a song about mountains and grasshoppers. It will sit on the telephone wire and sing to the house.</behavior>
           <behavior type="updateBirds" />
-          <behavior type="dialog">The bluebird sings a song about ****************. It will sit on the telephone wire and sing to the house.</behavior>
         </conditionalBehaviors>
         <conditionalBehaviors flagName="allBirdsBefriended" value="1">
           <behavior type="dialog">That should be enough birds to fill the house with music.</behavior>
         </conditionalBehaviors>
       </verb>
-      <verb name="Read"></verb>
-      <verb name="Write"></verb>
-      <verb name="Cook"></verb>
+      <verb name="Read">
+        <behavior type="dialog">If the bluebird were wearing a sandwich board, it would read "Save the Bermuda cedars."</behavior>
+      </verb>
+      <verb name="Write">
+        <behavior type="dialog">"Bluebird, No, Blackbird," a book of famous poems with minor alterations.</behavior>
+      </verb>
+      <verb name="Cook">
+        <behavior type="dialog">No, it's definitely meant to be blue *berry* pie.</behavior>
+      </verb>
       <verb name="Sing" moveTo="1">
         <conditionalBehaviors flagName="allBirdsBefriended" value="1">
           <behavior type="stopMusic" />
@@ -1410,9 +1431,6 @@
     </sprite>
     
     <!-- Room #2-3 - A House at the Top of a Hill -->
-    <sprite name="bagOfPeanuts"
-            verboseName="bag of peanuts"/>
-    <sprite name="fan" />
     <sprite name="storyBook"
             verboseName="book about clouds">
       <verb name="Read">
@@ -1486,8 +1504,8 @@
         <conditionalBehaviors flagName="hillBirdsAccessible" value="1">
           <behavior type="removeSprite" targetSprite="sparrow" />
           <behavior type="setFlag" flagName="sparrowBefriended" value="1"/>
-          <behavior type="updateBirds" />
           <behavior type="dialog">The sparrow sings a song about ****************. It will sit on the telephone wire and sing to the house.</behavior>
+          <behavior type="updateBirds" />
         </conditionalBehaviors>
         <conditionalBehaviors flagName="allBirdsBefriended" value="1">
           <behavior type="dialog">That should be enough birds to fill the house with music.</behavior>
@@ -1513,8 +1531,8 @@
         <conditionalBehaviors flagName="hillBirdsAccessible" value="1">
           <behavior type="removeSprite" targetSprite="goldfinch" />
           <behavior type="setFlag" flagName="goldfinchBefriended" value="1"/>
-          <behavior type="updateBirds" />
           <behavior type="dialog">The goldfinch sings a song about ****************. It will sit on the telephone wire and sing to the house.</behavior>
+          <behavior type="updateBirds" />
         </conditionalBehaviors>
         <conditionalBehaviors flagName="allBirdsBefriended" value="1">
           <behavior type="dialog">That should be enough birds to fill the house with music.</behavior>
@@ -1540,8 +1558,8 @@
         <conditionalBehaviors flagName="hillBirdsAccessible" value="1">
           <behavior type="removeSprite" targetSprite="chickadee" />
           <behavior type="setFlag" flagName="chickadeeBefriended" value="1"/>
-          <behavior type="updateBirds" />
           <behavior type="dialog">The chickadee sings a song about ****************. It will sit on the telephone wire and sing to the house.</behavior>
+          <behavior type="updateBirds" />
         </conditionalBehaviors>
         <conditionalBehaviors flagName="allBirdsBefriended" value="1">
           <behavior type="dialog">That should be enough birds to fill the house with music.</behavior>
