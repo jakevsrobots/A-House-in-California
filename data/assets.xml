@@ -108,6 +108,10 @@
          type="xml" />
   <asset name="aTVShowAboutACathedral" file="maps/Level-3-2-ATVShowAboutACathedral.oel"
          type="xml" />
+
+  <!-- Ann -->
+  <asset name="annHome" file="maps/Level-4-1-AHouseInCalifornia.oel"
+         type="xml" />
   
   <!-- ################################################### -->
   <!-- ################# Images ########################## -->
@@ -301,6 +305,10 @@
   <asset name="chickadee" file="sprites/chickadee.png"
          type="image" />
 
+  <!-- general Connie -->
+  <asset name="conniePlayer" file="sprites/connie-player.png"
+         type="image" />
+  
   <!-- Connie home -->
   <asset name="television" file="sprites/television.png"
          type="image" />
@@ -326,6 +334,10 @@
   <asset name="cross" file="sprites/cross.png"
          type="image" />
   <asset name="carGlow" file="sprites/car-glow.png"
+         type="image" />
+
+  <!-- general Ann -->
+  <asset name="annPlayer" file="sprites/ann-player.png"
          type="image" />
   
 </assets>

@@ -105,5 +105,15 @@
     <orangeButterfly x="124" y="92"/>
     <orangeButterfly x="87" y="91"/>
     <orangeButterfly x="44" y="94"/>
+
+    <inactivePigeon x="179" y="62" />
+    <inactiveDove x="206" y="64" />
+    <inactiveMagpie x="280" y="65" />
+    <inactiveRobin x="248" y="64" />
+    <inactiveCardinal x="306" y="66" />
+    <inactiveBluebird x="169" y="60" />
+    <inactiveSparrow x="190" y="65" />
+    <inactiveGoldfinch x="232" y="70" />
+    <inactiveChickadee x="270" y="63" />
   </sprites>
 </level>

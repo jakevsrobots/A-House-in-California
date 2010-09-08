@@ -46,7 +46,8 @@ package california {
         //private var startingRoomName:String = 'beulahHome';
         //private var startingRoomName:String = 'upOnACloud';
         //private var startingRoomName:String = 'aTVShowAboutACathedral';
-        private var startingRoomName:String = 'connieHome';
+        //private var startingRoomName:String = 'connieHome';
+        private var startingRoomName:String = 'annHome';
 
         public static var musicPlayer:MusicPlayer;
 

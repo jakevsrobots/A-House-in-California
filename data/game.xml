@@ -40,7 +40,7 @@
       </conditionalBehaviors>
     </room>
     <room name="upOnACloud" title="Up On a Cloud">
-      <conditionalBehaviors flagName="beulahSectionStarted" value="0">      
+      <conditionalBehaviors flagName="beulahSectionStarted" value="0">
         <behavior type="setVocabulary">
           <verb name="Look" />
           <verb name="Read" />
@@ -48,7 +48,7 @@
           <verb name="Cook" />
           <verb name="Befriend" />
         </behavior>
-
+        <behavior type="setPlayer" name="beulahPlayer" />
         <behavior type="setFlag" flagName="beulahSectionStarted" value="1" />        
       </conditionalBehaviors>
     </room>
@@ -61,7 +61,7 @@
           <verb name="Cook" />
           <verb name="Befriend" />
         </behavior>
-
+        <behavior type="setPlayer" name="beulahPlayer" />
         <behavior type="setFlag" flagName="beulahSectionStarted" value="1" />        
       </conditionalBehaviors>
     </room>
@@ -74,7 +74,7 @@
           <verb name="Watch" />          
           <verb name="Listen" />
         </behavior>
-
+        <behavior type="setPlayer" name="conniePlayer" />
         <behavior type="setFlag" flagName="connieSectionStarted" value="1" />        
       </conditionalBehaviors>
     </room>
@@ -86,7 +86,7 @@
           <verb name="Watch" />          
           <verb name="Listen" />
         </behavior>
-
+        <behavior type="setPlayer" name="conniePlayer" />        
         <behavior type="setFlag" flagName="connieSectionStarted" value="1" />                
       </conditionalBehaviors>
       <conditionalBehaviors flagName="readyToCreateSleepyBoy" value="1">
@@ -94,6 +94,18 @@
         <behavior type="setFlag" flagName="readyToCreateSleepyBoy" value="0" />
         <behavior type="setFlag" flagName="createdSleepyBoy" value="1" />        
      </conditionalBehaviors>
+    </room>
+
+    <!-- Ann -->
+    <room name="annHome" title="A House in California">
+      <conditionalBehaviors flagName="annSectionStarted" value="0">
+        <behavior type="setVocabulary">
+          <verb name="Look" />
+          <verb name="Remember" />
+        </behavior>
+        <behavior type="setPlayer" name="annPlayer" />
+        <behavior type="setFlag" flagName="annSectionStarted" value="1" />
+      </conditionalBehaviors>
     </room>
     
   </world>
@@ -144,6 +156,9 @@
           template="Save" />
     <verb name="Rest"
           template="Rest with" />
+
+    <!-- Ann -->
+    <!-- remember, forget, read, write, look, listen -->
     
   </verbs>
   
@@ -1393,6 +1408,9 @@
     </sprite>
 
     <!-- ####################### CONNIE ######################### -->
+    <sprite name="conniePlayer"
+            verboseName="Connie">
+    </sprite>
 
     <!-- Room #3-1 - A House in California -->    
     <sprite name="television"
@@ -1431,6 +1449,16 @@
       </verb>
     </sprite>
 
+    <sprite name="inactivePigeon" interactive="0" verboseName="pigeon" assetName="pigeon" />
+    <sprite name="inactiveDove" interactive="0" verboseName="dove" assetName="dove" />
+    <sprite name="inactiveMagpie" interactive="0" verboseName="magpie" assetName="magpie" />
+    <sprite name="inactiveRobin" interactive="0" verboseName="robin" assetName="robin" />
+    <sprite name="inactiveCardinal" interactive="0" verboseName="cardinal" assetName="cardinal" />
+    <sprite name="inactiveBluebird" interactive="0" verboseName="bluebird" assetName="bluebird" />
+    <sprite name="inactiveSparrow" interactive="0" verboseName="sparrow" assetName="sparrow" />
+    <sprite name="inactiveGoldfinch" interactive="0" verboseName="goldfinch" assetName="goldfinch" />
+    <sprite name="inactiveChickadee" interactive="0" verboseName="chickadee" assetName="chickadee" />
+    
     <!-- Room #3-2 A TV Show About a Cathedral -->
     <sprite name="cathedral">
       <verb name="Listen">
@@ -1477,6 +1505,29 @@
         <behavior type="addVerb" newVerb="Rest" />
       </verb>
     </sprite>
+
+    <!-- ####################### ANN ######################### -->
+
+    <!-- Room #1-1 - A House in California -->
+    <sprite name="annPlayer"
+            verboseName="Ann">
+    </sprite>
     
+    <sprite name="restingPigeon"  verboseName="pigeon" assetName="pigeon" />
+    <sprite name="restingDove"  verboseName="dove" assetName="dove" />
+    <sprite name="restingMagpie"  verboseName="magpie" assetName="magpie" />
+    <sprite name="restingRobin"  verboseName="robin" assetName="robin" />
+    <sprite name="restingCardinal"  verboseName="cardinal" assetName="cardinal" />
+    <sprite name="restingBluebird"  verboseName="bluebird" assetName="bluebird" />
+    <sprite name="restingSparrow"  verboseName="sparrow" assetName="sparrow" />
+    <sprite name="restingGoldfinch"  verboseName="goldfinch" assetName="goldfinch" />
+    <sprite name="restingChickadee"  verboseName="chickadee" assetName="chickadee" />
+    
+    <sprite name="restingOrangeButterfly" 
+            verboseName="orange butterfly" assetName="orangeButterfly" />
+    <sprite name="restingBlueButterfly" 
+            verboseName="blue butterfly" assetName="blueButterfly" />
+    <sprite name="restingGreenButterfly" 
+            verboseName="green butterfly" assetName="greenButterfly" />
   </sprites>
 </game>

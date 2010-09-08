@@ -99,6 +99,7 @@
               width="49" height="30" />
       <object name="lightedLampPost" image="../sprites/lamppost.png"
               width="13" height="29" />
+      
       <object name="pigeon" image="../sprites/pigeon.png"
               width="10" height="9" />
       <object name="dove" image="../sprites/dove.png"
@@ -179,7 +180,25 @@
               width="13" height="7" />
       <object name="blueButterfly" image="../sprites/blue-butterfly.png"
               width="13" height="7" />
-      
+
+      <object name="inactivePigeon" image="../sprites/pigeon.png"
+              width="10" height="9" />
+      <object name="inactiveDove" image="../sprites/dove.png"
+              width="10" height="9" />
+      <object name="inactiveMagpie" image="../sprites/magpie.png"
+              width="7" height="5" />
+      <object name="inactiveRobin" image="../sprites/robin.png"
+              width="6" height="7" />
+      <object name="inactiveCardinal" image="../sprites/cardinal.png"
+              width="8" height="9" />
+      <object name="inactiveBluebird" image="../sprites/bluebird.png"
+              width="8" height="9" />
+      <object name="inactiveSparrow" image="../sprites/sparrow.png"
+              width="5" height="6" />
+      <object name="inactiveGoldfinch" image="../sprites/goldfinch.png"
+              width="4" height="5" />
+      <object name="inactiveChickadee" image="../sprites/chickadee.png"
+              width="6" height="6" />
     </folder>
 
     <folder name="connie-cathedral">
@@ -194,6 +213,38 @@
               width="20" height="9" />
       <object name="cross" image="../sprites/cross.png"
               width="40" height="44" />
+    </folder>
+    
+    <!-- ### ANN ### -->
+    <folder name="ann-home">
+      <object name="houseBackground" image="../backgrounds/home-background.png"
+              width="320" height="170" />
+
+      <object name="restingGreenButterfly" image="../sprites/green-butterfly.png"
+              width="13" height="7" />
+      <object name="restingOrangeButterfly" image="../sprites/orange-butterfly.png"
+              width="13" height="7" />
+      <object name="restingBlueButterfly" image="../sprites/blue-butterfly.png"
+              width="13" height="7" />
+
+      <object name="restingPigeon" image="../sprites/pigeon.png"
+              width="10" height="9" />
+      <object name="restingDove" image="../sprites/dove.png"
+              width="10" height="9" />
+      <object name="restingMagpie" image="../sprites/magpie.png"
+              width="7" height="5" />
+      <object name="restingRobin" image="../sprites/robin.png"
+              width="6" height="7" />
+      <object name="restingCardinal" image="../sprites/cardinal.png"
+              width="8" height="9" />
+      <object name="restingBluebird" image="../sprites/bluebird.png"
+              width="8" height="9" />
+      <object name="restingSparrow" image="../sprites/sparrow.png"
+              width="5" height="6" />
+      <object name="restingGoldfinch" image="../sprites/goldfinch.png"
+              width="4" height="5" />
+      <object name="restingChickadee" image="../sprites/chickadee.png"
+              width="6" height="6" />
     </folder>
   </objects>
   

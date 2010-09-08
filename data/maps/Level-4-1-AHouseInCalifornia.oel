@@ -1,0 +1,120 @@
+<level>
+  <width>320</width>
+  <height>170</height>
+  <background>
+    <houseBackground x="0" y="0"/>
+  </background>
+  <sprites>
+    <lightedLampPost x="291" y="117"/>
+    <lightedLampPost x="241" y="117"/>    
+    <lightedLampPost x="27" y="117"/>
+    
+    <restingOrangeButterfly x="47" y="66"/>
+    <restingOrangeButterfly x="45" y="74"/>
+    <restingOrangeButterfly x="46" y="83"/>
+    <restingOrangeButterfly x="61" y="86"/>
+    <restingOrangeButterfly x="77" y="86"/>
+    <restingOrangeButterfly x="92" y="85"/>
+    <restingOrangeButterfly x="96" y="77"/>
+    <restingOrangeButterfly x="92" y="66"/>
+    <restingOrangeButterfly x="70" y="67"/>
+    <restingOrangeButterfly x="84" y="59"/>
+    <restingOrangeButterfly x="60" y="64"/>
+    <restingOrangeButterfly x="70" y="59"/>
+    <restingOrangeButterfly x="92" y="52"/>
+    <restingOrangeButterfly x="99" y="58"/>
+    <restingOrangeButterfly x="112" y="58"/>
+    <restingOrangeButterfly x="113" y="66"/>
+    <restingOrangeButterfly x="106" y="67"/>
+    <restingOrangeButterfly x="124" y="74"/>
+    <restingOrangeButterfly x="127" y="81"/>
+    <restingOrangeButterfly x="106" y="85"/>
+    <restingOrangeButterfly x="120" y="85"/>
+    <restingOrangeButterfly x="82" y="66"/>
+    <restingOrangeButterfly x="132" y="85"/>
+    <restingOrangeButterfly x="143" y="84"/>
+    <restingOrangeButterfly x="141" y="75"/>
+    <restingOrangeButterfly x="144" y="66"/>
+    <restingOrangeButterfly x="144" y="53"/>
+    <restingOrangeButterfly x="129" y="64"/>
+    <restingOrangeButterfly x="144" y="61"/>
+    <restingOrangeButterfly x="143" y="45"/>
+    <restingOrangeButterfly x="106" y="51"/>
+    <restingOrangeButterfly x="127" y="57"/>
+    <restingOrangeButterfly x="69" y="78"/>
+    <restingOrangeButterfly x="81" y="52"/>
+    <restingBlueButterfly x="46" y="107"/>
+    <restingBlueButterfly x="59" y="105"/>
+    <restingBlueButterfly x="72" y="106"/>
+    <restingBlueButterfly x="70" y="114"/>
+    <restingBlueButterfly x="71" y="121"/>
+    <restingBlueButterfly x="58" y="121"/>
+    <restingBlueButterfly x="47" y="119"/>
+    <restingBlueButterfly x="44" y="113"/>
+    <restingBlueButterfly x="45" y="127"/>
+    <restingBlueButterfly x="46" y="135"/>
+    <restingBlueButterfly x="58" y="139"/>
+    <restingBlueButterfly x="45" y="141"/>
+    <restingBlueButterfly x="70" y="141"/>
+    <restingBlueButterfly x="85" y="141"/>
+    <restingBlueButterfly x="93" y="134"/>
+    <restingBlueButterfly x="93" y="125"/>
+    <restingBlueButterfly x="84" y="122"/>
+    <restingBlueButterfly x="94" y="118"/>
+    <restingBlueButterfly x="94" y="111"/>
+    <restingBlueButterfly x="90" y="107"/>
+    <restingBlueButterfly x="105" y="106"/>
+    <restingBlueButterfly x="120" y="106"/>
+    <restingBlueButterfly x="137" y="106"/>
+    <restingBlueButterfly x="142" y="112"/>
+    <restingBlueButterfly x="130" y="113"/>
+    <restingBlueButterfly x="123" y="115"/>
+    <restingBlueButterfly x="105" y="123"/>
+    <restingBlueButterfly x="113" y="120"/>
+    <restingBlueButterfly x="117" y="124"/>
+    <restingBlueButterfly x="130" y="123"/>
+    <restingBlueButterfly x="143" y="122"/>
+    <restingBlueButterfly x="146" y="129"/>
+    <restingBlueButterfly x="147" y="136"/>
+    <restingBlueButterfly x="140" y="138"/>
+    <restingBlueButterfly x="139" y="131"/>
+    <restingBlueButterfly x="116" y="140"/>
+    <restingBlueButterfly x="103" y="141"/>
+    <restingBlueButterfly x="95" y="141"/>
+    <restingBlueButterfly x="121" y="132"/>
+    <restingBlueButterfly x="147" y="118"/>
+    <restingGreenButterfly x="58" y="112"/>
+    <restingGreenButterfly x="80" y="112"/>
+    <restingGreenButterfly x="110" y="112"/>
+    <restingGreenButterfly x="111" y="134"/>
+    <restingGreenButterfly x="60" y="131"/>
+    <restingGreenButterfly x="72" y="132"/>
+    <restingGreenButterfly x="80" y="132"/>
+    <restingGreenButterfly x="58" y="78"/>
+    <restingGreenButterfly x="81" y="78"/>
+    <restingGreenButterfly x="110" y="78"/>
+    <restingOrangeButterfly x="46" y="97"/>
+    <restingOrangeButterfly x="59" y="97"/>
+    <restingOrangeButterfly x="75" y="97"/>
+    <restingOrangeButterfly x="85" y="97"/>
+    <restingOrangeButterfly x="95" y="97"/>
+    <restingOrangeButterfly x="104" y="98"/>
+    <restingOrangeButterfly x="120" y="98"/>
+    <restingOrangeButterfly x="132" y="98"/>
+    <restingOrangeButterfly x="149" y="99"/>
+    <restingOrangeButterfly x="148" y="93"/>
+    <restingOrangeButterfly x="124" y="92"/>
+    <restingOrangeButterfly x="87" y="91"/>
+    <restingOrangeButterfly x="44" y="94"/>
+
+    <restingPigeon x="179" y="62" />
+    <restingDove x="206" y="64" />
+    <restingMagpie x="280" y="65" />
+    <restingRobin x="248" y="64" />
+    <restingCardinal x="306" y="66" />
+    <restingBluebird x="169" y="60" />
+    <restingSparrow x="190" y="65" />
+    <restingGoldfinch x="232" y="70" />
+    <restingChickadee x="270" y="63" />
+  </sprites>
+</level>
