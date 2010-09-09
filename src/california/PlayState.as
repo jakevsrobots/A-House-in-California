@@ -24,6 +24,7 @@ package california {
         
         private var preMenuFade:Boolean = false;
         private var preCutSceneFade:Boolean = false;
+        private var endGameFade:Boolean = false;
         private var queuedCutSceneName:String;
         private var queuedRoomName:String;        
         
@@ -47,7 +48,7 @@ package california {
         //private var startingRoomName:String = 'upOnACloud';
         //private var startingRoomName:String = 'aTVShowAboutACathedral';
         //private var startingRoomName:String = 'connieHome';
-        //private var startingRoomName:String = 'annHome';
+        private var startingRoomName:String = 'annHome';
 
         public static var musicPlayer:MusicPlayer;
 
@@ -237,6 +238,27 @@ package california {
                         });
                 }
             }
+
+            // update endgame fade
+            
+            if(endGameFade) {
+                PlayState.hasMouseFocus = false;
+                PlayState.cursor.visible = false;
+                
+                if(fadeStartTimer > 0) {
+                    fadeStartTimer -= FlxG.elapsed;
+                } else {
+                    preCutSceneFade = false;
+                    FlxG.fade.start(0xff000000, 2, function():void {
+                            for each(var sound:FlxSound in FlxG.sounds) {
+                                sound.fadeOut(5);
+                            }
+                            
+                            FlxG.fade.stop();
+                            FlxG.state = new EndGameState();
+                        });
+                }
+            }
             
             super.update();
 
@@ -304,10 +326,13 @@ package california {
         }
         
         static public function removeSprite(targetSpriteName:String):void {
-            var targetSprite:GameSprite = PlayState.instance.currentRoom.getSprite(targetSpriteName);
-
-            if(targetSprite != null) {
-                PlayState.instance.currentRoom.sprites.remove(targetSprite, true);
+            // not sure why i have to make multiple passes here but it's a dirty hack for now...
+            for(var i:int=0; i < 10; i++) {
+                for each(var sprite:GameSprite in PlayState.instance.currentRoom.sprites.members) {
+                    if(sprite != null && sprite.name == targetSpriteName) {
+                        PlayState.instance.currentRoom.sprites.remove(sprite, true);
+                    }
+                }
             }
         }
 
@@ -370,6 +395,9 @@ package california {
 
         static public function removeVerb(targetVerbName:String):void {
             PlayState.vocabulary.removeVerbByName(targetVerbName);
+            if(targetVerbName == PlayState.instance.currentVerb.name) {
+                PlayState.instance.currentVerb = vocabulary.verbData['Look'];                
+            }
         }
 
         public function replaceVerb(oldVerbName:String, newVerbName:String):void {
@@ -399,6 +427,10 @@ package california {
 
             queuedCutSceneName = cutSceneName;
             queuedRoomName = roomName;
+        }
+
+        public function endGame():void {
+            endGameFade = true;
         }
         
         public function removeDarkness():void {

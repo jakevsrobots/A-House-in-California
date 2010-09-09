@@ -5,9 +5,12 @@
     <houseBackground x="0" y="0"/>
   </background>
   <sprites>
-    <lightedLampPost x="291" y="117"/>
-    <lightedLampPost x="241" y="117"/>    
-    <lightedLampPost x="27" y="117"/>
+
+    <annHouse x="40" y="47"/>    
+    
+    <restingLightedLampPost x="291" y="117"/>
+    <restingLightedLampPost x="241" y="117"/>    
+    <restingLightedLampPost x="27" y="117"/>
     
     <restingOrangeButterfly x="47" y="66"/>
     <restingOrangeButterfly x="45" y="74"/>

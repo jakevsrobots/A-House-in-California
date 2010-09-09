@@ -158,7 +158,8 @@
           template="Rest with" />
 
     <!-- Ann -->
-    <!-- remember, forget, read, write, look, listen -->
+    <!-- remember, forget, read, write, watch, listen -->
+    <verb name="Enter" />
     
   </verbs>
   
@@ -465,7 +466,7 @@
         <behavior type="dialog">The kicking machine isn't going anywhere.</behavior>        
       </verb>
       <verb name="Learn" moveTo="1">
-        <behavior type="dialog">It's important to lear how the kicking machine works in order to repair it, but that information doesn't seem to be here on the moon.</behavior>
+        <behavior type="dialog">It's important to learn how the kicking machine works in order to repair it, but that information doesn't seem to be here on the moon.</behavior>
       </verb>
       
     </sprite>
@@ -1000,7 +1001,7 @@
       </verb>
       <verb name="Cook" verbText="Cook recipe on billboard">
         <conditionalBehaviors flagName="houseBirdsAccessible" value="1">
-          <behavior type="dialog">The birds did enjoy that bread. But now they're resting on the powerlines.</behavior>
+          <behavior type="dialog">The birds did enjoy that bread. But now they're resting on the telephone wire.</behavior>
         </conditionalBehaviors>
         <conditionalBehaviors flagName="houseBirdsAccessible" value="0">
           <behavior type="moveSprite" targetSprite="pigeon" x="212" y="137" />
@@ -1218,7 +1219,7 @@
         <behavior type="dialog">There was a boy who befriended an airplane. He ran along beneath it until it passed the valley.</behavior>
       </verb>
       <verb name="Read">
-        <behavior type="dialog">"Try Avian Mills rich and crusty Berry Cake; your bird's feathers will sparkle whe she samples this delicious blend of raspberry, millet and strawberry frosting."</behavior>
+        <behavior type="dialog">"Try Avian Mills rich and crusty Berry Cake; your bird's feathers will sparkle when she samples this delicious blend of raspberry, millet and strawberry frosting."</behavior>
       </verb>
       <verb name="Write">
         <behavior type="dialog">"The Best Views Are Stolen," the autobiography of a plane thief.</behavior>
@@ -1807,8 +1808,14 @@
       <verb name="Watch">
         <conditionalBehaviors flagName="orangeButterfliesCaught" value="0">        
           <behavior type="addVerb" newVerb="Save" />
-          <behavior type="dialog">Whether it's intuition or divine suggestion, this cross is a comforting object to watch.</behavior>
+          <behavior type="dialog">Whether it's mundane intuition or divine presence, this cross is a comforting object to watch.</behavior>
         </conditionalBehaviors>
+      </verb>
+      <verb name="Save">
+        <behavior type="dialog">Does the cross itself need saving? How poetic.</behavior>
+      </verb>
+      <verb name="Free">
+        <behavior type="dialog">If the cross were loosened from its post, it might fall on someone.</behavior>
       </verb>
     </sprite>
     <sprite name="sleepyBoy" assetName="boy"
@@ -1835,23 +1842,457 @@
     <!-- Room #1-1 - A House in California -->
     <sprite name="annPlayer"
             verboseName="Ann">
+      <look>Ann is a writer, new age spiritualist, and owner of a small press.</look>
+      <verb name="Remember">
+        <behavior type="dialog">Ann built a labyrinth out of small stones and slowly walked to the center of it.</behavior>
+      </verb>
+      <verb name="Forget">
+        <behavior type="dialog">Ann walked slowly out from the center of the labyrinth.</behavior>
+      </verb>
+      <verb name="Read">
+        <behavior type="dialog">Ann read a manuscript written by her mother.</behavior>
+      </verb>
+      <verb name="Write">
+        <behavior type="dialog">Ann retyped the manuscript written by her mother.</behavior>
+      </verb>
+      <verb name="Watch">
+        <behavior type="dialog">Ann watched the valley turn from white to green to brown, then slowly back to white.</behavior>
+      </verb>
+      <verb name="Listen">
+        <behavior type="dialog">Ann listened to the creek, and to her breathing.</behavior>
+      </verb>
+      <verb name="Enter">
+        <behavior type="dialog">Ann focused on her thoughts, acknowledging each one and letting it pass.</behavior>
+      </verb>
     </sprite>
+
+    <!-- birds - read, write, remember, forget -->
     
-    <sprite name="restingPigeon"  verboseName="pigeon" assetName="pigeon" />
-    <sprite name="restingDove"  verboseName="dove" assetName="dove" />
-    <sprite name="restingMagpie"  verboseName="magpie" assetName="magpie" />
-    <sprite name="restingRobin"  verboseName="robin" assetName="robin" />
-    <sprite name="restingCardinal"  verboseName="cardinal" assetName="cardinal" />
-    <sprite name="restingBluebird"  verboseName="bluebird" assetName="bluebird" />
-    <sprite name="restingSparrow"  verboseName="sparrow" assetName="sparrow" />
-    <sprite name="restingGoldfinch"  verboseName="goldfinch" assetName="goldfinch" />
-    <sprite name="restingChickadee"  verboseName="chickadee" assetName="chickadee" />
+    <sprite name="restingPigeon"  verboseName="pigeon" assetName="pigeon">
+      <look>A small, gray bird, with some mangy bits. The pigeon is singing.</look>
+      <verb name="Watch">
+        <behavior type="dialog">The birds occasionally shift a bit on the telephone wire, but mostly they're quite still.</behavior>
+      </verb>
+      <verb name="Listen">
+        <behavior type="dialog">The birds sing a pretty song, so there's always music in the air.</behavior>
+      </verb>
+      <verb name="Remember">
+        <behavior type="dialog">The birds sang a pretty song, so there was always music in the air.</behavior>
+      </verb>
+      <verb name="Forget">
+        <behavior type="dialog">Their songs went in one ear and out the other, and then bounced along down the street.</behavior>
+      </verb>
+      <verb name="Read">
+        <behavior type="flash" />
+        <behavior type="removeVerb" targetVerb="Read" />
+        <behavior type="addVerb" newVerb="Write" />
+      </verb>
+      <verb name="Write">
+        <behavior type="flash" />
+        <behavior type="removeSprite" targetSprite="restingPigeon" />
+        <behavior type="removeSprite" targetSprite="restingDove" />
+        <behavior type="removeSprite" targetSprite="restingMagpie" />
+        <behavior type="removeSprite" targetSprite="restingRobin" />
+        <behavior type="removeSprite" targetSprite="restingCardinal" />
+        <behavior type="removeSprite" targetSprite="restingBluebird" />        
+        <behavior type="removeSprite" targetSprite="restingSparrow" />
+        <behavior type="removeSprite" targetSprite="restingGoldfinch" />
+        <behavior type="removeSprite" targetSprite="restingChickadee" />
+        <behavior type="removeVerb" targetVerb="Write" />
+        <behavior type="addVerb" newVerb="Watch" />                        
+      </verb>
+    </sprite>
+    <sprite name="restingDove"  verboseName="dove" assetName="dove">
+      <look>A lovely white bird. The dove is singing.</look>
+      <verb name="Watch">
+        <behavior type="dialog">The birds occasionally shift a bit on the telephone wire, but mostly they're quite still.</behavior>
+      </verb>
+      <verb name="Listen">
+        <behavior type="dialog">The birds sing a pretty song, so there's always music in the air.</behavior>
+      </verb>
+      <verb name="Remember">
+        <behavior type="dialog">The birds sang a pretty song, so there was always music in the air.</behavior>
+      </verb>
+      <verb name="Forget">
+        <behavior type="dialog">Their songs went in one ear and out the other, and then bounced along down the street.</behavior>
+      </verb>
+      <verb name="Read">
+        <behavior type="flash" />
+        <behavior type="removeVerb" targetVerb="Read" />
+        <behavior type="addVerb" newVerb="Write" />
+      </verb>
+      <verb name="Write">
+        <behavior type="flash" />
+        <behavior type="removeSprite" targetSprite="restingPigeon" />
+        <behavior type="removeSprite" targetSprite="restingDove" />
+        <behavior type="removeSprite" targetSprite="restingMagpie" />
+        <behavior type="removeSprite" targetSprite="restingRobin" />
+        <behavior type="removeSprite" targetSprite="restingCardinal" />
+        <behavior type="removeSprite" targetSprite="restingBluebird" />        
+        <behavior type="removeSprite" targetSprite="restingSparrow" />
+        <behavior type="removeSprite" targetSprite="restingGoldfinch" />
+        <behavior type="removeSprite" targetSprite="restingChickadee" />
+        <behavior type="removeVerb" targetVerb="Write" />
+        <behavior type="addVerb" newVerb="Watch" />                        
+      </verb>      
+    </sprite>
+    <sprite name="restingMagpie"  verboseName="magpie" assetName="magpie">
+      <look>A small bird with a long tail. The magpie is singing.</look>
+      <verb name="Watch">
+        <behavior type="dialog">The birds occasionally shift a bit on the telephone wire, but mostly they're quite still.</behavior>
+      </verb>
+      <verb name="Listen">
+        <behavior type="dialog">The birds sing a pretty song, so there's always music in the air.</behavior>
+      </verb>
+      <verb name="Remember">
+        <behavior type="dialog">The birds sang a pretty song, so there was always music in the air.</behavior>
+      </verb>
+      <verb name="Forget">
+        <behavior type="dialog">Their songs went in one ear and out the other, and then bounced along down the street.</behavior>
+      </verb>
+      <verb name="Read">
+        <behavior type="flash" />
+        <behavior type="removeVerb" targetVerb="Read" />
+        <behavior type="addVerb" newVerb="Write" />
+      </verb>
+      <verb name="Write">
+        <behavior type="flash" />
+        <behavior type="removeSprite" targetSprite="restingPigeon" />
+        <behavior type="removeSprite" targetSprite="restingDove" />
+        <behavior type="removeSprite" targetSprite="restingMagpie" />
+        <behavior type="removeSprite" targetSprite="restingRobin" />
+        <behavior type="removeSprite" targetSprite="restingCardinal" />
+        <behavior type="removeSprite" targetSprite="restingBluebird" />        
+        <behavior type="removeSprite" targetSprite="restingSparrow" />
+        <behavior type="removeSprite" targetSprite="restingGoldfinch" />
+        <behavior type="removeSprite" targetSprite="restingChickadee" />
+        <behavior type="removeVerb" targetVerb="Write" />
+        <behavior type="addVerb" newVerb="Watch" />                        
+      </verb>      
+    </sprite>
+    <sprite name="restingRobin"  verboseName="robin" assetName="robin">
+      <look>A tiny bird with a cheerful red breast. The robin is singing.</look>
+      <verb name="Watch">
+        <behavior type="dialog">The birds occasionally shift a bit on the telephone wire, but mostly they're quite still.</behavior>
+      </verb>
+      <verb name="Listen">
+        <behavior type="dialog">The birds sing a pretty song, so there's always music in the air.</behavior>
+      </verb>
+      <verb name="Remember">
+        <behavior type="dialog">The birds sang a pretty song, so there was always music in the air.</behavior>
+      </verb>
+      <verb name="Forget">
+        <behavior type="dialog">Their songs went in one ear and out the other, and then bounced along down the street.</behavior>
+      </verb>
+      <verb name="Read">
+        <behavior type="flash" />
+        <behavior type="removeVerb" targetVerb="Read" />
+        <behavior type="addVerb" newVerb="Write" />
+      </verb>
+      <verb name="Write">
+        <behavior type="flash" />
+        <behavior type="removeSprite" targetSprite="restingPigeon" />
+        <behavior type="removeSprite" targetSprite="restingDove" />
+        <behavior type="removeSprite" targetSprite="restingMagpie" />
+        <behavior type="removeSprite" targetSprite="restingRobin" />
+        <behavior type="removeSprite" targetSprite="restingCardinal" />
+        <behavior type="removeSprite" targetSprite="restingBluebird" />        
+        <behavior type="removeSprite" targetSprite="restingSparrow" />
+        <behavior type="removeSprite" targetSprite="restingGoldfinch" />
+        <behavior type="removeSprite" targetSprite="restingChickadee" />
+        <behavior type="removeVerb" targetVerb="Write" />
+        <behavior type="addVerb" newVerb="Watch" />                        
+      </verb>      
+    </sprite>
+    <sprite name="restingCardinal"  verboseName="cardinal" assetName="cardinal">
+      <look>A bright red bird with a vacant expression on its face. The cardinal is singing</look>
+      <verb name="Watch">
+        <behavior type="dialog">The birds occasionally shift a bit on the telephone wire, but mostly they're quite still.</behavior>
+      </verb>
+      <verb name="Listen">
+        <behavior type="dialog">The birds sing a pretty song, so there's always music in the air.</behavior>
+      </verb>
+      <verb name="Remember">
+        <behavior type="dialog">The birds sang a pretty song, so there was always music in the air.</behavior>
+      </verb>
+      <verb name="Forget">
+        <behavior type="dialog">Their songs went in one ear and out the other, and then bounced along down the street.</behavior>
+      </verb>
+      <verb name="Read">
+        <behavior type="flash" />
+        <behavior type="removeVerb" targetVerb="Read" />
+        <behavior type="addVerb" newVerb="Write" />
+      </verb>
+      <verb name="Write">
+        <behavior type="flash" />
+        <behavior type="removeSprite" targetSprite="restingPigeon" />
+        <behavior type="removeSprite" targetSprite="restingDove" />
+        <behavior type="removeSprite" targetSprite="restingMagpie" />
+        <behavior type="removeSprite" targetSprite="restingRobin" />
+        <behavior type="removeSprite" targetSprite="restingCardinal" />
+        <behavior type="removeSprite" targetSprite="restingBluebird" />        
+        <behavior type="removeSprite" targetSprite="restingSparrow" />
+        <behavior type="removeSprite" targetSprite="restingGoldfinch" />
+        <behavior type="removeSprite" targetSprite="restingChickadee" />
+        <behavior type="removeVerb" targetVerb="Write" />
+        <behavior type="addVerb" newVerb="Watch" />                        
+      </verb>      
+    </sprite>
+    <sprite name="restingBluebird"  verboseName="bluebird" assetName="bluebird">
+      <look>A small blue bird with a red throat. The bluebird is singing.</look>
+      <verb name="Watch">
+        <behavior type="dialog">The birds occasionally shift a bit on the telephone wire, but mostly they're quite still.</behavior>
+      </verb>
+      <verb name="Listen">
+        <behavior type="dialog">The birds sing a pretty song, so there's always music in the air.</behavior>
+      </verb>
+      <verb name="Remember">
+        <behavior type="dialog">The birds sang a pretty song, so there was always music in the air.</behavior>
+      </verb>
+      <verb name="Forget">
+        <behavior type="dialog">Their songs went in one ear and out the other, and then bounced along down the street.</behavior>
+      </verb>
+      <verb name="Read">
+        <behavior type="flash" />
+        <behavior type="removeVerb" targetVerb="Read" />
+        <behavior type="addVerb" newVerb="Write" />
+      </verb>
+      <verb name="Write">
+        <behavior type="flash" />
+        <behavior type="removeSprite" targetSprite="restingPigeon" />
+        <behavior type="removeSprite" targetSprite="restingDove" />
+        <behavior type="removeSprite" targetSprite="restingMagpie" />
+        <behavior type="removeSprite" targetSprite="restingRobin" />
+        <behavior type="removeSprite" targetSprite="restingCardinal" />
+        <behavior type="removeSprite" targetSprite="restingBluebird" />        
+        <behavior type="removeSprite" targetSprite="restingSparrow" />
+        <behavior type="removeSprite" targetSprite="restingGoldfinch" />
+        <behavior type="removeSprite" targetSprite="restingChickadee" />
+        <behavior type="removeVerb" targetVerb="Write" />
+        <behavior type="addVerb" newVerb="Watch" />                        
+      </verb>      
+    </sprite>
+    <sprite name="restingSparrow"  verboseName="sparrow" assetName="sparrow">
+      <look>A familiar bird: the sparrow. The sparrow is singing.</look>
+      <verb name="Watch">
+        <behavior type="dialog">The birds occasionally shift a bit on the telephone wire, but mostly they're quite still.</behavior>
+      </verb>
+      <verb name="Listen">
+        <behavior type="dialog">The birds sing a pretty song, so there's always music in the air.</behavior>
+      </verb>
+      <verb name="Remember">
+        <behavior type="dialog">The birds sang a pretty song, so there was always music in the air.</behavior>
+      </verb>
+      <verb name="Forget">
+        <behavior type="dialog">Their songs went in one ear and out the other, and then bounced along down the street.</behavior>
+      </verb>
+      <verb name="Read">
+        <behavior type="flash" />
+        <behavior type="removeVerb" targetVerb="Read" />
+        <behavior type="addVerb" newVerb="Write" />
+      </verb>
+      <verb name="Write">
+        <behavior type="flash" />
+        <behavior type="removeSprite" targetSprite="restingPigeon" />
+        <behavior type="removeSprite" targetSprite="restingDove" />
+        <behavior type="removeSprite" targetSprite="restingMagpie" />
+        <behavior type="removeSprite" targetSprite="restingRobin" />
+        <behavior type="removeSprite" targetSprite="restingCardinal" />
+        <behavior type="removeSprite" targetSprite="restingBluebird" />        
+        <behavior type="removeSprite" targetSprite="restingSparrow" />
+        <behavior type="removeSprite" targetSprite="restingGoldfinch" />
+        <behavior type="removeSprite" targetSprite="restingChickadee" />
+        <behavior type="removeVerb" targetVerb="Write" />
+        <behavior type="addVerb" newVerb="Watch" />                        
+      </verb>      
+    </sprite>
+    <sprite name="restingGoldfinch"  verboseName="goldfinch" assetName="goldfinch">
+      <look>A brilliant yellow bird. The goldfinch is singing.</look>
+      <verb name="Watch">
+        <behavior type="dialog">The birds occasionally shift a bit on the telephone wire, but mostly they're quite still.</behavior>
+      </verb>
+      <verb name="Listen">
+        <behavior type="dialog">The birds sing a pretty song, so there's always music in the air.</behavior>
+      </verb>
+      <verb name="Remember">
+        <behavior type="dialog">The birds sang a pretty song, so there was always music in the air.</behavior>
+      </verb>
+      <verb name="Forget">
+        <behavior type="dialog">Their songs went in one ear and out the other, and then bounced along down the street.</behavior>
+      </verb>
+      
+      <verb name="Read">
+        <behavior type="flash" />
+        <behavior type="removeVerb" targetVerb="Read" />
+        <behavior type="addVerb" newVerb="Write" />
+      </verb>
+      <verb name="Write">
+        <behavior type="flash" />
+        <behavior type="removeSprite" targetSprite="restingPigeon" />
+        <behavior type="removeSprite" targetSprite="restingDove" />
+        <behavior type="removeSprite" targetSprite="restingMagpie" />
+        <behavior type="removeSprite" targetSprite="restingRobin" />
+        <behavior type="removeSprite" targetSprite="restingCardinal" />
+        <behavior type="removeSprite" targetSprite="restingBluebird" />        
+        <behavior type="removeSprite" targetSprite="restingSparrow" />
+        <behavior type="removeSprite" targetSprite="restingGoldfinch" />
+        <behavior type="removeSprite" targetSprite="restingChickadee" />
+        <behavior type="removeVerb" targetVerb="Write" />
+        <behavior type="addVerb" newVerb="Watch" />                
+      </verb>      
+    </sprite>
+    <sprite name="restingChickadee"  verboseName="chickadee" assetName="chickadee">
+      <look>An odd-looking bird with a small, black beard. The chickadee is singing.</look>
+      <verb name="Watch">
+        <behavior type="dialog">The birds occasionally shift a bit on the telephone wire, but mostly they're quite still.</behavior>
+      </verb>
+      <verb name="Listen">
+        <behavior type="dialog">The birds sing a pretty song, so there's always music in the air.</behavior>
+      </verb>
+      <verb name="Remember">
+        <behavior type="dialog">The birds sang a pretty song, so there was always music in the air.</behavior>
+      </verb>
+      <verb name="Forget">
+        <behavior type="dialog">Their songs went in one ear and out the other, and then bounced along down the street.</behavior>
+      </verb>
+      
+      <verb name="Read">
+        <behavior type="flash" />
+        <behavior type="removeVerb" targetVerb="Read" />
+        <behavior type="addVerb" newVerb="Write" />
+      </verb>
+      <verb name="Write">
+        <behavior type="flash" />
+        <behavior type="removeSprite" targetSprite="restingPigeon" />
+        <behavior type="removeSprite" targetSprite="restingDove" />
+        <behavior type="removeSprite" targetSprite="restingMagpie" />
+        <behavior type="removeSprite" targetSprite="restingRobin" />
+        <behavior type="removeSprite" targetSprite="restingCardinal" />
+        <behavior type="removeSprite" targetSprite="restingBluebird" />        
+        <behavior type="removeSprite" targetSprite="restingSparrow" />
+        <behavior type="removeSprite" targetSprite="restingGoldfinch" />
+        <behavior type="removeSprite" targetSprite="restingChickadee" />
+        <behavior type="removeVerb" targetVerb="Write" />
+        <behavior type="addVerb" newVerb="Watch" />                        
+      </verb>      
+    </sprite>
+
+    <!-- butterflies: remember, forget, read, write -->
     
     <sprite name="restingOrangeButterfly" 
-            verboseName="orange butterfly" assetName="orangeButterfly" />
+            verboseName="orange butterfly" assetName="orangeButterfly">
+      <look>A peaceful orange butterfly.</look>
+      <verb name="Remember">
+        <behavior type="dialog">The orange butterfly was regretful but now it seems to be at peace.</behavior>
+      </verb>
+      <verb name="Forget">
+        <behavior type="dialog">The orange butterfly clings to the house like a splash of paint.</behavior>
+      </verb>
+      <verb name="Read">
+        <behavior type="dialog">The orange butterfly clings to the house like a splash of house paint, not graffiti</behavior>
+      </verb>
+      <verb name="Write">
+        <behavior type="dialog">"The Orange Butterfly," an allegorical story about redemption and forgiveness.</behavior>
+      </verb>
+      <verb name="Watch">
+        <behavior type="flash" />
+        <behavior type="removeVerb" targetVerb="Watch" />
+        <behavior type="addVerb" newVerb="Listen" />
+      </verb>
+      <verb name="Listen">
+        <behavior type="flash" />
+        <behavior type="removeSprite" targetSprite="restingOrangeButterfly" />
+        <behavior type="removeSprite" targetSprite="restingBlueButterfly" />
+        <behavior type="removeSprite" targetSprite="restingGreenButterfly" />        
+        <behavior type="removeVerb" targetVerb="Listen" />
+        <behavior type="addVerb" newVerb="Enter" />
+        <behavior type="makeSpriteInteractive" spriteName="annHouse" />        
+      </verb>
+    </sprite>
     <sprite name="restingBlueButterfly" 
-            verboseName="blue butterfly" assetName="blueButterfly" />
+            verboseName="blue butterfly" assetName="blueButterfly">
+      <look>A rested blue butterfly.</look>
+      <verb name="Remember">
+        <behavior type="dialog">The blue butterfly was tired, but now it seems rested.</behavior>
+      </verb>
+      <verb name="Forget">
+        <behavior type="dialog">The blue butterfly clings to the side of the house like a splash of paint.</behavior>
+      </verb>
+      <verb name="Read">
+        <behavior type="dialog">The blue butterfly clings to the side of the house like a splash of house paint, not graffiti.</behavior>
+      </verb>
+      <verb name="Write">
+        <behavior type="dialog">"The Blue Butterfly," an allegorical story about being overworked and finding time to relax.</behavior>
+      </verb>
+      <verb name="Watch">
+        <behavior type="flash" />
+        <behavior type="removeVerb" targetVerb="Watch" />
+        <behavior type="addVerb" newVerb="Listen" />
+      </verb>
+      <verb name="Listen">
+        <behavior type="flash" />
+        <behavior type="removeSprite" targetSprite="restingOrangeButterfly" />
+        <behavior type="removeSprite" targetSprite="restingBlueButterfly" />
+        <behavior type="removeSprite" targetSprite="restingGreenButterfly" />        
+        <behavior type="removeVerb" targetVerb="Listen" />                
+        <behavior type="addVerb" newVerb="Enter" />
+        <behavior type="makeSpriteInteractive" spriteName="annHouse" />        
+      </verb>
+    </sprite>
     <sprite name="restingGreenButterfly" 
-            verboseName="green butterfly" assetName="greenButterfly" />
+            verboseName="green butterfly" assetName="greenButterfly">
+      <look>A liberated green butterfly.</look>
+      <verb name="Remember">
+        <behavior type="dialog">The green butterfly used to feel trapped, but now it is free.</behavior>
+      </verb>
+      <verb name="Forget">
+        <behavior type="dialog">The green butterfly clings to the house like a splash of paint.</behavior>        
+      </verb>
+      <verb name="Read">
+        <behavior type="dialog">The green butterfly clings to the house like a splash of house paint, not graffiti</behavior>        
+      </verb>
+      <verb name="Write">
+        <behavior type="dialog">"The Green Butterfly," an allegorical story about constraint and freedom.</behavior>
+      </verb>
+      <verb name="Watch">
+        <behavior type="flash" />
+        <behavior type="removeVerb" targetVerb="Watch" />
+        <behavior type="addVerb" newVerb="Listen" />
+      </verb>
+      <verb name="Listen">
+        <behavior type="flash" />
+        <behavior type="removeSprite" targetSprite="restingOrangeButterfly" />
+        <behavior type="removeSprite" targetSprite="restingBlueButterfly" />
+        <behavior type="removeSprite" targetSprite="restingGreenButterfly" />        
+        <behavior type="removeVerb" targetVerb="Listen" />        
+        <behavior type="addVerb" newVerb="Enter" />
+        <behavior type="makeSpriteInteractive" spriteName="annHouse" />
+      </verb>
+    </sprite>
+
+    <!-- lamp post -->
+    
+    <sprite name="restingLightedLampPost" assetName="lightedLampPost"
+            spriteClass="LightedLampPost" verboseName="lamp post">
+      <look>The lamp is lit by a charming swarm of fireflies.</look>
+      <verb name="Remember">
+        <behavior type="flash" />
+        <behavior type="removeVerb" targetVerb="Remember" />
+        <behavior type="addVerb" newVerb="Forget" />
+      </verb>
+      <verb name="Forget">
+        <behavior type="flash" />
+        <behavior type="removeVerb" targetVerb="Forget" />
+        <behavior type="addVerb" newVerb="Read" />        
+        <behavior type="removeSprite" targetSprite="restingLightedLampPost" />
+      </verb>
+    </sprite>
+
+    <sprite name="annHouse" interactive="0" assetName="house" verboseName="house">
+        <look>A house in California. It's dark, quiet and gray; time to sleep.</look>
+        <verb name="Enter">
+          <behavior type="endGameBehavior" />
+        </verb>
+    </sprite>
   </sprites>
 </game>

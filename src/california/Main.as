@@ -69,7 +69,9 @@ package california {
                     "updateBirds": UpdateBirdsBehavior,
                     "catchButterflies": CatchButterfliesBehavior,
                     "fadeToCutScene": FadeToCutSceneBehavior,
-                    "stopMusic": StopMusicBehavior
+                    "stopMusic": StopMusicBehavior,
+                    "makeSpriteInteractive": MakeSpriteInteractiveBehavior,
+                    "endGameBehavior": EndGameBehavior
                 });
             
             GameSprite.registerSpriteClasses({
@@ -105,8 +107,9 @@ package california {
 
             FlxG.showBounds = false;
 
-            super(320, 170, PlayState, 2);
-            //super(320, 170, StartState, 2);
+            //super(320, 170, PlayState, 2);
+            super(320, 170, StartState, 2);
+            //super(320, 170, EndGameState, 2);
 
             FlxState.bgColor = Main.bgcolor;
 

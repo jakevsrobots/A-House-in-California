@@ -245,6 +245,12 @@
               width="4" height="5" />
       <object name="restingChickadee" image="../sprites/chickadee.png"
               width="6" height="6" />
+
+      <object name="restingLightedLampPost" image="../sprites/lamppost.png"
+              width="13" height="29" />
+
+      <object name="annHouse" image="../sprites/house.png"
+              width="124" height="99" />
     </folder>
   </objects>
   
