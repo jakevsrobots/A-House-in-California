@@ -6,7 +6,7 @@
   </background>
   <sprites>
     <streetSign x="256" y="44"/>
-    <storyBook x="44" y="133"/>
+    <storyBook x="32" y="99"/>
     <cookBook x="39" y="112"/>
     <sparrow x="283" y="38"/>
     <goldfinch x="255" y="42"/>
