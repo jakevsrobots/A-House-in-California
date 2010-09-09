@@ -1560,7 +1560,7 @@
         <conditionalBehaviors flagName="hillBirdsAccessible" value="1">
           <behavior type="removeSprite" targetSprite="sparrow" />
           <behavior type="setFlag" flagName="sparrowBefriended" value="1"/>
-          <behavior type="dialog">The sparrow sings a song about ****************. It will sit on the telephone wire and sing to the house.</behavior>
+          <behavior type="dialog">The sparrow sings a song about falling and death. It will sit on the telephone wire and sing to the house.</behavior>
           <behavior type="updateBirds" />
         </conditionalBehaviors>
         <conditionalBehaviors flagName="allBirdsBefriended" value="1">
@@ -1594,7 +1594,7 @@
         <conditionalBehaviors flagName="hillBirdsAccessible" value="1">
           <behavior type="removeSprite" targetSprite="goldfinch" />
           <behavior type="setFlag" flagName="goldfinchBefriended" value="1"/>
-          <behavior type="dialog">The goldfinch sings a song about ****************. It will sit on the telephone wire and sing to the house.</behavior>
+          <behavior type="dialog">The goldfinch sings a song about thistles and flies. It will sit on the telephone wire and sing to the house.</behavior>
           <behavior type="updateBirds" />
         </conditionalBehaviors>
         <conditionalBehaviors flagName="allBirdsBefriended" value="1">
@@ -1628,7 +1628,7 @@
         <conditionalBehaviors flagName="hillBirdsAccessible" value="1">
           <behavior type="removeSprite" targetSprite="chickadee" />
           <behavior type="setFlag" flagName="chickadeeBefriended" value="1"/>
-          <behavior type="dialog">The chickadee sings a song about ****************. It will sit on the telephone wire and sing to the house.</behavior>
+          <behavior type="dialog">The chickadee sings a song about noisy marshes. It will sit on the telephone wire and sing to the house.</behavior>
           <behavior type="updateBirds" />
         </conditionalBehaviors>
         <conditionalBehaviors flagName="allBirdsBefriended" value="1">
