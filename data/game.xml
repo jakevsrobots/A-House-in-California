@@ -1782,7 +1782,7 @@
     
     <sprite name="car"
             spriteClass="Car">
-      <look>A stationg wagon, parked and running outside the cathedral.</look>
+      <look>A station wagon, parked and running outside the cathedral.</look>
       <verb name="Listen">
           <behavior type="transitionToRoom" targetRoom="connieHome" />
       </verb>
@@ -1800,13 +1800,14 @@
     </sprite>
     
     <sprite name="cross">
-      <look>The cross is tall and stark.</look>
+      <look>The cross is tall and stark. Hope, salvation, forgiveness, olive wood, fiberglass?</look>
       <verb name="Listen">
         <behavior type="transitionToRoom" targetRoom="connieHome" />
       </verb>
       <verb name="Watch">
         <conditionalBehaviors flagName="orangeButterfliesCaught" value="0">        
           <behavior type="addVerb" newVerb="Save" />
+          <behavior type="dialog">Whether it's intuition or divine suggestion, this cross is a comforting object to watch.</behavior>
         </conditionalBehaviors>
       </verb>
     </sprite>
