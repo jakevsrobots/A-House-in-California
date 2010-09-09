@@ -1657,22 +1657,55 @@
     <!-- ####################### CONNIE ######################### -->
     <sprite name="conniePlayer"
             verboseName="Connie">
+      <look>Connie is a kind and pious homemaker.</look>
+      <verb name="Watch">
+        <behavior type="dialog">If one watches oneself too closely, nothing will get done.</behavior>
+      </verb>
+      <verb name="Listen">
+        <behavior type="dialog">Listen to your gut or listen to your conscience?</behavior>
+      </verb>
+      <verb name="Save">
+        <behavior type="dialog">Devout, save thyself.</behavior>
+      </verb>
+      <verb name="Rest">
+        <behavior type="dialog">No rest for the weary. But soon.</behavior>
+      </verb>
     </sprite>
 
     <!-- Room #3-1 - A House in California -->    
     <sprite name="television"
             spriteClass="Television">
+      <look>The television flickers and hums into the night.</look>
       <verb name="Watch">
         <behavior type="transitionToRoom" targetRoom="aTVShowAboutACathedral" />
       </verb>
       <verb name="Listen">
-        <behavior type="fadeToCutScene" cutSceneName="lois"
-                  roomName="loisHome" delay="0" />
+        <behavior type="dialog">The tinny sound of a cathedral at night rattles through the television's built-in speaker.</behavior>
       </verb>
+      <verb name="Free">
+        <behavior type="dialog">Over-the-air analog broadcasts were a free form of television; free to watch, free to interrupt.</behavior>
+      </verb>
+      <verb name="Save">
+        <behavior type="dialog">It may be too late.</behavior>
+      </verb>
+      <verb name="Rest">
+        <behavior type="dialog">Falling asleep in front of the television may yield strange dreams.</behavior>
+      </verb>
+      
     </sprite>
     <sprite name="greenButterfly"
             verboseName="green butterfly"
             spriteClass="Butterfly">
+      <look>A cagey green butterfly.</look>
+      <verb name="Watch">
+        <behavior type="dialog">The green butterfly darts back and forth; looking for an exit?</behavior>
+      </verb>
+      <verb name="Listen">
+        <behavior type="dialog">The green butterfly mumbles about pastures, highways, forests and distant beaches.</behavior>
+      </verb>
+      <verb name="Save">
+        <behavior type="dialog">The green butterfly doesn't need saving.</behavior>
+      </verb>
       <verb name="Free">
         <behavior type="catchButterflies" color="green" />
         <behavior type="removeVerb" targetVerb="Free" />
@@ -1681,6 +1714,16 @@
     <sprite name="orangeButterfly"
             verboseName="orange butterfly"
             spriteClass="Butterfly">
+      <look>A doubtful orange butterfly.</look>
+      <verb name="Watch">
+        <behavior type="dialog">The orange butterfly drags its wings against the air; regretful?</behavior>
+      </verb>
+      <verb name="Listen">
+        <behavior type="dialog">The orange butterfly mumbles about bad choices and missed opportunities.</behavior>
+      </verb>
+      <verb name="Free">
+        <behavior type="dialog">The orange butterfly doesn't need freeing.</behavior>
+      </verb>
       <verb name="Save">
         <behavior type="catchButterflies" color="orange" />
         <behavior type="removeVerb" targetVerb="Save" />
@@ -1689,6 +1732,19 @@
     <sprite name="blueButterfly"
             verboseName="blue butterfly"
             spriteClass="Butterfly">
+      <look>A tired blue butterfly</look>
+      <verb name="Watch">
+        <behavior type="dialog">The blue butterfly lags a bit; looking for a place to land?</behavior>
+      </verb>
+      <verb name="Listen">
+        <behavior type="dialog">The blue butterfly yawns.</behavior>
+      </verb>
+      <verb name="Free">
+        <behavior type="dialog">The blue butterfly doesn't need freeing.</behavior>
+      </verb>
+      <verb name="Save">
+        <behavior type="dialog">The blue butterfly doesn't need saving.</behavior>
+      </verb>
       <verb name="Rest">
         <behavior type="catchButterflies" color="blue" />
         <behavior type="fadeToCutScene" cutSceneName="ann"
@@ -1708,13 +1764,25 @@
     
     <!-- Room #3-2 A TV Show About a Cathedral -->
     <sprite name="cathedral">
+      <look>A Californian cathedral, with architecture from somewhere between Italy and Mexico.</look>
       <verb name="Listen">
         <behavior type="transitionToRoom" targetRoom="connieHome" />
       </verb>
+      <verb name="Watch">
+        <behavior type="dialog">The cathedral sits, motionless and silence.</behavior>
+      </verb>
+      <verb name="Save">
+        <behavior type="dialog">Every stone in this building has already received a thousand sacraments.</behavior>
+      </verb>
+      <verb name="Free">
+        <behavior type="dialog">Just a small chip from the side of the building; who would notice?</behavior>
+      </verb>
+      
     </sprite>
     
     <sprite name="car"
             spriteClass="Car">
+      <look>A stationg wagon, parked and running outside the cathedral.</look>
       <verb name="Listen">
           <behavior type="transitionToRoom" targetRoom="connieHome" />
       </verb>
@@ -1723,8 +1791,16 @@
           <behavior type="addVerb" newVerb="Free" />
         </conditionalBehaviors>
       </verb>
+      <verb name="Save">
+        <behavior type="dialog">An easy way to save on gas is to reduce the weight of the car.</behavior>
+      </verb>
+      <verb name="Free">
+        <behavior type="dialog">Removing the parking break could be disastrous.</behavior>        
+      </verb>
     </sprite>
+    
     <sprite name="cross">
+      <look>The cross is tall and stark.</look>
       <verb name="Listen">
         <behavior type="transitionToRoom" targetRoom="connieHome" />
       </verb>
