@@ -59,8 +59,7 @@ package california {
                     //musicPlayer.fadeOut();
                     FlxG.fade.start(0xff000000, 2.0, function():void {
                             FlxG.fade.stop();
-                            //FlxG.state = new CutSceneState('lois', 'loisHome');
-                            FlxG.state = new PlayState('annHome');
+                            FlxG.state = new CutSceneState('lois', 'loisHome');
                         });
                 });
             playButton.loadGraphic(

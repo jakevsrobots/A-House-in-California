@@ -1183,7 +1183,7 @@
 
     <sprite name="dove">
       <look>A lovely white bird.</look>
-      <verb name="Befriend" moveTo="1">
+      <verb name="Befriend">
         <conditionalBehaviors flagName="houseBirdsAccessible" value="0">
           <behavior type="dialog">The birds look friendly, but they're too far away. Perhaps they could be lured down with a snack.</behavior>
         </conditionalBehaviors>
@@ -1218,7 +1218,7 @@
     
     <sprite name="magpie">
       <look>A small bird with a long tail.</look>
-      <verb name="Befriend" moveTo="1">
+      <verb name="Befriend">
         <conditionalBehaviors flagName="houseBirdsAccessible" value="0">
           <behavior type="dialog">The birds look friendly, but they're too far away. Perhaps they could be lured down with a snack.</behavior>
         </conditionalBehaviors>
@@ -1515,7 +1515,7 @@
         <behavior type="dialog">Fahrenheit 451 is a novel by Ray Bradbury about an anti-intellectual dystopia.</behavior>
       </verb>
       <verb name="Sing" moveTo="1">
-        <behavior type="dialog">"Oh.. I'm living in the future / I feel wonderful / I'm tipping over backwards."</behavior>
+        <behavior type="dialog">"Oh... I'm living in the future / I feel wonderful / I'm tipping over backwards."</behavior>
       </verb>
     </sprite>
     
@@ -1591,16 +1591,16 @@
 
     <sprite name="peanutButter" verboseName="empty jar of peanut butter">
       <look>The jar is empty; it looks like it's been licked clean. The label is printed with ingredients, nutritional information and family recipes.</look>
-      <verb name="Befriend" moveTo="1">
+      <verb name="Befriend">
         <behavior type="dialog">There was a boy who befriended a jar of peanut butter. He emptied it, filled it with dirt, and grew new peanuts in it.</behavior>
       </verb>
-      <verb name="Read" moveTo="1">
+      <verb name="Read">
         <behavior type="dialog">"Avian Mills Bird-Friendly Peanut Butter. Ingredients: Peanuts..."</behavior>
       </verb>
-      <verb name="Write" moveTo="1">
+      <verb name="Write">
         <behavior type="dialog">"The Jar, Alone," a short story about an empty jar and its surroundings.</behavior>
       </verb>
-      <verb name="Cook" moveTo="1">
+      <verb name="Cook">
         <behavior type="removeSprite" targetSprite="peanutButter" />
         <conditionalBehaviors flagName="hillBirdsAccessible" value="1">
           <behavior type="dialog">The birds have had plenty to eat.</behavior>
@@ -1613,14 +1613,14 @@
           <behavior type="setFlag" flagName="hillBirdsAccessible" value="1" />
         </conditionalBehaviors>
       </verb>
-      <verb name="Sing" moveTo="1">
+      <verb name="Sing">
         <behavior type="dialog">Singing into the peanut butter jar makes for a convincing reverb effect.</behavior>
       </verb>
     </sprite>
     
     <sprite name="sparrow">
       <look>A familiar bird: the sparrow.</look>
-      <verb name="Befriend" moveTo="1">
+      <verb name="Befriend">
         <conditionalBehaviors flagName="hillBirdsAccessible" value="0">
           <behavior type="dialog">The birds look friendly, but they're too far away. Perhaps they could be lured down with a snack.</behavior>
         </conditionalBehaviors>
@@ -1739,7 +1739,13 @@
       </verb>
     </sprite>
 
-    <!-- Room #3-1 - A House in California -->    
+    <!-- Room #3-1 - A House in California -->
+    <sprite name="inactiveLightedLampPost"
+            assetName="lightedLampPost"
+            verboseName="lamp post"
+            spriteClass="LightedLampPost"
+            interactive="0" />
+    
     <sprite name="television"
             spriteClass="Television">
       <look>The television flickers and hums into the night.</look>
@@ -1844,7 +1850,9 @@
       <verb name="Free" moveTo="1">
         <behavior type="dialog">Just a small chip from the side of the building; who would notice?</behavior>
       </verb>
-      
+      <verb name="Rest" moveTo="1">
+        <behavior type="dialog">There are only two kinds of rest to be found in a cathedral.</behavior>
+      </verb>
     </sprite>
     
     <sprite name="car"
@@ -1854,6 +1862,7 @@
           <behavior type="transitionToRoom" targetRoom="connieHome" />
       </verb>
       <verb name="Watch" moveTo="1">
+        <behavior type="dialog">It's just idling now, but this car has come a long way. How long has it left to go?</behavior>
         <conditionalBehaviors flagName="greenButterfliesCaught" value="0">
           <behavior type="addVerb" newVerb="Free" />
         </conditionalBehaviors>
@@ -1864,6 +1873,9 @@
       <verb name="Free" moveTo="1">
         <behavior type="dialog">Removing the parking break could be disastrous.</behavior>        
       </verb>
+      <verb name="Rest" moveTo="1">
+        <behavior type="dialog">The back seat of this car looks spacious and comfortable, but there is work to do.</behavior>        
+      </verb>
     </sprite>
     
     <sprite name="cross">
@@ -1872,9 +1884,9 @@
         <behavior type="transitionToRoom" targetRoom="connieHome" />
       </verb>
       <verb name="Watch" moveTo="1">
+        <behavior type="dialog">Whether it's mundane intuition or divine presence, this cross is a comforting object to watch.</behavior>
         <conditionalBehaviors flagName="orangeButterfliesCaught" value="0">        
           <behavior type="addVerb" newVerb="Save" />
-          <behavior type="dialog">Whether it's mundane intuition or divine presence, this cross is a comforting object to watch.</behavior>
         </conditionalBehaviors>
       </verb>
       <verb name="Save" moveTo="1">
@@ -1882,6 +1894,9 @@
       </verb>
       <verb name="Free" moveTo="1">
         <behavior type="dialog">If the cross were loosened from its post, it might fall on someone.</behavior>
+      </verb>
+      <verb name="Rest" moveTo="1">
+        <behavior type="dialog">It creates a restful and symmetrical silhouette against the night sky.</behavior>        
       </verb>
     </sprite>
     <sprite name="sleepyBoy" assetName="boy"

@@ -129,7 +129,6 @@
   <asset name="menuBackground" file="backgrounds/menu-background.png"
          type="image" />
 
-
   <!-- general lois -->
   <asset name="oneFirefly" file="sprites/one-firefly.png"
          type="image" />

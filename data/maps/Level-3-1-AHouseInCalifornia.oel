@@ -6,8 +6,8 @@
   </background>
   <sprites>
     <television x="204" y="106"/>
-    <lightedLampPost x="291" y="117"/>
-    <lightedLampPost x="27" y="117"/>
+    <inactiveLightedLampPost x="291" y="117"/>
+    <inactiveLightedLampPost x="27" y="117"/>
     <orangeButterfly x="47" y="66"/>
     <orangeButterfly x="45" y="74"/>
     <orangeButterfly x="46" y="83"/>
