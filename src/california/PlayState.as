@@ -248,8 +248,8 @@ package california {
                 if(fadeStartTimer > 0) {
                     fadeStartTimer -= FlxG.elapsed;
                 } else {
-                    preCutSceneFade = false;
-                    FlxG.fade.start(0xff000000, 2, function():void {
+                    endGameFade = false;
+                    FlxG.fade.start(0xff000000, 3, function():void {
                             for each(var sound:FlxSound in FlxG.sounds) {
                                 sound.fadeOut(5);
                             }
@@ -430,11 +430,16 @@ package california {
         }
 
         public function endGame():void {
+            fadeStartTimer = 2;
             endGameFade = true;
         }
         
         public function removeDarkness():void {
             fadeDarkness = true;
+        }
+
+        public static function removePlayer():void {
+            PlayState.player.visible = false;
         }
         
         private function loadRoom(roomName:String):void {

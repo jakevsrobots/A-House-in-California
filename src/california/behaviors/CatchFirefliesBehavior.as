@@ -14,6 +14,7 @@ package california.behaviors {
 
             // Check if all the fireflies have been caught
             if(
+                PlayState.getFlag('loisHome-firefliesCaught') &&
                 PlayState.getFlag('theSurfaceOfTheMoon-firefliesCaught') &&
                 PlayState.getFlag('aFountainInABackYard-firefliesCaught') &&
                 PlayState.getFlag('aComputerInAGuestRoom-firefliesCaught') ) {

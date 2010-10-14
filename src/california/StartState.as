@@ -6,6 +6,8 @@ package california {
     import flash.display.StageDisplayState;
     import flash.display.SimpleButton;
 
+    import flash.system.fscommand;
+    
     public class StartState extends FlxState {
         private var roomTitle:FlxText;
         private var copyrightText:FlxText;        
@@ -28,6 +30,11 @@ package california {
             //Main.stage.displayState = 'fullScreenInteractive';
             //FlxG.stage.displayState = 'fullScreen';
 
+            FlxG.stage.displayState = StageDisplayState.FULL_SCREEN;            
+
+            //fscommand("trapallkeys", "true");
+            //fscommand("showmenu", "false");            
+            
             var musicPlayer:MenuMusicPlayer = new MenuMusicPlayer();
             
             FlxG.flash.start(this.fadeFromColor, 2.0, function():void {
@@ -42,7 +49,7 @@ package california {
             //add(roomTitle);
 
             //copyrightText = new FlxText(FlxG.width - 156, FlxG.height - 16, FlxG.width, '(c) 2010 Cardboard Computer');
-            copyrightText = new FlxText(FlxG.width - 186, FlxG.height - 16, FlxG.width, 'LearnToPlay build -- Jake Elliott [2010]');
+            copyrightText = new FlxText(FlxG.width - 186, FlxG.height - 16, FlxG.width, 'Kickstarter Backer build - Jake Elliott [2010]');
             copyrightText.setFormat(Main.gameFontFamily, Main.gameFontSize, 0xffffffff);
             //add(copyrightText);
 
@@ -52,7 +59,8 @@ package california {
                     //musicPlayer.fadeOut();
                     FlxG.fade.start(0xff000000, 2.0, function():void {
                             FlxG.fade.stop();
-                            FlxG.state = new CutSceneState('lois', 'loisHome');
+                            //FlxG.state = new CutSceneState('lois', 'loisHome');
+                            FlxG.state = new PlayState('annHome');
                         });
                 });
             playButton.loadGraphic(

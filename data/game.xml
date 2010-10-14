@@ -192,6 +192,9 @@
       <verb name="Repair">
         <behavior type="dialog">Lois is doing just fine.</behavior>
       </verb>
+      <verb name="Light">
+        <behavior type="dialog">Lois' eyes are lit with love.</behavior>
+      </verb>
     </sprite>
 
     <!-- Room #1-1 - A House in California -->
@@ -216,6 +219,9 @@
       </verb>
       <verb name="Repair" moveTo="1">
         <behavior type="dialog">It's too dark to attempt any serious repairs.</behavior>
+      </verb>
+      <verb name="Light" moveTo="1">
+        <behavior type="dialog">On second thought, that sounds like arson.</behavior>
       </verb>
     </sprite>
     
@@ -334,10 +340,12 @@
       <verb name="Catch">
         <behavior type="dialog">They look small from here, but they're actually too large to get a grip on.</behavior>
       </verb>
-      <verb name="Repair" moveTo="1">
+      <verb name="Repair">
         <behavior type="dialog">These stars can only be adjust with a stellar spanner.</behavior>
       </verb>
-      
+      <verb name="Light" moveTo="1">
+        <behavior type="dialog">The stars are glowing more brilliantly than a billion fireflies; just too far away to matter.</behavior>
+      </verb>
     </sprite>
     
     <sprite name="moonFountain"
@@ -361,6 +369,9 @@
       </verb>
       <verb name="Repair" moveTo="1">
         <behavior type="dialog">The fountain is flowing normally.</behavior>
+      </verb>
+      <verb name="Light" moveTo="1">
+        <behavior type="dialog">The fountain water sparkles, a swimming reflection of the night sky.</behavior>
       </verb>
       
     </sprite>
@@ -437,6 +448,9 @@
       <verb name="Learn" moveTo="1">
         <behavior type="dialog">The first man-made domes were built with Mammoth tusks over 20,000 years ago. Perhaps they met a similar fate.</behavior>
       </verb>
+      <verb name="Light" moveTo="1">
+        <behavior type="dialog">Starlight glints off the cracked edges of this broken moon dome.</behavior>
+      </verb>
       
     </sprite>
 
@@ -490,6 +504,9 @@
       <verb name="Learn" moveTo="1">
         <behavior type="dialog">This kicking machine has already revealed all its secrets.</behavior>
       </verb>
+      <verb name="Light" moveTo="1">
+        <behavior type="dialog">Starlight glints off the cracked edges of this broken moon dome.</behavior>
+      </verb>
       
     </sprite>
     
@@ -515,6 +532,9 @@
       <verb name="Repair" moveTo="1">
         <behavior type="dialog">The fountain is flowing normally.</behavior>
       </verb>
+      <verb name="Light" moveTo="1">
+        <behavior type="dialog">The fountain water sparkles, a swimming reflection of the night sky.</behavior>
+      </verb>
       
     </sprite>
 
@@ -528,10 +548,10 @@
       <verb name="Remember">
         <behavior type="dialog">These wild flowers were planted here by the wind.</behavior>
       </verb>
-      <verb name="Play">
+      <verb name="Play" moveTo="1">
         <behavior type="dialog">There was a boy who pretended to be a flower. He buried himself in the dirt and then slowly crawled out into the sun.</behavior>
       </verb>
-      <verb name="Catch">
+      <verb name="Catch" moveTo="1">
         <behavior type="dialog">The bees hovering around these flowers will sting if they're caught.</behavior>
       </verb>
       <verb name="Learn">
@@ -539,6 +559,9 @@
       </verb>
       <verb name="Repair" moveTo="1">
         <behavior type="dialog">With a few adjustments, this flower arrangement is looking lovely.</behavior>
+      </verb>
+      <verb name="Light" moveTo="1">
+        <behavior type="dialog">Each petal glistens in the moonlight.</behavior>
       </verb>
       
     </sprite>
@@ -553,10 +576,10 @@
       <verb name="Remember">
         <behavior type="dialog">These wild flowers were planted here by the wind.</behavior>
       </verb>
-      <verb name="Play">
+      <verb name="Play" moveTo="1">
         <behavior type="dialog">There was a boy who pretended to be a flower. He closed his eyes, drank a glass of water, then slowly opened them.</behavior>
       </verb>
-      <verb name="Catch">
+      <verb name="Catch" moveTo="1">
         <behavior type="dialog">The bees hovering around these flowers will sting if they're caught.</behavior>
       </verb>
       <verb name="Learn">
@@ -564,6 +587,9 @@
       </verb>
       <verb name="Repair" moveTo="1">
         <behavior type="dialog">A few stray petals to round up but otherwise these flowers are looking good.</behavior>
+      </verb>
+      <verb name="Light" moveTo="1">
+        <behavior type="dialog">Each petal glistens in the moonlight.</behavior>
       </verb>
       
     </sprite>
@@ -578,10 +604,10 @@
       <verb name="Remember">
         <behavior type="dialog">These wild flowers were planted here by the wind.</behavior>
       </verb>
-      <verb name="Play">
+      <verb name="Play" moveTo="1">
         <behavior type="dialog">There was a boy who pretended to be a flower. He held his arms tightly against his chest, stood in the sun, then slowly lifted his hands into the air.</behavior>
       </verb>
-      <verb name="Catch">
+      <verb name="Catch" moveTo="1">
         <behavior type="dialog">The bees hovering around these flowers will sting if they're caught.</behavior>
       </verb>
       <verb name="Learn">
@@ -589,6 +615,9 @@
       </verb>
       <verb name="Repair" moveTo="1">
         <behavior type="dialog">These flowers should probably be re-potted, but it's too dark now.</behavior>
+      </verb>
+      <verb name="Light" moveTo="1">
+        <behavior type="dialog">Each petal glistens in the moonlight.</behavior>
       </verb>
       
     </sprite>
@@ -604,17 +633,20 @@
       <verb name="Remember">
         <behavior type="dialog">Laying under these stars at night, they felt close enough to touch.</behavior>
       </verb>
-      <verb name="Play">
+      <verb name="Play" moveTo="1">
         <behavior type="dialog">"Count the stars" is a long game.</behavior>
       </verb>
       <verb name="Catch">
         <behavior type="dialog">They're just tiny pricks of light, too small to get a grip on.</behavior>
       </verb>
-      <verb name="Learn">
+      <verb name="Learn" moveTo="1">
         <behavior type="dialog">The smallest kind of star is  called a "red dwarf." The closest star to earth is one of these.</behavior>
       </verb>
       <verb name="Repair" moveTo="1">
         <behavior type="dialog">They seem to be working normally.</behavior>
+      </verb>
+      <verb name="Light" moveTo="1">
+        <behavior type="dialog">The stars are glowing more brilliantly than a billion fireflies; just too far away to matter.</behavior>
       </verb>
       
     </sprite>
@@ -629,17 +661,20 @@
       <verb name="Forget">
         <behavior type="dialog">Doesn't look familiar.</behavior>
       </verb>
-      <verb name="Play">
+      <verb name="Play" moveTo="1">
         <behavior type="dialog">Playing near windows can be dangerous.</behavior>
       </verb>
       <verb name="Learn">
         <behavior type="dialog">The word "window" comes from the Norse word "vindauga", which means "Wind Eye".</behavior>
       </verb>
-      <verb name="Catch">
+      <verb name="Catch" moveTo="1">
         <behavior type="dialog">It's stuck to the building.</behavior>
       </verb>
       <verb name="Repair" moveTo="1">
         <behavior type="dialog">The window isn't broken.</behavior>
+      </verb>
+      <verb name="Light" moveTo="1">
+        <behavior type="dialog">The window is already emitting a faint glow; must be something in that room.</behavior>
       </verb>
       
     </sprite>
@@ -665,14 +700,17 @@
           <behavior type="setFlag" flagName="backyardJarBroken" value="1" />
         </conditionalBehaviors>
       </verb>
-      <verb name="Learn">
+      <verb name="Learn" moveTo="1">
         <behavior type="dialog">The table has four legs, which are meant to keep it stable. But one of the legs is too short; it's all a bit precarious.</behavior>
       </verb>
-      <verb name="Forget">
+      <verb name="Forget" moveTo="1">
         <behavior type="dialog">Perfectly normal back yard table.</behavior>
       </verb>
-      <verb name="Catch">
+      <verb name="Catch" moveTo="1">
         <behavior type="dialog">There's a game called "eeny-meeny-miny-moe, catch a table by the leg."</behavior>
+      </verb>
+      <verb name="Light" moveTo="1">
+        <behavior type="dialog">Best to break it down into kindling before... Best to leave it be.</behavior>
       </verb>
     </sprite>
     
@@ -681,22 +719,22 @@
             spriteClass="JarOfBugs">
 
       <look>A jar full of fireflies.</look>
-      <verb name="Remember">
+      <verb name="Remember" moveTo="1">
         <behavior type="dialog">These fireflies have come a long way.</behavior>
       </verb>
-      <verb name="Forget">
+      <verb name="Forget" moveTo="1">
         <behavior type="dialog">Home sweet home.</behavior>
       </verb>
-      <verb name="Play">
+      <verb name="Play" moveTo="1">
         <behavior type="dialog">The fireflies are trapped in the jar, they can't really play anything but charades right now.</behavior>
       </verb>
-      <verb name="Learn">
+      <verb name="Learn" moveTo="1">
         <behavior type="dialog">Mason jars are named after their inventor, John L. Mason, who created them in 1858 to store fruit and fireflies.</behavior>
       </verb>
-      <verb name="Catch">
+      <verb name="Catch" moveTo="1">
         <behavior type="dialog">The fireflies are stuck in the jar.</behavior>
       </verb>
-      <verb name="Repair">
+      <verb name="Repair" moveTo="1">
         <behavior type="dialog">The jar isn't broken; in fact it's working too well.</behavior>
       </verb>
     </sprite>
@@ -705,24 +743,28 @@
             verboseName="broken jar">
       
       <look>The jar is broken.</look>
-      <verb name="Remember">
+      <verb name="Remember" moveTo="1">
         <behavior type="dialog">This jar used to have fireflies trapped in it.</behavior>
       </verb>
-      <verb name="Forget">
+      <verb name="Forget" moveTo="1">
         <behavior type="dialog">What happened to this jar?</behavior>
       </verb>
-      <verb name="Play">
+      <verb name="Play" moveTo="1">
         <behavior type="dialog">Playing with broken glass would be quite dangerous.</behavior>
       </verb>
-      <verb name="Learn">
+      <verb name="Learn" moveTo="1">
         <behavior type="dialog">Jars like this are used to preserve fruit because they can be sealed to create a partial vacuum. But breaking the jar open renders it useless.</behavior>
       </verb>
-      <verb name="Repair">
+      <verb name="Repair" moveTo="1">
         <behavior type="dialog">Repairing broken jars is a good way to get stitches, but that's about all.</behavior>
       </verb>
-      <verb name="Catch">
+      <verb name="Catch" moveTo="1">
         <behavior type="dialog">Someone will probably clean it up later.</behavior>
       </verb>
+      <verb name="Light" moveTo="1">
+        <behavior type="dialog">Destroying the evidence?</behavior>
+      </verb>
+      
     </sprite>
 
     
@@ -731,27 +773,30 @@
             verboseName="floppy disk">
       
       <look>It's a floppy disk copy of "Rocky's Boots" for the Apple II.</look>
-      <verb name="Play">
+      <verb name="Play" moveTo="1">
         <behavior type="replaceSprite" oldSprite="computerScreen"
                   newSprite="computerScreenRockysBoots" />
         <behavior type="replaceSprite" oldSprite="computerScreenBoy"
                   newSprite="computerScreenRockysBoots" />
       </verb>
 
-      <verb name="Remember">
+      <verb name="Remember" moveTo="1">
         <behavior type="dialog">This game was published in 1982, it taught players about logic gates and electronic circuits through puzzles, like building a kicking machine.</behavior>
       </verb>
-      <verb name="Forget">
+      <verb name="Forget" moveTo="1">
         <behavior type="dialog">Must be a new release. Maybe a sports game?</behavior>
       </verb>
-      <verb name="Learn">
+      <verb name="Learn" moveTo="1">
         <behavior type="dialog">The best way to learn from this game is to play it.</behavior>
       </verb>
-      <verb name="Catch">
+      <verb name="Catch" moveTo="1">
         <behavior type="dialog">Hardly sporting, it's just laying there.</behavior>
       </verb>
-      <verb name="Repair">
+      <verb name="Repair" moveTo="1">
         <behavior type="dialog">The disk looks like it will play as it is.</behavior>
+      </verb>
+      <verb name="Light" moveTo="1">
+        <behavior type="dialog">That might damage the disk.</behavior>
       </verb>
     </sprite>
 
@@ -759,7 +804,7 @@
             verboseName="strange painting">
 
       <look>It's a watercolor painting of a vine growing up through a manhole. In the background there's a fire hydrant. It's a crude rendition, but there's something familiar about it; that fire hydrant almost looks touchable.</look>
-      <verb name="Play">
+      <verb name="Play" moveTo="1">
         <conditionalBehaviors flagName="aComputerInAGuestRoom-firefliesCaught" value="0">
           <behavior type="replaceSprite" oldSprite="computerScreen"
                     newSprite="computerScreenBoy" />
@@ -773,45 +818,53 @@
         </conditionalBehaviors>
       </verb>
 
-      <verb name="Remember">
+      <verb name="Remember" moveTo="1">
         <behavior type="dialog">This is a painting of a scene from "The Manhole," a strange computer game about exploring a fantasy world.</behavior>
       </verb>
-      <verb name="Forget">
+      <verb name="Forget" moveTo="1">
         <behavior type="dialog">After looking at it for a few minutes, it's hard to forget, really.</behavior>
       </verb>
-      <verb name="Learn">
+      <verb name="Learn" moveTo="1">
         <behavior type="dialog">"The Manhole," the computer game this painting was drawn from, was designed by Rand and Robyn Miller in 1988. Later, they made "Myst".</behavior>
       </verb>
-      <verb name="Catch">
+      <verb name="Catch" moveTo="1">
         <behavior type="dialog">In "The Manhole," the computer game this painting was drawn from, the player chases a rabbit. The rabbit does not appear in this painting, though.</behavior>
       </verb>
-      <verb name="Repair">
+      <verb name="Repair" moveTo="1">
         <behavior type="dialog">There's nothing broken about the painting; it almost seems alive.</behavior>
       </verb>
+      <verb name="Light" moveTo="1">
+        <behavior type="dialog">The painting has a bit of a glow already; or maybe it's just yellow paint.</behavior>
+      </verb>
+      
     </sprite>
 
     <sprite name="computer">
 
       <look>It's an Apple II. A programmable machine, from a more civilized age.</look>
-      <verb name="Forget">
+      <verb name="Forget" moveTo="1">
         <behavior type="transitionToRoom" targetRoom="aFountainInABackYard" />
       </verb>
 
-      <verb name="Play">
+      <verb name="Play" moveTo="1">
         <behavior type="dialog">The computer doesn't play anything by itself, it needs software.</behavior>
       </verb>
-      <verb name="Remember">
+      <verb name="Remember" moveTo="1">
         <behavior type="dialog">This computer had gummy keys, like typing in Jello.</behavior>
       </verb>
-      <verb name="Learn">
+      <verb name="Learn" moveTo="1">
         <behavior type="dialog">This computer has more to teach when it's running some software.</behavior>
       </verb>
-      <verb name="Repair">
+      <verb name="Repair" moveTo="1">
         <behavior type="dialog">The Apple II is running just as well today as it was in 1977; just load up some software and see.</behavior>
       </verb>
-      <verb name="Catch">
+      <verb name="Catch" moveTo="1">
         <behavior type="dialog">The Apple II?  It's much too fast to catch.</behavior>
       </verb>
+      <verb name="Light" moveTo="1">
+        <behavior type="dialog">The Apple II shines like a blue LED in a cloud of thrift store dust.</behavior>
+      </verb>
+      
     </sprite>
 
     <sprite name="computerScreen"
@@ -837,6 +890,10 @@
       <verb name="Catch">
         <behavior type="dialog">The Apple II?  It's much too fast to catch.</behavior>
       </verb>
+      
+      <verb name="Light" moveTo="1">
+        <behavior type="dialog">The Apple II shines like a blue LED in a cloud of thrift store dust.</behavior>
+      </verb>
     </sprite>
 
     <sprite name="computerScreenRockysBoots"
@@ -860,7 +917,10 @@
       </verb>
       <verb name="Repair" verbText="Repair kicking machine">
         <behavior type="dialog">This kicking machine is not broken. Perhaps there's another one in need of repair?</behavior>
-      </verb>      
+      </verb>
+      <verb name="Light" moveTo="1">
+        <behavior type="dialog">The game is already quite bright.</behavior>
+      </verb>
     </sprite>
     
     <sprite name="computerScreenBoy"
@@ -950,19 +1010,19 @@
             verboseName="house"
             assetName="house">
       <look>A house in California. It's so quiet.</look>
-      <verb name="Befriend">
+      <verb name="Befriend" moveTo="1">
         <behavior type="dialog">There was a boy who befriended a house. Late at night, he put his ear to the wall and listened to it hum.</behavior>
       </verb>
-      <verb name="Read">
+      <verb name="Read" moveTo="1">
         <behavior type="dialog">The only thing written on the house is the address number: 2602.</behavior>
       </verb>
-      <verb name="Write">
+      <verb name="Write" moveTo="1">
         <behavior type="dialog">"A House in California," an experimental novel about four people building a house together.</behavior>
       </verb>
-      <verb name="Cook">
+      <verb name="Cook" moveTo="1">
         <behavior type="dialog">Very few recipes call for a house.</behavior>
       </verb>
-      <verb name="Sing">
+      <verb name="Sing" moveTo="1">
         <behavior type="dialog">"Oh if this old house could talk / what a story it would tell..."</behavior>
       </verb>
     </sprite>
@@ -990,16 +1050,16 @@
     
     <sprite name="billboard">
       <look>The billboard seems to be advertising some kind of bird snack.</look>
-      <verb name="Befriend">
+      <verb name="Befriend" moveTo="1">
         <behavior type="dialog">There was a boy who befriended a billboard. He read it stories about long, empty highways to help it sleep at night.</behavior>
       </verb>
-      <verb name="Read">
+      <verb name="Read" moveTo="1">
         <behavior type="dialog">"Avian Mills 100% organic and Sawdust-Free Bird Bread. Baked daily from choice wheat and flaxseed."</behavior>
       </verb>
-      <verb name="Write">
+      <verb name="Write" moveTo="1">
         <behavior type="dialog">"Let the Little Shavers Grow," a history of billboard advertising since the 1930s.</behavior>
       </verb>
-      <verb name="Cook" verbText="Cook recipe on billboard">
+      <verb name="Cook" verbText="Cook recipe on billboard" moveTo="1">
         <conditionalBehaviors flagName="houseBirdsAccessible" value="1">
           <behavior type="dialog">The birds did enjoy that bread. But now they're resting on the telephone wire.</behavior>
         </conditionalBehaviors>
@@ -1011,7 +1071,7 @@
           <behavior type="setFlag" flagName="houseBirdsAccessible" value="1" />
         </conditionalBehaviors>
       </verb>
-      <verb name="Sing">
+      <verb name="Sing" moveTo="1">
         <behavior type="dialog">The billboard is informational, but it's nothing to sing about.</behavior>
       </verb>
     </sprite>
@@ -1036,6 +1096,7 @@
         <behavior type="dialog">Clouds are actually fairly flavorless.</behavior>
       </verb>
     </sprite>
+    
     <sprite name="houseCloud2"
             verboseName="cloud"
             spriteClass="HouseCloud">
@@ -1069,25 +1130,25 @@
             verboseName="lamp post"
             spriteClass="LightedLampPost">
       <look>The lamp is lit by a charming swarm of fireflies.</look>
-      <verb name="Befriend">
+      <verb name="Befriend" moveTo="1">
         <behavior type="dialog">There was a boy who befriended a lamp post. He swung around it like a monkey.</behavior>
       </verb>
-      <verb name="Read">
+      <verb name="Read" moveTo="1">
         <behavior type="dialog">A small metal stamp at the bottom of the lamp post suggests it was built by the state of California.</behavior>
       </verb>
-      <verb name="Write">
+      <verb name="Write" moveTo="1">
         <behavior type="dialog">"Why Do Insects Glow?," a children's science book.</behavior>
       </verb>
-      <verb name="Cook">
+      <verb name="Cook" moveTo="1">
         <behavior type="dialog">The light from a firefly's tail is strong enough to see by but not strong enough to heat food.</behavior>
       </verb>
-      <verb name="Sing">
+      <verb name="Sing" moveTo="1">
         <behavior type="dialog">"I never cared much for moonlit skies / I never winked back at fireflies..."</behavior>
       </verb>
     </sprite>
     <sprite name="pigeon">
       <look>A small, gray bird, with some mangy bits.</look>
-      <verb name="Befriend">
+      <verb name="Befriend" moveTo="1">
         <conditionalBehaviors flagName="houseBirdsAccessible" value="0">
           <behavior type="dialog">The birds look friendly, but they're too far away. Perhaps they could be lured down with a snack.</behavior>
         </conditionalBehaviors>
@@ -1122,7 +1183,7 @@
 
     <sprite name="dove">
       <look>A lovely white bird.</look>
-      <verb name="Befriend">
+      <verb name="Befriend" moveTo="1">
         <conditionalBehaviors flagName="houseBirdsAccessible" value="0">
           <behavior type="dialog">The birds look friendly, but they're too far away. Perhaps they could be lured down with a snack.</behavior>
         </conditionalBehaviors>
@@ -1157,7 +1218,7 @@
     
     <sprite name="magpie">
       <look>A small bird with a long tail.</look>
-      <verb name="Befriend">
+      <verb name="Befriend" moveTo="1">
         <conditionalBehaviors flagName="houseBirdsAccessible" value="0">
           <behavior type="dialog">The birds look friendly, but they're too far away. Perhaps they could be lured down with a snack.</behavior>
         </conditionalBehaviors>
@@ -1280,7 +1341,7 @@
             spriteClass="HouseCloud">
       <look>A fluffy and serene storybook cumulonimbus.</look>      
       <verb name="Read">
-        <behavior type="transitionToRoom" targetRoom="uponACloud" />
+        <behavior type="transitionToRoom" targetRoom="beulahHome" />
       </verb>
       <verb name="Befriend">
         <behavior type="dialog">There was a boy who befriended a cloud. When it rained, he shed a sympathetic tear.</behavior>
@@ -1441,19 +1502,19 @@
     <sprite name="storyBook"
             verboseName="book about clouds">
       <look>A story book about a world above the clouds.</look>
-      <verb name="Read">
+      <verb name="Read" moveTo="1">
         <behavior type="transitionToRoom" targetRoom="upOnACloud" />
       </verb>
-      <verb name="Befriend">
+      <verb name="Befriend" moveTo="1">
         <behavior type="dialog">There was a boy who befriended a book. He stayed up all night, telling it stories.</behavior>
       </verb>
-      <verb name="Write">
+      <verb name="Write" moveTo="1">
         <behavior type="dialog">"Clouds? Why?" a short article reviewing several popular children's books about clouds.</behavior>
       </verb>
-      <verb name="Cook">
+      <verb name="Cook" moveTo="1">
         <behavior type="dialog">Fahrenheit 451 is a novel by Ray Bradbury about an anti-intellectual dystopia.</behavior>
       </verb>
-      <verb name="Sing">
+      <verb name="Sing" moveTo="1">
         <behavior type="dialog">"Oh.. I'm living in the future / I feel wonderful / I'm tipping over backwards."</behavior>
       </verb>
     </sprite>
@@ -1463,20 +1524,25 @@
       <look>A worn and stained cookbook.</look>
       <verb name="Read" moveTo="1">
         <conditionalBehaviors flagName="peanutButterBoyCreated" value="0">
+          <behavior type="flash" />                  
           <behavior type="addSprite" spriteName="peanutButterBoy" x="152" y="133" />
           <behavior type="setFlag" flagName="peanutButterBoyCreated" value="1" />
         </conditionalBehaviors>
       </verb>
-      <verb name="Befriend">
+      <verb name="Befriend" moveTo="1">
         <behavior type="dialog">There was a boy who befriended a cook book. He shared his favorite peanut butter with it, and the pages stuck together.</behavior>
       </verb>
-      <verb name="Write">
+      <verb name="Write" moveTo="1">
         <behavior type="dialog">"Between Recipes," a newspaper column about the personal life of a professional food writer.</behavior>
       </verb>
-      <verb name="Cook">
-        <behavior type="addSprite" spriteName="peanutButterBoy" x="152" y="133" />
+      <verb name="Cook" moveTo="1">
+        <conditionalBehaviors flagName="peanutButterBoyCreated" value="0">
+          <behavior type="flash" />                  
+          <behavior type="addSprite" spriteName="peanutButterBoy" x="152" y="133" />
+          <behavior type="setFlag" flagName="peanutButterBoyCreated" value="1" />
+        </conditionalBehaviors>        
       </verb>
-      <verb name="Sing">
+      <verb name="Sing" moveTo="1">
         <behavior type="dialog">"Hey good lookin / what ya got cookin..."</behavior>
       </verb>
     </sprite>
@@ -1525,16 +1591,16 @@
 
     <sprite name="peanutButter" verboseName="empty jar of peanut butter">
       <look>The jar is empty; it looks like it's been licked clean. The label is printed with ingredients, nutritional information and family recipes.</look>
-      <verb name="Befriend">
+      <verb name="Befriend" moveTo="1">
         <behavior type="dialog">There was a boy who befriended a jar of peanut butter. He emptied it, filled it with dirt, and grew new peanuts in it.</behavior>
       </verb>
-      <verb name="Read">
+      <verb name="Read" moveTo="1">
         <behavior type="dialog">"Avian Mills Bird-Friendly Peanut Butter. Ingredients: Peanuts..."</behavior>
       </verb>
-      <verb name="Write">
+      <verb name="Write" moveTo="1">
         <behavior type="dialog">"The Jar, Alone," a short story about an empty jar and its surroundings.</behavior>
       </verb>
-      <verb name="Cook">
+      <verb name="Cook" moveTo="1">
         <behavior type="removeSprite" targetSprite="peanutButter" />
         <conditionalBehaviors flagName="hillBirdsAccessible" value="1">
           <behavior type="dialog">The birds have had plenty to eat.</behavior>
@@ -1547,14 +1613,14 @@
           <behavior type="setFlag" flagName="hillBirdsAccessible" value="1" />
         </conditionalBehaviors>
       </verb>
-      <verb name="Sing">
+      <verb name="Sing" moveTo="1">
         <behavior type="dialog">Singing into the peanut butter jar makes for a convincing reverb effect.</behavior>
       </verb>
     </sprite>
     
     <sprite name="sparrow">
       <look>A familiar bird: the sparrow.</look>
-      <verb name="Befriend">
+      <verb name="Befriend" moveTo="1">
         <conditionalBehaviors flagName="hillBirdsAccessible" value="0">
           <behavior type="dialog">The birds look friendly, but they're too far away. Perhaps they could be lured down with a snack.</behavior>
         </conditionalBehaviors>
@@ -1586,7 +1652,7 @@
         </conditionalBehaviors>        
       </verb>
     </sprite>
-    <sprite name="goldfinch">
+    <sprite name="goldfinch" moveTo="1">
       <look>A brilliant yellow bird.</look>
       <verb name="Befriend">
         <conditionalBehaviors flagName="hillBirdsAccessible" value="0">
@@ -1620,7 +1686,7 @@
         </conditionalBehaviors>        
       </verb>      
     </sprite>
-    <sprite name="chickadee">
+    <sprite name="chickadee" moveTo="1">
       <look>An odd-looking bird with a small, black beard.</look>
       <verb name="Befriend">
         <conditionalBehaviors flagName="hillBirdsAccessible" value="0">
@@ -1677,19 +1743,19 @@
     <sprite name="television"
             spriteClass="Television">
       <look>The television flickers and hums into the night.</look>
-      <verb name="Watch">
+      <verb name="Watch" moveTo="1">
         <behavior type="transitionToRoom" targetRoom="aTVShowAboutACathedral" />
       </verb>
-      <verb name="Listen">
+      <verb name="Listen" moveTo="1">
         <behavior type="dialog">The tinny sound of a cathedral at night rattles through the television's built-in speaker.</behavior>
       </verb>
-      <verb name="Free">
+      <verb name="Free" moveTo="1">
         <behavior type="dialog">Over-the-air analog broadcasts were a free form of television; free to watch, free to interrupt.</behavior>
       </verb>
-      <verb name="Save">
+      <verb name="Save" moveTo="1">
         <behavior type="dialog">It may be too late.</behavior>
       </verb>
-      <verb name="Rest">
+      <verb name="Rest" moveTo="1">
         <behavior type="dialog">Falling asleep in front of the television may yield strange dreams.</behavior>
       </verb>
       
@@ -1766,16 +1832,16 @@
     <!-- Room #3-2 A TV Show About a Cathedral -->
     <sprite name="cathedral">
       <look>A Californian cathedral, with architecture from somewhere between Italy and Mexico.</look>
-      <verb name="Listen">
+      <verb name="Listen" moveTo="1">
         <behavior type="transitionToRoom" targetRoom="connieHome" />
       </verb>
-      <verb name="Watch">
+      <verb name="Watch" moveTo="1">
         <behavior type="dialog">The cathedral sits, motionless and silence.</behavior>
       </verb>
-      <verb name="Save">
+      <verb name="Save" moveTo="1">
         <behavior type="dialog">Every stone in this building has already received a thousand sacraments.</behavior>
       </verb>
-      <verb name="Free">
+      <verb name="Free" moveTo="1">
         <behavior type="dialog">Just a small chip from the side of the building; who would notice?</behavior>
       </verb>
       
@@ -1784,37 +1850,37 @@
     <sprite name="car"
             spriteClass="Car">
       <look>A station wagon, parked and running outside the cathedral.</look>
-      <verb name="Listen">
+      <verb name="Listen" moveTo="1">
           <behavior type="transitionToRoom" targetRoom="connieHome" />
       </verb>
-      <verb name="Watch">
+      <verb name="Watch" moveTo="1">
         <conditionalBehaviors flagName="greenButterfliesCaught" value="0">
           <behavior type="addVerb" newVerb="Free" />
         </conditionalBehaviors>
       </verb>
-      <verb name="Save">
+      <verb name="Save" moveTo="1">
         <behavior type="dialog">An easy way to save on gas is to reduce the weight of the car.</behavior>
       </verb>
-      <verb name="Free">
+      <verb name="Free" moveTo="1">
         <behavior type="dialog">Removing the parking break could be disastrous.</behavior>        
       </verb>
     </sprite>
     
     <sprite name="cross">
       <look>The cross is tall and stark. Hope, salvation, forgiveness, olive wood, fiberglass?</look>
-      <verb name="Listen">
+      <verb name="Listen" moveTo="1">
         <behavior type="transitionToRoom" targetRoom="connieHome" />
       </verb>
-      <verb name="Watch">
+      <verb name="Watch" moveTo="1">
         <conditionalBehaviors flagName="orangeButterfliesCaught" value="0">        
           <behavior type="addVerb" newVerb="Save" />
           <behavior type="dialog">Whether it's mundane intuition or divine presence, this cross is a comforting object to watch.</behavior>
         </conditionalBehaviors>
       </verb>
-      <verb name="Save">
+      <verb name="Save" moveTo="1">
         <behavior type="dialog">Does the cross itself need saving? How poetic.</behavior>
       </verb>
-      <verb name="Free">
+      <verb name="Free" moveTo="1">
         <behavior type="dialog">If the cross were loosened from its post, it might fall on someone.</behavior>
       </verb>
     </sprite>
@@ -1870,24 +1936,24 @@
     
     <sprite name="restingPigeon"  verboseName="pigeon" assetName="pigeon">
       <look>A small, gray bird, with some mangy bits. The pigeon is singing.</look>
-      <verb name="Watch">
+      <verb name="Watch" moveTo="1">
         <behavior type="dialog">The birds occasionally shift a bit on the telephone wire, but mostly they're quite still.</behavior>
       </verb>
-      <verb name="Listen">
+      <verb name="Listen" moveTo="1">
         <behavior type="dialog">The birds sing a pretty song, so there's always music in the air.</behavior>
       </verb>
-      <verb name="Remember">
+      <verb name="Remember" moveTo="1">
         <behavior type="dialog">The birds sang a pretty song, so there was always music in the air.</behavior>
       </verb>
-      <verb name="Forget">
+      <verb name="Forget" moveTo="1">
         <behavior type="dialog">Their songs went in one ear and out the other, and then bounced along down the street.</behavior>
       </verb>
-      <verb name="Read">
+      <verb name="Read" moveTo="1">
         <behavior type="flash" />
         <behavior type="removeVerb" targetVerb="Read" />
         <behavior type="addVerb" newVerb="Write" />
       </verb>
-      <verb name="Write">
+      <verb name="Write" moveTo="1">
         <behavior type="flash" />
         <behavior type="removeSprite" targetSprite="restingPigeon" />
         <behavior type="removeSprite" targetSprite="restingDove" />
@@ -1904,24 +1970,24 @@
     </sprite>
     <sprite name="restingDove"  verboseName="dove" assetName="dove">
       <look>A lovely white bird. The dove is singing.</look>
-      <verb name="Watch">
+      <verb name="Watch" moveTo="1">
         <behavior type="dialog">The birds occasionally shift a bit on the telephone wire, but mostly they're quite still.</behavior>
       </verb>
-      <verb name="Listen">
+      <verb name="Listen" moveTo="1">
         <behavior type="dialog">The birds sing a pretty song, so there's always music in the air.</behavior>
       </verb>
-      <verb name="Remember">
+      <verb name="Remember" moveTo="1">
         <behavior type="dialog">The birds sang a pretty song, so there was always music in the air.</behavior>
       </verb>
-      <verb name="Forget">
+      <verb name="Forget" moveTo="1">
         <behavior type="dialog">Their songs went in one ear and out the other, and then bounced along down the street.</behavior>
       </verb>
-      <verb name="Read">
+      <verb name="Read" moveTo="1">
         <behavior type="flash" />
         <behavior type="removeVerb" targetVerb="Read" />
         <behavior type="addVerb" newVerb="Write" />
       </verb>
-      <verb name="Write">
+      <verb name="Write" moveTo="1">
         <behavior type="flash" />
         <behavior type="removeSprite" targetSprite="restingPigeon" />
         <behavior type="removeSprite" targetSprite="restingDove" />
@@ -1938,24 +2004,24 @@
     </sprite>
     <sprite name="restingMagpie"  verboseName="magpie" assetName="magpie">
       <look>A small bird with a long tail. The magpie is singing.</look>
-      <verb name="Watch">
+      <verb name="Watch" moveTo="1">
         <behavior type="dialog">The birds occasionally shift a bit on the telephone wire, but mostly they're quite still.</behavior>
       </verb>
-      <verb name="Listen">
+      <verb name="Listen" moveTo="1">
         <behavior type="dialog">The birds sing a pretty song, so there's always music in the air.</behavior>
       </verb>
-      <verb name="Remember">
+      <verb name="Remember" moveTo="1">
         <behavior type="dialog">The birds sang a pretty song, so there was always music in the air.</behavior>
       </verb>
-      <verb name="Forget">
+      <verb name="Forget" moveTo="1">
         <behavior type="dialog">Their songs went in one ear and out the other, and then bounced along down the street.</behavior>
       </verb>
-      <verb name="Read">
+      <verb name="Read" moveTo="1">
         <behavior type="flash" />
         <behavior type="removeVerb" targetVerb="Read" />
         <behavior type="addVerb" newVerb="Write" />
       </verb>
-      <verb name="Write">
+      <verb name="Write" moveTo="1">
         <behavior type="flash" />
         <behavior type="removeSprite" targetSprite="restingPigeon" />
         <behavior type="removeSprite" targetSprite="restingDove" />
@@ -1972,24 +2038,24 @@
     </sprite>
     <sprite name="restingRobin"  verboseName="robin" assetName="robin">
       <look>A tiny bird with a cheerful red breast. The robin is singing.</look>
-      <verb name="Watch">
+      <verb name="Watch" moveTo="1">
         <behavior type="dialog">The birds occasionally shift a bit on the telephone wire, but mostly they're quite still.</behavior>
       </verb>
-      <verb name="Listen">
+      <verb name="Listen" moveTo="1">
         <behavior type="dialog">The birds sing a pretty song, so there's always music in the air.</behavior>
       </verb>
-      <verb name="Remember">
+      <verb name="Remember" moveTo="1">
         <behavior type="dialog">The birds sang a pretty song, so there was always music in the air.</behavior>
       </verb>
-      <verb name="Forget">
+      <verb name="Forget" moveTo="1">
         <behavior type="dialog">Their songs went in one ear and out the other, and then bounced along down the street.</behavior>
       </verb>
-      <verb name="Read">
+      <verb name="Read" moveTo="1">
         <behavior type="flash" />
         <behavior type="removeVerb" targetVerb="Read" />
         <behavior type="addVerb" newVerb="Write" />
       </verb>
-      <verb name="Write">
+      <verb name="Write" moveTo="1">
         <behavior type="flash" />
         <behavior type="removeSprite" targetSprite="restingPigeon" />
         <behavior type="removeSprite" targetSprite="restingDove" />
@@ -2006,24 +2072,24 @@
     </sprite>
     <sprite name="restingCardinal"  verboseName="cardinal" assetName="cardinal">
       <look>A bright red bird with a vacant expression on its face. The cardinal is singing</look>
-      <verb name="Watch">
+      <verb name="Watch" moveTo="1">
         <behavior type="dialog">The birds occasionally shift a bit on the telephone wire, but mostly they're quite still.</behavior>
       </verb>
-      <verb name="Listen">
+      <verb name="Listen" moveTo="1">
         <behavior type="dialog">The birds sing a pretty song, so there's always music in the air.</behavior>
       </verb>
-      <verb name="Remember">
+      <verb name="Remember" moveTo="1">
         <behavior type="dialog">The birds sang a pretty song, so there was always music in the air.</behavior>
       </verb>
-      <verb name="Forget">
+      <verb name="Forget" moveTo="1">
         <behavior type="dialog">Their songs went in one ear and out the other, and then bounced along down the street.</behavior>
       </verb>
-      <verb name="Read">
+      <verb name="Read" moveTo="1">
         <behavior type="flash" />
         <behavior type="removeVerb" targetVerb="Read" />
         <behavior type="addVerb" newVerb="Write" />
       </verb>
-      <verb name="Write">
+      <verb name="Write" moveTo="1">
         <behavior type="flash" />
         <behavior type="removeSprite" targetSprite="restingPigeon" />
         <behavior type="removeSprite" targetSprite="restingDove" />
@@ -2040,24 +2106,24 @@
     </sprite>
     <sprite name="restingBluebird"  verboseName="bluebird" assetName="bluebird">
       <look>A small blue bird with a red throat. The bluebird is singing.</look>
-      <verb name="Watch">
+      <verb name="Watch" moveTo="1">
         <behavior type="dialog">The birds occasionally shift a bit on the telephone wire, but mostly they're quite still.</behavior>
       </verb>
-      <verb name="Listen">
+      <verb name="Listen" moveTo="1">
         <behavior type="dialog">The birds sing a pretty song, so there's always music in the air.</behavior>
       </verb>
-      <verb name="Remember">
+      <verb name="Remember" moveTo="1">
         <behavior type="dialog">The birds sang a pretty song, so there was always music in the air.</behavior>
       </verb>
-      <verb name="Forget">
+      <verb name="Forget" moveTo="1">
         <behavior type="dialog">Their songs went in one ear and out the other, and then bounced along down the street.</behavior>
       </verb>
-      <verb name="Read">
+      <verb name="Read" moveTo="1">
         <behavior type="flash" />
         <behavior type="removeVerb" targetVerb="Read" />
         <behavior type="addVerb" newVerb="Write" />
       </verb>
-      <verb name="Write">
+      <verb name="Write" moveTo="1">
         <behavior type="flash" />
         <behavior type="removeSprite" targetSprite="restingPigeon" />
         <behavior type="removeSprite" targetSprite="restingDove" />
@@ -2074,24 +2140,24 @@
     </sprite>
     <sprite name="restingSparrow"  verboseName="sparrow" assetName="sparrow">
       <look>A familiar bird: the sparrow. The sparrow is singing.</look>
-      <verb name="Watch">
+      <verb name="Watch" moveTo="1">
         <behavior type="dialog">The birds occasionally shift a bit on the telephone wire, but mostly they're quite still.</behavior>
       </verb>
-      <verb name="Listen">
+      <verb name="Listen" moveTo="1">
         <behavior type="dialog">The birds sing a pretty song, so there's always music in the air.</behavior>
       </verb>
-      <verb name="Remember">
+      <verb name="Remember" moveTo="1">
         <behavior type="dialog">The birds sang a pretty song, so there was always music in the air.</behavior>
       </verb>
-      <verb name="Forget">
+      <verb name="Forget" moveTo="1">
         <behavior type="dialog">Their songs went in one ear and out the other, and then bounced along down the street.</behavior>
       </verb>
-      <verb name="Read">
+      <verb name="Read" moveTo="1">
         <behavior type="flash" />
         <behavior type="removeVerb" targetVerb="Read" />
         <behavior type="addVerb" newVerb="Write" />
       </verb>
-      <verb name="Write">
+      <verb name="Write" moveTo="1">
         <behavior type="flash" />
         <behavior type="removeSprite" targetSprite="restingPigeon" />
         <behavior type="removeSprite" targetSprite="restingDove" />
@@ -2108,25 +2174,25 @@
     </sprite>
     <sprite name="restingGoldfinch"  verboseName="goldfinch" assetName="goldfinch">
       <look>A brilliant yellow bird. The goldfinch is singing.</look>
-      <verb name="Watch">
+      <verb name="Watch" moveTo="1">
         <behavior type="dialog">The birds occasionally shift a bit on the telephone wire, but mostly they're quite still.</behavior>
       </verb>
-      <verb name="Listen">
+      <verb name="Listen" moveTo="1">
         <behavior type="dialog">The birds sing a pretty song, so there's always music in the air.</behavior>
       </verb>
-      <verb name="Remember">
+      <verb name="Remember" moveTo="1">
         <behavior type="dialog">The birds sang a pretty song, so there was always music in the air.</behavior>
       </verb>
-      <verb name="Forget">
+      <verb name="Forget" moveTo="1">
         <behavior type="dialog">Their songs went in one ear and out the other, and then bounced along down the street.</behavior>
       </verb>
       
-      <verb name="Read">
+      <verb name="Read" moveTo="1">
         <behavior type="flash" />
         <behavior type="removeVerb" targetVerb="Read" />
         <behavior type="addVerb" newVerb="Write" />
       </verb>
-      <verb name="Write">
+      <verb name="Write" moveTo="1">
         <behavior type="flash" />
         <behavior type="removeSprite" targetSprite="restingPigeon" />
         <behavior type="removeSprite" targetSprite="restingDove" />
@@ -2143,25 +2209,25 @@
     </sprite>
     <sprite name="restingChickadee"  verboseName="chickadee" assetName="chickadee">
       <look>An odd-looking bird with a small, black beard. The chickadee is singing.</look>
-      <verb name="Watch">
+      <verb name="Watch" moveTo="1">
         <behavior type="dialog">The birds occasionally shift a bit on the telephone wire, but mostly they're quite still.</behavior>
       </verb>
-      <verb name="Listen">
+      <verb name="Listen" moveTo="1">
         <behavior type="dialog">The birds sing a pretty song, so there's always music in the air.</behavior>
       </verb>
-      <verb name="Remember">
+      <verb name="Remember" moveTo="1">
         <behavior type="dialog">The birds sang a pretty song, so there was always music in the air.</behavior>
       </verb>
-      <verb name="Forget">
+      <verb name="Forget" moveTo="1">
         <behavior type="dialog">Their songs went in one ear and out the other, and then bounced along down the street.</behavior>
       </verb>
       
-      <verb name="Read">
+      <verb name="Read" moveTo="1">
         <behavior type="flash" />
         <behavior type="removeVerb" targetVerb="Read" />
         <behavior type="addVerb" newVerb="Write" />
       </verb>
-      <verb name="Write">
+      <verb name="Write" moveTo="1">
         <behavior type="flash" />
         <behavior type="removeSprite" targetSprite="restingPigeon" />
         <behavior type="removeSprite" targetSprite="restingDove" />
@@ -2182,24 +2248,24 @@
     <sprite name="restingOrangeButterfly" 
             verboseName="orange butterfly" assetName="orangeButterfly">
       <look>A peaceful orange butterfly.</look>
-      <verb name="Remember">
+      <verb name="Remember" moveTo="1">
         <behavior type="dialog">The orange butterfly was regretful but now it seems to be at peace.</behavior>
       </verb>
-      <verb name="Forget">
+      <verb name="Forget" moveTo="1">
         <behavior type="dialog">The orange butterfly clings to the house like a splash of paint.</behavior>
       </verb>
-      <verb name="Read">
+      <verb name="Read" moveTo="1">
         <behavior type="dialog">The orange butterfly clings to the house like a splash of house paint, not graffiti</behavior>
       </verb>
-      <verb name="Write">
+      <verb name="Write" moveTo="1">
         <behavior type="dialog">"The Orange Butterfly," an allegorical story about redemption and forgiveness.</behavior>
       </verb>
-      <verb name="Watch">
+      <verb name="Watch" moveTo="1">
         <behavior type="flash" />
         <behavior type="removeVerb" targetVerb="Watch" />
         <behavior type="addVerb" newVerb="Listen" />
       </verb>
-      <verb name="Listen">
+      <verb name="Listen" moveTo="1">
         <behavior type="flash" />
         <behavior type="removeSprite" targetSprite="restingOrangeButterfly" />
         <behavior type="removeSprite" targetSprite="restingBlueButterfly" />
@@ -2212,24 +2278,24 @@
     <sprite name="restingBlueButterfly" 
             verboseName="blue butterfly" assetName="blueButterfly">
       <look>A rested blue butterfly.</look>
-      <verb name="Remember">
+      <verb name="Remember" moveTo="1">
         <behavior type="dialog">The blue butterfly was tired, but now it seems rested.</behavior>
       </verb>
-      <verb name="Forget">
+      <verb name="Forget" moveTo="1">
         <behavior type="dialog">The blue butterfly clings to the side of the house like a splash of paint.</behavior>
       </verb>
-      <verb name="Read">
+      <verb name="Read" moveTo="1">
         <behavior type="dialog">The blue butterfly clings to the side of the house like a splash of house paint, not graffiti.</behavior>
       </verb>
-      <verb name="Write">
+      <verb name="Write" moveTo="1">
         <behavior type="dialog">"The Blue Butterfly," an allegorical story about being overworked and finding time to relax.</behavior>
       </verb>
-      <verb name="Watch">
+      <verb name="Watch" moveTo="1">
         <behavior type="flash" />
         <behavior type="removeVerb" targetVerb="Watch" />
         <behavior type="addVerb" newVerb="Listen" />
       </verb>
-      <verb name="Listen">
+      <verb name="Listen" moveTo="1">
         <behavior type="flash" />
         <behavior type="removeSprite" targetSprite="restingOrangeButterfly" />
         <behavior type="removeSprite" targetSprite="restingBlueButterfly" />
@@ -2242,24 +2308,24 @@
     <sprite name="restingGreenButterfly" 
             verboseName="green butterfly" assetName="greenButterfly">
       <look>A liberated green butterfly.</look>
-      <verb name="Remember">
+      <verb name="Remember" moveTo="1">
         <behavior type="dialog">The green butterfly used to feel trapped, but now it is free.</behavior>
       </verb>
-      <verb name="Forget">
+      <verb name="Forget" moveTo="1">
         <behavior type="dialog">The green butterfly clings to the house like a splash of paint.</behavior>        
       </verb>
-      <verb name="Read">
+      <verb name="Read" moveTo="1">
         <behavior type="dialog">The green butterfly clings to the house like a splash of house paint, not graffiti</behavior>        
       </verb>
-      <verb name="Write">
+      <verb name="Write" moveTo="1">
         <behavior type="dialog">"The Green Butterfly," an allegorical story about constraint and freedom.</behavior>
       </verb>
-      <verb name="Watch">
+      <verb name="Watch" moveTo="1">
         <behavior type="flash" />
         <behavior type="removeVerb" targetVerb="Watch" />
         <behavior type="addVerb" newVerb="Listen" />
       </verb>
-      <verb name="Listen">
+      <verb name="Listen" moveTo="1">
         <behavior type="flash" />
         <behavior type="removeSprite" targetSprite="restingOrangeButterfly" />
         <behavior type="removeSprite" targetSprite="restingBlueButterfly" />
@@ -2275,12 +2341,12 @@
     <sprite name="restingLightedLampPost" assetName="lightedLampPost"
             spriteClass="LightedLampPost" verboseName="lamp post">
       <look>The lamp is lit by a charming swarm of fireflies.</look>
-      <verb name="Remember">
+      <verb name="Remember" moveTo="1">
         <behavior type="flash" />
         <behavior type="removeVerb" targetVerb="Remember" />
         <behavior type="addVerb" newVerb="Forget" />
       </verb>
-      <verb name="Forget">
+      <verb name="Forget" moveTo="1">
         <behavior type="flash" />
         <behavior type="removeVerb" targetVerb="Forget" />
         <behavior type="addVerb" newVerb="Read" />        
@@ -2288,9 +2354,16 @@
       </verb>
     </sprite>
 
+    <sprite name="endGameBoy" interactive="0" assetName="boy"
+            spriteClass="ComputerScreenBoy" />
+    
     <sprite name="annHouse" interactive="0" assetName="house" verboseName="house">
         <look>A house in California. It's dark, quiet and gray; time to sleep.</look>
-        <verb name="Enter">
+        <verb name="Enter" moveTo="1">
+          <behavior type="flash" />          
+          <behavior type="removePlayer" />
+          <behavior type="replaceSprite" oldSprite="annHouse" newSprite="endGameBoy"
+                    x="54" y="134" />
           <behavior type="endGameBehavior" />
         </verb>
     </sprite>

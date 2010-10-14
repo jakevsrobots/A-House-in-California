@@ -217,7 +217,7 @@
     
     <!-- ### ANN ### -->
     <folder name="ann-home">
-      <object name="houseBackground" image="../backgrounds/home-background.png"
+      <object name="annHouseBackground" image="../backgrounds/ann-home-background.png"
               width="320" height="170" />
 
       <object name="restingGreenButterfly" image="../sprites/green-butterfly.png"

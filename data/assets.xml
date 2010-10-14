@@ -339,6 +339,8 @@
          type="image" />
 
   <!-- general Ann -->
+  <asset name="annHouseBackground" file="backgrounds/ann-home-background.png"
+         type="image" />
   <asset name="annPlayer" file="sprites/ann-player.png"
          type="image" />
   

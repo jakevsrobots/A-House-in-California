@@ -12,7 +12,8 @@ package california {
     import flash.ui.ContextMenu;
     import flash.ui.ContextMenuItem;
     import flash.ui.ContextMenuBuiltInItems;
-    
+
+    import flash.system.*;
     
     [SWF(width="640", height="340", backgroundColor="#000000")];
 
@@ -71,7 +72,8 @@ package california {
                     "fadeToCutScene": FadeToCutSceneBehavior,
                     "stopMusic": StopMusicBehavior,
                     "makeSpriteInteractive": MakeSpriteInteractiveBehavior,
-                    "endGameBehavior": EndGameBehavior
+                    "endGameBehavior": EndGameBehavior,
+                    "removePlayer": RemovePlayerBehavior
                 });
             
             GameSprite.registerSpriteClasses({
@@ -127,6 +129,8 @@ package california {
             //stage.displayState = 'fullScreenInteractive';
 
             setUpFullScreenContextMenu();
+
+            //fscommand('fullscreen', "true");
         }
 
         private function setUpFullScreenContextMenu():void {

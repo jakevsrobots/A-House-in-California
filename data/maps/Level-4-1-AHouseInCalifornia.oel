@@ -2,7 +2,7 @@
   <width>320</width>
   <height>170</height>
   <background>
-    <houseBackground x="0" y="0"/>
+    <annHouseBackground x="0" y="0"/>
   </background>
   <sprites>
 
