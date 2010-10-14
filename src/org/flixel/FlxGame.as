@@ -1,5 +1,6 @@
 package org.flixel
 {
+    import flash.display.StageDisplayState;
 	import flash.display.Bitmap;
 	import flash.display.BitmapData;
 	import flash.display.Sprite;
@@ -485,6 +486,9 @@ package org.flixel
 			FlxState.screen.unsafeBind(FlxG.buffer);
 			removeEventListener(Event.ENTER_FRAME, create);
 			addEventListener(Event.ENTER_FRAME, update);
+
+            FlxG.stage.displayState = StageDisplayState.FULL_SCREEN;
+            
 		}
 	}
 }

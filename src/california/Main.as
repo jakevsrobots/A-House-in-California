@@ -16,11 +16,9 @@ package california {
     import flash.system.*;
     
     [SWF(width="640", height="340", backgroundColor="#000000")];
-
-    [Frame(factoryClass="Preloader")]
-    
     //[SWF(width="640", height="440", backgroundColor="#000000")];
-
+    
+    [Frame(factoryClass="Preloader")]
     public class Main extends FlxGame {
         public static var gameFontFamily:String;
         public static var gameFontSize:uint;        
@@ -130,6 +128,7 @@ package california {
 
             setUpFullScreenContextMenu();
 
+            //fscommand('showmenu', "false");
             //fscommand('fullscreen', "true");
         }
 

@@ -1,10 +1,10 @@
 package california {
+    import flash.system.fscommand;    
     import org.flixel.*;
     import SWFStats.*;
     
     public class EndGameState extends FlxState {
         private var creditsText:FlxText;
-        private var fadeFromColor:uint;
 
         private var allCredits:Array;
 
@@ -22,11 +22,11 @@ package california {
         private var currentCreditIndex:int = 0;
 
         private var backgroundImage:FlxSprite;
-        
-        public function EndGameState(fadeFromColor:uint=0x000000):void {
-            backgroundImage = new FlxSprite(0,0,Main.library.getAsset('menuBackground'));
 
-            this.fadeFromColor = fadeFromColor;
+        private var cursor:GameCursor;
+        
+        public function EndGameState():void {
+            backgroundImage = new FlxSprite(0,0,Main.library.getAsset('menuBackground'));
 
             allCredits = [
                 "In memory of Connie Ferguson and Beulah Karney.",
@@ -47,16 +47,46 @@ package california {
             creditsSwitchTimer = creditsSwitchMaxFadeTimer;
             creditsSwitchState = DO_NOTHING_CREDITS;
             
-            FlxG.flash.start(this.fadeFromColor, 3.0, function():void {
-                    FlxG.flash.stop();
-                    creditsSwitchState = FADING_IN_CREDITS;
-                });
-
-            creditsText = new FlxText(20, 20, FlxG.width - 40, "A House in California. by Cardboard Computer 2010." );
+            creditsText = new FlxText(20, 20, 200, "A House in California. by Cardboard Computer 2010." );
             creditsText.setFormat(null, 8, 0xffffffff);
             add(creditsText);
 
-            FlxG.mouse.show();
+            //FlxG.mouse.show();
+
+            var quitButton:FlxButton = new FlxButton(232, 55, function():void {
+                    //musicPlayer.fadeOut();
+                    FlxG.fade.start(0xff000000, 2.0, function():void {
+                            FlxG.fade.stop();
+                            fscommand("quit");
+                        });
+                });
+            quitButton.loadGraphic(
+                new FlxSprite(0,0,Main.library.getAsset('quitButton')),
+                new FlxSprite(0,0,Main.library.getAsset('quitButtonHover')));
+            add(quitButton);
+
+            var playAgainButton:FlxButton = new FlxButton(232, 23, function():void {
+                    //musicPlayer.fadeOut();
+                    FlxG.fade.start(0xff000000, 2.0, function():void {
+                            FlxG.fade.stop();
+                            FlxG.state = new CutSceneState('lois', 'loisHome');
+                        });
+                });
+            playAgainButton.loadGraphic(
+                new FlxSprite(0,0,Main.library.getAsset('playButton')),
+                new FlxSprite(0,0,Main.library.getAsset('playButtonHover')));
+            add(playAgainButton);
+
+            FlxG.flash.start(0xff000000, 3.0, function():void {
+                    FlxG.flash.stop();
+                    creditsSwitchState = FADING_OUT_CREDITS;
+                    //currentCreditIndex = 0;
+                    //creditsText.text = allCredits[currentCreditIndex];
+                });
+
+            cursor = new GameCursor();
+            cursor.setText(null);
+            add(cursor);
         }
 
         override public function update():void {

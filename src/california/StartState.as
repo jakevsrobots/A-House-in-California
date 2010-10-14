@@ -30,7 +30,7 @@ package california {
             //Main.stage.displayState = 'fullScreenInteractive';
             //FlxG.stage.displayState = 'fullScreen';
 
-            FlxG.stage.displayState = StageDisplayState.FULL_SCREEN;            
+            //FlxG.stage.displayState = StageDisplayState.FULL_SCREEN;            
 
             //fscommand("trapallkeys", "true");
             //fscommand("showmenu", "false");            
@@ -55,7 +55,7 @@ package california {
 
             var buttonPos:uint = 60;
 
-            var playButton:FlxButton = new FlxButton(232, 25, function():void {
+            var playButton:FlxButton = new FlxButton(232, 23, function():void {
                     //musicPlayer.fadeOut();
                     FlxG.fade.start(0xff000000, 2.0, function():void {
                             FlxG.fade.stop();
@@ -66,6 +66,29 @@ package california {
                 new FlxSprite(0,0,Main.library.getAsset('playButton')),
                 new FlxSprite(0,0,Main.library.getAsset('playButtonHover')));
             add(playButton);
+            
+            var creditsButton:FlxButton = new FlxButton(232, 55, function():void {
+                    FlxG.fade.start(0xff000000, 2.0, function():void {
+                            FlxG.fade.stop();
+                            FlxG.state = new EndGameState();
+                        });
+                });
+            creditsButton.loadGraphic(
+                new FlxSprite(0,0,Main.library.getAsset('creditsButton')),
+                new FlxSprite(0,0,Main.library.getAsset('creditsButtonHover')));
+            add(creditsButton);
+
+            var quitButton:FlxButton = new FlxButton(232, 87, function():void {
+                    //musicPlayer.fadeOut();
+                    FlxG.fade.start(0xff000000, 2.0, function():void {
+                            FlxG.fade.stop();
+                            fscommand("quit");
+                        });
+                });
+            quitButton.loadGraphic(
+                new FlxSprite(0,0,Main.library.getAsset('quitButton')),
+                new FlxSprite(0,0,Main.library.getAsset('quitButtonHover')));
+            add(quitButton);
             
             cursor = new GameCursor();
             cursor.setText(null);

@@ -32,7 +32,18 @@
          type="image" />
   <asset name="playButtonHover" file="play-button-hover.png"
          type="image" />
-  
+  <asset name="playAgainButton" file="play-again-button.png"
+         type="image" />
+  <asset name="playAgainButtonHover" file="play-again-button-hover.png"
+         type="image" />
+  <asset name="quitButton" file="quit-button.png"
+         type="image" />
+  <asset name="quitButtonHover" file="quit-button-hover.png"
+         type="image" />
+  <asset name="creditsButton" file="credits-button.png"
+         type="image" />
+  <asset name="creditsButtonHover" file="credits-button-hover.png"
+         type="image" />
   
   <!-- ################################################### -->
   <!-- ################## Music ########################### -->
