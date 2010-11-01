@@ -42,17 +42,12 @@ package california {
         
         private var currentVerb:Verb;
 
-        //private var startingRoomName:String = 'loisHome';
-        //private var startingRoomName:String = 'aHouseAtTheTopOfAHill';
-        //private var startingRoomName:String = 'beulahHome';
-        //private var startingRoomName:String = 'upOnACloud';
-        //private var startingRoomName:String = 'aTVShowAboutACathedral';
-        //private var startingRoomName:String = 'connieHome';
-        private var startingRoomName:String = 'annHome';
+        private var startingRoomName:String = 'loisHome';
 
         public static var musicPlayer:MusicPlayer;
 
-        private var mouseActivityTimeoutLength:Number = 10 * 60;
+        // This is for gallery/exhibition mode
+        private var mouseActivityTimeoutLength:Number = 3 * 60;
         private var mouseTimer:Number = 0;
 
         private var oldMouseX:Number = 0;
@@ -202,9 +197,6 @@ package california {
             if(FlxG.keys.justPressed('Q')) {
                 fadeToMenu(0);
             }
-            if(FlxG.keys.justPressed('N')) {
-                fadeToMenu(0);
-            }
             
             // Update menu level fade
             if(preMenuFade) {
@@ -267,8 +259,10 @@ package california {
                 mouseTimer = 0;
             } else {
                 mouseTimer += FlxG.elapsed;
-                if(mouseTimer > mouseActivityTimeoutLength) {
-                    fadeToMenu(0);
+                if(mouseTimer > mouseActivityTimeoutLength) { 
+                   mouseTimer = 0;
+                   // Uncomment this for gallery/exhibition mode :)
+                   //fadeToMenu(0);
                 }
             }
 
